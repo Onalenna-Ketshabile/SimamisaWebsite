@@ -85,14 +85,27 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
+            "assets": [ 
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css" 
             ],
-            "scripts": []
+            "scripts": [
+              "src/js2/jquery.min.js",
+              "js2/bootstrap.min.js",
+
+              "src/assets/js/newsfeedposts/jquery.min.js",
+              "src/assets/js/newsfeedposts/jquery.inview.min.js",
+              "src/assets/js/newsfeedposts/main.js",
+
+              "src/app//pages/manager/main-layout/more/scripts/bootstrap.min.js",
+              "src/app//pages/manager/main-layout/more/scripts/jquery.min.js",
+              "src/app//pages/manager/main-layout/more/scripts/plugins.js"
+
+            ]
           }
         }
       }
