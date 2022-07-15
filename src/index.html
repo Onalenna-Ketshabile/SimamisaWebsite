@@ -16,7 +16,7 @@
 </head>
 <body>
     
-  <div id="nav"  class="header-holder" hidden>
+  <div id="nav"  class="header-holder">
     
     <nav class="navbar navbar-full">
         <div class="container-fluid">
@@ -92,7 +92,7 @@
 </div>
  <app-root></app-root>
 
-<app-footer  id="footer" ></app-footer>
+<app-footer id="footer"  ></app-footer>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
@@ -116,7 +116,7 @@ $(document).ready(function () {
             }
   });
 
-  if(url.href.includes("login") || url.href.includes("register")){
+  if(url.href.includes("login") || url.href.includes("register") ||  url.href.includes("hometwo")){
 
     document.getElementById('nav').style.display = "none";
     document.getElementById('footer').style.display = "none";
