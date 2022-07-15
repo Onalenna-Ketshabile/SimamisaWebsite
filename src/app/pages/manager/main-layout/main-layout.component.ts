@@ -15,18 +15,19 @@ export class MainLayoutComponent implements OnInit {
   constructor() {
 
     this.myMinJs = document.createElement("script");
-    this.myMinJs.src = "./more/scripts/jquery.min.js";
+    this.myMinJs.src = "../../../assets/js/manager-layout/jquery.min.js";
     document.body.appendChild(this.myMinJs);
 
     
     this.mybootstrapJs = document.createElement("script");
-    this.mybootstrapJs.src = "./more/scripts/bootstrap.min.js";
+    this.mybootstrapJs.src = "../../../assets/js/manager-layout/bootstrap.min.js";
     document.body.appendChild(this.mybootstrapJs);
 
         
     this.myPluginJs = document.createElement("script");
-    this.myPluginJs.src = "./more/scripts/plugins.js";
+    this.myPluginJs.src = "../../../assets/js/manager-layout/plugins.js";
     document.body.appendChild(this.myPluginJs);
+
    }
 
   ngOnInit(): void {

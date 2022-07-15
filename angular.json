@@ -101,9 +101,9 @@
               "src/assets/js/newsfeedposts/jquery.inview.min.js",
               "src/assets/js/newsfeedposts/main.js",
 
-              "src/app//pages/manager/main-layout/more/scripts/bootstrap.min.js",
-              "src/app//pages/manager/main-layout/more/scripts/jquery.min.js",
-              "src/app//pages/manager/main-layout/more/scripts/plugins.js"
+              "src/assets/js/manager-layout/bootstrap.min.js",
+              "src/assets/js/manager-layout/jquery.min.js",
+              "src/assets/js/manager-layout/plugins.js"
 
             ]
           }
