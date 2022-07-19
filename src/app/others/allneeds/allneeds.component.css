@@ -242,6 +242,9 @@ p {
 	margin: 0px;
 }
 
+.read-more{
+	font-weight: 500;
+}
 a {
 	-webkit-transition: all 0.3s ease-out 0s;
 	-o-transition: all 0.3s ease-out 0s;
@@ -503,6 +506,7 @@ a:hover {
 	position: relative;
 	z-index: 1;
 	border: 1px solid transparent;
+	margin: 0 30px;
 }
 
 .main-btn i {
@@ -2089,6 +2093,7 @@ a:hover {
 	font-size: 16px;
 	font-weight: 500;
 	color: #001d23;
+	float: right;
 }
 
 .project-items .project-item .date i {
@@ -2133,14 +2138,15 @@ a:hover {
 }
 
 .project-items.project-style-two .project-item .content {
-	padding: 50px;
+	padding: 0px 50px;
+	padding-top: 20px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+	width: 100%;
 }
 
 .project-items.project-style-two .project-item .title {
 	font-size: 24px;
-	margin-bottom: 30px;
 }
 
 /*======= Project Three =======*/
@@ -2567,7 +2573,7 @@ a:hover {
 }
 
 .project-details-tab {
-	margin-top: 75px;
+	margin-bottom: 10px;
 }
 
 .project-details-tab .nav-tabs {
@@ -5231,4 +5237,9 @@ a:hover {
 .contact-form input:not(:focus),
 .contact-form textarea:not(:focus) {
 	border-color: transparent;
+}
+.donation-btns{
+	display: flex;
+    justify-content: center;
+	width: 100%
 }
