@@ -18,6 +18,7 @@ import { NewsfeedComponent } from './pages/newsfeed/newsfeed.component';
 import { AllneedsComponent } from './others/allneeds/allneeds.component';
 import { NewsfeedPostComponent } from './pages/newsfeed-post/newsfeed-post.component';
 import { MainLayoutComponent } from './pages/manager/main-layout/main-layout.component';
+import { NeeditemComponent } from './others/needitem/needitem.component';
 
 @NgModule({
   declarations: [ 
@@ -36,7 +37,8 @@ import { MainLayoutComponent } from './pages/manager/main-layout/main-layout.com
     NewsfeedComponent,
     AllneedsComponent,
     NewsfeedPostComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    NeeditemComponent,
   ],
   imports: [
     BrowserModule,

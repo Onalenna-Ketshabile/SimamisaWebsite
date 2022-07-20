@@ -1,0 +1,41 @@
+<div class="col-xl-10">
+    <div class="project-item mb-30">
+        <div class="thumb" style="background-image: url(../../../assets/images/newsfeed/jackets.jpg);"></div>
+        <div class="content">
+
+            <h4 class="title">
+                <a href="project-details.html">{{need.title}}</a>
+            </h4>
+            <div class="author">
+                <img src="../../../assets/images/orphanages/KingdomLife.png" alt="Thumb">
+                <a href="#">Kingdom Life</a>
+            </div>	
+            <div class="project-details-tab">
+
+                <div class="description-content">
+                    <p class="description">
+                        {{descriptionToShow}}}  </p>
+                  <button *ngIf="showReadMore" (click)="onReadMore(need)">Read More</button>
+                  <button *ngIf="!showReadMore" (click)="onShowless(need)">Show Less</button>
+            
+                </div>
+
+            </div>		
+            <div class="project-stats">
+                <div class="stats-value">
+                    <span class="value-title">Raised of <span class="value">$59,689</span></span>
+                    <span class="stats-percentage">79%</span>
+                </div>
+                <div class="stats-bar" data-value="79">
+                    <div class="bar-line"></div>
+                </div>
+            </div>
+            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+            
+        </div>
+        <div class="donation-btns">
+        <button type="submit" class="main-btn">Donate Item <i class="far fa-arrow-right"></i></button>
+        <button type="submit" class="main-btn">Donate Money <i class="far fa-arrow-right"></i></button>
+        </div>
+    </div>
+</div>

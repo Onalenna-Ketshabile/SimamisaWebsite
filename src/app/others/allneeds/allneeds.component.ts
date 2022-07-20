@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import { Need } from 'src/app/Need';
+import { NEEDS } from 'src/app/mock-needs';
 @Component({
   selector: 'app-allneeds',
   templateUrl: './allneeds.component.html',
   styleUrls: ['./allneeds.component.css','./bootstrap.min.css']
 })
 export class AllneedsComponent implements OnInit {
-
+  needs: Need[] = NEEDS;
   myIViewJs: HTMLScriptElement;
   myMinJs: HTMLScriptElement;
   myMainJs: HTMLScriptElement;
