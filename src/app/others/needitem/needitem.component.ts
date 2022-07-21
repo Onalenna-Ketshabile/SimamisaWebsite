@@ -4,7 +4,7 @@ import { Need } from 'src/app/Need';
 @Component({
   selector: 'app-needitem',
   templateUrl: './needitem.component.html',
-  styleUrls: ['../allneeds/allneeds.component.css','./bootstrap.min.css']
+  styleUrls: []
 })
 export class NeeditemComponent implements OnInit {
   @Input()

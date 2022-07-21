@@ -4,7 +4,8 @@ import { NEEDS } from 'src/app/mock-needs';
 @Component({
   selector: 'app-allneeds',
   templateUrl: './allneeds.component.html',
-  styleUrls: ['./allneeds.component.css','./bootstrap.min.css']
+  styleUrls: ['./allneeds.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AllneedsComponent implements OnInit {
   needs: Need[] = NEEDS;
