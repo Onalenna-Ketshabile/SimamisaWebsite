@@ -20,7 +20,9 @@ const routes: Routes = [
  {path: 'infohubpost', component: InfohubPostComponent},
  {path: 'newsfeed', component: NewsfeedComponent},
  {path: 'newsfeedpost', component: NewsfeedPostComponent},
- {path: 'hometwo', component: MainLayoutComponent}
+ {path: 'hometwo', component: MainLayoutComponent},
+ {path: 'm',
+  loadChildren: () =>  import('./pages/manager/main-layout/main-layout.module').then(m => m.MainLayoutModule)}
 
 ];
 
