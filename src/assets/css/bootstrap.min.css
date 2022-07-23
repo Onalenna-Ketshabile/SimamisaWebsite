@@ -1400,6 +1400,7 @@ body {
     -webkit-animation: movebg 30s linear both infinite;
     -moz-animation: movebg 30s linear both infinite;
     animation: movebg 30s linear both infinite;
+    overflow-x: hidden ;
 }
 
 button,
