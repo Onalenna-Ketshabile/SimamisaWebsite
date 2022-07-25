@@ -8,38 +8,38 @@
             <div class="form login">
                 <span class="title">Register</span>
 
-                <form action="#">
+                <form #registerForm="ngForm" (ngSubmit)="getUserRegistrationData(registerForm.value)">
 					<div class="input-field">
-						<input type="text" id="name" runat="server" placeholder="Enter your name" required>
+						<input type="text" id="name" name="name" runat="server" placeholder="Enter your name" ngModel required>
 						<i class="uil uil-user"></i>
 					</div>
 				   <div class="input-field">
-						<input type="text" id="surname" runat="server" placeholder="Enter your surname" required>
+						<input type="text" id="surname" name="surname" runat="server" placeholder="Enter your surname" ngModel required>
 						<i class="uil uil-user"></i>
 					</div>
 				  <div class="input-field">
-						<input type="text" id="dob" runat="server"  class="date-input" placeholder="Enter your date of birth" onfocus="(this.type='date')" required>
+						<input type="text" id="dob" runat="server" name="dob" class="date-input" placeholder="Enter your date of birth" onfocus="(this.type='date')" ngModel required>
 						<i class="uil uil-calendar-alt"></i>
 					</div>
 				  <div class="input-field">
-						<input type="text" id="address" runat="server" placeholder="Enter your address" required>
+						<input type="text" id="address" runat="server"  name="address" placeholder="Enter your address" ngModel required>
 						<i class="uil uil-location-pin-alt"></i>
 					</div>
 					<div class="input-field">
-						<input type="text" id="email" runat="server" placeholder="Enter your email" required>
+						<input type="text" id="email" runat="server" name="email" placeholder="Enter your email" ngModel required>
 						<i class="uil uil-envelope icon"></i>
 					</div>
 					  <div class="input-field">
-						<input type="text" id="phone" runat="server" placeholder="Enter your phone number" required>
+						<input type="text" id="phone" runat="server" name="phone" placeholder="Enter your phone number" ngModel required>
 						<i class="uil uil-phone"></i>
 					</div>
 				
 					<div class="input-field">
-						<input type="password" id="password" runat="server" class="password" placeholder="Create a password" required>
+						<input type="password" id="password" runat="server" name="password" class="password" placeholder="Create a password" ngModel required>
 						<i class="uil uil-lock icon"></i>
 					</div>
 					<div class="input-field">
-						<input type="password" id="password_confirm" runat="server"  class="password" placeholder="Confirm a password" required>
+						<input type="password" id="password_confirm" runat="server" name="password_confirm"  class="password" placeholder="Confirm a password" ngModel required>
 						<i class="uil uil-lock icon"></i>
 					</div>
 
@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <input type="button" value="Register Now">
+                        <input type="submit" value="Register Now">
                     </div>
                 </form>
 

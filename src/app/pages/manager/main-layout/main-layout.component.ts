@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+declare var window: any;
+
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
@@ -11,6 +13,8 @@ export class MainLayoutComponent implements OnInit {
   mybootstrapJs: HTMLScriptElement;
   myMinJs: HTMLScriptElement;
   myPluginJs: HTMLScriptElement;
+
+  formModal:any;
 
   constructor() {
 
@@ -31,6 +35,19 @@ export class MainLayoutComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log("Angular On Init!");
+    this.formModal = new window.boostrap.Modal(
+      document.getElementById("custom-modal")
+    );
+
+  }
+  openModal(){
+     this.formModal.show();
+      console.log("Modal function is called...");
+  }
+
+  doSomething(){
+    this.formModal.hide();
   }
 
 }

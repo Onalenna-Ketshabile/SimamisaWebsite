@@ -125,6 +125,9 @@
     <h1 class="title">Newsfeed</h1>
       <ol class="breadcrumb">
         <li class="active">Your Orphanage Needs</li>
+        <div class="mt-3 mt-md-0">
+          <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#custom-modal" (click)="openModal()" ><span class="iconify" data-icon="mdi:plus-circle"></span> Add New Need</button>
+      </div>
     </ol>
 
     <!-- Start Page Header Right Div -->
@@ -144,10 +147,11 @@
 <!-- START CONTAINER -->
 <div class="container-widget">
   <router-outlet></router-outlet>
+  <app-modal-add-need></app-modal-add-need>>
 </div>
 <!-- END CONTAINER -->
  <!-- //////////////////////////////////////////////////////////////////////////// --> 
-+
+
 <!-- Start Footer -->
 <div class="row footer">
   <div class="col-md-6 text-left">

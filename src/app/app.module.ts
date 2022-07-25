@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,6 +23,7 @@ import { AllneedsComponent } from './others/allneeds/allneeds.component';
 import { NewsfeedPostComponent } from './pages/newsfeed-post/newsfeed-post.component';
 import { MainLayoutComponent } from './pages/manager/main-layout/main-layout.component';
 import { NeeditemComponent } from './others/needitem/needitem.component';
+import { ModalAddNeedComponent } from './others/modal-add-need/modal-add-need.component';
 
 @NgModule({
   declarations: [ 
@@ -39,10 +44,10 @@ import { NeeditemComponent } from './others/needitem/needitem.component';
     NewsfeedPostComponent,
     MainLayoutComponent,
     NeeditemComponent,
+    ModalAddNeedComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule
   ],
   providers: [],
   bootstrap: [

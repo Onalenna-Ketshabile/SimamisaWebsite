@@ -1,3 +1,6 @@
+
+//Temporarily Commented : WAS BLOCKING THE MODAL POP
+/*
 "use strict"
 // Main slider initiate
 $('.main-slider').slick({
@@ -18,7 +21,7 @@ $(window).on('load', function() {
         var posY = 100 + e.pageY/100;
         $(cloudBG).css("background-position",posX+"% "+posY+"%");
     });
-    */
+ 
 
     // Add functionality for the toggle button in the pricing page
     var dToggle = $('#d-toggle');
@@ -76,3 +79,6 @@ $(window).on('load', function() {
         return false;
     });
 });
+
+
+*/   

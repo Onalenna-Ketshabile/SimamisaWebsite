@@ -42,14 +42,11 @@ textarea,
 select {
 	width: 100%;
 	background-color: #fff;
-	padding: 0 25px;
-	height: 55px;
 	font-size: 16px;
 	color: #afafaf;
 	-webkit-transition: 0.3s;
 	-o-transition: 0.3s;
 	transition: 0.3s;
-	border: 2px solid rgb(0 29 35 / 10%);
 }
 
 label {

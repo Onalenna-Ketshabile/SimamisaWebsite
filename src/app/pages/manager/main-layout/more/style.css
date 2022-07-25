@@ -2426,27 +2426,24 @@ fieldset[disabled] .btn {
 }
 /* Button Success */
 .btn-success {
-  background-color: #26A65B;
+  margin-top: 10px;
+  background-color: #FF7B29;
   color: #fff;
 }
 .btn-success:hover,
-.btn-success:focus,
-.btn-success.focus,
-.btn-success:active,
-.btn-success.active,
 .open > .dropdown-toggle.btn-success {
-  background-color: #2ab764;
+  background-color: #FFB282;
   color: #fff;
 }
 .btn-success:active,
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
-  background: #219150;
+  background: #FF7B29;
   box-shadow: none;
   color: #fff;
 }
 .btn-success .badge {
-  color: #26A65B;
+  color: #FF7B29;
   background-color: #fff;
 }
 /* Button Info */
