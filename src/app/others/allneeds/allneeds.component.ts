@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Need } from 'src/app/models/need';
 import { NeedsService } from 'src/app/services/needs.service';
-
+import { OrphanageService } from 'src/app/services/orphanage.service';
 @Component({
   selector: 'app-allneeds',
   templateUrl: './allneeds.component.html',
@@ -14,7 +14,7 @@ export class AllneedsComponent implements OnInit {
   myMinJs: HTMLScriptElement;
   myMainJs: HTMLScriptElement;
 
-  constructor(private service:NeedsService) {
+  constructor(private needs_service:NeedsService,private orphService:OrphanageService) {
 
     this.myMinJs = document.createElement("script");
     this.myMinJs.src = "../../../assets/js/newsfeedposts/jquery.min.js";
@@ -30,7 +30,8 @@ export class AllneedsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.service.getAllNeeds().subscribe(data=>{
+     this.orphService.init();
+    this.needs_service.getAllNeeds().subscribe(data=>{
       this.needs =data;
     });
   }

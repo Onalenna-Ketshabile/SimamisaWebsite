@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -11,17 +11,24 @@ import { Title } from '@angular/platform-browser';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private titleService: Title,private http: HttpClient) {
+  constructor( private titleService: Title,private http: HttpClient,private authService:AuthenticationService) {
     titleService.setTitle("Login");
     }
 
   ngOnInit(): void {
   }
 
-  getUserLoginData(data: {email: string, password: string}){
-    console.log(data);
-    this.http.post("http://simamisaapiv1.azurewebsites.net/simamisa/orphanages/users/login",data)
-    .subscribe((res) => { console.log(res)});
+ login(data: {email: string, password: string}){
+    let userData = {
+        Email:data.email,
+        UserPassword:data.password
+    }
+
+    const body= JSON.stringify(userData);
+    console.log(body);
+    this.authService.login(body).subscribe(data=>{
+     console.log(data);
+    });
   }
 
 }

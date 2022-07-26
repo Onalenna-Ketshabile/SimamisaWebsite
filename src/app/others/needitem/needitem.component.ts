@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Need } from 'src/app/models/need';
+import { OrphanageService } from 'src/app/services/orphanage.service';
 @Component({
   selector: 'app-needitem',
   templateUrl: './needitem.component.html',
@@ -12,23 +12,24 @@ export class NeeditemComponent implements OnInit {
   descriptionToShow: string = "";
   showReadMore: boolean = false;
   showShowLess:boolean= false;
-  needImage!: SafeUrl;
   progress!:number;
-  orphName:string="";
+  orphName?:string="";
   date!: string;
-  constructor(private sanitizer: DomSanitizer,) {
+  constructor(private orphService:OrphanageService) {
 
   }
 
-  async ngOnInit(): Promise<void> {
+   ngOnInit():void {
     //progress
     let num =((this.need.AmountReceived/this.need.AmountNeed)*100);
    this.progress= Math.round( num * 100 + Number.EPSILON ) / 100;
    //date
     this.date = this.need.DateEstablished.slice(0,10);
-   
+   //orphanage name
 
- 
+   var orph = this.orphService.getOrphanageByID(this.need.orphanageID);
+   orph.subscribe((orphanage)=>{this.orphName=orphanage?.OrphanageName});
+    console.log("name "+this.orphName);
     if (this.need.Description.length > 100) {
       this.descriptionToShow = this.need.Description.slice(0, 100);
       this.showReadMore = true;
