@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Need } from 'src/app/Need';
-import { NEEDS } from 'src/app/mock-needs';
+import { Need } from 'src/app/models/need';
+import { NeedsService } from 'src/app/services/needs.service';
+
 @Component({
   selector: 'app-allneeds',
   templateUrl: './allneeds.component.html',
@@ -8,12 +9,12 @@ import { NEEDS } from 'src/app/mock-needs';
   encapsulation: ViewEncapsulation.None
 })
 export class AllneedsComponent implements OnInit {
-  needs: Need[] = NEEDS;
+  needs?: Need[];
   myIViewJs: HTMLScriptElement;
   myMinJs: HTMLScriptElement;
   myMainJs: HTMLScriptElement;
 
-  constructor() {
+  constructor(private service:NeedsService) {
 
     this.myMinJs = document.createElement("script");
     this.myMinJs.src = "../../../assets/js/newsfeedposts/jquery.min.js";
@@ -29,6 +30,9 @@ export class AllneedsComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.service.getAllNeeds().subscribe(data=>{
+      this.needs =data;
+    });
   }
 
 }

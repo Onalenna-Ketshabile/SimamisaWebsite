@@ -5,7 +5,7 @@
         <div class="content">
 
             <h4 class="title">
-                <a href="project-details.html">{{need.title}}</a>
+                <a href="project-details.html">{{need.Title}}</a>
             </h4>
             <div class="author">
                 <img src="../../../assets/images/orphanages/KingdomLife.png" alt="Thumb">
@@ -15,23 +15,23 @@
 
                 <div class="description-content">
                     <p class="description">
-                        {{descriptionToShow}}}  </p>
+                        {{descriptionToShow}}  </p>
                   <button *ngIf="showReadMore" (click)="onReadMore(need)">Read More</button>
-                  <button *ngIf="!showReadMore" (click)="onShowless(need)">Show Less</button>
+                  <button *ngIf="showShowLess" (click)="onShowless(need)">Show Less</button>
             
                 </div>
 
             </div>		
             <div class="project-stats">
                 <div class="stats-value">
-                    <span class="value-title">Raised of <span class="value">$59,689</span></span>
-                    <span class="stats-percentage">79%</span>
+                    <span class="value-title">Raised of <span class="value">R{{need.AmountReceived}}</span></span>
+                    <span class="stats-percentage">{{progress}}%</span>
                 </div>
                 <div class="stats-bar" data-value="79">
                     <div class="bar-line"></div>
                 </div>
             </div>
-            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+            <span class="date"><i class="far fa-calendar-alt"></i> {{date}}</span>
             
         </div>
         <div class="donation-btns">
