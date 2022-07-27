@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation,Input } from '@angular/core';
 
 @Component({
   selector: 'app-avatar',
@@ -6,7 +6,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./avatar.component.css','./bootstrap.min.css','./icons.min.css'],
 })
 export class AvatarComponent implements OnInit {
-
+  @Input()
+  name!: String|null;
   mybootstrapJs: HTMLScriptElement;
   myMinJs: HTMLScriptElement;
 

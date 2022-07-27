@@ -8,22 +8,22 @@ import { LoginComponent } from './pages/login/login.component';
 import { NewsfeedComponent } from './pages/newsfeed/newsfeed.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NewsfeedPostComponent } from './pages/newsfeed-post/newsfeed-post.component';
-import { MainLayoutComponent } from './pages/manager/main-layout/main-layout.component';
-
+import { LogoutComponent } from './pages/logout/logout.component';
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch:'full'},
- {path: 'home', component: HomeComponent},
- {path: 'login', component: LoginComponent},
- {path: 'register', component: RegisterComponent},
- {path: 'infohub', component: InfoHubComponent},
- {path: 'orphanages', component: OrphanagesComponent},
- {path: 'infohubpost', component: InfohubPostComponent},
- {path: 'newsfeed', component: NewsfeedComponent},
- {path: 'newsfeedpost', component: NewsfeedPostComponent},
- {path: 'hometwo', component: MainLayoutComponent},
- {path: 'm',
-  loadChildren: () =>  import('./pages/manager/main-layout/main-layout.module').then(m => m.MainLayoutModule)}
-
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout,', component: LogoutComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'infohub', component: InfoHubComponent },
+  { path: 'orphanages', component: OrphanagesComponent },
+  { path: 'infohubpost', component: InfohubPostComponent },
+  { path: 'newsfeed', component: NewsfeedComponent },
+  { path: 'newsfeedpost', component: NewsfeedPostComponent },
+  {
+    path: 'manager',
+    loadChildren: () => import('./pages/manager/main-layout/main-layout.module').then(m => m.MainLayoutModule)
+  }
 ];
 
 @NgModule({

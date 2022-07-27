@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+LoginStatus = new BehaviorSubject<boolean>(false);
+UserRole = new BehaviorSubject<String>("");
+UserName!: Observable<String>;
+  constructor(private authService:AuthenticationService,
+   private router:Router
+   ) { }
 
   ngOnInit(): void {
+    this.authService.globalStateChanged.subscribe((state)=>{
+      this.LoginStatus.next(state.loggedInStatus);
+      this.UserRole.next(state.userRole);
+    });
+    this.UserName= this.authService.currentuserName;
   }
-
+  showHeader():boolean{
+    return (this.router.routerState.snapshot.url.includes('login')||this.router.routerState.snapshot.url.includes('register'));
+  }
+ 
 }

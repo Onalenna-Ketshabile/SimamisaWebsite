@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -10,12 +11,28 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class LoginComponent implements OnInit {
+  returnUrl!:string;
+  ErrorMessage!:string;
 
-  constructor( private titleService: Title,private http: HttpClient,private authService:AuthenticationService) {
+  LoginStatus= new BehaviorSubject<boolean>(false);
+  UserRole = new BehaviorSubject<String>("U");
+
+  constructor( private titleService: Title,
+    private authService:AuthenticationService,
+    private router:Router,
+    private route:ActivatedRoute) {
     titleService.setTitle("Login");
     }
 
   ngOnInit(): void {
+    this.authService.globalStateChanged.subscribe((state)=>{
+      this.LoginStatus.next(state.loggedInStatus);
+      this.UserRole.next(state.userRole);
+    });
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/';
+    if(this.LoginStatus.getValue()){
+      this.router.navigate(["/"]);
+    }
   }
 
  login(data: {email: string, password: string}){
@@ -23,11 +40,14 @@ export class LoginComponent implements OnInit {
         Email:data.email,
         UserPassword:data.password
     }
+ 
 
     const body= JSON.stringify(userData);
-    console.log(body);
+    
     this.authService.login(body).subscribe(data=>{
-     console.log(data);
+      console.log(data);
+      if(this.UserRole.getValue()==="M") this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/manager';
+     this.router.navigateByUrl(this.returnUrl);
     });
   }
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms'
@@ -24,6 +24,7 @@ import { NewsfeedPostComponent } from './pages/newsfeed-post/newsfeed-post.compo
 import { MainLayoutComponent } from './pages/manager/main-layout/main-layout.component';
 import { NeeditemComponent } from './others/needitem/needitem.component';
 import { ModalAddNeedComponent } from './others/modal-add-need/modal-add-need.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 @NgModule({
   declarations: [ 
@@ -45,9 +46,10 @@ import { ModalAddNeedComponent } from './others/modal-add-need/modal-add-need.co
     MainLayoutComponent,
     NeeditemComponent,
     ModalAddNeedComponent,
+    LogoutComponent,
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule
+    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule
   ],
   providers: [],
   bootstrap: [
