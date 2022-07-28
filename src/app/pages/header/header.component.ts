@@ -25,7 +25,8 @@ UserName!: Observable<String>;
     this.UserName= this.authService.currentuserName;
   }
   showHeader():boolean{
-    return (this.router.routerState.snapshot.url.includes('login')||this.router.routerState.snapshot.url.includes('register'));
+    return (this.router.routerState.snapshot.url.includes('login')||this.router.routerState.snapshot.url.includes('register')||this.UserRole.getValue()==='M');
+
   }
  
 }

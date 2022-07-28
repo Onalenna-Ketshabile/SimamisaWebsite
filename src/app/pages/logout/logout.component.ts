@@ -13,7 +13,7 @@ export class LogoutComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
-    console.log("NON");
+   this.logout();
   }
   logout(){
     this.authService.logout().subscribe((res)=>{

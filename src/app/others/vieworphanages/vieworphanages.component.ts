@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { Orphanage } from 'src/app/models/orphanage';
 
 @Component({
   selector: 'app-vieworphanages',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vieworphanages.component.css']
 })
 export class VieworphanagesComponent implements OnInit {
-
+@Input() orphanage!:Orphanage
   constructor() { }
 
   ngOnInit(): void {

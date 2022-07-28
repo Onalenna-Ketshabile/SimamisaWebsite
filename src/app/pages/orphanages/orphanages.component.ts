@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Orphanage } from 'src/app/models/orphanage';
+import { OrphanageService } from 'src/app/services/orphanage.service';
 
 @Component({
   selector: 'app-orphanages',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orphanages.component.css']
 })
 export class OrphanagesComponent implements OnInit {
-
-  constructor() { }
+  orphanages?: Orphanage[];
+  constructor(private orphService:OrphanageService) { }
 
   ngOnInit(): void {
+    this.orphService.init();
+    this.orphService.getOrphanages().subscribe(data=>{
+      this.orphanages =data;
+    });
   }
 
 }

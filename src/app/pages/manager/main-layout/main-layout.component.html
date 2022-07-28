@@ -16,7 +16,9 @@
 
 
     <!-- Start Top Right -->
-    <app-avatar></app-avatar>
+    <app-avatar [name]="(UserName|async)"></app-avatar>
+    <li ><a href="home" routerLink="logout" class="hbtn hbtn-primary hbtn-lg">Logout</a></li>
+                               
     <ul class="top-right" hidden>
 
     <li class="dropdown link">

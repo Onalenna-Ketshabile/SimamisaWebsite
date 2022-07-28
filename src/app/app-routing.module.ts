@@ -9,11 +9,13 @@ import { NewsfeedComponent } from './pages/newsfeed/newsfeed.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NewsfeedPostComponent } from './pages/newsfeed-post/newsfeed-post.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { AuthGuard } from './routeguards/auth.guard';
+
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+ 
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'logout,', component: LogoutComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'infohub', component: InfoHubComponent },
   { path: 'orphanages', component: OrphanagesComponent },
@@ -22,8 +24,10 @@ const routes: Routes = [
   { path: 'newsfeedpost', component: NewsfeedPostComponent },
   {
     path: 'manager',
+    canActivate:[AuthGuard],
     loadChildren: () => import('./pages/manager/main-layout/main-layout.module').then(m => m.MainLayoutModule)
-  }
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

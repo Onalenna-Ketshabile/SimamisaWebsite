@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 declare var window: any;
 
@@ -9,15 +11,17 @@ declare var window: any;
 })
 export class MainLayoutComponent implements OnInit {
 
-  
+LoginStatus = new BehaviorSubject<boolean>(false);
+UserRole = new BehaviorSubject<String>("");
+UserName!: Observable<String>;
   mybootstrapJs: HTMLScriptElement;
   myMinJs: HTMLScriptElement;
   myPluginJs: HTMLScriptElement;
 
   formModal:any;
 
-  constructor() {
-
+  constructor(private authService:AuthenticationService) {
+    
     this.myMinJs = document.createElement("script");
     this.myMinJs.src = "../../../assets/js/manager-layout/jquery.min.js";
     document.body.appendChild(this.myMinJs);
@@ -31,15 +35,18 @@ export class MainLayoutComponent implements OnInit {
     this.myPluginJs = document.createElement("script");
     this.myPluginJs.src = "../../../assets/js/manager-layout/plugins.js";
     document.body.appendChild(this.myPluginJs);
-
+    this.authService.globalStateChanged.subscribe((state)=>{
+      this.LoginStatus.next(state.loggedInStatus);
+      this.UserRole.next(state.userRole);
+    });
+    this.UserName= this.authService.currentuserName;
    }
 
   ngOnInit(): void {
-    console.log("Angular On Init!");
     this.formModal = new window.boostrap.Modal(
       document.getElementById("custom-modal")
     );
-
+  
   }
   openModal(){
      this.formModal.show();

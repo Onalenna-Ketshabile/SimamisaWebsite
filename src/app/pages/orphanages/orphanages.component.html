@@ -30,4 +30,4 @@
         </div>
     </div>
 </div>
-<app-vieworphanages></app-vieworphanages>
+<app-vieworphanages *ngFor="let orph of orphanages" [orphanage]="orph"></app-vieworphanages>

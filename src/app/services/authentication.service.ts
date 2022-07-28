@@ -9,8 +9,9 @@ import { StoreState } from '../interfaces/store-state';
 })
 export class AuthenticationService extends ObservableStore<StoreState>{
 
-  private loginStatus = new BehaviorSubject<boolean>(false);//Anyone logged in at all?
-  private userRole = new BehaviorSubject<String>("U");//Default's to unregistered user
+
+  private loginStatus = new BehaviorSubject<boolean>(this.checkLogin());//Anyone logged in at all?
+  private userRole = new BehaviorSubject<String>(this.checkUserRole());//Default's to unregistered user
   private name = new BehaviorSubject<String>("");
 
 
@@ -28,10 +29,30 @@ export class AuthenticationService extends ObservableStore<StoreState>{
       this.setState({ userRole: res }, 'USER_ROLE');
     })
   }
+
+
+  get currentuserName() {
+    return this.name.asObservable();
+  }
+
+  get getUserRole() {
+    return this.userRole.getValue();
+  }
+  get getLoggedIn() {
+    return this.loginStatus.getValue();
+  }
+
+  set setLoggedIn(isLoggedIn: boolean) {
+    this.loginStatus.next(isLoggedIn);
+  };
+  set setUserRole(userRole: String) {
+    this.userRole.next(userRole);
+  }
+
   readonly apiURL = "http://simamisaapiv1.azurewebsites.net/simamisa/orphanages/users/login";
 
   login(details: string): Observable<any> {
-    if (details.includes("eren")) {
+  /*  if (details.includes("eren")) {
       let tempUser: any = {
         ID: 1,
         isDonor: false,
@@ -42,9 +63,13 @@ export class AuthenticationService extends ObservableStore<StoreState>{
       }
 
       let user = from([tempUser]);
-      this.loginStatus.next(true);  
+      this.loginStatus.next(true);
       this.userRole.next("R");
       this.name.next("Eren");
+      //Local Storage
+      localStorage.setItem('loggedIn','true');
+      localStorage.setItem('userRole','R');
+      localStorage.setItem('userName','Eren');
       return user;
     }
     if (details.includes("manager")) {
@@ -58,16 +83,20 @@ export class AuthenticationService extends ObservableStore<StoreState>{
       }
 
       let user = from([tempUser]);
-      this.loginStatus.next(true);  
+      this.loginStatus.next(true);
       this.userRole.next("M");
       this.name.next("Chris");
+        //Local Storage
+        localStorage.setItem('loggedIn','true');
+        localStorage.setItem('userRole','M');
+        localStorage.setItem('userName','Chris');
+      
       return user;
     }
-     else {
+    else {
       return new Observable();
-    }
-
-    /*return  this.http.post<any>(this.apiURL,details).pipe(
+    }*/
+    return  this.http.post<any>(this.apiURL,details).pipe(
      //shareReplay(),//cache the user data
      map((res)=>{
       if(res && res.ID){
@@ -78,26 +107,42 @@ export class AuthenticationService extends ObservableStore<StoreState>{
      
      },
    )
-    );*/
+    );
   }
 
-  get currentuserName(){
-    return this.name.asObservable();
+  logout(): Observable<any> {
+    this.setState({ loggedInStatus: false }, "LOGGED_IN_STATUS");
+    this.setState({ userRole: "" }, "USER_ROLE");
+
+    let empty: any = {
+      ID: 0,
+      isDonor: false,
+      isFlagged: false,
+      isSponsor: false,
+      isVolunteer: false,
+      Status: ""
+    }
+    localStorage.setItem('loggedIn','false');
+    localStorage.setItem('userRole','');
+    localStorage.setItem('userName','');
+    let user = from([empty]);
+    return user;
   }
-  logout(): Observable<any>{
-  this.setState({loggedInStatus:false},"LOGGED_IN_STATUS");
-  this.setState({userRole:""},"USER_ROLE");
+   checkLogin(){
+    var loggedIn = localStorage.getItem("loggedIn");
+    if(loggedIn==='true'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+   checkUserRole(){
+    var role = localStorage.getItem("userRole");
+    if(role?.length!=0){
+      return role!;
+    }else{
+      return "U";
+    }
+   }
  
-  let empty: any = {
-    ID: 0,
-    isDonor: false,
-    isFlagged: false,
-    isSponsor: false,
-    isVolunteer: false,
-    Status: ""
-  }
-
-  let user = from([empty]);
-  return user;
-}
 }
