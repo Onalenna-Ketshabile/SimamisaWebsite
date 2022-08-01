@@ -25,6 +25,17 @@ import { MainLayoutComponent } from './pages/manager/main-layout/main-layout.com
 import { NeeditemComponent } from './others/needitem/needitem.component';
 import { ModalAddNeedComponent } from './others/modal-add-need/modal-add-need.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { ChildpageComponent } from './pages/childpage/childpage.component';
+import { SponsorChildComponent } from './pages/sponsor-child/sponsor-child.component';
+import { ModalMeetingSetupComponent } from './others/modal-meeting-setup/modal-meeting-setup.component';
+import { SponsorshipComponent } from './pages/manager/sponsorship/sponsorship.component';
+
+
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [ 
@@ -47,9 +58,19 @@ import { LogoutComponent } from './pages/logout/logout.component';
     NeeditemComponent,
     ModalAddNeedComponent,
     LogoutComponent,
+    ChildpageComponent,
+    SponsorChildComponent,
+    ModalMeetingSetupComponent,
+    SponsorshipComponent,
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule
+    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [

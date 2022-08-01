@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '../../home/home.component';
 import { LogoutComponent } from '../../logout/logout.component';
 import { NewsfeedComponent } from '../../newsfeed/newsfeed.component';
+import { SponsorChildComponent } from '../../sponsor-child/sponsor-child.component';
+import { SponsorshipComponent } from '../sponsorship/sponsorship.component';
 import { MainLayoutComponent } from './main-layout.component';
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
     {path: 'newsfeed', component: NewsfeedComponent},
     {path:'logout',component:LogoutComponent}
    ]
-   }
+   },
+   {path: 'calendar', component: SponsorshipComponent }
+   
 ];
 
 @NgModule({
