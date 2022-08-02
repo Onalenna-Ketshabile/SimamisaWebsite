@@ -1,0 +1,36 @@
+  
+  <div class="modal" tabindex="-1" id="custom-modal" data-backdrop="false" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-light">
+          <h4 class="modal-title" id="myCenterModalLabel">Set Up A Meeting With Orphanage Manager</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+      </div>
+      <div class="modal-body">
+          <form>
+              <div class="mb-3">
+                  <label for="name" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="name" placeholder="">
+              </div>
+
+  
+
+              <div class="mb-3">
+                  <label for="" class="form-label">Choose a date</label>
+                  <div>
+                    <input type="text" id="dob" runat="server" name="dob" class="date-input" placeholder="" onfocus="(this.type='date')" ngModel required>
+                  </div>
+              </div>
+              <div class="mb-3">
+                  <label for="" class="form-label">Title</label>
+                  <textarea class="form-control" id="description" placeholder=""></textarea>
+              </div>
+
+
+                  <button type="submit" class="btn btn-light waves-effect waves-light">Submit</button>
+                  <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+          </form>
+      </div>
+      </div>
+    </div>
+  </div>

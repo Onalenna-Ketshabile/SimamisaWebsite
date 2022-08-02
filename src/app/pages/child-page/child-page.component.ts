@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 
 declare var window: any;
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-child-page',
+  templateUrl: './child-page.component.html',
+  styleUrls: ['./child-page.component.css']
 })
-export class AppComponent {
-  title = 'SimamisaWebApplication';
+export class ChildPageComponent implements OnInit {
+
   formModal:any;
 
   constructor() { }
@@ -24,4 +23,5 @@ export class AppComponent {
     this.formModal.show();
      console.log("Modal function is called...");
  }
+
 }

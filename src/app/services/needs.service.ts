@@ -11,7 +11,7 @@ export class NeedsService {
     
    }
 
-   readonly apiURL="http://simamisaapiv1.azurewebsites.net/simamisa/orphanages/needs/active";
+   readonly apiURL="https://simamisaapiv3.azurewebsites.net/simamisa/orphanages/needs/active";
    
    getAllNeeds():Observable<Need[]>{
     return this.http.get<Need[]>(this.apiURL);

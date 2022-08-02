@@ -25,6 +25,9 @@ import { MainLayoutComponent } from './pages/manager/main-layout/main-layout.com
 import { NeeditemComponent } from './others/needitem/needitem.component';
 import { ModalAddNeedComponent } from './others/modal-add-need/modal-add-need.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { SponsorChildComponent } from './pages/sponsor-child/sponsor-child.component';
+import { ChildPageComponent } from './pages/child-page/child-page.component';
+import { ModalMeetingSetupComponent } from './others/modal-meeting-setup/modal-meeting-setup.component';
 
 @NgModule({
   declarations: [ 
@@ -47,6 +50,9 @@ import { LogoutComponent } from './pages/logout/logout.component';
     NeeditemComponent,
     ModalAddNeedComponent,
     LogoutComponent,
+    SponsorChildComponent,
+    ChildPageComponent,
+    ModalMeetingSetupComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule
