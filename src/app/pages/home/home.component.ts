@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    if(localStorage.getItem('userRole')=='M'){
+      this.router.navigate(['/manager']);
+    }
   }
 
 }
