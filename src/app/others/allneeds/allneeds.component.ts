@@ -33,7 +33,6 @@ export class AllneedsComponent implements OnInit {
      this.orphService.init();
     this.needs_service.getAllNeeds().subscribe(data=>{
       this.needs =data;
-      console.log(data)
     });
   }
 

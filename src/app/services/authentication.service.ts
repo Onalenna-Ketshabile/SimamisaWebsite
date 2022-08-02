@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, map, from, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../models/user';
+import { BehaviorSubject, map, from, Observable, shareReplay } from 'rxjs';
 import { ObservableStore } from '@codewithdan/observable-store';
 import { StoreState } from '../interfaces/store-state';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -49,7 +49,7 @@ export class AuthenticationService extends ObservableStore<StoreState>{
     this.userRole.next(userRole);
   }
 
-  readonly apiURL = "https://simamisaapiv3.azurewebsites.net/simamisa/orphanages/users/login";
+  readonly apiURL = "http://simamisaapiv1.azurewebsites.net/simamisa/orphanages/users/login";
 
   login(details: string): Observable<any> {
   /*  if (details.includes("eren")) {
@@ -96,18 +96,12 @@ export class AuthenticationService extends ObservableStore<StoreState>{
     else {
       return new Observable();
     }*/
-    const headers= new HttpHeaders()
-  .set('content-type', 'application/json');
-  headers.set( 'Accept','application/json')
-  headers.set('Access-Control-Allow-Origin', '*');
-    return  this.http.post<any>(this.apiURL,details,{ 'headers': headers }).pipe(
+    return  this.http.post<any>(this.apiURL,details).pipe(
      //shareReplay(),//cache the user data
      map((res)=>{
       if(res && res.ID){
        console.log(res);
-       localStorage.setItem('loggedIn','true');
-       localStorage.setItem('userRole',res.UserRole);
-       localStorage.setItem('userName','Chris');
+      
        return res;
       }
      

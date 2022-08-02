@@ -36,10 +36,9 @@ export class LoginComponent implements OnInit {
     const body= JSON.stringify(userData);
     
     this.authService.login(body).subscribe(data=>{
-    
+      console.log(data);
       if(this.authService.getUserRole==="M") this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/manager';
-     
-      this.router.navigateByUrl(this.returnUrl);
+     this.router.navigateByUrl(this.returnUrl);
     });
   }
 

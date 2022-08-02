@@ -14,7 +14,7 @@ export class OrphanageService {
    
   }
 
-  readonly apiURL ="https://simamisaapiv3.azurewebsites.net/simamisa/orphanages";
+  readonly apiURL ="http://simamisaapiv1.azurewebsites.net/simamisa/orphanages";
   
   public init():void {
     this.http.get<Orphanage[]>(this.apiURL).subscribe(
