@@ -37,10 +37,7 @@ export class LoginComponent implements OnInit {
     
     this.authService.login(body).subscribe(data=>{
     
-      if(this.authService.getUserRole==="M") {
-        console.log("We Have a manager");
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/manager';
-      }
+      if(this.authService.getUserRole==="M") this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/manager';
      
       this.router.navigateByUrl(this.returnUrl);
     });
