@@ -15,7 +15,7 @@ const routes: Routes = [
   children: [
     {path: 'home', component: HomeComponent},
     {path: 'newsfeed', component: NewsfeedComponent},
-    {path:'logout',component:LogoutComponent}
+      {path:'logout',component:LogoutComponent}
    ]
    }
 ];
