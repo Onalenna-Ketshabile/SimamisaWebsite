@@ -313,7 +313,7 @@ Top
   border-radius: 0px 0px 0px 30px;
 }
 #topcontainer{
-  background: #1a120d;
+  background: #fce9dd;
 }
 /* =================================================================================
 App Logo
@@ -965,6 +965,7 @@ Page Header
 }
 .page-header .right .btn-group .btn {
   border: 1px solid #E8EBED;
+  background: #F7F6F5
 }
 .page-header .pagination {
   margin: 0;

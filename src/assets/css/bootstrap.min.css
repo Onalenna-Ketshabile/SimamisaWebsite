@@ -1782,10 +1782,67 @@ a.bg-danger:hover {
 }
 
 .page-header {
-    padding-bottom: 9px;
-    margin: 40px 0 20px;
-    border-bottom: 1px solid #eee
-}
+    background: #FFE1CF;
+    padding: 20px;
+    border-bottom: none;
+    position: relative;
+  }
+  .page-header .title {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: normal;
+    font-weight: normal;
+    color: #37363E;
+    padding-bottom: 6px;
+  }
+  .page-header .right {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    min-width: 500px;
+    text-align: right;
+  }
+  .page-header .right .btn-group {
+    float: right;
+  }
+  .page-header .right .btn {
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 13px;
+  }
+  .page-header .right .btn .fa {
+    margin: 0 4px;
+  }
+  .page-header .right .btn .no-border {
+    border: none;
+  }
+  .page-header .right .btn-group .btn {
+    border: 1px solid #E8EBED;
+    background: #F7F6F5;
+        display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .page-header .pagination {
+    margin: 0;
+  }
+  .page-header .widget-inline-list {
+    right: 0;
+    bottom: -25px;
+    position: relative !important;
+  }
 
 ol,
 ul {
@@ -5628,10 +5685,9 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 }
 
 .breadcrumb {
-    padding: 8px 15px;
     margin-bottom: 20px;
     list-style: none;
-    background-color: #f5f5f5;
+    background-color: #FFE1CF;
     border-radius: 4px
 }
 
@@ -8039,4 +8095,3 @@ button.close {
     }
 }
 
-/*# sourceMappingURL=bootstrap.min.css.map */

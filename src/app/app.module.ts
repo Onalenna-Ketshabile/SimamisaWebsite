@@ -28,6 +28,8 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { SponsorChildComponent } from './pages/sponsor-child/sponsor-child.component';
 import { ChildPageComponent } from './pages/child-page/child-page.component';
 import { ModalMeetingSetupComponent } from './others/modal-meeting-setup/modal-meeting-setup.component';
+import { OrphanagesManagerComponent } from './pages/manager/orphanages-manager/orphanages-manager.component';
+import { MyPartnersComponent } from './pages/manager/my-partners/my-partners.component';
 
 @NgModule({
   declarations: [ 
@@ -53,6 +55,8 @@ import { ModalMeetingSetupComponent } from './others/modal-meeting-setup/modal-m
     SponsorChildComponent,
     ChildPageComponent,
     ModalMeetingSetupComponent,
+    OrphanagesManagerComponent,
+    MyPartnersComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule
