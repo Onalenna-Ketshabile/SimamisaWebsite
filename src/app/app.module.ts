@@ -30,6 +30,10 @@ import { ChildPageComponent } from './pages/child-page/child-page.component';
 import { ModalMeetingSetupComponent } from './others/modal-meeting-setup/modal-meeting-setup.component';
 import { OrphanagesManagerComponent } from './pages/manager/orphanages-manager/orphanages-manager.component';
 import { MyPartnersComponent } from './pages/manager/my-partners/my-partners.component';
+import { PartneringRequestsComponent } from './pages/manager/partnering-requests/partnering-requests.component';
+import { MyOffersComponent } from './pages/manager/my-offers/my-offers.component';
+import { VieworphanagesManagerComponent } from './others/vieworphanages-manager/vieworphanages-manager.component';
+import { SponsorRequestComponent } from './pages/manager/sponsor-request/sponsor-request.component';
 
 @NgModule({
   declarations: [ 
@@ -57,6 +61,10 @@ import { MyPartnersComponent } from './pages/manager/my-partners/my-partners.com
     ModalMeetingSetupComponent,
     OrphanagesManagerComponent,
     MyPartnersComponent,
+    PartneringRequestsComponent,
+    MyOffersComponent,
+    VieworphanagesManagerComponent,
+    SponsorRequestComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule
