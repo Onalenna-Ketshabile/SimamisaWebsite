@@ -7,6 +7,7 @@ import { MyOffersComponent } from '../my-offers/my-offers.component';
 import { MyPartnersComponent } from '../my-partners/my-partners.component';
 import { OrphanagesManagerComponent } from '../orphanages-manager/orphanages-manager.component';
 import { PartneringRequestsComponent } from '../partnering-requests/partnering-requests.component';
+import { SponsorRequestComponent } from '../sponsor-request/sponsor-request.component';
 import { MainLayoutComponent } from './main-layout.component';
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
     {path: 'orphanages', component: OrphanagesManagerComponent},
     {path: 'partners', component: MyPartnersComponent},
     {path: 'partnering-requests', component: PartneringRequestsComponent},
-    {path: 'my-offers', component: MyOffersComponent}
+    {path: 'my-offers', component: MyOffersComponent},
+    {path: 'sponsor-request', component: SponsorRequestComponent}
    ]
    }
    
