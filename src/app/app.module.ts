@@ -34,6 +34,7 @@ import { PartneringRequestsComponent } from './pages/manager/partnering-requests
 import { MyOffersComponent } from './pages/manager/my-offers/my-offers.component';
 import { VieworphanagesManagerComponent } from './others/vieworphanages-manager/vieworphanages-manager.component';
 import { SponsorRequestComponent } from './pages/manager/sponsor-request/sponsor-request.component';
+import { ProfileQueriesComponent } from './pages/manager/profile-queries/profile-queries.component';
 
 @NgModule({
   declarations: [ 
@@ -65,6 +66,7 @@ import { SponsorRequestComponent } from './pages/manager/sponsor-request/sponsor
     MyOffersComponent,
     VieworphanagesManagerComponent,
     SponsorRequestComponent,
+    ProfileQueriesComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule
