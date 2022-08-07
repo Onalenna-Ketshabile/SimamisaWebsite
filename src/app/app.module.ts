@@ -35,6 +35,9 @@ import { MyOffersComponent } from './pages/manager/my-offers/my-offers.component
 import { VieworphanagesManagerComponent } from './others/vieworphanages-manager/vieworphanages-manager.component';
 import { SponsorRequestComponent } from './pages/manager/sponsor-request/sponsor-request.component';
 import { ProfileQueriesComponent } from './pages/manager/profile-queries/profile-queries.component';
+import { CalendarComponent } from './pages/manager/calendar/calendar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [ 
@@ -67,9 +70,10 @@ import { ProfileQueriesComponent } from './pages/manager/profile-queries/profile
     VieworphanagesManagerComponent,
     SponsorRequestComponent,
     ProfileQueriesComponent,
+    CalendarComponent,
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule
+    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '../../home/home.component';
 import { LogoutComponent } from '../../logout/logout.component';
 import { NewsfeedComponent } from '../../newsfeed/newsfeed.component';
+import { CalendarComponent } from '../calendar/calendar.component';
 import { MyOffersComponent } from '../my-offers/my-offers.component';
 import { MyPartnersComponent } from '../my-partners/my-partners.component';
 import { OrphanagesManagerComponent } from '../orphanages-manager/orphanages-manager.component';
@@ -27,7 +28,8 @@ const routes: Routes = [
     {path: 'partnering-requests', component: PartneringRequestsComponent},
     {path: 'my-offers', component: MyOffersComponent},
     {path: 'sponsor-request', component: SponsorRequestComponent},
-    {path: 'children-profile-queries', component: ProfileQueriesComponent}
+    {path: 'children-profile-queries', component: ProfileQueriesComponent},
+    {path: 'meeting-calendar', component: CalendarComponent}
    ]
    }
    

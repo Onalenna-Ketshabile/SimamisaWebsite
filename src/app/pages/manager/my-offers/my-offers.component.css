@@ -3736,6 +3736,7 @@ a:hover {
 	width: 155px;
 	height: 155px;
 	border-radius: 50%;
+	object-fit: cover;
 }
 
 .event-items .single-event-item .event-content {
