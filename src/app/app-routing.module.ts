@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'sponsor-child', component: SponsorChildComponent},
-  { path: 'child-single', component: ChildPageComponent}
+  { path: 'child-single', component: ChildPageComponent},
 ];
 
 @NgModule({
