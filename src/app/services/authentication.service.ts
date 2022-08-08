@@ -52,70 +52,70 @@ export class AuthenticationService extends ObservableStore<StoreState>{
   readonly apiURL = "https://simamisaapiv3.azurewebsites.net/simamisa/orphanages/users/login";
 
   login(details: string): Observable<any> {
-  /*  if (details.includes("eren")) {
-      let tempUser: any = {
-        ID: 1,
-        isDonor: false,
-        isFlagged: false,
-        isSponsor: false,
-        isVolunteer: false,
-        Status: "new"
-      }
-
-      let user = from([tempUser]);
-      this.loginStatus.next(true);
-      this.userRole.next("R");
-      this.name.next("Eren");
-      //Local Storage
-      localStorage.setItem('loggedIn','true');
-      localStorage.setItem('userRole','R');
-      localStorage.setItem('userName','Eren');
-      return user;
-    }
-    if (details.includes("manager")) {
-      let tempUser: any = {
-        ID: 1,
-        isDonor: false,
-        isFlagged: false,
-        isSponsor: false,
-        isVolunteer: false,
-        Status: "new"
-      }
-
-      let user = from([tempUser]);
-      this.loginStatus.next(true);
-      this.userRole.next("M");
-      this.name.next("Chris");
+    /*  if (details.includes("eren")) {
+        let tempUser: any = {
+          ID: 1,
+          isDonor: false,
+          isFlagged: false,
+          isSponsor: false,
+          isVolunteer: false,
+          Status: "new"
+        }
+  
+        let user = from([tempUser]);
+        this.loginStatus.next(true);
+        this.userRole.next("R");
+        this.name.next("Eren");
         //Local Storage
         localStorage.setItem('loggedIn','true');
-        localStorage.setItem('userRole','M');
-        localStorage.setItem('userName','Chris');
-      
-      return user;
-    }
-    else {
-      return new Observable();
-    }*/
-    const headers= new HttpHeaders()
-  .set('content-type', 'application/json');
-  headers.set( 'Accept','application/json')
-  headers.set('Access-Control-Allow-Origin', '*');
-    return  this.http.post<any>(this.apiURL,details,{ 'headers': headers }).pipe(
-     //shareReplay(),//cache the user data
-     map((res)=>{
-      if(res && res.ID){
-       console.log(res);
-       localStorage.setItem('loggedIn','true');
-       localStorage.setItem('userRole',res.UserRole);
-       localStorage.setItem('userName','Chris');
-       this.loginStatus.next(true);
-       this.userRole.next(localStorage.getItem('userRole')!);
-       this.name.next("Chris");
-       return res;
+        localStorage.setItem('userRole','R');
+        localStorage.setItem('userName','Eren');
+        return user;
       }
-     
-     },
-   )
+      if (details.includes("manager")) {
+        let tempUser: any = {
+          ID: 1,
+          isDonor: false,
+          isFlagged: false,
+          isSponsor: false,
+          isVolunteer: false,
+          Status: "new"
+        }
+  
+        let user = from([tempUser]);
+        this.loginStatus.next(true);
+        this.userRole.next("M");
+        this.name.next("Chris");
+          //Local Storage
+          localStorage.setItem('loggedIn','true');
+          localStorage.setItem('userRole','M');
+          localStorage.setItem('userName','Chris');
+        
+        return user;
+      }
+      else {
+        return new Observable();
+      }*/
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json');
+    headers.set('Accept', 'application/json')
+    headers.set('Access-Control-Allow-Origin', '*');
+    return this.http.post<any>(this.apiURL, details, { 'headers': headers }).pipe(
+      //shareReplay(),//cache the user data
+      map((res) => {
+        if (res && res.ID) {
+          console.log(res);
+          localStorage.setItem('loggedIn', 'true');
+          localStorage.setItem('userRole', res.UserRole);
+          localStorage.setItem('userName', 'Chris');
+          this.loginStatus.next(true);
+          this.userRole.next(localStorage.getItem('userRole')!);
+          this.name.next("Chris");
+          return res;
+        }
+
+      },
+      )
     );
   }
 
@@ -131,27 +131,27 @@ export class AuthenticationService extends ObservableStore<StoreState>{
       isVolunteer: false,
       Status: ""
     }
-    localStorage.setItem('loggedIn','false');
-    localStorage.setItem('userRole','');
-    localStorage.setItem('userName','');
+    localStorage.setItem('loggedIn', 'false');
+    localStorage.setItem('userRole', '');
+    localStorage.setItem('userName', '');
     let user = from([empty]);
     return user;
   }
-   checkLogin(){
+  checkLogin() {
     var loggedIn = localStorage.getItem("loggedIn");
-    if(loggedIn==='true'){
+    if (loggedIn === 'true') {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
-   checkUserRole(){
+  checkUserRole() {
     var role = localStorage.getItem("userRole");
-    if(role?.length!=0){
+    if (role?.length != 0) {
       return role!;
-    }else{
+    } else {
       return "U";
     }
-   }
- 
+  }
+
 }

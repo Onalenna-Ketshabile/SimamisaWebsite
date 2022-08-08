@@ -30,6 +30,9 @@ import { ChildPageComponent } from './pages/child-page/child-page.component';
 import { ModalMeetingSetupComponent } from './others/modal-meeting-setup/modal-meeting-setup.component';
 import { OrphanagesManagerComponent } from './pages/manager/orphanages-manager/orphanages-manager.component';
 import { MyPartnersComponent } from './pages/manager/my-partners/my-partners.component';
+import { ModalMakeItemproposalComponent } from './others/modal-make-itemproposal/modal-make-itemproposal.component';
+import { LoadingIndicatorComponent } from './others/loading-indicator/loading-indicator.component';
+import { ModalPaypalNeedComponent } from './others/modal-paypal-need/modal-paypal-need.component';
 
 @NgModule({
   declarations: [ 
@@ -57,6 +60,9 @@ import { MyPartnersComponent } from './pages/manager/my-partners/my-partners.com
     ModalMeetingSetupComponent,
     OrphanagesManagerComponent,
     MyPartnersComponent,
+    ModalMakeItemproposalComponent,
+    LoadingIndicatorComponent,
+    ModalPaypalNeedComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule

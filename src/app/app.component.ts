@@ -11,17 +11,21 @@ declare var window: any;
 export class AppComponent {
   title = 'SimamisaWebApplication';
   formModal:any;
-
+  makeproposalModal:any;
+  payNeed:any
   constructor() { }
 
   ngOnInit(): void {
     this.formModal = new window.boostrap.Modal(
       document.getElementById("custom-modal")
     );
-    console.log(this.formModal);
+    this.makeproposalModal = new window.boostrap.Modal(
+      document.getElementById("makeproposal-modal")
+    );
+    this.payNeed = new window.boostrap.Modal(
+      document.getElementById("payNeed-modal")
+    );
+  
   }
-  openModal(){
-    this.formModal.show();
-     console.log("Modal function is called...");
- }
+
 }

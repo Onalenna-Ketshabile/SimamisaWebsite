@@ -17,7 +17,7 @@
 <body>
 <app-root></app-root>
 <app-footer id="footer"  ></app-footer>
-
+<script src="https://www.paypal.com/sdk/js?client-id=AWV-EVHPLGOMwU-tTipjQcsettGzUbhh6GACSX0CGeXQ1WoSJ5uhVQzwm0AertE-m2LE1uCCcBFmQEel"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/slick.min.js"></script>
@@ -32,6 +32,7 @@ $(document).ready(function () {
     if (this.href == url.href) {
       console.log("Routing...");
       $(this).parent().addClass('active');
+      console.log((this).parent());
     }
             if(url.href.includes("index3.html") || url.href.includes("index4.html") ){
                 //Account for dropdown item
@@ -56,6 +57,49 @@ $(document).ready(function () {
   
 
 });
+const total = document.getElementById('to-need-amount');
+console.log(total);
+paypal
+  .Buttons({
+    createOrder: function () {
+      return fetch("/create-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          purchase_units: [
+      {
+        amount: {
+          currency_code: "USD",
+          value: total,
+          breakdown: {
+            item_total: {
+              currency_code: "USD",
+              value: total,
+            },
+          },
+        },
+      },
+    ],
+        }),
+      })
+        .then(res => {
+          if (res.ok) return res.json()
+          return res.json().then(json => Promise.reject(json))
+        })
+        .then(({ id }) => {
+          return id
+        })
+        .catch(e => {
+          console.error(e.error)
+        })
+    },
+    onApprove: function (data, actions) {
+      return actions.order.capture()
+    },
+  })
+  .render("#paypal");
 </script>
 <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 

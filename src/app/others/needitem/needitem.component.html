@@ -1,6 +1,5 @@
 <div class="col-xl-10">
     <div class="project-item mb-30">
-        <div class="badge bg-success float-end">Fulfilled</div>
         <div class="thumb" style="background-image: url(../../../assets/images/newsfeed/jackets.jpg);"></div>
         <div class="content">
 
@@ -35,8 +34,8 @@
             
         </div>
         <div class="donation-btns">
-        <button type="submit" class="main-btn">Donate Item <i class="far fa-arrow-right"></i></button>
-        <button type="submit" class="main-btn">Donate Money <i class="far fa-arrow-right"></i></button>
+        <button type="submit" class="main-btn"   data-bs-toggle="modal" data-bs-target="#makeproposal-modal" (click)="openModal">Donate Item <i class="far fa-arrow-right"></i></button>
+        <button type="submit" class="main-btn"data-bs-toggle="modal" data-bs-target="#payNeed-modal" (click)="openModal">Donate Money <i class="far fa-arrow-right"></i></button>
         </div>
     </div>
 </div>

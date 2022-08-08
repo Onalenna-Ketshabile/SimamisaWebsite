@@ -15,6 +15,7 @@ export class NeeditemComponent implements OnInit {
   progress!:number;
   orphName?:string="";
   date!: string;
+  formModal: any;
   constructor(private orphService:OrphanageService) {
 
   }
@@ -38,7 +39,6 @@ export class NeeditemComponent implements OnInit {
       this.showReadMore = false;
       this.showShowLess = false;
     }
-
   }
   onReadMore(need: { Description: string; }): void {
     this.showReadMore = false;
@@ -57,8 +57,9 @@ export class NeeditemComponent implements OnInit {
       this.showShowLess = false;
     }
   }
-}
-function async(ItemImage: any) {
-  throw new Error('Function not implemented.');
+  openModal(){
+    this.formModal.show();
+     console.log("Modal function is called...");
+ }
 }
 
