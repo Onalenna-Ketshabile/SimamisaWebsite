@@ -6432,4 +6432,8 @@ body[data-layout-mode=dark] .pricing-table-bg {
 	line-height: .8;
 	position: relative;
 }
+.hbtn.hbtn-primary {
+    background-color: #FF7B29;
+    color: #ffffff;
+}
 /*# sourceMappingURL=app.min.css.map */

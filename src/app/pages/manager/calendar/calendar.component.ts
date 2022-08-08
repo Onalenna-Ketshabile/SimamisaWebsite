@@ -61,7 +61,7 @@ export class CalendarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(refresh = new Subject<void>()): void {
   }
 
   

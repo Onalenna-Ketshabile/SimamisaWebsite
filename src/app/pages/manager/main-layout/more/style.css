@@ -4100,4 +4100,9 @@ Widgets
   font-size: 11px;
   opacity: 0.7;
 }
-/*# sourceMappingURL=style.css.map */
+
+.avatar-container{
+  display: inline;
+  margin-left: auto;
+  margin-right: 20px;
+}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Orphanage } from 'src/app/models/orphanage';
+import { OrphanageService } from 'src/app/services/orphanage.service';
 
 @Component({
   selector: 'app-orphanages-manager',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
               '../../../../assets/css/font-awesome.min.css','responsive.css']
 })
 export class OrphanagesManagerComponent implements OnInit {
-
-  constructor() { }
+  orphanages?: Orphanage[];
+  constructor(private orphService:OrphanageService) { }
 
   ngOnInit(): void {
+    this.orphService.init();
+    this.orphService.getOrphanages().subscribe(data=>{
+      this.orphanages =data;
+    });
   }
-
 }
