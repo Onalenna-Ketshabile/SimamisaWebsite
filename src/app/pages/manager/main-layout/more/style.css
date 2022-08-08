@@ -294,7 +294,7 @@ strong {
 }
 .container-mail {
   padding: 0px;
-  margin: -20px -30px 0 -30px;
+  margin: 20px;
 }
 /* =================================================================================
 Top
@@ -518,8 +518,8 @@ Sidebar
 ================================================================================= */
 .sidebar {
   width: 250px;
-  position: absolute;
-  top: 90px;
+  position: fixed;
+  padding-top: 90px;
   left: 0;
   font-family: 'Montserrat', sans-serif;
   background: #1a120d;
@@ -936,7 +936,7 @@ Page Header
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 28px;
   line-height: normal;
   font-weight: normal;
   color: #37363E;
@@ -4100,4 +4100,9 @@ Widgets
   font-size: 11px;
   opacity: 0.7;
 }
-/*# sourceMappingURL=style.css.map */
+
+.avatar-container{
+  display: inline;
+  margin-left: auto;
+  margin-right: 20px;
+}

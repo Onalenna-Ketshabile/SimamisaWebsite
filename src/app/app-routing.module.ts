@@ -26,12 +26,12 @@ const routes: Routes = [
   { path: 'newsfeedpost', component: NewsfeedPostComponent },
   {
     path: 'manager',
-   //canActivate:[AuthGuard],
+   canActivate:[AuthGuard],
     loadChildren: () => import('./pages/manager/main-layout/main-layout.module').then(m => m.MainLayoutModule)
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'sponsor-child', component: SponsorChildComponent},
-  { path: 'child-single', component: ChildPageComponent}
+  { path: 'child-single', component: ChildPageComponent},
 ];
 
 @NgModule({

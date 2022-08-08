@@ -1,0 +1,23 @@
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+/* Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&amp;display=swap');
+
+/* === Icons === */
+/* Font Awesome */
+
+
+/* ================================================
+Main Css
+================================================ */
+/* Bootstrap Main Css File (unedited) */
+@import url('./../main-layout/more/bootstrap.css');
+
+/* Theme Style */
+@import url('./../main-layout/more/style.css');
+
+/* Responsive Style */
+@import url('./../main-layout/more/responsive.css');
+
+/* Shortcuts Css Codes */
+@import url('./../main-layout/more/shortcuts.css');

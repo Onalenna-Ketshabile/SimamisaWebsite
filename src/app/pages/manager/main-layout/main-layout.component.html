@@ -16,9 +16,12 @@
 
 
     <!-- Start Top Right -->
+    <div class="avatar-container">
     <app-avatar [name]="(UserName|async)"></app-avatar>
-    <li ><a href="home" routerLink="logout" class="hbtn hbtn-primary hbtn-lg">Logout</a></li>
-                               
+    <li hidden ><a href="home" routerLink="logout" class="hbtn hbtn-primary hbtn-lg">Logout</a></li>
+    </div>
+  
+  
     <ul class="top-right" hidden>
 
     <li class="dropdown link">
@@ -64,15 +67,17 @@
   <li><a ><span class="icon color7"><i class="fa fa-flask"></i></span>Partnership<span class="caret"></span></a>
     <ul>
       <li><a href="partners" routerLink="partners">My Partners</a></li>
-      <li><a href="tabs.html">Partnering Requests</a></li>
-      <li><a href="buttons.html">My Offers</a></li>
+      <li><a href="partnering-requests" routerLink="partnering-requests">Partnering Requests</a></li>
+      <li><a href="my-offers" routerLink="my-offers">My Offers</a></li>
     </ul>
   </li>
   <li><a href="newsfeed" routerLink="newsfeed"><span class="icon color8"><i class="fa fa-bar-chart"></i></span>Newsfeed</a></li>
-  <li><a href="#"><span class="icon color9"><i class="fa fa-th"></i></span>Page<span class="caret"></span></a>
+  <li><a ><span class="icon color9"><i class="fa fa-th"></i></span>Sponsorship<span class="caret"></span></a>
     <ul>
-      <li><a href="basic-table.html">Basic Page</a></li>
-      <li><a href="data-table.html">Data Page</a></li>
+      <li><a href="sponsor-request" routerLink="sponsor-request">Sponsoring Requests</a></li>
+      <li><a href="meeting-calendar" routerLink="meeting-calendar">Meeting Calendar</a></li>
+      <li><a href="children-profile-queries" routerLink="children-profile-queries">Children's Profile Queries</a></li>
+      <li><a href="data-table.html">Children's Needs</a></li>
     </ul>
   </li>
   <li><a href="#"><span class="icon color10"><i class="fa fa-check-square-o"></i></span>Page<span class="caret"></span></a>

@@ -33,6 +33,14 @@ import { MyPartnersComponent } from './pages/manager/my-partners/my-partners.com
 import { ModalMakeItemproposalComponent } from './others/modal-make-itemproposal/modal-make-itemproposal.component';
 import { LoadingIndicatorComponent } from './others/loading-indicator/loading-indicator.component';
 import { ModalPaypalNeedComponent } from './others/modal-paypal-need/modal-paypal-need.component';
+import { PartneringRequestsComponent } from './pages/manager/partnering-requests/partnering-requests.component';
+import { MyOffersComponent } from './pages/manager/my-offers/my-offers.component';
+import { VieworphanagesManagerComponent } from './others/vieworphanages-manager/vieworphanages-manager.component';
+import { SponsorRequestComponent } from './pages/manager/sponsor-request/sponsor-request.component';
+import { ProfileQueriesComponent } from './pages/manager/profile-queries/profile-queries.component';
+import { CalendarComponent } from './pages/manager/calendar/calendar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [ 
@@ -60,12 +68,19 @@ import { ModalPaypalNeedComponent } from './others/modal-paypal-need/modal-paypa
     ModalMeetingSetupComponent,
     OrphanagesManagerComponent,
     MyPartnersComponent,
+
     ModalMakeItemproposalComponent,
     LoadingIndicatorComponent,
     ModalPaypalNeedComponent,
+    PartneringRequestsComponent,
+    MyOffersComponent,
+    VieworphanagesManagerComponent,
+    SponsorRequestComponent,
+    ProfileQueriesComponent,
+    CalendarComponent,
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule
+    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [

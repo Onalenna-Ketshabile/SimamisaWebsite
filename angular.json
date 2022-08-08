@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css",
               "src/assets/css/bootstrap.min.css"
             ],
@@ -88,26 +89,24 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [ 
+            "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css" 
+              "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": [
               "src/js2/jquery.min.js",
               "js2/bootstrap.min.js",
-
               "src/assets/js/newsfeedposts/jquery.min.js",
               "src/assets/js/newsfeedposts/jquery.inview.min.js",
               "src/assets/js/newsfeedposts/main.js",
-
               "src/assets/js/manager-layout/bootstrap.min.js",
               "src/assets/js/manager-layout/jquery.min.js",
               "src/assets/js/manager-layout/plugins.js"
-
             ]
           }
         }
