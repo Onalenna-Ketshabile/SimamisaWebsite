@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import {Orphanage} from '../models/orphanage';
 import { Observable,BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,15 +9,18 @@ import { map } from 'rxjs/operators';
 })
 export class OrphanageService {
   private orphanages = new BehaviorSubject<Orphanage[]>([]);
-
+  headers: any;
   constructor(private http:HttpClient) {
-   
+    this.headers= new HttpHeaders()
+    .set('content-type', 'application/json');
+    this.headers.set( 'Accept','application/json')
+    this.headers.set('Access-Control-Allow-Origin', '*');
   }
 
-  readonly apiURL ="https://simamisaapiv3.azurewebsites.net/simamisa/orphanages";
+  readonly apiURL ="http://localhost:8080/simamisa/orphanages/";
   
   public init():void {
-    this.http.get<Orphanage[]>(this.apiURL).subscribe(
+    this.http.get<Orphanage[]>(this.apiURL,{headers:this.headers}).subscribe(
       (orphs)=>{
         this.orphanages.next(orphs);
         console.log(this.orphanages);
