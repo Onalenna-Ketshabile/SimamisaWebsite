@@ -1,0 +1,1 @@
+export const BASEURL: string ="http://localhost:8081/simamisa/orphanages";

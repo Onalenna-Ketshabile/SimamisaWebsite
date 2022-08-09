@@ -3,6 +3,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import {Orphanage} from '../models/orphanage';
 import { Observable,BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { BASEURL } from '../constants/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class OrphanageService {
     this.headers.set('Access-Control-Allow-Origin', '*');
   }
 
-  readonly apiURL ="http://localhost:8080/simamisa/orphanages/";
+  readonly apiURL =`${BASEURL}/`;
   
   public init():void {
     this.http.get<Orphanage[]>(this.apiURL,{headers:this.headers}).subscribe(

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Need } from '../models/need';
 import { Observable,map } from 'rxjs';
+import { BASEURL } from '../constants/constants';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,7 @@ headers: any;
     this.headers.set('Access-Control-Allow-Origin', '*');
    }
 
-   readonly apiURL="https://simamisaapiv3.azurewebsites.net/simamisa/orphanages/needs";
+   readonly apiURL=`${BASEURL}/needs`;
    
    getAllNeeds():Observable<Need[]>{
     return this.http.get<Need[]>(this.apiURL+"/active",{headers:this.headers});
