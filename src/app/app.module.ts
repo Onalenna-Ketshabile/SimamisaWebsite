@@ -42,6 +42,7 @@ import { CalendarComponent } from './pages/manager/calendar/calendar.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { OrphanageItemComponent } from './others/orphanage-item/orphanage-item.component';
+import { ChilditemComponent } from './others/childitem/childitem.component';
 
 @NgModule({
   declarations: [ 
@@ -79,6 +80,7 @@ import { OrphanageItemComponent } from './others/orphanage-item/orphanage-item.c
     SponsorRequestComponent,
     ProfileQueriesComponent,
     CalendarComponent,
+    ChilditemComponent,
     OrphanageItemComponent,
   ],
   imports: [
