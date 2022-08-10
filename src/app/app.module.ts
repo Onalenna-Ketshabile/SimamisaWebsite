@@ -41,6 +41,7 @@ import { ProfileQueriesComponent } from './pages/manager/profile-queries/profile
 import { CalendarComponent } from './pages/manager/calendar/calendar.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { OrphanageItemComponent } from './others/orphanage-item/orphanage-item.component';
 import { ChilditemComponent } from './others/childitem/childitem.component';
 import { ChildrenManagerComponent } from './pages/manager/children-manager/children-manager.component';
 import { ChildNeedsComponent } from './pages/manager/child-needs/child-needs.component';
@@ -84,6 +85,8 @@ import { ChildNeedsComponent } from './pages/manager/child-needs/child-needs.com
     ChilditemComponent,
     ChildrenManagerComponent,
     ChildNeedsComponent,
+    OrphanageItemComponent,
+
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })

@@ -34,6 +34,7 @@ const routes: Routes = [
     {path: 'meeting-calendar', component: CalendarComponent},
     {path: 'children', component: ChildrenManagerComponent},
     {path: 'child-needs', component: ChildNeedsComponent}
+
    ]
    }
    
