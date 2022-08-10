@@ -17,17 +17,19 @@
             <div class="image-upload">
               <label for="name" class="form-label">Upload Need Image</label>
             <label> {{imageError}}</label> 
-              <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+              <input type="file" (change)="previwImage($event)" class="fileInputProfile">
                     <div class="img-space">
-
-                        <ng-container *ngIf="isImageSaved; else elseTemplate">
+                       <!-- <ng-container *ngIf="isImageSaved; else elseTemplate">
                             <img [src]="cardImageBase64" style="height:250px;width:300px;" />
                         </ng-container>
                         <ng-template #elseTemplate>
 
                             <img src="./../../../assets/images/placeholder.png" style="height:250px;width:300px;"  class="img-responsive">
-                        </ng-template>
-
+                        </ng-template> -->
+                          <br>
+                          <img id="old" [src]="oldSrc" style="height:250px;width:300px;" />
+                     <br>
+                   
                     </div>
               <!---  <input type="file" name="inpFile" class="form-control" required ngModel>
             </div>

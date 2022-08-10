@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 @Component({
@@ -13,8 +15,10 @@ import { Title } from '@angular/platform-browser';
 export class RegisterComponent implements OnInit {
 
   user: any;
-
-  constructor(private titleService: Title,private http: HttpClient) { 
+  returnUrl!: string;
+  ErrorMessage!: string;
+  constructor(private titleService: Title, private authService: AuthenticationService,
+    private router: Router, private route: ActivatedRoute) {
     titleService.setTitle("Register");
 
     this
@@ -23,11 +27,28 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  getUserRegistrationData(data: {name: string,surname: string, dob: string, address: string,email: string,phone: string,password: string,password_confirm: string}){
-    console.log(data);
-    this.http.post("http://simamisaapiv1.azurewebsites.net/simamisa/orphanages/users/register",data)
-    .subscribe((res) => { console.log(res)});
+  getUserRegistrationData(data: { name: string, surname: string,address: string, email: string, phone: string, password: string, password_confirm: string }) {
+    let userData = {
+      FirstName: data.name,
+      Surname: data.surname,
+      Email: data.email,
+      Phonenumber: data.phone,
+      Status: "new",
+      isFlagged: "false",
+      isVolunteer: "0",
+      isSponsor: "0",
+      isDonor: "0",
+      UserPassword: data.password,
+      UserAddress: data.address,
+      UserRole: "R"
+    }
+    const body = JSON.stringify(userData);
+
+    this.authService.register(body).subscribe(data => {
+      console.log(data);
     
+      this.router.navigate(['./login']);
+    });
   }
 
 }

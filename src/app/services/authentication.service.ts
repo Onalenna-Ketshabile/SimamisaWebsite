@@ -14,7 +14,7 @@ export class AuthenticationService extends ObservableStore<StoreState>{
   private loginStatus = new BehaviorSubject<boolean>(this.checkLogin());//Anyone logged in at all?
   private userRole = new BehaviorSubject<String>(this.checkUserRole());//Default's to unregistered user
   private name = new BehaviorSubject<String>("");
-
+  headers : any;
 
   constructor(private http: HttpClient) {
     super({
@@ -28,7 +28,12 @@ export class AuthenticationService extends ObservableStore<StoreState>{
     });
     this.userRole.subscribe((res) => {
       this.setState({ userRole: res }, 'USER_ROLE');
-    })
+    });
+
+     this.headers = new HttpHeaders()
+    .set('content-type', 'application/json');
+  this.headers.set('Accept', 'application/json')
+  this.headers.set('Access-Control-Allow-Origin', '*');
   }
 
 
@@ -50,7 +55,18 @@ export class AuthenticationService extends ObservableStore<StoreState>{
     this.userRole.next(userRole);
   }
 
-  readonly apiURL = `${BASEURL}/users/login`;
+  readonly loginURL = `${BASEURL}/users/login`;
+  readonly registerURL = `${BASEURL}/users/register`;
+  register(body: any) :Observable<any>{
+    return this.http.post<any>(this.registerURL,body,{headers:this.headers}).pipe(
+      map((res)=>{
+        if(res && res.ID){
+         console.log(res); 
+         return res;
+        }
+       },
+    ));
+  }
 
   login(details: string): Observable<any> {
     /*  if (details.includes("eren")) {
@@ -97,11 +113,8 @@ export class AuthenticationService extends ObservableStore<StoreState>{
       else {
         return new Observable();
       }*/
-    const headers = new HttpHeaders()
-      .set('content-type', 'application/json');
-    headers.set('Accept', 'application/json')
-    headers.set('Access-Control-Allow-Origin', '*');
-    return this.http.post<any>(this.apiURL, details, { 'headers': headers }).pipe(
+   
+    return this.http.post<any>(this.loginURL, details, { 'headers': this.headers }).pipe(
       //shareReplay(),//cache the user data
       map((res) => {
         if (res && res.ID) {
@@ -109,6 +122,7 @@ export class AuthenticationService extends ObservableStore<StoreState>{
           localStorage.setItem('loggedIn', 'true');
           localStorage.setItem('userRole', res.UserRole);
           localStorage.setItem('userName', 'Chris');
+          localStorage.setItem('userID', res.ID)
           this.loginStatus.next(true);
           this.userRole.next(localStorage.getItem('userRole')!);
           this.name.next("Chris");
@@ -154,5 +168,6 @@ export class AuthenticationService extends ObservableStore<StoreState>{
       return "U";
     }
   }
+
 
 }

@@ -35,5 +35,4 @@ export class AllneedsComponent implements OnInit {
       this.needs =data;
     });
   }
-
 }

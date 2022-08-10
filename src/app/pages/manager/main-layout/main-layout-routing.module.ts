@@ -29,7 +29,8 @@ const routes: Routes = [
     {path: 'my-offers', component: MyOffersComponent},
     {path: 'sponsor-request', component: SponsorRequestComponent},
     {path: 'children-profile-queries', component: ProfileQueriesComponent},
-    {path: 'meeting-calendar', component: CalendarComponent}
+    {path: 'meeting-calendar', component: CalendarComponent},
+    {path: 'chidren-neesd', component: CalendarComponent}
    ]
    }
    
