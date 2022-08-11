@@ -18,7 +18,7 @@ export class OrphanageService {
     this.headers.set('Access-Control-Allow-Origin', '*');
   }
 
-  readonly apiURL =`${BASEURL}/`;
+  readonly apiURL =`https://simamisa.herokuapp.com/simamisa/orphanages`;
   
   public init():void {
     this.http.get<Orphanage[]>(this.apiURL,{headers:this.headers}).subscribe(
