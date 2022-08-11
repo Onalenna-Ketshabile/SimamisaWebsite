@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,5 +12,8 @@ export class ModalMeetingSetupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  setUpMeeting(details: { date: Date; time: Time; venue: string; motivation: string; }) {
+    console.log(details);
+  
+  }
 }

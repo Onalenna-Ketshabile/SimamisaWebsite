@@ -20,6 +20,7 @@ export class ChildrenService {
   }
   
   readonly apiURL =`http://localhost:8080/simamisa/orphanages/children`;
+  readonly apiURL_singleChild = `http://localhost:8080/simamisa/orphanages/children/child?id=`;
   
   public init():void {
     this.http.get<Child[]>(this.apiURL,{headers:this.headers}).subscribe(
@@ -32,4 +33,11 @@ export class ChildrenService {
   getAllChildren():Observable<Child[]>{
     return this.http.get<Child[]>(this.apiURL,{headers:this.headers});
    }
+   getChildByID(id: number): Observable<Child>{
+   // return this.getAllChildren().pipe(
+  //      map(child => child.find(child => child.ID === id))
+  //  );
+  return this.http.get<Child>(this.apiURL_singleChild + id,{headers:this.headers});
+   }
+   
 }
