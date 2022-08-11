@@ -5,7 +5,8 @@ import { LogoutComponent } from '../../logout/logout.component';
 import { NewsfeedComponent } from '../../newsfeed/newsfeed.component';
 import { SponsorChildComponent } from '../../sponsor-child/sponsor-child.component';
 import { CalendarComponent } from '../calendar/calendar.component';
-import { MyChildrenComponent } from '../my-children/my-children.component';
+import { ChildNeedsComponent } from '../child-needs/child-needs.component';
+import { ChildrenManagerComponent } from '../children-manager/children-manager.component';
 import { MyOffersComponent } from '../my-offers/my-offers.component';
 import { MyPartnersComponent } from '../my-partners/my-partners.component';
 import { OrphanagesManagerComponent } from '../orphanages-manager/orphanages-manager.component';
@@ -32,7 +33,9 @@ const routes: Routes = [
     {path: 'sponsor-request', component: SponsorRequestComponent},
     {path: 'children-profile-queries', component: ProfileQueriesComponent},
     {path: 'meeting-calendar', component: CalendarComponent},
-    {path: 'children-need', component: MyChildrenComponent}
+    {path: 'children', component: ChildrenManagerComponent},
+    {path: 'child-needs', component: ChildNeedsComponent}
+
    ]
    }
    
