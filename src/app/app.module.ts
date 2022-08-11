@@ -43,6 +43,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { OrphanageItemComponent } from './others/orphanage-item/orphanage-item.component';
 import { ChilditemComponent } from './others/childitem/childitem.component';
+import { MyChildrenComponent } from './pages/manager/my-children/my-children.component';
 
 @NgModule({
   declarations: [ 
@@ -82,6 +83,7 @@ import { ChilditemComponent } from './others/childitem/childitem.component';
     CalendarComponent,
     ChilditemComponent,
     OrphanageItemComponent,
+    MyChildrenComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
