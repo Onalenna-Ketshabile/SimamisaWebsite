@@ -11,36 +11,7 @@
             <label for="name" class="form-label">Title</label>
             <input type="text" name="name" placeholder="Enter name of the need" class="form-control" required ngModel>
           </div>
-
-          <div class="mb-3 form-group">
-
-            <div class="image-upload">
-              <label for="name" class="form-label">Upload Need Image</label>
-            <label> {{imageError}}</label> 
-              <input type="file" (change)="previwImage($event)" class="fileInputProfile">
-                    <div class="img-space">
-                       <!-- <ng-container *ngIf="isImageSaved; else elseTemplate">
-                            <img [src]="cardImageBase64" style="height:250px;width:300px;" />
-                        </ng-container>
-                        <ng-template #elseTemplate>
-
-                            <img src="./../../../assets/images/placeholder.png" style="height:250px;width:300px;"  class="img-responsive">
-                        </ng-template> -->
-                          <br>
-                          <img id="old" [src]="oldSrc" style="height:250px;width:300px;" />
-                     <br>
-                   
-                    </div>
-              <!---  <input type="file" name="inpFile" class="form-control" required ngModel>
-            </div>
-                    <div class="image-preview" id="imagePreview">
-                    <img serc="" alt="Image Prview" class="image-preview__image">
-                    <span class="image-preview__default-text">Image Preview</span>
-                </div> !-->
-          </div>
-          </div>
-
-          <div class="mb-3 form-group">
+      <div class="mb-3 form-group">
             <label for="priority">Priority Rating:</label>
             <select id="priority" name ="priority" class="form-control" required ngModel>
               <option class="rating-option" disabled selected>Select A priority Rating</option>

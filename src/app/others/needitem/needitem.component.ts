@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Need } from 'src/app/models/need';
+import { NeedsService } from 'src/app/services/needs.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 @Component({
   selector: 'app-needitem',
@@ -16,7 +18,7 @@ export class NeeditemComponent implements OnInit {
   orphName?:string="";
   date!: string;
   formModal: any;
-  constructor(private orphService:OrphanageService) {
+  constructor(private orphService:OrphanageService,private needService:NeedsService,private router:Router) {
 
   }
 
@@ -46,7 +48,9 @@ export class NeeditemComponent implements OnInit {
     this.descriptionToShow = need.Description;
 
   }
-
+  isSponsor=()=>{
+    return localStorage.getItem("userRole")=="M";
+  }
   onShowless(need: { Description: string; }): void {
     if (need.Description.length > 100) {
       this.descriptionToShow = this.need.Description.slice(0, 100);
@@ -58,8 +62,20 @@ export class NeeditemComponent implements OnInit {
     }
   }
   openModal(){
+    localStorage.setItem("needID",this.need.ID.toString());
+    localStorage.setItem("needAmount",this.need.AmountNeeded.toString());
     this.formModal.show();
      console.log("Modal function is called...");
+ }
+ deleteNeed(){
+  console.log("Trying")
+  this.needService.deleteNeed(this.need.ID).subscribe(data => {
+    
+    console.log("Posted");
+    console.log(data);
+    //Close modal and show the newsfeed
+    this.router.navigate(['./manager/newsfeed'])
+  });
  }
 }
 

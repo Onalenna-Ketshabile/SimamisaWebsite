@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core'; 
 import { ActivatedRoute } from '@angular/router';
 import { Child } from 'src/app/models/child';
+import { Childneed } from 'src/app/models/childneed';
 import { ChildrenService } from 'src/app/services/children.service';
+import { NeedsService } from 'src/app/services/needs.service';
 @Component({
   selector: 'app-child-needs',
   templateUrl: './child-needs.component.html',
@@ -10,7 +12,9 @@ import { ChildrenService } from 'src/app/services/children.service';
 export class ChildNeedsComponent implements OnInit {
   id!: string|null;
  child!:Child
-  constructor(private _Activatedroute:ActivatedRoute,private cService:ChildrenService) { }
+ childneeds!:Childneed[]
+ formModal:any
+  constructor(private _Activatedroute:ActivatedRoute,private cService:ChildrenService,private nService:NeedsService) { }
 
   ngOnInit(): void {
     this.id=this._Activatedroute.snapshot.paramMap.get("id");
@@ -18,6 +22,12 @@ export class ChildNeedsComponent implements OnInit {
     this.cService.getChildByID(this.id!).subscribe(data=>{
       this.child =data;
     });
+    this.nService.getChildNeedsById(this.id!).subscribe(data=>{
+      this.childneeds =data;
+    });
   }
-
+  openModal(){
+    this.formModal.show();
+     console.log("Modal function is called...");
+ }
 }

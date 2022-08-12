@@ -21,6 +21,7 @@ export class ChildrenService {
   
   readonly apiURL =`${BASEURL}/children`;
   readonly getChildURL = `${BASEURL}/children/child/?id=`;
+  readonly getChildrenOrph = `${BASEURL}/children/orphanage/child?id=`;
   public init():void {
     this.http.get<Child[]>(this.apiURL,{headers:this.headers}).subscribe(
       (child)=>{
@@ -32,12 +33,12 @@ export class ChildrenService {
   getAllChildren():Observable<Child[]>{
     return this.http.get<Child[]>(this.apiURL,{headers:this.headers});
    }
-
+  
+   getChildrenByOrphanage(id:string):Observable<Child[]>{
+    return this.http.get<Child[]>(this.getChildrenOrph+id,{headers:this.headers});
+   }
    getChildByID(id:string):Observable<Child>{
     return this.http.get<Child>(this.getChildURL+id,{headers:this.headers});
    }
-
-  //  getChildsNeeds(id:string):Observable<ChildNeed>{
-
-  //  }
+   //Child's update posts  
 }
