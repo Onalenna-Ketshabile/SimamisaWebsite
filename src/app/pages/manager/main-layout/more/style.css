@@ -347,6 +347,7 @@ Sidebar Open Button - Show or Hide Sidebar
   border-right: 1px solid rgba(0, 0, 0, 0.14);
   border-left: 1px solid rgba(0, 0, 0, 0.14);
   z-index: 1;
+ 
 }
 .sidebar-open-button:hover,
 .sidebar-open-button:active {
@@ -517,6 +518,7 @@ Top Right
 Sidebar 
 ================================================================================= */
 .sidebar {
+  height: 100%;
   width: 250px;
   position: fixed;
   padding-top: 90px;
