@@ -1,6 +1,6 @@
 <div class="col-xl-10">
     <div class="project-item mb-30">
-        <div class="thumb" style="background-image: url(../../../assets/images/newsfeed/jackets.jpg);"></div>
+        <img class="thumb" src={{need.ItemImage}} >
         <div class="content">
 
             <h4 class="title">
@@ -23,7 +23,8 @@
             </div>		
             <div class="project-stats">
                 <div class="stats-value">
-                    <span class="value-title">Raised of <span class="value">R{{need.AmountReceived}}</span></span>
+                    <p class="value-title">Amount Needed <span class="value">R{{need.AmountNeeded}}</span></p>
+                    <br/>
                     <span class="stats-percentage">{{progress}}%</span>
                 </div>
                 <div class="stats-bar" data-value="79">

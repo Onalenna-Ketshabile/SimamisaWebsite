@@ -1,5 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { async } from '@angular/core/testing';
+import { Router } from '@angular/router';
 import { NeedsService } from 'src/app/services/needs.service';
 
 @Component({
@@ -14,7 +16,7 @@ export class ModalAddNeedComponent implements OnInit {
   cardImageBase64!: string;
   oldSrc: string = './../../../assets/images/placeholder.png';
   newSrc: string = './../../../assets/images/placeholder.png';
-  constructor(private needsService: NeedsService) { }
+  constructor(private needsService: NeedsService,private router:Router,private location:Location) { }
 
   ngOnInit(): void {
 
@@ -31,15 +33,17 @@ export class ModalAddNeedComponent implements OnInit {
       ItemImage: this.cardImageBase64,
       NumberNeeded: details.numNeeded,
       UnitCost: details.unitCost,
-      orphanageID: "2",
+      orphanageID: localStorage.getItem("orphID"),
     }
     const body = JSON.stringify(needDetails);
     console.log(body);
-    // this.needsService.postNeed(body).subscribe(data => {
-    //   console.log("Posted");
-    //   console.log(data);
-    //   //Close modal and show the newsfeed
-    // });
+  
+    this.needsService.postNeed(body).subscribe(data => {
+      console.log("Posted");
+      console.log(data);
+      //Close modal and show the newsfeed
+      window.location.reload();
+    });
   }
 
   previwImage = async (fileInput: any) => {

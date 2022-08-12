@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '../../home/home.component';
 import { LogoutComponent } from '../../logout/logout.component';
 import { NewsfeedComponent } from '../../newsfeed/newsfeed.component';
+import { SponsorChildComponent } from '../../sponsor-child/sponsor-child.component';
 import { CalendarComponent } from '../calendar/calendar.component';
 import { ChildNeedsComponent } from '../child-needs/child-needs.component';
 import { ChildrenManagerComponent } from '../children-manager/children-manager.component';

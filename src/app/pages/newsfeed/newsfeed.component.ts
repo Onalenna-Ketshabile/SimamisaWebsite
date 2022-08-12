@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -6,9 +6,12 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   templateUrl: './newsfeed.component.html',
   styleUrls: ['./newsfeed.component.css']
 })
-export class NewsfeedComponent implements OnInit {
+export class NewsfeedComponent implements OnInit, OnChanges {
   formModal:any;
   constructor(private authService:AuthenticationService,) { }
+  ngOnChanges(changes: SimpleChanges): void {
+  
+  }
 
   ngOnInit(): void {
   }
