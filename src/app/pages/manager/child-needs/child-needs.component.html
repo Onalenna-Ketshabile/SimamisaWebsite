@@ -24,7 +24,7 @@
                            <div class="col-lg-12">
                                <div class="card">
                                 <div class="add-need-btn">
-                                    <a href="project-details.html" class="hbtn hbtn-primary">Add Need</a>
+                                    <a href="project-details.html" class="hbtn hbtn-primary"   data-bs-toggle="modal" data-bs-target="#addChildNeed" (click)="openModal" >Add Need</a>
                                 </div>
                                    <div class="card-body">
                                         
@@ -51,7 +51,7 @@
                                                     <th scope="col"></th>
                                                     <th scope="col">Title</th>
                                                     <th scope="col">Description</th>
-                                                    <th scope="col">Date Modified</th>
+                                                    <th scope="col">Amount Needed</th>
                                                     <th style="width: 80px; min-width: 80px;">Action</th>
                                                 </tr>
                                                 </thead>
@@ -59,7 +59,7 @@
 
                                                     <tr>
                                         
-                            <app-child-need-item></app-child-need-item>
+                            <app-child-need-item  *ngFor="let need of childneeds" [childneed]="need" ></app-child-need-item>
                                                     </tr>
 
 

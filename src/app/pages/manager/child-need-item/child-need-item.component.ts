@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Childneed } from 'src/app/models/childneed';
 
 @Component({
   selector: 'app-child-need-item',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../child-needs/child-needs.component.css']
 })
 export class ChildNeedItemComponent implements OnInit {
-
+@Input()
+childneed!:Childneed
   constructor() { }
 
   ngOnInit(): void {
