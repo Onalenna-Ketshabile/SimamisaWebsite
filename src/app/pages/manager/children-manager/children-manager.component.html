@@ -15,64 +15,7 @@
 
 <section class="event-area section-gap-extra-bottom">
     <div class="container">
-        <div class="event-items">
-        
-            <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="event-thumb">
-                    <img src="../../../../assets/images/sponsor/dynamite.jpg" alt="Image">
-                </div>
-                <div class="event-content">
-
-                    <h4 class="event-title"><a href="#">Dynamite</a></h4>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error voluptatem accus laudantium totam rem aperiam eaque
-                    </p>
-                </div>
-
-                <div class="buttons-container">
-                <div class="event-button">
-                    <a href="project-details.html" class="main-btn bordered-btn">View Child Need <i class="far fa-arrow-right"></i></a>
-                </div>
-                
-                </div>
-            </div>
-            <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="event-thumb">
-                    <img src="../../../../assets/images/sponsor/Einstein.jpg" alt="Image">
-                </div>
-                <div class="event-content">
-                    <h4 class="event-title"><a href="#">Eistein</a></h4>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error voluptatem accus laudantium totam rem aperiam eaque
-                    </p>
-                </div>
-                <div class="buttons-container">
-                    <div class="event-button">
-                        <a href="project-details.html" class="main-btn bordered-btn">View Child Need <i class="far fa-arrow-right"></i></a>
-                    </div>
-                    
-                    </div>
-            </div>
-            <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="event-thumb">
-                    <img src="../../../../assets/images/sponsor/elsa.jpg" alt="Image">
-                </div>
-                <div class="event-content">
-        
-                    <h4 class="event-title"><a href="#">Sunshine</a></h4>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error voluptatem accus laudantium totam rem aperiam eaque
-                    </p>
-                </div>
-                <div class="buttons-container">
-                    <div class="event-button">
-                        <a href="project-details.html" class="main-btn bordered-btn">View Child Need <i class="far fa-arrow-right"></i></a>
-                    </div>
-                   
-                    </div>
-            </div>
- 
-          
-        </div>
+      
+        <app-child-item-manager *ngFor="let child of children" [child]="child"></app-child-item-manager>        
     </div>
 </section>

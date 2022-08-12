@@ -45,6 +45,10 @@ import { OrphanageItemComponent } from './others/orphanage-item/orphanage-item.c
 import { ChilditemComponent } from './others/childitem/childitem.component';
 import { ChildrenManagerComponent } from './pages/manager/children-manager/children-manager.component';
 import { ChildNeedsComponent } from './pages/manager/child-needs/child-needs.component';
+import { ChildItemManagerComponent } from './pages/manager/child-item-manager/child-item-manager.component';
+import { ChildNeedItemComponent } from './pages/manager/child-need-item/child-need-item.component';
+import { ChildUpdatesComponent } from './pages/manager/child-updates/child-updates.component';
+import { ModalAddChildUpdateComponent } from './others/modal-add-child-update/modal-add-child-update.component';
 
 @NgModule({
   declarations: [ 
@@ -86,6 +90,10 @@ import { ChildNeedsComponent } from './pages/manager/child-needs/child-needs.com
     ChildrenManagerComponent,
     ChildNeedsComponent,
     OrphanageItemComponent,
+    ChildItemManagerComponent,
+    ChildNeedItemComponent,
+    ChildUpdatesComponent,
+    ModalAddChildUpdateComponent,
 
   ],
   imports: [

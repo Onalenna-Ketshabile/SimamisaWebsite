@@ -6,12 +6,10 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   templateUrl: './newsfeed.component.html',
   styleUrls: ['./newsfeed.component.css']
 })
-export class NewsfeedComponent implements OnInit, OnChanges {
+export class NewsfeedComponent implements OnInit {
   formModal:any;
   constructor(private authService:AuthenticationService,) { }
-  ngOnChanges(changes: SimpleChanges): void {
-  
-  }
+ 
 
   ngOnInit(): void {
   }
