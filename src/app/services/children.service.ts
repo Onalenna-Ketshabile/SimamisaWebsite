@@ -20,6 +20,9 @@ export class ChildrenService {
   }
   
   readonly apiURL =`${BASEURL}/children`;
+
+  readonly apiURL_singleChild = `${BASEURL}/children/child?id=`;
+
   
   public init():void {
     this.http.get<Child[]>(this.apiURL,{headers:this.headers}).subscribe(
@@ -32,4 +35,11 @@ export class ChildrenService {
   getAllChildren():Observable<Child[]>{
     return this.http.get<Child[]>(this.apiURL,{headers:this.headers});
    }
+   getChildByID(id: number): Observable<Child>{
+   // return this.getAllChildren().pipe(
+  //      map(child => child.find(child => child.ID === id))
+  //  );
+  return this.http.get<Child>(this.apiURL_singleChild + id,{headers:this.headers});
+   }
+   
 }
