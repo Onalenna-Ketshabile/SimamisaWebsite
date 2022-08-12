@@ -24,7 +24,7 @@ export class ModalMeetingSetupComponent implements OnInit {
       MeetingDate:  datetime,
       MeetingVenue: details.venue,
       orphanageManagerID: 1,
-      registeredUserID: 2 
+      registeredUserID: 8
 
     };
 
@@ -32,7 +32,7 @@ export class ModalMeetingSetupComponent implements OnInit {
 
     this.meetingService.setUpMeeting(body).subscribe(data => {
       console.log(data);
-    
+        
       this.router.navigate(['./home']);
 
 

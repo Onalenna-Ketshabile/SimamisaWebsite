@@ -19,8 +19,8 @@ export class ChildrenService {
     this.headers.set('Access-Control-Allow-Origin', '*');
   }
   
-  readonly apiURL =`http://localhost:8080/simamisa/orphanages/children`;
-  readonly apiURL_singleChild = `http://localhost:8080/simamisa/orphanages/children/child?id=`;
+  readonly apiURL =`${BASEURL}/children`;
+  readonly apiURL_singleChild = `${BASEURL}/children/child?id=`;
   
   public init():void {
     this.http.get<Child[]>(this.apiURL,{headers:this.headers}).subscribe(
