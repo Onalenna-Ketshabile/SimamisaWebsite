@@ -6,7 +6,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
         </div>
         <div class="modal-body">
-          <form #addUpdateForm="ngForm" (ngSubmit)="addPost(addUpdateForm.value)">
+          <form #ChildNeed="ngForm" (ngSubmit)="addChildNeed(ChildNeed.value)">
             <div class="mb-3 form-group">
               <label for="name" class="form-label">Title</label>
               <input type="text" name="name" placeholder="Enter title of the update" class="form-control" required ngModel>
@@ -28,3 +28,4 @@
       </div>
     </div>
   </div>
+

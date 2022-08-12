@@ -49,6 +49,7 @@ import { ChildItemManagerComponent } from './pages/manager/child-item-manager/ch
 import { ChildNeedItemComponent } from './pages/manager/child-need-item/child-need-item.component';
 import { ChildUpdatesComponent } from './pages/manager/child-updates/child-updates.component';
 import { ModalAddChildUpdateComponent } from './others/modal-add-child-update/modal-add-child-update.component';
+import { ModalAddChildNeedComponent } from './others/modal-add-child-need/modal-add-child-need.component';
 
 @NgModule({
   declarations: [ 
@@ -94,6 +95,7 @@ import { ModalAddChildUpdateComponent } from './others/modal-add-child-update/mo
     ChildNeedItemComponent,
     ChildUpdatesComponent,
     ModalAddChildUpdateComponent,
+    ModalAddChildNeedComponent,
 
   ],
   imports: [
