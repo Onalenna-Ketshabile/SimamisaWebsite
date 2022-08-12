@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'sponsor-child', component: SponsorChildComponent},
-  { path: 'child-single', component: ChildPageComponent},
+  { path: 'orphanage/:o_d/child/:c_id', component: ChildPageComponent},
 ];
 
 @NgModule({
