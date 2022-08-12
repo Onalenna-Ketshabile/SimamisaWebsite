@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit {
       this.returnUrl= this.route.snapshot.queryParams['returnUrl'];
       if(this.authService.getUserRole==="M") this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/manager';
       this.router.navigateByUrl(this.returnUrl);
-  
     });
   }
 

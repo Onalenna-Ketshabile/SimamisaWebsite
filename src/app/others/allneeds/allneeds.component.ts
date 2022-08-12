@@ -31,15 +31,8 @@ export class AllneedsComponent implements OnInit {
 
   ngOnInit(): void {
      this.orphService.init();
-    if(localStorage.getItem("userRole")=="M"){
-      this.needs_service.getOrphanageNeeds().subscribe(data=>{
-        this.needs =data;
-      });
-    }else{
-      this.needs_service.getAllNeeds().subscribe(data=>{
-        this.needs =data;
-      });
-    }
-    
+    this.needs_service.getAllNeeds().subscribe(data=>{
+      this.needs =data;
+    });
   }
 }
