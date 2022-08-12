@@ -24,6 +24,7 @@
     "angular-material": "^1.1.24",
     "angularx-flatpickr": "^6.6.0",
     "bootstrap": "^5.2.0",
+    "creditcardpayments": "^1.0.3",
     "date-fns": "^2.29.1",
     "flatpickr": "^4.6.13",
     "font-awesome": "^4.7.0",

@@ -21,8 +21,8 @@ export class NeeditemComponent implements OnInit {
   }
 
    ngOnInit():void {
-    //progress
-    let num =((this.need.AmountReceived/this.need.AmountNeed)*100);
+
+    let num =((this.need.AmountReceived/this.need.AmountNeeded)*100);
    this.progress= Math.round( num * 100 + Number.EPSILON ) / 100;
    //date
     this.date = this.need.DateEstablished.slice(0,10);

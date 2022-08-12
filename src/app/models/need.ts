@@ -9,7 +9,7 @@ export interface Need {
   ItemImage:any,
   NumberReceived:number,
   NumberNeeded:number,
-  AmountNeed:number,
+  AmountNeeded:number,
   AmountReceived:number,
   UnitCost:number,
   orphanageID:number
