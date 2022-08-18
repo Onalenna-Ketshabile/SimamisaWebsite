@@ -8,19 +8,26 @@ import { NeedsService } from 'src/app/services/needs.service';
   styleUrls: ['./modal-add-child-need.component.css']
 })
 export class ModalAddChildNeedComponent implements OnInit {
+  spID!: string;
 
-  constructor(private nService:NeedsService) { }
+  constructor(private nService:NeedsService,private cService:ChildrenService) { }
 
   ngOnInit(): void {
   }
-  addChildNeed(details: { name: string; description: any; amount: any; }) {
+  addChildNeed(details: { name: string; duedate: any; description: any; amount: any; }) {
     console.log("Add: " + details.name);
+    this.cService.getSponsorShipID(localStorage.getItem("childID")!).subscribe(data => {
+    this.spID = data;
+     });
     let needDetails = {
-      Title: details.name,
-      Description: details.description,
-      isFullfilled:0,
-      AmountNeeded:details.amount
-     //sponsorship id?
+      DueDate : details.duedate,
+      Title : details.name,
+      Description : details.description,
+      isFullfilled : "false",
+      orphanageID : localStorage.getItem("orphID"),
+      sponsorshipID :this.spID,
+      AmountReceived : "0",
+      AmountNeeded : details.amount
     }
     const body = JSON.stringify(needDetails);
     console.log(body);
@@ -28,7 +35,7 @@ export class ModalAddChildNeedComponent implements OnInit {
     this.nService.createChildNeed(body).subscribe(data => {
       console.log("Posted");
       console.log(data);
-      //Close modal and show the newsfeed
+      alert("Need Created");
       window.location.reload();
     });
   }

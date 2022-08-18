@@ -50,6 +50,10 @@ import { ChildNeedItemComponent } from './pages/manager/child-need-item/child-ne
 import { ChildUpdatesComponent } from './pages/manager/child-updates/child-updates.component';
 import { ModalAddChildUpdateComponent } from './others/modal-add-child-update/modal-add-child-update.component';
 import { ModalAddChildNeedComponent } from './others/modal-add-child-need/modal-add-child-need.component';
+import { EditNeedComponent } from './pages/manager/edit-need/edit-need.component';
+import { EditChildneedComponent } from './pages/manager/edit-childneed/edit-childneed.component';
+import { ChildUpdateItemComponent } from './pages/manager/child-update-item/child-update-item.component';
+import { EditChildupdateComponent } from './pages/manager/edit-childupdate/edit-childupdate.component';
 
 @NgModule({
   declarations: [ 
@@ -96,6 +100,10 @@ import { ModalAddChildNeedComponent } from './others/modal-add-child-need/modal-
     ChildUpdatesComponent,
     ModalAddChildUpdateComponent,
     ModalAddChildNeedComponent,
+    EditNeedComponent,
+    EditChildneedComponent,
+    ChildUpdateItemComponent,
+    EditChildupdateComponent,
 
   ],
   imports: [

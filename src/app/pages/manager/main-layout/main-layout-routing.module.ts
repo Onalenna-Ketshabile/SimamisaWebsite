@@ -8,6 +8,9 @@ import { CalendarComponent } from '../calendar/calendar.component';
 import { ChildNeedsComponent } from '../child-needs/child-needs.component';
 import { ChildUpdatesComponent } from '../child-updates/child-updates.component';
 import { ChildrenManagerComponent } from '../children-manager/children-manager.component';
+import { EditChildneedComponent } from '../edit-childneed/edit-childneed.component';
+import { EditChildupdateComponent } from '../edit-childupdate/edit-childupdate.component';
+import { EditNeedComponent } from '../edit-need/edit-need.component';
 import { MyOffersComponent } from '../my-offers/my-offers.component';
 import { MyPartnersComponent } from '../my-partners/my-partners.component';
 import { OrphanagesManagerComponent } from '../orphanages-manager/orphanages-manager.component';
@@ -26,6 +29,7 @@ const routes: Routes = [
   children: [
     {path: 'home', component: HomeComponent},
     {path: 'newsfeed', component: NewsfeedComponent},
+    {path:'newsfeed/editneed/:id',component:EditNeedComponent},
     {path:'logout',component:LogoutComponent},
     {path: 'orphanages', component: OrphanagesManagerComponent},
     {path: 'partners', component: MyPartnersComponent},
@@ -36,7 +40,10 @@ const routes: Routes = [
     {path: 'meeting-calendar', component: CalendarComponent},
     {path: 'children', component: ChildrenManagerComponent},
     {path: 'child-needs/:id', component: ChildNeedsComponent},
-    {path: 'child-updates/:id', component: ChildUpdatesComponent}
+    {path: 'child-needs/editchildneed/:id', component: EditChildneedComponent},
+    {path: 'child-updates/:id', component: ChildUpdatesComponent},
+    {path: 'child-updates/editchildupdate/:id', component: EditChildupdateComponent},
+
    ]
    }
    
