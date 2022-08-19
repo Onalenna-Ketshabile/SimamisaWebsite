@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if(localStorage.getItem('loggedIn')==='true'&&localStorage.getItem('userRole')==='M'){
-      this.router.navigate(['/manager']);
+      this.router.navigate(['/manager']); localStorage.getItem("orphID")
     }
   }
 

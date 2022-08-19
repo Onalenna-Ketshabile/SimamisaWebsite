@@ -50,6 +50,7 @@ import { ChildNeedItemComponent } from './pages/manager/child-need-item/child-ne
 import { ChildUpdatesComponent } from './pages/manager/child-updates/child-updates.component';
 import { ModalAddChildUpdateComponent } from './others/modal-add-child-update/modal-add-child-update.component';
 import { ModalAddChildNeedComponent } from './others/modal-add-child-need/modal-add-child-need.component';
+import { ItemProposalsComponent } from './pages/item-proposals/item-proposals.component';
 
 @NgModule({
   declarations: [ 
@@ -96,6 +97,7 @@ import { ModalAddChildNeedComponent } from './others/modal-add-child-need/modal-
     ChildUpdatesComponent,
     ModalAddChildUpdateComponent,
     ModalAddChildNeedComponent,
+    ItemProposalsComponent,
 
   ],
   imports: [

@@ -1,0 +1,164 @@
+<div id="header-holder" class="innerpage grey-bg">
+    <div id="top-content" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title">Item Proposals</div>
+                    <div class="page-subtitle">All item proposals to orphanages</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="page-content" style="padding-top: 20px;">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <!-- end page title -->
+
+                       <div class="row">
+                           <div class="col-lg-12">
+                               <div class="card this-component">
+                                <div class="switch-buttons">
+                                    <a class="hbtn hbtn-primary" (click)="showPickUps()">PickUps</a>
+                                    <a  class="hbtn hbtn-primary" (click)="showDropOff()">DropOffs</a> 
+                                    
+                                </div>
+                                   <div class="card-body" [ngSwitch]="activeLayout">
+                                    
+                                    <!--DropOff Layout-->
+                                    <div *ngSwitchCase="'dropoffs'">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                           
+                                    
+                                                    <h5 class="big-title">DropOff<span class="text-muted fw-normal ms-2"></span></h5>
+                                                </div>
+                                            </div>
+
+                                                            
+                                        <div class="table-responsive mb-4">
+                                            <table class="table align-middle datatable dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
+                                                <thead>
+                                                <tr>
+                                                    
+                                                    <th scope="col"></th>
+                                                    <th scope="col">Item name</th>
+                                                    <th scope="col">Orphanage</th>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Time</th>
+                                                    <th scope="col">Note to manager</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                
+                                                    <tr>
+                                        
+                                                        <td>
+                                                                                                             
+                                                        <div class="need-image">
+                                                            <img src="./../../../../assets/../assets/images/newsfeed/schoolshoe.jpg" alt="Image">
+                                                        </div>
+                                                        </td>
+                                                        <td>Tables</td>
+                                                        <td>Kingdom Life</td>
+                                                        <td>2022-08-15</td>
+                                                        <td>14:00</td>
+                                                        
+                                                        <td>
+                                                            I might be there few minutes earlier
+                                                        </td>
+                                         
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <!-- end table -->
+                                        </div>
+                                        <!-- end table responsive -->
+        
+                                        </div>
+
+                                    </div>
+                                    <!--End Of DropOff-->
+                                    <!--Pickup Layout-->
+                                    <div *ngSwitchCase="'pickups'">
+
+                                        <div class="row align-items-center">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                           
+                                    
+                                                    <h5 class="big-title">PickUps<span class="text-muted fw-normal ms-2"></span></h5>
+                                                </div>
+                                            </div>
+
+                                                            
+                                        <div class="table-responsive mb-4">
+                                            <table class="table align-middle datatable dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
+                                                <thead>
+                                                <tr>
+                                                    
+                                                    <th scope="col"></th>
+                                                    <th scope="col">Item name</th>
+                                                    <th scope="col">Orphanage</th>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Time</th>
+                                                    <th scope="col">Specified Address</th>
+                                                    <th scope="col">Note to manager</th>
+                                                    <th scope="col">status</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                
+                                                    <tr>
+                                        
+                                                        <td>
+                                                                                                             
+                                                        <div class="need-image">
+                                                            <img src="./../../../../assets/../assets/images/newsfeed/schoolshoe.jpg" alt="Image">
+                                                        </div>
+                                                        </td>
+                                                        <td>Tables</td>
+                                                        <td>Kingdom Life</td>
+                                                        <td>2022-08-15</td>
+                                                        <td>14:00</td>
+                                                        <td>
+                                                            14th Avenue Smierd Road, Johannesburg 
+                                                        </td>
+                                                        <td>
+                                                            I might be there few minutes earlier
+                                                        </td>
+                                                        <td>
+                                                            Not collected
+                                                        </td>
+                                         
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <!-- end table -->
+                                        </div>
+                                        <!-- end table responsive -->
+        
+                                        </div>
+
+                                    </div>
+                                    <!--End Of Pickup-->
+                                    
+                               </div>
+                           </div>
+                       </div>
+                        
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+            <!-- end main content-->
+
+        <!-- END layout-wrapper -->
