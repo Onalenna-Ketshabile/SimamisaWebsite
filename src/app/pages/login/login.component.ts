@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
   returnUrl!:string;
   ErrorMessage!:string;
 
+  loadingHandler = new LoadingHandler();
   constructor( private titleService: Title,
     private authService:AuthenticationService,
     private router:Router,
@@ -34,9 +36,10 @@ export class LoginComponent implements OnInit {
  
 
     const body= JSON.stringify(userData);
-    
+    this.loadingHandler.start();
     this.authService.login(body).subscribe(data=>{
       console.log(data);
+      this.loadingHandler.finish();
       this.returnUrl= this.route.snapshot.queryParams['returnUrl'];
       if(this.authService.getUserRole==="M") this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/manager';
       this.router.navigateByUrl(this.returnUrl);

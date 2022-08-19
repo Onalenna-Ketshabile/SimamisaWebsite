@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChildrenService } from 'src/app/services/children.service';
 import { NeedsService } from 'src/app/services/needs.service';
 
 @Component({
@@ -7,28 +8,27 @@ import { NeedsService } from 'src/app/services/needs.service';
   styleUrls: ['./modal-add-child-update.component.css']
 })
 export class ModalAddChildUpdateComponent implements OnInit {
+  spID: any;
 
-  constructor(private needsService: NeedsService) { }
+  constructor(private cService: ChildrenService) { }
 
   ngOnInit(): void {
   }
   addPost(details: { name: string; duedate: any; description: any; priority: any; numNeeded: any; unitCost: any; }) {
     console.log("Add: " + details.name);
+    this.cService.getSponsorShipID(localStorage.getItem("childID")!).subscribe(data => {
+    this.spID = data;
+     });
     let needDetails = {
-      DueDate: details.duedate,
-      DateEstablished: new Date(),
       Title: details.name,
       Description: details.description,
-      PriorityRating: details.priority,
-      ItemImage: "",
-      NumberNeeded: details.numNeeded,
-      UnitCost: details.unitCost,
-      orphanageID: localStorage.getItem("orphID"),
+      PostImage: "",
+      sponsorshipID :this.spID,
     }
     const body = JSON.stringify(needDetails);
     console.log(body);
   //Make Post(uPDATE)
-    this.needsService.postNeed(body).subscribe(data => {
+    this.cService.createChildUpdate(body).subscribe(data => {
       console.log("Posted");
       console.log(data);
       //Close modal and show the newsfeed

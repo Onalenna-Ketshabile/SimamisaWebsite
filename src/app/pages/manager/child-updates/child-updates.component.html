@@ -56,7 +56,8 @@
 
                                                     <tr>
                                         
-                            <app-child-need-item></app-child-need-item>
+                                                        <app-child-update-item  *ngFor="let update of childupdates" [childUpdate]="update"  (elementDeleted)="onElementDeleted($event)" ></app-child-update-item>
+                    
                                                     </tr>
 
 

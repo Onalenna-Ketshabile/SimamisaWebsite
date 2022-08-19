@@ -15,7 +15,14 @@
 
 <section class="event-area section-gap-extra-bottom">
     <div class="container">
-      
+      <div *ngIf="loadingHandler.isLoading | async" class="row" >
+        <div class="col-sm-12">
+          <div style="margin-left:500px; margin-top:30px">
+            <app-loading-indicator></app-loading-indicator>
+          </div>
+        
+        </div>
+      </div>
         <app-child-item-manager *ngFor="let child of children" [child]="child"></app-child-item-manager>        
     </div>
 </section>

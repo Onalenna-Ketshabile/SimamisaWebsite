@@ -4,12 +4,20 @@
     
     <a href="home" routerLink="home"><div class="logo-part" ><a class="navbar-brand" ><img href="home" routerLink="home" src="../../../assets/images/SimamisaLogo2.svg" alt="Simamisa"></a></div></a>
     <div class="continue-text">Log in to continue with Simamisa</div>
+    <div  *ngIf="loadingHandler.isLoading | async" class="row" >
+        <div class="col-sm-12">
+            <div style="margin-left:130px; margin-bottom:30px">
+                <app-loading-indicator></app-loading-indicator>
+            </div>
+        
+        </div>
+    </div>
     <div class="cloud-bg"></div>
     <div class="container">
         <div class="forms">
             <div class="form login"  >
                 <span class="title">Login</span>
-
+               
                 <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
                     <div class="input-field">
                         <input type="text" placeholder="Enter your email" name="email" ngModel required>

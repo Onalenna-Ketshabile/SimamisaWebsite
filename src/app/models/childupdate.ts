@@ -1,7 +1,8 @@
-export interface Childupdate {
+export interface ChildUpdate {
+    ID:number,
     PostDate : string,
     Title :string,
     Description : string,
     sponsorshipID :number,
-    ItemImage :string,
+    PostImage :string,
 }
