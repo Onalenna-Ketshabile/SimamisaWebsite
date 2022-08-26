@@ -11,14 +11,13 @@
 Main Css
 ================================================ */
 /* Bootstrap Main Css File (unedited) */
-@import url('./../main-layout/more/bootstrap.css');
+@import url('./../../pages/manager/main-layout/more/bootstrap.css');
 
 /* Theme Style */
-@import url('./../main-layout/more/style.css');
+@import url('./../../pages/manager/main-layout/more/style.css');
 
 /* Responsive Style */
-@import url('./../main-layout/more/responsive.css');
+@import url('./../../pages/manager/main-layout/more/responsive.css');
 
 /* Shortcuts Css Codes */
-@import url('./../main-layout/more/shortcuts.css');
-
+@import url('./../../pages/manager/main-layout/more/shortcuts.css');
