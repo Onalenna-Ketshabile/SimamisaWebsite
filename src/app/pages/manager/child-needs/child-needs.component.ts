@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { Child } from 'src/app/models/child';
 import { Childneed } from 'src/app/models/childneed';
 import { ChildrenService } from 'src/app/services/children.service';
@@ -11,7 +12,8 @@ import { NeedsService } from 'src/app/services/needs.service';
 })
 export class ChildNeedsComponent implements OnInit {
   id!: string | null;
-  child!: Child
+  child!: Child;
+  name! :string ;
   childneeds!: Childneed[]
   formModal: any
   constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService, private nService: NeedsService) { }
@@ -27,6 +29,7 @@ export class ChildNeedsComponent implements OnInit {
     localStorage.setItem("childID", this.id!);
     this.cService.getChildByID(this.id!).subscribe(data => {
       this.child = data;
+      this.name = this.child.Nickname;
     });
     this.nService.getChildNeedsById(this.id!).subscribe(data => {
       this.childneeds = data;
@@ -40,5 +43,13 @@ export class ChildNeedsComponent implements OnInit {
   onElementDeleted(element: any) {
     console.log("Deleted child need" + element);
     this.getChildNeeds();
+  }
+
+  onElementAdded(element:any){
+    console.log("added child need" + element);
+  
+    this.getChildNeeds();
+    document.getElementById("close-add-cneed")!.click();
+    
   }
 }

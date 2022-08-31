@@ -17,6 +17,7 @@ export class ModalMakeItemproposalComponent implements OnInit {
     constructor(private needsService: NeedsService,) { }
 
     ngOnInit(): void {
+        this.currentTab ='C';
     }
 
     dropOffMethod(details: any) {
@@ -26,7 +27,6 @@ export class ModalMakeItemproposalComponent implements OnInit {
 
     }
     updateCurrentTab(option: string) {
-
         this.currentTab = option;
     }
 }

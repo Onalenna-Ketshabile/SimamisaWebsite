@@ -27,6 +27,7 @@
                     <br/>
                     <span class="stats-percentage">{{progress}}%</span>
                 </div>
+                <!-- Use the progress here -->
                 <div class="stats-bar" data-value="79">
                     <div class="bar-line"></div>
                 </div>
@@ -37,7 +38,7 @@
         <div class="donation-btns">
             <div *ngIf="!isSponsor()">
                 <button type="submit" class="main-btn"   data-bs-toggle="modal" data-bs-target="#makeproposal-modal" (click)="openModal">Donate Item <i class="far fa-arrow-right"></i></button>
-                <button type="submit" class="main-btn"data-bs-toggle="modal" data-bs-target="#payNeed-modal" (click)="openModal">Donate Money <i class="far fa-arrow-right"></i></button>
+                <button type="submit" class="main-btn"data-bs-toggle="modal" data-bs-target="#payNeed-modal" (click)="openModal()">Donate Money <i class="far fa-arrow-right"></i></button>
                
             </div>
             <div *ngIf="isSponsor()">

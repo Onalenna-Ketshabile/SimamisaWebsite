@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { render } from 'creditcardpayments/creditCardPayments'
 import { NeedsService } from 'src/app/services/needs.service';
 @Component({
@@ -9,40 +9,62 @@ import { NeedsService } from 'src/app/services/needs.service';
 export class ModalPaypalNeedComponent implements OnInit {
 
   amount: string = "";
-
-  constructor(private needService:NeedsService) {
-   
+  amountDollars!: number;
+  isSucessful!:boolean;
+  @Output()
+  transactionDone: EventEmitter<any> = new EventEmitter();
+  constructor(private needService: NeedsService) {
+    this.isSucessful=false;
   }
-  updateamount=(val:string)=>{
-    this.amount=val;
-    console.log(val);
+
+  ngOnInit(): void {
+    this.isSucessful=false;
+  }
+
+  updateamount = () => {
+   
+    this.amountDollars = (Number(this.amount)*0.059);
+    console.log(this.amount);
+    console.log(this.amountDollars);
   }
   clickme() {
+    this.updateamount();
     render({
       id: "#paypal",
       currency: "USD",
-      value: this.amount,
+      value:this.amountDollars.toPrecision(2),
       onApprove: (details) => {
-        alert("Transaction Successful");
-        // let val  = localStorage.getItem("needAmount");
-        // var num:number = parseInt(val!);
-        // var edit:number = parseInt(this.amount)
-        // let body = {
-        //   AmountNeeded: num-edit ,
-        // }
-        // let id= localStorage.getItem("needID");
-        // let body2 = JSON.stringify(body)
-        // this.needService.updateNeed(id!,body2).subscribe(data => {
-    
-        //   console.log("Posted");
-        //   console.log(data);
-        //   //Close modal and show the newsfeed
-        // });
-        
+        console.log(details);
+        this.isSucessful = true;
+        this.donateMoney();
+
       }
     })
   }
-  ngOnInit(): void {
-  }
+  donateMoney() {
+    console.log("I have been called")
+     let needid = localStorage.getItem("needID");
+    
+    let donation = {
+      id: needid, // itemID
+      amount: this.amount,
+      ProposalComment: "This is a donation",
+      registeredUserID: localStorage.getItem("userID")
+    }
 
+    let body = JSON.stringify(donation)
+    console.log(body);
+    this.needService.donate(body).subscribe(data => {
+
+      console.log("Donated");
+      console.log(data);
+      //Close modal and show the newsfeed
+      localStorage.removeItem("needAmount");
+      localStorage.removeItem("needID");
+    });
+  }
+   closeModal(){
+    this.isSucessful=false;
+    this.transactionDone.emit();
+   }
 }

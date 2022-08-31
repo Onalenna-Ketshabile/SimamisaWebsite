@@ -37,7 +37,7 @@
   
   
             <button type="submit" class="btn btn-light waves-effect waves-light">Submit</button>
-            <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal" (click)="updateCurrentTab('C')">Cancel</button>
      
           </div>
           <div id="Pickup" *ngIf="currentTab==='P'">
@@ -65,7 +65,7 @@
   
   
             <button type="submit" class="btn btn-light waves-effect waves-light">Submit</button>
-            <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger waves-effect waves-light" (click)="updateCurrentTab('C')" data-bs-dismiss="modal">Cancel</button>
     
           </div>
                </form>

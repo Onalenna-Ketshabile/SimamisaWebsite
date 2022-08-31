@@ -13,6 +13,8 @@ export class NeeditemComponent implements OnInit {
   need!: Need;
   @Output()
   elementDeleted: EventEmitter<any> = new EventEmitter();
+  @Output()
+  elementclicked: EventEmitter<any> = new EventEmitter();
   descriptionToShow: string = "";
   showReadMore: boolean = false;
   showShowLess:boolean= false;
@@ -65,10 +67,11 @@ export class NeeditemComponent implements OnInit {
   }
   openModal(){
     localStorage.setItem("needID",this.need.ID.toString());
-    localStorage.setItem("needAmount",this.need.AmountNeeded.toString());
-    this.formModal.show();
+    //this.formModal.show();
      console.log("Modal function is called...");
  }
+
+
  deleteNeed(){
   console.log("Trying")
 

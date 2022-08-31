@@ -1,3 +1,5 @@
+<app-modal-add-child-update (elementAdded)="onElementAdded($event)" ></app-modal-add-child-update>
+
 <div class="page-header" >
     <h1 class="title">Sponsorship</h1>
       <ol class="breadcrumb" style="padding-left: 0px;">
@@ -25,6 +27,8 @@
                                <div class="card">
                                 <div class="add-need-btn">
                                   <button type="submit" class="hbtn hbtn-primary" title="Add Update"   data-bs-toggle="modal" data-bs-target="#addChildUpdate" (click)="openModal">Add Update</button>
+                                  <button type="button" id="close-add-update" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal" [hidden]="true"></button>
+  
                                 </div>
                                    <div class="card-body">                  
                                         <div class="row align-items-center">
@@ -34,7 +38,7 @@
                                                     <div class= "child-profile-image">
                                                     <img src="./../../../../assets/images/sponsor/dynamite.jpg" alt="">
                                                    </div>
-                                                    <h5 class="big-title">{{child.Nickname}}'s Updates<span class="text-muted fw-normal ms-2"></span></h5>
+                                                    <h5 class="big-title">{{name }}'s Updates<span class="text-muted fw-normal ms-2"></span></h5>
                                                 </div>
                                             </div>      
                                         </div>

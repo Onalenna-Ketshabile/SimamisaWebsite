@@ -54,4 +54,10 @@ export class AllneedsComponent implements OnInit {
     console.log(element)
    this.getNeeds();
   }
+  onElementUpdated(element:any){
+  
+    this.getNeeds();
+    //document.getElementById("close-add-cneed")!.click();
+    
+  }
 }

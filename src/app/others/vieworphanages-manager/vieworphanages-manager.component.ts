@@ -17,7 +17,7 @@ export class VieworphanagesManagerComponent implements OnInit {
   constructor(private orphService:OrphanageService,private partneringService: PartneringService) { }
 
   ngOnInit(): void {
-   // this.orphService.init();
+  //// this.orphService.init();
     this.orphService.getOrphanages().subscribe(data=>{
       this.orphanages =data;
     });
