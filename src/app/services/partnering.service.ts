@@ -23,16 +23,17 @@ export class PartneringService {
     .set('content-type', 'application/json');
   this.headers.set('Accept', 'application/json')
   this.headers.set('Access-Control-Allow-Origin', '*');
+  this.MyPartners();
   }
   public init():void {
-    console.log("Loading requests");
+    console.log("Loading requests1");
     this.http.get<PartneringRequest[]>(this.apiURLGetRequest+localStorage.getItem("orphID"),{headers:this.headers}).subscribe(
       (partneringRequest)=>{
         this.partneringRequests.next(partneringRequest);
         console.log(this.partneringRequests);
       }
     );
-    
+   
   }
   sendRequest(fromID:string|null,toID: string):Observable<any>{
 
@@ -62,16 +63,20 @@ export class PartneringService {
     ));
       
   }
+  
   GetMyPartners():Observable<any>{
-    console.log("Loading partners");
+
+      return this.myOrphanagePartners;
+    }
+  MyPartners(): void{
+    console.log("Loading partners2");
     this.http.get<Orphanage[]>(this.apiURLGetRequest+localStorage.getItem("orphID"),{headers:this.headers}).subscribe(
       (myOrphanagePartner)=>{
         this.myOrphanagePartners.next(myOrphanagePartner);
         console.log(this.myOrphanagePartners);
       }
     );
-      return this.myOrphanagePartners;
-    }
+  }
       
 
 }

@@ -3,6 +3,7 @@ import { Orphanage } from 'src/app/models/orphanage';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 import { PartneringService } from 'src/app/services/partnering.service';
 
+
 @Component({
   selector: 'app-view-mypartners',
   templateUrl: './view-mypartners.component.html',
@@ -13,7 +14,8 @@ export class ViewMypartnersComponent implements OnInit {
   @Input() orphanage!:Orphanage;
   
   orphanages?: Orphanage[];
-  
+  formModal:any;
+  makeOfferModal: any;
   constructor(private partneringService: PartneringService) { }
 
   ngOnInit(): void {
@@ -21,5 +23,12 @@ export class ViewMypartnersComponent implements OnInit {
       this.orphanages =data;
     });
   }
+  openModal(){
+    this.formModal.show();
+     console.log("Modal function is called...");
+ }
+ openMakeOfferModal(){
+   this.makeOfferModal.show();
+ }
 
 }

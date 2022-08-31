@@ -19,6 +19,7 @@ UserName!: Observable<String>;
   myPluginJs: HTMLScriptElement;
 
   formModal:any;
+  makeOfferModal: any;
 
   constructor(private authService:AuthenticationService) {
     
@@ -46,6 +47,9 @@ UserName!: Observable<String>;
     this.formModal = new window.boostrap.Modal(
       document.getElementById("custom-modal")
     );
+    this.makeOfferModal = new window.boostrap.Modal(
+      document.getElementById("make-offer-modal")
+    );
   
   }
   openModal(){
@@ -56,5 +60,6 @@ UserName!: Observable<String>;
   doSomething(){
     this.formModal.hide();
   }
+
 
 }
