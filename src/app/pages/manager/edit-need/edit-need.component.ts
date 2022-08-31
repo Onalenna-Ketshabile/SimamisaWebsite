@@ -23,43 +23,32 @@ export class EditNeedComponent implements OnInit {
   ngOnInit(): void {
 
     this.id = this.route.snapshot.paramMap.get('id')!;
-    console.log(this.id);
-    // this.need = this.nService.getNeedByID(this.id);
-    this.need = {
-      ID: parseInt(this.id),
-      Title: "Tables",
-      DateEstablished: "Today",
-      DueDate: "Tomorrow",
-      AmountNeeded: 12,
-      AmountReceived: 0,
-      Description: "tEMPORATY NEED",
-      isFulfilled: 0,
-      ItemImage: "",
-      NumberNeeded: 12,
-      NumberReceived: 0,
-      orphanageID: 0,
-      PriorityRating: 3,
-      UnitCost: 12
+   
+    this.nService.getNeedByID(this.id).subscribe((data)=>{
+      this.need = data;
+      console.log(this.need);
+      setTimeout(()=>{
+        this.editNeedForm.controls["title"].setValue(this.need.Title);
+        this.editNeedForm.controls["duedate"].setValue(this.need.DueDate.slice(0,10));
+        this.editNeedForm.controls["numNeeded"].setValue(this.need.NumberNeeded);
+        this.editNeedForm.controls["unitCost"].setValue(this.need.UnitCost);
+        this.editNeedForm.controls["description"].setValue(this.need.Description);
+        this.editNeedForm.controls["priority"].setValue(this.need.PriorityRating);
+      })
+      
     }
-    setTimeout(() => {
-      this.editNeedForm.controls["title"].setValue(this.need.Title);
-      this.editNeedForm.controls["duedate"].setValue(this.need.DueDate);
-      this.editNeedForm.controls["numNeeded"].setValue(this.need.NumberNeeded);
-      this.editNeedForm.controls["unitCost"].setValue(this.need.UnitCost);
-      this.editNeedForm.controls["description"].setValue(this.need.Description);
-      this.editNeedForm.controls["priority"].setValue(this.need.PriorityRating);
+    
+    )
 
-    });
   }
   editNeed(details: { name: string; duedate: any; title: any; description: any; priority: any; numNeeded: any; unitCost: any; }) {
     console.log("Add: " + details.name);
     let needDetails = {
-      ID:this.id,
+      id:this.id,
       DueDate: details.duedate,
       Title: details.title,
       Description: details.description,
       PriorityRating: details.priority,
-      //ItemImage: this.cardImageBase64,
       NumberNeeded: details.numNeeded,
       UnitCost: details.unitCost,
     }

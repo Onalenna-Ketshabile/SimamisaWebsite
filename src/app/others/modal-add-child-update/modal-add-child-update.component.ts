@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { ChildrenService } from 'src/app/services/children.service';
 import { NeedsService } from 'src/app/services/needs.service';
 
@@ -9,16 +10,18 @@ import { NeedsService } from 'src/app/services/needs.service';
 })
 export class ModalAddChildUpdateComponent implements OnInit {
   spID: any;
-
-  constructor(private cService: ChildrenService) { }
+  @Output()
+  elementAdded: EventEmitter<any> = new EventEmitter();
+  constructor(private cService: ChildrenService,private router:Router) { }
 
   ngOnInit(): void {
+    this.cService.getSponsorShipID(localStorage.getItem("childID")!).subscribe(data => {
+      this.spID = data;
+       });
   }
   addPost(details: { name: string; duedate: any; description: any; priority: any; numNeeded: any; unitCost: any; }) {
     console.log("Add: " + details.name);
-    this.cService.getSponsorShipID(localStorage.getItem("childID")!).subscribe(data => {
-    this.spID = data;
-     });
+   
     let needDetails = {
       Title: details.name,
       Description: details.description,
@@ -26,13 +29,12 @@ export class ModalAddChildUpdateComponent implements OnInit {
       sponsorshipID :this.spID,
     }
     const body = JSON.stringify(needDetails);
-    console.log(body);
+    
   //Make Post(uPDATE)
     this.cService.createChildUpdate(body).subscribe(data => {
       console.log("Posted");
       console.log(data);
-      //Close modal and show the newsfeed
-      window.location.reload();
+      this.elementAdded.emit();//Notifies parent to reload
     });
   }
 

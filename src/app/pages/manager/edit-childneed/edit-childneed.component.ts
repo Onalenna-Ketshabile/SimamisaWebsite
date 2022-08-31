@@ -23,39 +23,30 @@ export class EditChildneedComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
-    console.log(this.id);
-    // this.childNeed = this.nService.getChildNeedByID(this.id);
-    this.childNeed = {
-      ID: parseInt(this.id),
-      Title: "Glasses",
-      DueDate: "Sunday",
-      AmountNeeded: 12,
-      AmountReceived: 0,
-      Description: "tEMPORATY childneed",
-      isFullfilled: 0,
-      sponsorshipID: 0
-    }
-    setTimeout(() => {
-      this.editChildNeedForm.controls["name"].setValue(this.childNeed.Title);
-      this.editChildNeedForm.controls["duedate"].setValue(this.childNeed.DueDate);
-      this.editChildNeedForm.controls["amount"].setValue(this.childNeed.AmountNeeded);
-      this.editChildNeedForm.controls["description"].setValue(this.childNeed.Description);
-    });
+  
+    this.nService.getChildNeedByID(this.id).subscribe((data)=>{
+      this.childNeed = data;
+      console.log(this.childNeed);
+      setTimeout(()=>{
+        this.editChildNeedForm.controls["name"].setValue(this.childNeed.Title);
+        this.editChildNeedForm.controls["duedate"].setValue(this.childNeed.DueDate.slice(0,10));
+        this.editChildNeedForm.controls["amount"].setValue(this.childNeed.AmountNeeded);
+        this.editChildNeedForm.controls["description"].setValue(this.childNeed.Description);
+      })
+      
+    })
+
   }
   editChildNeed(details: { name: string; description: any; amount: any; }) {
     //Check if I need the to send sponsor ID as well
     console.log("Add: " + details.name);
-    this.cService.getSponsorShipID(localStorage.getItem("childID")!).subscribe(data => {
-      this.spID = data;
-    });
+
     let needDetails = {
+      id: this.id,
       Title: details.name,
       Description: details.description,
-      isFullfilled: "false",//??
-      orphanageID: localStorage.getItem("orphID"),//??
-      sponsorshipID: this.spID,//???
-      AmountReceived: "0",
-      AmountNeeded: details.amount
+      AmountNeeded: details.amount,
+
     }
     const body = JSON.stringify(needDetails);
     console.log(body);
@@ -63,7 +54,7 @@ export class EditChildneedComponent implements OnInit {
     this.nService.editChildNeed(body).subscribe(data => {
       console.log("Edited");
       console.log(data);
-      this.router.navigate(['manager/child-needs']);
+      this.back();
     });
   }
   back() {

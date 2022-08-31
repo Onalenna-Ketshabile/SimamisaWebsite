@@ -24,7 +24,7 @@ export class OrphanageService {
     this.http.get<Orphanage[]>(this.apiURL,{headers:this.headers}).subscribe(
       (orphs)=>{
         this.orphanages.next(orphs);
-        console.log(this.orphanages);
+
       }
     )
   }

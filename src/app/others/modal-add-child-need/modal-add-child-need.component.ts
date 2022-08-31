@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { ChildrenService } from 'src/app/services/children.service';
 import { NeedsService } from 'src/app/services/needs.service';
 
@@ -9,16 +10,17 @@ import { NeedsService } from 'src/app/services/needs.service';
 })
 export class ModalAddChildNeedComponent implements OnInit {
   spID!: string;
-
-  constructor(private nService:NeedsService,private cService:ChildrenService) { }
+  @Output()
+  elementAdded: EventEmitter<any> = new EventEmitter();
+  constructor(private nService:NeedsService,private cService:ChildrenService,private router:Router) { }
 
   ngOnInit(): void {
+    this.cService.getSponsorShipID(localStorage.getItem("childID")!).subscribe(data => {
+      this.spID = data;
+    });
   }
   addChildNeed(details: { name: string; duedate: any; description: any; amount: any; }) {
-    console.log("Add: " + details.name);
-    this.cService.getSponsorShipID(localStorage.getItem("childID")!).subscribe(data => {
-    this.spID = data;
-     });
+  
     let needDetails = {
       DueDate : details.duedate,
       Title : details.name,
@@ -35,8 +37,7 @@ export class ModalAddChildNeedComponent implements OnInit {
     this.nService.createChildNeed(body).subscribe(data => {
       console.log("Posted");
       console.log(data);
-      alert("Need Created");
-      window.location.reload();
+      this.elementAdded.emit();//Notifies parent to reload
     });
   }
 

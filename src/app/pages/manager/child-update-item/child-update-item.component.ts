@@ -19,7 +19,7 @@ export class ChildUpdateItemComponent implements OnInit {
   deleteChildNeed(){
     console.log("Trying") 
     this.cService.deleteChildUpdate(this.childUpdate.ID).subscribe(data => {  
-      console.log("Posted");
+      console.log(this.childUpdate.ID);
       console.log(data);
       this.elementDeleted.emit();//Notifies parent to reload
      

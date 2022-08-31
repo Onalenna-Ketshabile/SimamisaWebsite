@@ -138,6 +138,11 @@ export class AuthenticationService extends ObservableStore<StoreState>{
   }
 
   logout(): Observable<any> {
+
+    if(localStorage.getItem("userRole")=='M'){
+      localStorage.removeItem("childID");
+    }
+
     this.setState({ loggedInStatus: false }, "LOGGED_IN_STATUS");
     this.setState({ userRole: "" }, "USER_ROLE");
 

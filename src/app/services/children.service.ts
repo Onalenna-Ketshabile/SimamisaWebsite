@@ -47,12 +47,19 @@ readonly getSpURL= `${BASEURL}/children/sponsorship/?childID=`
     return this.http.get<Child>(this.getChildURL+id,{headers:this.headers});
    }
    //Child's update posts  ********************************************
-    readonly childUpdatesUrl = `${BASEURL}/children/sponsorship/?childID=`//May be incorrect
+    readonly childUpdatesUrl = `${BASEURL}/children/posts/?id=`//May be incorrect
    getChildUpdatesByID(id:string):Observable<ChildUpdate[]>{
-    console.log("OrphID :" + localStorage.getItem("orphID"));
-    return this.http.get<ChildUpdate[]>(this.childUpdatesUrl + id, { headers: this.headers });
+  
+    return this.http.get<any>(this.childUpdatesUrl + id, { headers: this.headers }).pipe(
+      map((res) => {
+        if (res) {
+          return (res[0]);
+        }
+
+      },
+      ));;
    }
-   readonly createUpdateURL = `${BASEURL}/childneed/`;//Incorrect url
+   readonly createUpdateURL = `${BASEURL}/om/post`;
   createChildUpdate(body: string): Observable<any> {
     return this.http.post<any>(this.createUpdateURL, body, { headers: this.headers }).pipe(
       map((res) => {
@@ -64,8 +71,17 @@ readonly getSpURL= `${BASEURL}/children/sponsorship/?childID=`
       },
       ));
   }
+  readonly getUpdateIDurl = `${BASEURL}/children/post/?id=`;
+
+  getChildUpdateByID(id:string):Observable<any>{
+    return this.http.get<any>(this.getUpdateIDurl + id, { headers: this.headers }).pipe(
+      map((res) => {
+        return res;
+      },
+      ));
+  }
   //Edit child updte to be updated
-  readonly editCUurl = `${BASEURL}/childneed/` //This url is be incorrect
+  readonly editCUurl = `${BASEURL}/children/post/` //This url is be incorrect
   editChildUpdate(body: string) : Observable<any>{
     return this.http.put<any>(this.editCUurl, body, { headers: this.headers }).pipe(
       map((res) => {
@@ -78,16 +94,14 @@ readonly getSpURL= `${BASEURL}/children/sponsorship/?childID=`
       ));
   }
 //Delete child updaye to be updated
-  readonly deleteCUurl = `${BASEURL}/childneed/?id=`;//Note this url is incorrect
+  readonly deleteCUurl = `${BASEURL}/children/post/?id=`;
   deleteChildUpdate(ID: number): Observable<any> {
-    console.log(ID);
+  
     return this.http.delete<any>(this.deleteCUurl + ID, { headers: this.headers }).pipe(
       map((res) => {
 
-        console.log(res);
+
         return res;
-
-
       },
       ));
   }

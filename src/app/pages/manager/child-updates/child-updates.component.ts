@@ -13,31 +13,44 @@ export class ChildUpdatesComponent implements OnInit {
   formModal: any;
   id!: string | null;
   child!: Child;
-  childupdates!: ChildUpdate[]
+  childupdates!: ChildUpdate[];
+  name! :string ;
+  
   constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService) { }
 
   ngOnInit(): void {
-   // this.getChildUpdates(); need get updates method
+    this.getChildUpdates();
   }
 
   getChildUpdates() {
     this.id = this._Activatedroute.snapshot.paramMap.get("id");
-    console.log(this.id);
+   
     localStorage.setItem("childID", this.id!);
     this.cService.getChildByID(this.id!).subscribe(data => {
       this.child = data;
+      this.name = this.child.Nickname;
     });
     this.cService.getChildUpdatesByID(this.id!).subscribe(data => {
       this.childupdates = data;
+     
     });
 
   }
   openModal() {
-    this.formModal.show();
+    //this.formModal.show();
     console.log("Modal function is called...");
   }
   onElementDeleted(element: any) {
     console.log("Deleted child need" + element);
     this.getChildUpdates();
+    console.log(this.childupdates);
+  }
+
+  onElementAdded(element:any){
+    console.log("added child need" + element);
+  
+    this.getChildUpdates();
+    document.getElementById("close-add-update")!.click();
+    console.log(this.childupdates);
   }
 }
