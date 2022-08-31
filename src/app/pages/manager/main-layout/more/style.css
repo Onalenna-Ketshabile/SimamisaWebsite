@@ -1357,6 +1357,7 @@ Mailbox
   left: 0;
   top: 0;
   color: #76747A;
+  margin-bottom: 0px;
 }
 .mailbox-inbox li {
   display: block;

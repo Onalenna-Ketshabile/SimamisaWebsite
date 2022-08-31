@@ -55,6 +55,13 @@ import { EditNeedComponent } from './pages/manager/edit-need/edit-need.component
 import { EditChildneedComponent } from './pages/manager/edit-childneed/edit-childneed.component';
 import { ChildUpdateItemComponent } from './pages/manager/child-update-item/child-update-item.component';
 import { EditChildupdateComponent } from './pages/manager/edit-childupdate/edit-childupdate.component';
+import { ViewPartneringrequestsComponent } from './others/view-partneringrequests/view-partneringrequests.component';
+import { ViewMypartnersComponent } from './others/view-mypartners/view-mypartners.component';
+import { ViewMyoffersComponent } from './others/view-myoffers/view-myoffers.component';
+import { ChildProfileQueriersComponent } from './others/child-profile-queriers/child-profile-queriers.component';
+import { QueryChatComponent } from './others/query-chat/query-chat.component';
+import { QuerierItemComponent } from './others/querier-item/querier-item.component';
+import { ModalMakeOfferComponent } from './others/modal-make-offer/modal-make-offer.component';
 
 
 @NgModule({
@@ -107,6 +114,13 @@ import { EditChildupdateComponent } from './pages/manager/edit-childupdate/edit-
     EditChildneedComponent,
     ChildUpdateItemComponent,
     EditChildupdateComponent,
+    ViewPartneringrequestsComponent,
+    ViewMypartnersComponent,
+    ViewMyoffersComponent,
+    ChildProfileQueriersComponent,
+    QueryChatComponent,
+    QuerierItemComponent,
+    ModalMakeOfferComponent,
 
   ],
   imports: [

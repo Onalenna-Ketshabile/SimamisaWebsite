@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Orphanage } from 'src/app/models/orphanage';
+import { PartneringService } from 'src/app/services/partnering.service';
 
 @Component({
   selector: 'app-my-partners',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   '../../../../assets/css/font-awesome.min.css']
 })
 export class MyPartnersComponent implements OnInit {
-
-  constructor() { }
+  orphanages?: Orphanage[];
+  constructor(private partneringService: PartneringService) { }
 
   ngOnInit(): void {
+    this.partneringService.GetMyPartners().subscribe(data=>{
+      
+      this.orphanages =data;
+    });
+  
   }
+  
+  
 
 }
