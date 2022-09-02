@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./../../pages/manager/my-offers/my-offers.component.css','../../../assets/css/bootstrap.min.css','../../../assets/css/font-awesome.min.css']
 })
 export class ViewMyoffersComponent implements OnInit {
+   
+  acceptOfferModal: any;
 
   constructor() { }
 
@@ -18,5 +20,9 @@ export class ViewMyoffersComponent implements OnInit {
  }
  show():boolean{
   return localStorage.getItem('userRole')=="M";
+ }
+ showAcceptOfferModal():void{
+   console.log("About to show a modal form.");
+   this.acceptOfferModal.show();
  }
 }

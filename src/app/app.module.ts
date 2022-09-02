@@ -62,6 +62,7 @@ import { ChildProfileQueriersComponent } from './others/child-profile-queriers/c
 import { QueryChatComponent } from './others/query-chat/query-chat.component';
 import { QuerierItemComponent } from './others/querier-item/querier-item.component';
 import { ModalMakeOfferComponent } from './others/modal-make-offer/modal-make-offer.component';
+import { ModalAcceptOfferComponent } from './others/modal-accept-offer/modal-accept-offer.component';
 
 
 @NgModule({
@@ -121,6 +122,7 @@ import { ModalMakeOfferComponent } from './others/modal-make-offer/modal-make-of
     QueryChatComponent,
     QuerierItemComponent,
     ModalMakeOfferComponent,
+    ModalAcceptOfferComponent,
 
   ],
   imports: [

@@ -20,7 +20,8 @@ UserName!: Observable<String>;
 
   formModal:any;
   makeOfferModal: any;
-
+  acceptOffer: any;
+  
   constructor(private authService:AuthenticationService) {
     
     this.myMinJs = document.createElement("script");
@@ -49,6 +50,9 @@ UserName!: Observable<String>;
     );
     this.makeOfferModal = new window.boostrap.Modal(
       document.getElementById("make-offer-modal")
+    );
+    this.acceptOffer = new window.boostrap.Modal(
+      document.getElementById("acceptOffer-modal")
     );
   
   }

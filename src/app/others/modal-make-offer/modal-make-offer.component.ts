@@ -38,5 +38,6 @@ export class ModalMakeOfferComponent implements OnInit {
   });
 
  }
+ 
 
 }

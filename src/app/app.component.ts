@@ -12,7 +12,8 @@ export class AppComponent {
   title = 'SimamisaWebApplication';
   formModal:any;
   makeproposalModal:any;
-  payNeed:any
+  payNeed:any;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class AppComponent {
     this.payNeed = new window.boostrap.Modal(
       document.getElementById("payNeed-modal")
     );
+
   
   }
 

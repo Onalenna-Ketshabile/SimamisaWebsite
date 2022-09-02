@@ -782,7 +782,8 @@
     }
 }
 .modal.show .modal-dialog{
-    transform:none
+    transform:none;
+    height: 100%
 }
 .modal.modal-static .modal-dialog{
     transform:scale(1.02)
@@ -812,7 +813,12 @@
     background-clip:padding-box;
     border:1px solid transparent;
     border-radius:.2rem;
-    outline:0
+    outline:0;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .modal-backdrop{
     position:fixed;
