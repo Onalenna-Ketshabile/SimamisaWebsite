@@ -3,7 +3,7 @@ import { ChildUpdate } from 'src/app/models/childupdate';
 import { ChildrenService } from 'src/app/services/children.service';
 
 @Component({
-  selector: 'app-child-update-item',
+  selector: '[app-child-update-item]',
   templateUrl: './child-update-item.component.html',
   styleUrls: ['./child-update-item.component.css']
 })

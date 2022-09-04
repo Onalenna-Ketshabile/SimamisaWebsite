@@ -61,9 +61,9 @@
                                                 </thead>
                                                 <tbody>
 
-                                                    <tr>
+                                                    <tr app-child-need-item  *ngFor="let need of childneeds" [childneed]="need"  (elementDeleted)="onElementDeleted($event)" >
                                         
-                            <app-child-need-item  *ngFor="let need of childneeds" [childneed]="need"  (elementDeleted)="onElementDeleted($event)" ></app-child-need-item>
+                      
                                                     </tr>
 
 

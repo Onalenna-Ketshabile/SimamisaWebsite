@@ -3,7 +3,7 @@ import { Childneed } from 'src/app/models/childneed';
 import { NeedsService } from 'src/app/services/needs.service';
 
 @Component({
-  selector: 'app-child-need-item',
+  selector: '[app-child-need-item]',
   templateUrl: './child-need-item.component.html',
   styleUrls: ['../child-needs/child-needs.component.css']
 })

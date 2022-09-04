@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -63,6 +63,11 @@ import { QueryChatComponent } from './others/query-chat/query-chat.component';
 import { QuerierItemComponent } from './others/querier-item/querier-item.component';
 import { ModalMakeOfferComponent } from './others/modal-make-offer/modal-make-offer.component';
 import { ModalAcceptOfferComponent } from './others/modal-accept-offer/modal-accept-offer.component';
+import { LoadingIndicatorSpinnerComponent } from './others/loading-indicator-spinner/loading-indicator-spinner.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from "@angular/material/toolbar" ;
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { NetworkInterceptor } from './network.interceptor';
 
 
 @NgModule({
@@ -123,12 +128,19 @@ import { ModalAcceptOfferComponent } from './others/modal-accept-offer/modal-acc
     QuerierItemComponent,
     ModalMakeOfferComponent,
     ModalAcceptOfferComponent,
+    LoadingIndicatorSpinnerComponent,
+    
 
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule
   ],
-  providers: [],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: NetworkInterceptor,
+    multi: true
+  }],
   bootstrap: [
     AppComponent,
     AvatarComponent,
