@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Offer } from 'src/app/models/offer';
 
 @Component({
   selector: 'app-view-myoffers',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewMyoffersComponent implements OnInit {
    
+  @Input() offer!:Offer;
+  
+  offers?: Offer[];
   acceptOfferModal: any;
 
   constructor() { }

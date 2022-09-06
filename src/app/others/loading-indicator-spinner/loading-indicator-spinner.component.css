@@ -8,7 +8,6 @@ mat-progress-spinner {
 }
 #spinner-container {
 
- background-color: red;
  width: 100%;
 height: 700px;
  min-height: 700px;

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OrphanagesResolverService } from 'src/app/services/resolvers/orphanages-resolver.service';
 import { HomeComponent } from '../../home/home.component';
 import { LogoutComponent } from '../../logout/logout.component';
 import { NewsfeedComponent } from '../../newsfeed/newsfeed.component';
@@ -31,7 +32,7 @@ const routes: Routes = [
     {path: 'newsfeed', component: NewsfeedComponent},
     {path:'newsfeed/editneed/:id',component:EditNeedComponent},
     {path:'logout',component:LogoutComponent},
-    {path: 'orphanages', component: OrphanagesManagerComponent},
+    {path: 'orphanages', component: OrphanagesManagerComponent, resolve: { orphanages: OrphanagesResolverService}},
     {path: 'partners', component: MyPartnersComponent},
     {path: 'partnering-requests', component: PartneringRequestsComponent},
     {path: 'my-offers', component: MyOffersComponent},
@@ -51,6 +52,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [OrphanagesResolverService]
 })
 export class MainLayoutRoutingModule { }

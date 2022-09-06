@@ -1,10 +1,9 @@
 export interface Offer {
     ID: number,
-    OrphanageName: string,
-    OrphanageAddress:string,
-    OrphanageImage:string,
-    OrphanageDescription: string,
-    DateReg: string,
-    Children:number,
-    DefaultChildPassword: string,
+    Title: string,
+    Description:string,
+    DateMade:string,
+    isAvailable: string,
+    Quantity: number,
+    OrphanageID:number
 }

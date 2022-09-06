@@ -21,6 +21,7 @@ export class OrphanageService {
   readonly apiURL =`${BASEURL}/`;
   
   public init():void {
+    console.log("Inside the init.")
     this.http.get<Orphanage[]>(this.apiURL,{headers:this.headers}).subscribe(
       (orphs)=>{
         this.orphanages.next(orphs);
@@ -30,7 +31,7 @@ export class OrphanageService {
   }
 
   public getOrphanages():Observable<Orphanage[]>{
- 
+  console.log("Inside a method");
     return this.orphanages;
   }
 

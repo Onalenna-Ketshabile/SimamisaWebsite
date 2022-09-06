@@ -9,18 +9,22 @@ import { Offer } from '../models/offer';
 })
 export class OffersService {
   
-  private myOrphanagePartners = new BehaviorSubject<Offer[]>([]);
+  private myOffers = new BehaviorSubject<Offer[]>([]);
   headers: any;
-  readonly apiURLPost =`${BASEURL}/partnering/offers/`;
+  readonly apiURL =`${BASEURL}/partnering/offers/`;
   constructor(private http:HttpClient) {   
     this.headers = new HttpHeaders()
     .set('content-type', 'application/json');
   this.headers.set('Accept', 'application/json')
   this.headers.set('Access-Control-Allow-Origin', '*');
+  this.MyOffer();
   }
+
+
+  
   MakeOffer(body:string):Observable<any>{
 
-    return this.http.post<any>(this.apiURLPost,body,{headers:this.headers}).pipe(
+    return this.http.post<any>(this.apiURL,body,{headers:this.headers}).pipe(
       map((res)=>{
         if(res && res.ID){
          console.log(res); 
@@ -32,17 +36,16 @@ export class OffersService {
       }
 
        getMyOffer():Observable<any>{
-
-          return this.myOrphanagePartners;
+         
+          return this.myOffers;
         }
-      MyPartners(): void{
-        // console.log("Loading partners2");
-        // this.http.get<Offer[]>(this.apiURLGetRequest+localStorage.getItem("orphID"),{headers:this.headers}).subscribe(
-        //   (myOrphanagePartner)=>{
-        //     this.myOrphanagePartners.next(myOrphanagePartner);
-        //     console.log(this.myOrphanagePartners);
-        //   }
-        // );
+      MyOffer(): void{
+
+        this.http.get<Offer[]>(this.apiURL+"?id="+localStorage.getItem("orphID"),{headers:this.headers}).subscribe(
+          (myOffer)=>{
+            this.myOffers.next(myOffer);
+          }
+        );
       }
   
 }

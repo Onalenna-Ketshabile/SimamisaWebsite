@@ -18,7 +18,7 @@
 
   </div>
 
-<app-view-myoffers></app-view-myoffers>
+<app-view-myoffers *ngFor="let offer of offers" [offer]="offer"></app-view-myoffers>
 <div class="view-more-btn text-center mt-80">
     <a href="project-1.html" class="main-btn bordered-btn" hidden>View More Events <i class="far fa-arrow-right"></i></a>
 </div>

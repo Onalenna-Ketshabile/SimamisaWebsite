@@ -1,1 +1,34 @@
 
+
+        <div class="event-items">
+        
+            <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="event-thumb">
+                    <img src="../../../../assets/images/orphanages/KingdomLife.png" alt="Image">
+                </div>
+                <div class="event-content">
+                   
+                    <ul class="meta">
+       
+                        <li>
+                            <a href="#" class="date"><i class="fal fa-map-marker-alt"></i>25 Main Street ,New York</a>
+                        </li>
+                    </ul>
+                    <h4 class="event-title"><a href="#">{{orphanage.OrphanageName}}</a></h4>
+                    <p>
+                        {{orphanage.OrphanageDescription}}
+                    </p>
+                </div>
+
+                <div class="buttons-container">
+                <div class="event-button">
+                    <a href="project-details.html" class="main-btn bordered-btn">View Orphanage <i class="far fa-arrow-right"></i></a>
+                </div>
+                <div class="event-button">
+                    <a (click)="sendPartneringRequest()" class="main-btn bordered-btn">Send Partnering Request<i class="far fa-arrow-right"></i></a>
+                </div>
+                </div>
+            </div>
+
+        </div>
+
