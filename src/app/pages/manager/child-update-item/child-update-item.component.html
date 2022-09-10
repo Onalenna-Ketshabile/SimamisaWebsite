@@ -13,7 +13,7 @@
 <div class="d-flex gap-2">
   
     <div class=".hbtn .hbtn-primary">
-        <a   [routerLink]="['../editchildupdate', childUpdate.ID]" class="hbtn hbtn-primary">Edit</a>
+        <a class="hbtn hbtn-primary" (click)="editChildUpdate()" data-bs-toggle="modal" data-bs-target="#editChildUpdate-modal">Edit</a>
     </div>
     <div class=".hbtn .hbtn-primary">
         

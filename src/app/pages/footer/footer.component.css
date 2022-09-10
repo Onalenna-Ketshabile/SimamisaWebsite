@@ -1,0 +1,333 @@
+/*
+====================================
+[ CSS TABLE CONTENT ]
+------------------------------------
+    1.0 - General
+    2.0 - Typography
+    3.0 - Global Style
+    4.0 - Navigation
+    5.0 - Search Box
+    6.0 - Page Title Section
+    7.0 - Slider Section
+    8.0 - Creative Section
+    9.0 - Recent Project Section
+    9.1 - Overlay and hover effect
+    10.0 - Magnific Popup CSS
+    11.0 - Feature Section
+    12.0 - About Section
+    13.0 - Counter Section
+    14.0 - Team Section
+    15.0 - Video Section
+    16.0 - Service Section
+    17.0 - Process Section
+    18.0 - Portfolio Section
+    19.0 - Portfolio Single Page
+    20.0 - Partner Section
+    21.0 - Case study section
+    22.0 - Map Section
+    23.0 - Contact Section
+    24.0 - Footer Section
+    25.0 - Preloader
+    26.0 - Homepage Two
+    27.0 - Homepage Three
+    28.0 - About us Page
+    29.0 - About us page two
+    30.0 - Blog Page
+    31.0 - Blog Page Version Two
+    32.0 - Full Width Section
+    33.0 - Call to action section
+    34.0 - Client Testimonial Style
+    35.0 - Parallax Homepage
+    36.0 - Contact Page
+    37.0 - 404 page
+    38.0 - Slick slider customization
+-------------------------------------
+[ END CSS TABLE CONTENT ]
+=====================================
+*/
+
+/* =============================================
+            	Theme Reset Style
+============================================= */
+@import url("./../../../assets/css/bootstrap.min.css");
+@import url("./../../../assets/css/theme-icons.min.css");
+
+
+/*=============================================
+                        Footer
+=============================================*/
+
+
+.footer{
+  font-size:16px;
+}
+
+.footer-main{
+  padding:89px 0 0 0;
+  background-color: transparent;
+  position: relative;
+}
+
+
+.footer .widget-title {
+    position: relative;
+    margin-bottom: 25px;
+    color: #212121;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer .widget-text p {color:#9e9e9e;}
+
+.footer-about p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.footer .widget-links{
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  z-index: 99;
+}
+
+.footer-three {
+	background: #e0eafc;
+}
+
+.footer .widget-links li{
+  margin-bottom: 10px;
+  list-style:none;
+  color: #888;
+  font-size: 14px;
+}
+
+.footer .widget-links li i {
+	color:#888;
+	padding-right: 10px;
+}
+
+.footer .widget-links a{
+  color: #888;
+}
+
+.footer .widget-links a:hover{
+  color:#FF7B29;
+  text-decoration: none;
+}
+
+.footer-copyright{
+   padding: 0px 0 50px 0;
+   background-color: transparent;
+}
+
+.copy-right {
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer-main ul.social-media{
+	  float:left;
+	  display:block;
+	  margin-bottom:0;
+	  margin-top: 24px;
+}
+
+.footer-main ul.social-media li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.footer-main ul.social-media li:last-child {
+		margin-right:0;
+}
+
+.footer-main ul.social-media li a{
+		font-size: 16px;
+	  display: inline-block;
+	  color: #fff;
+	  background: #FF7B29;
+	  background: -moz-linear-gradient(47deg, rgba(255,123,41,1) 0%, rgba(204,142,104,0.39539565826330536) 100%);
+	  background: -webkit-linear-gradient(47deg, rgba(255,123,41,1) 0%, rgba(204,142,104,0.39539565826330536) 100%);
+	  background: linear-gradient(47deg, rgba(255,123,41,1) 0%, rgba(204,142,104,0.39539565826330536) 100%);
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endColorstr="#8d3fd0",GradientType=1);
+	  border-radius: 100%;
+	  padding: 7px 10px;
+	  opacity: 0.5;
+}
+
+.footer-main ul.social-media li a:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+.post-sm-content h6 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 5px;
+}
+
+.post-sm-content p {
+    font-size: 12px;
+}
+
+ul.footer-contact {
+    list-style: none;
+    float: left;
+}
+
+ul.footer-contact li {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 25px;
+    float: left;
+	width: 100%;
+}
+
+ul.footer-contact li i {
+    color: #FF7B29;
+    margin-right: 6px;
+    float: left;
+}
+
+ul.footer-contact li i.purple-color{
+	color:#6a82fb;
+}
+
+ul.footer-contact li i.yellow-color{
+	color:#f9a825;
+}
+
+ul.footer-contact li p {
+    float: left;
+    width: 90%;
+}
+
+ul.footer-contact li p a {
+    color: #9e9e9e;
+}
+
+
+.flat-footer ul.social-media{
+  float:none;
+  display:block;
+  margin-bottom:0;
+  margin-top: 5px;
+}
+
+.flat-footer ul.social-media li {
+	display:inline-block;
+	margin-right: 17px;
+}
+
+.flat-footer ul.social-media li:last-child {
+	margin-right:0;
+}
+
+.flat-footer ul.social-media li a{
+  font-size: 20px;
+  display: inline-block;
+  color: #fff;
+}
+
+.flat-footer ul.social-media li a:hover{
+  color: #1de9b6;
+}
+
+ul.footer-gallery {margin:0;}
+
+ul.footer-gallery li {
+    display: inline-block;
+    width: 24%;
+    padding: 0 2px 0px 0;
+    margin-bottom: 5px;
+}
+ul.footer-gallery li img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.footer-gallery-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-gallery-box .skin-overlay {
+    background-color: rgba(30, 192, 255, 0.9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+.footer-gallery-box:hover .skin-overlay{
+    opacity: 1;
+}
+.footer-gallery-box .zoom-wrap {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-gallery-zoom {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+}
+
+.footer-gallery-zoom li {
+    position: relative;
+    bottom: -40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateZ(0);
+}
+
+.footer-gallery-box:hover .footer-gallery-zoom li{
+	bottom: 0;
+    opacity: 1;
+    visibility: visible;
+	-webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.footer-gallery-zoom li a {
+	color:#fff;
+}
+
+.footer-gallery-zoom li a:hover, .footer-gallery-zoom li a:focus {
+	color:#212121;
+}
+
+.logo-footer {
+    height:auto;
+    margin-bottom: 19px;
+}
+.logo-footer img {
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.contact-widget.widget ul li {
+  padding-left: 25px;
+  position: relative;
+}
+.contact-widget.widget ul li i {
+  position: absolute;
+  left: 0;
+  top: 1px;
+}

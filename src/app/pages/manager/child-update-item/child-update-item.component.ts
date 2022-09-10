@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ChildUpdate } from 'src/app/models/childupdate';
 import { ChildrenService } from 'src/app/services/children.service';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 
 @Component({
   selector: '[app-child-update-item]',
@@ -12,7 +13,7 @@ export class ChildUpdateItemComponent implements OnInit {
   childUpdate!:ChildUpdate 
   @Output()
   elementDeleted: EventEmitter<any> = new EventEmitter();
-  constructor(private cService:ChildrenService) { }
+  constructor(private cService:ChildrenService, private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +25,8 @@ export class ChildUpdateItemComponent implements OnInit {
       this.elementDeleted.emit();//Notifies parent to reload
      
     });
+   }
+   editChildUpdate(){
+      this.dataToModals.setChildUpdateDetails(this.childUpdate);
    }
 }

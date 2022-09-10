@@ -11,9 +11,14 @@ export class OrphanagesResolverService implements Resolve<Orphanage[]> {
 
   constructor(private orphanageService: OrphanageService) { }
   
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Orphanage[] | Observable<Orphanage[]> | Promise<Orphanage[]> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):  Observable<Orphanage[]>  {
     console.log("Resolver called.");
-    this.orphanageService.init();
+   // this.orphanageService.init();
+
+    
     return this.orphanageService.getOrphanages();
   }
+  
+  
+
 }

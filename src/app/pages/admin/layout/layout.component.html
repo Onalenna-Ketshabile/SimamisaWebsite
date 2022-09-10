@@ -1,0 +1,122 @@
+<!-- START TOP -->
+<div id="topcontainer">
+    <div id="top" class="clearfix">
+    
+        <!-- Start App Logo -->
+        <div class="applogo">
+          <a href="index.html" class="logo"><img src="../../../../assets/images/SimamisaLogo1.svg" alt="Simamisa"></a>
+          
+        </div>
+        <!-- End App Logo -->
+    
+        <!-- Start Sidebar Show Hide Button -->
+        <a  class="sidebar-open-button"><i class="fa fa-bars"></i></a>
+        <a  class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
+        <!-- End Sidebar Show Hide Button -->
+    
+    
+        <!-- Start Top Right -->
+        <div class="avatar-container">
+        <!--   <app-avatar [name]="(UserName|async)"></app-avatar> -->
+        <li hidden ><a href="home" routerLink="logout" class="hbtn hbtn-primary hbtn-lg">Logout</a></li>
+        </div>
+      
+      
+        <ul class="top-right" hidden>
+    
+        <li class="dropdown link">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle hdbutton">Create New <span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-list">
+              <li><a href="#"><i class="fa falist fa-paper-plane-o"></i>Product or Item</a></li>
+              <li><a href="#"><i class="fa falist fa-font"></i>Blog Post</a></li>
+              <li><a href="#"><i class="fa falist fa-file-image-o"></i>Image Gallery</a></li>
+              <li><a href="#"><i class="fa falist fa-file-video-o"></i>Video Gallery</a></li>
+            </ul>
+          </li>
+    
+        <li class="dropdown link">
+          <a href="#" data-toggle="dropdown" class="dropdown-toggle profilebox"><img src="img/profileimg.png" alt="img"><b>Jonathan Doe</b><span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-list dropdown-menu-right">
+              <li role="presentation" class="dropdown-header">Profile</li>
+              <li><a href="#"><i class="fa falist fa-inbox"></i>Inbox<span class="badge label-danger">4</span></a></li>
+              <li><a href="#"><i class="fa falist fa-file-o"></i>Files</a></li>
+              <li><a href="#"><i class="fa falist fa-wrench"></i>Settings</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="fa falist fa-lock"></i> Lockscreen</a></li>
+              <li><a href="#"><i class="fa falist fa-power-off"></i> Logout</a></li>
+            </ul>
+        </li>
+    
+        </ul>
+        <!-- End Top Right -->
+    
+      </div>
+      <div>
+      <!-- END TOP -->
+     <!-- //////////////////////////////////////////////////////////////////////////// --> 
+    
+    
+    <!-- //////////////////////////////////////////////////////////////////////////// --> 
+    <!-- START SIDEBAR -->
+    <div class="sidebar clearfix">
+    
+    <ul class="sidebar-panel nav">
+      <li class="sidetitle"></li>
+
+      <li><a href="home" routerLink="dashboard-admin"><span class="icon color5"><i class="fa fa-home"></i></span>Dashboard<span class="label label-default"> </span></a></li>
+    
+
+      <li><a href="newsfeed" routerLink="newsfeed"><span class="icon color8"><i class="fa fa-bar-chart"></i></span>Manage Orphanages</a></li>
+      
+      <li><a href="newsfeed" routerLink="newsfeed"><span class="icon color8"><i class="fa fa-bar-chart"></i></span>Manage Funds</a></li>
+    
+     
+    </ul>
+    
+    
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- //////////////////////////////////////////////////////////////////////////// --> 
+    
+     <!-- //////////////////////////////////////////////////////////////////////////// --> 
+    <!-- START CONTENT -->
+    <div class="content">
+    
+    
+     <!-- //////////////////////////////////////////////////////////////////////////// --> 
+    <!-- START CONTAINER -->
+    <div class="container-widget">
+      <router-outlet></router-outlet>
+      <app-modal-add-need></app-modal-add-need>
+      <app-modal-make-offer></app-modal-make-offer>
+      <app-modal-accept-offer></app-modal-accept-offer>
+      <app-edit-need></app-edit-need>
+      <app-edit-childneed></app-edit-childneed>
+      <app-edit-childupdate></app-edit-childupdate>
+      <app-loading-indicator-spinner></app-loading-indicator-spinner>
+    </div>
+    <!-- END CONTAINER -->
+     <!-- //////////////////////////////////////////////////////////////////////////// --> 
+    
+    <!-- Start Footer -->
+    <div class="row footer">
+      <div class="col-md-3 text-left">
+        <i class="mdi mdi-phone" style="font-size: 20px;"></i> <p>+27 34 384 249 </p>
+      </div>
+      <div class="col-md-3">
+        <i class="mdi mdi-map-marker"  style="font-size: 20px;"></i> <p>Kingway Road, 2092 Johannesburg, APK Campus</p>
+     </div>
+    
+     <div class="col-md-3">
+      <i class="mdi mdi-email" style="font-size: 20px;"></i> <p><a href="#">bitreapers01@gmail.com</a></p>
+    </div>
+     
+      <div class="col-md-3 text-right">
+      
+        ©  2022 Simamisa by <a href="" target="_blank">BitReapers</a> All rights reserved.
+      </div> 
+    </div>
+    <!-- End Footer -->
+    
+    </div>
+    

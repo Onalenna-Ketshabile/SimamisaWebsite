@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Childneed } from 'src/app/models/childneed';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { NeedsService } from 'src/app/services/needs.service';
 
 @Component({
@@ -13,7 +14,7 @@ childneed!:Childneed
 
 @Output()
 elementDeleted: EventEmitter<any> = new EventEmitter();
-  constructor(private needService:NeedsService) { }
+  constructor(private needService:NeedsService,private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,9 @@ elementDeleted: EventEmitter<any> = new EventEmitter();
       this.elementDeleted.emit();//Notifies parent to reload
      
     });
+   }
+   editChildNeed(){
+     this.dataToModals.setChildNeedDetails(this.childneed);
    }
   
 }

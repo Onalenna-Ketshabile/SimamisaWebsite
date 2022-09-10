@@ -1,4 +1,4 @@
-<div>
+<div class="modal" tabindex="-1" id="editNeed-modal" data-backdrop="false" role="dialog" aria-hidden="true">
     <div class="modal-dialog" >
       <div class="modal-content">
         <div class="modal-header bg-light">
@@ -20,7 +20,7 @@
             </div>
             <div class="mb-3 form-group">
               <label for="" class="form-label">Need's Due Date</label>
-              <input type="text" id="duedate" runat="server" name="duedate" value={{need.DueDate}} class="form-control" placeholder="Due Date"
+              <input type="text" id="duedate" runat="server" name="duedate"  class="form-control" placeholder="Due Date"
                 onfocus="(this.type='date')" required ngModel>
               <i class="uil uil-calendar-alt"></i>
             </div>
@@ -44,7 +44,7 @@
   
   
             <button type="submit" class="btn btn-light waves-effect waves-light">   Save   </button>
-            <button type="button" class="btn btn-danger waves-effect waves-light" (click)="back()">Cancel</button>
+            <button type="button" class="btn btn-danger waves-effect waves-light" >Cancel</button>
      
           </form>
         </div>

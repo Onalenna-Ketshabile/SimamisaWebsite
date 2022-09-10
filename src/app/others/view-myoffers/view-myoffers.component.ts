@@ -1,5 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { Offer } from 'src/app/models/offer';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
+
+
+declare var window: any;
+
 
 @Component({
   selector: 'app-view-myoffers',
@@ -13,7 +18,8 @@ export class ViewMyoffersComponent implements OnInit {
   offers?: Offer[];
   acceptOfferModal: any;
 
-  constructor() { }
+
+  constructor(private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +33,13 @@ export class ViewMyoffersComponent implements OnInit {
  }
  showAcceptOfferModal():void{
    console.log("About to show a modal form.");
-   this.acceptOfferModal.show();
+  // this.acceptOfferModal.show();
+  console.log("This could work");
+  console.log(this.offer.ID);
+
+  this.dataToModals.setOfferDetails(this.offer);
+  console.log("offere details were set.");
+ 
+     
  }
 }

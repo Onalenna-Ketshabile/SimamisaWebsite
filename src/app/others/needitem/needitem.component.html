@@ -42,7 +42,7 @@
                
             </div>
             <div *ngIf="isSponsor()">
-                <button  class="main-btn"  [routerLink]="['../newsfeed/editneed', need.ID]"    (click)="openModal">Edit Need <i class="far fa-arrow-right"></i></button>
+                <button  class="main-btn"   data-bs-toggle="modal" data-bs-target="#editNeed-modal"  (click)="editNeed()">Edit Need <i class="far fa-arrow-right"></i></button>
                 <button  class="main-btn" (click)="deleteNeed()">Delete Need <i class="far fa-arrow-right"></i></button>
                
             </div>

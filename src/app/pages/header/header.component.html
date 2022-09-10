@@ -29,7 +29,7 @@
                                 <li *ngIf="(LoginStatus | async ) as LoginStatus"> <app-avatar [name]="(UserName|async)"></app-avatar> </li>
                                 <li *ngIf="!(LoginStatus | async ) as LoginStatus"><a href="login" routerLink="login" class="hbtn hbtn-tertiary hbtn-lg">Log In</a></li>
                                 <li *ngIf="!(LoginStatus | async ) as LoginStatus"><a href="register" routerLink="register" class="hbtn hbtn-primary hbtn-lg">Register</a></li>
-                                <li *ngIf="(LoginStatus | async ) as LoginStatus" ><a href="home" routerLink="logout" class="hbtn hbtn-primary hbtn-lg">Logout</a></li>
+                                <li  hidden *ngIf="(LoginStatus | async ) as LoginStatus" ><a href="home" routerLink="logout" class="hbtn hbtn-primary hbtn-lg">Logout</a></li>
                                 
                                   </ul>
                             </div>

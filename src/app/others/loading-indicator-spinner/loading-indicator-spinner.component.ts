@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { SpinnerIndicatorService } from 'src/app/services/spinner-indicator.service';
 
 @Component({
@@ -7,9 +8,19 @@ import { SpinnerIndicatorService } from 'src/app/services/spinner-indicator.serv
   styleUrls: ['./loading-indicator-spinner.component.css']
 })
 export class LoadingIndicatorSpinnerComponent implements OnInit {
-  loading$ = this.loader.loading$;
-  constructor(private loader :SpinnerIndicatorService) { }
+  loading = false;
+  //constructor(private loader :SpinnerIndicatorService) { }
+  constructor(public router: Router) {
+    this.router.events.subscribe(ev => {
+      if (ev instanceof NavigationStart) {
+        this.loading = true;
+      }
+      if (ev instanceof NavigationEnd || ev instanceof NavigationCancel || ev instanceof NavigationError) {
+        this.loading = false;
+      }
+    });
 
+  }
   ngOnInit(): void {
   }
    

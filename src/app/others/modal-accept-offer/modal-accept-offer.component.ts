@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Offer } from 'src/app/models/offer';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
+import { OffersService } from 'src/app/services/offers.service';
 
 @Component({
   selector: 'app-modal-accept-offer',
@@ -7,34 +10,54 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalAcceptOfferComponent implements OnInit {
 
-  constructor() { }
+  offerID = 0;
+  offer! : Offer;
+
+  Amount = 0;
+  Title = "";
+  IDstr: any;
+
+  constructor(private dataToModals: DataToModalsService, private offersService: OffersService) {    
+    
+
+ }
 
   ngOnInit(): void {
+
+    console.log("Modal successfully open!");
+    console.log(this.offer);
+    this.dataToModals.offerDatasent$.subscribe(
+      data => {
+        this.offer = data;
+        this.Title = this.offer.Title;
+        this.Amount= this.offer.Quantity;
+        console.log(this.offer);
+      }
+    )
+
   }
 
-  acceptOffer( offerDetails: { title: String;  quantity: number; description: string}) {
-
-
-
-    let Offer = {
-      from:  1,
-      to: 5,
-      Title: offerDetails.title,
-      Description: offerDetails.description ,
-      Quantity: offerDetails.quantity,
+  acceptOffer( offerDetails: {quantity: number}) {
+   
+    var strID  = "";
+    strID = String(localStorage.getItem("orphID"));
+    let OfferAccept = {
+      offerItemID:  this.offer.ID,
+      id: parseInt(strID),
+      amount: offerDetails.quantity,
 
     };
 
-    console.log(Offer);
-    const body = JSON.stringify(Offer);
+    console.log(OfferAccept);
+    const body = JSON.stringify(OfferAccept);
 
-    // this.offersService.MakeOffer(body).subscribe(data => {
-    //   console.log(data);
+    this.offersService.AcceptOffer(body).subscribe(data => {
+      console.log(data);
         
-    //   this.router.navigate(['./home']);
+    console.log("accepted?");
 
 
- //});
+ });
 
  }
  

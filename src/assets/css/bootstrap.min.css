@@ -1394,7 +1394,6 @@ body {
     line-height: 1.42857143;
     color: #333;
     background-color: #fce9dd;
-    background-image: url(../images/pattern.svg);
     background-repeat: repeat;
     background-size: 778px 481px;
     -webkit-animation: movebg 30s linear both infinite;
@@ -3914,29 +3913,31 @@ fieldset[disabled] .btn-primary:hover {
 
 .btn-success {
     color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c
+    background-color: #FF7B29;
+    border-color: #FF7B29;
+    padding: 5px;
+    margin: 10px 0px;
 }
 
 .btn-success.focus,
 .btn-success:focus {
     color: #fff;
-    background-color: #449d44;
-    border-color: #255625
+    background-color: #FFB282;
+    border-color: #FFB282
 }
 
 .btn-success:hover {
     color: #fff;
-    background-color: #449d44;
-    border-color: #398439
+    background-color: #FFB282;
+    border-color: #FFB282;
 }
 
 .btn-success.active,
 .btn-success:active,
 .open>.dropdown-toggle.btn-success {
     color: #fff;
-    background-color: #449d44;
-    border-color: #398439
+    background-color: #FF7B29;
+    border-color: #FF7B29
 }
 
 .btn-success.active.focus,

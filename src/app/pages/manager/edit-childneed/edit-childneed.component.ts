@@ -5,6 +5,7 @@ import { Childneed } from 'src/app/models/childneed';
 import { ChildrenService } from 'src/app/services/children.service';
 import { NeedsService } from 'src/app/services/needs.service';
 import { Location } from '@angular/common';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 @Component({
   selector: 'app-edit-childneed',
   templateUrl: './edit-childneed.component.html',
@@ -19,15 +20,20 @@ export class EditChildneedComponent implements OnInit {
     private cService: ChildrenService,
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location) { }
+    private location: Location,
+    private dataToModals: DataToModalsService) { }
+
+
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id')!;
   
-    this.nService.getChildNeedByID(this.id).subscribe((data)=>{
+
+    this.dataToModals.childNeedDatasent$.subscribe(data=>{
       this.childNeed = data;
+      console.log("Data has arrived.");
       console.log(this.childNeed);
       setTimeout(()=>{
+        console.log("BreakPoint");
         this.editChildNeedForm.controls["name"].setValue(this.childNeed.Title);
         this.editChildNeedForm.controls["duedate"].setValue(this.childNeed.DueDate.slice(0,10));
         this.editChildNeedForm.controls["amount"].setValue(this.childNeed.AmountNeeded);
@@ -35,12 +41,15 @@ export class EditChildneedComponent implements OnInit {
       })
       
     })
+    this.nService.getChildNeedByID(this.id).subscribe((data)=>{
+
+    })
 
   }
   editChildNeed(details: { name: string; description: any; amount: any; }) {
     //Check if I need the to send sponsor ID as well
     console.log("Add: " + details.name);
-
+    this.id = this.childNeed.ID;
     let needDetails = {
       id: this.id,
       Title: details.name,
@@ -54,7 +63,7 @@ export class EditChildneedComponent implements OnInit {
     this.nService.editChildNeed(body).subscribe(data => {
       console.log("Edited");
       console.log(data);
-      this.back();
+       window.location.reload();
     });
   }
   back() {

@@ -17,15 +17,15 @@ export class AppComponent {
   constructor() { }
 
   ngOnInit(): void {
-    this.formModal = new window.boostrap.Modal(
-      document.getElementById("custom-modal")
-    );
-    this.makeproposalModal = new window.boostrap.Modal(
-      document.getElementById("makeproposal-modal")
-    );
-    this.payNeed = new window.boostrap.Modal(
-      document.getElementById("payNeed-modal")
-    );
+    // this.formModal = new window.boostrap.Modal(
+    //   document.getElementById("custom-modal")
+    // );
+    // this.makeproposalModal = new window.boostrap.Modal(
+    //   document.getElementById("makeproposal-modal")
+    // );
+    // this.payNeed = new window.boostrap.Modal(
+    //   document.getElementById("payNeed-modal")
+    // );
 
   
   }

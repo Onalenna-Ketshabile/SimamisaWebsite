@@ -913,13 +913,13 @@ FOOTER
 ================================================================================= */
 .footer {
   border-top: 1px solid #e2e2e2;
-  margin-left: -30px;
-  margin-right: -30px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-bottom: 0;
   padding: 10px;
-  font-size: 11px;
+  font-size: 14px;
   color: #666;
-  background: rgba(0, 0, 0, 0.02);
+  background: #FFE1CF;
 }
 .footer .col-md-6 {
   margin-bottom: 0;

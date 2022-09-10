@@ -68,6 +68,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar" ;
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { NetworkInterceptor } from './network.interceptor';
+import { DonateComponent } from './pages/donate/donate.component';
+import { DashboardAdminComponent } from './pages/admin/dashboard-admin/dashboard-admin.component';
+import { BarchartComponent } from './pages/admin/barchart/barchart.component';
+import { LineChartComponent } from './pages/admin/line-chart/line-chart.component';
+import { OrphanagesResolverService } from './services/resolvers/orphanages-resolver.service';
+import { LayoutComponent } from './pages/admin/layout/layout.component';
 
 
 @NgModule({
@@ -129,7 +135,11 @@ import { NetworkInterceptor } from './network.interceptor';
     ModalMakeOfferComponent,
     ModalAcceptOfferComponent,
     LoadingIndicatorSpinnerComponent,
-    
+    DonateComponent,
+    DashboardAdminComponent,
+    BarchartComponent,
+    LineChartComponent,
+    LayoutComponent
 
   ],
   imports: [
@@ -140,7 +150,9 @@ import { NetworkInterceptor } from './network.interceptor';
     provide: HTTP_INTERCEPTORS,
     useClass: NetworkInterceptor,
     multi: true
-  }],
+  }, 
+  OrphanagesResolverService
+],
   bootstrap: [
     AppComponent,
     AvatarComponent,

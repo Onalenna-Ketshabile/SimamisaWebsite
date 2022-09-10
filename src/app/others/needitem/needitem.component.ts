@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Need } from 'src/app/models/need';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { NeedsService } from 'src/app/services/needs.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 @Component({
@@ -22,7 +23,7 @@ export class NeeditemComponent implements OnInit {
   orphName?:string="";
   date!: string;
   formModal: any;
-  constructor(private orphService:OrphanageService,private needService:NeedsService) {
+  constructor(private orphService:OrphanageService,private needService:NeedsService,private dataToModals: DataToModalsService) {
 
   }
 
@@ -81,6 +82,9 @@ export class NeeditemComponent implements OnInit {
     this.elementDeleted.emit();//Notifies parent to reload
    
   });
+ }
+ editNeed(){
+  this.dataToModals.setNeedDetails(this.need);
  }
 
 }

@@ -47,5 +47,18 @@ export class OffersService {
           }
         );
       }
+      AcceptOffer(body:any):Observable<any>{
+        console.log("Accept Offer: Service");
+        return this.http.put<any>(this.apiURL,body,{headers:this.headers}).pipe(
+          map((res)=>{
+            if(res && res.ID){
+             console.log(res); 
+             return res;
+            }
+           
+           },
+        ));
+          
+      }
   
 }

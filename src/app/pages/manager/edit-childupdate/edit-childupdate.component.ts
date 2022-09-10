@@ -5,6 +5,7 @@ import { ChildUpdate } from 'src/app/models/childupdate';
 import { ChildrenService } from 'src/app/services/children.service';
 import { NeedsService } from 'src/app/services/needs.service';
 import { Location } from '@angular/common';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 @Component({
   selector: 'app-edit-childupdate',
   templateUrl: './edit-childupdate.component.html',
@@ -19,18 +20,23 @@ export class EditChildupdateComponent implements OnInit {
     private cService: ChildrenService,
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location) { }
+    private location: Location,
+    private dataToModals: DataToModalsService) { }
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id')!;
-   this.cService.getChildUpdateByID(this.id).subscribe((data)=>{
+    //this.id = this.route.snapshot.paramMap.get('id')!;
+    this.dataToModals.childUpdateDatasent$.subscribe(data=>{
       this.childUpdate = data;
       this.editChildUpdateForm.controls["name"].setValue(this.childUpdate.Title);
       this.editChildUpdateForm.controls["description"].setValue(this.childUpdate.Description);
       console.log(this.childUpdate);
+    });
+   this.cService.getChildUpdateByID(this.id).subscribe((data)=>{
+ 
     })
    
   }
   editChildUpdate(details: { name: string; description: any; }) {
+    this.id = this.childUpdate.ID;
     let needDetails = {
       Title: details.name,
       Description: details.description,
@@ -43,7 +49,7 @@ export class EditChildupdateComponent implements OnInit {
     this.cService.editChildUpdate(body).subscribe(data => {
       console.log("Edited");
       console.log(data);
-      this.router.navigate(['manager/child-updates/'+localStorage.getItem("childID")]);
+      window.location.reload();
     });
   }
   back() {

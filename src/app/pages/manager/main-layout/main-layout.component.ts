@@ -51,9 +51,16 @@ UserName!: Observable<String>;
     this.makeOfferModal = new window.boostrap.Modal(
       document.getElementById("make-offer-modal")
     );
-    this.acceptOffer = new window.boostrap.Modal(
-      document.getElementById("acceptOffer-modal")
-    );
+    // console.log("This could work");
+    // this.acceptOffer = new window.boostrap.Modal(
+    //   document.getElementById("acceptOffer-modal")
+      
+    // );
+
+    console.log(document.getElementById("acceptOffer-modal")?.getAttribute("data-id"));
+
+    console.log("Getting information to modal.")
+    console.log(document.getElementById("acceptOffer-modal")?.id);
   
   }
   openModal(){

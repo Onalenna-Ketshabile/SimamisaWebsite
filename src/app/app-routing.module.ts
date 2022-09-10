@@ -14,6 +14,7 @@ import { SponsorChildComponent } from './pages/sponsor-child/sponsor-child.compo
 import { ChildPageComponent } from './pages/child-page/child-page.component';
 import { ItemProposalsComponent } from './pages/item-proposals/item-proposals.component';
 import { LoadingIndicatorSpinnerComponent } from './others/loading-indicator-spinner/loading-indicator-spinner.component';
+import { DonateComponent } from './pages/donate/donate.component';
 
 const routes: Routes = [
  
@@ -35,7 +36,14 @@ const routes: Routes = [
   { path: 'sponsor-child', component: SponsorChildComponent},
   { path: 'orphanage/:o_d/child/:c_id', component: ChildPageComponent},
   { path: 'item-proposals' , component: ItemProposalsComponent},
-  { path: 'spinner', component: LoadingIndicatorSpinnerComponent}
+  { path: 'spinner', component: LoadingIndicatorSpinnerComponent},
+  { path: 'donate' , component: DonateComponent},
+
+  {
+    path: 'admin',
+  // canActivate:[AuthGuard],
+    loadChildren: () => import('./pages/admin/layout/layout.module').then(m => m.LayoutModule)
+  },
 ];
 
 @NgModule({
