@@ -4,7 +4,7 @@ import { Child } from 'src/app/models/child';
 @Component({
   selector: 'app-child-item-manager',
   templateUrl: './child-item-manager.component.html',
-  styleUrls: ['../children-manager/children-manager.component.css']
+  styleUrls: ['../children-manager/children-manager.component.css','../../../../assets/css/font-awesome.min.css']
 })
 export class ChildItemManagerComponent implements OnInit {
 @Input()

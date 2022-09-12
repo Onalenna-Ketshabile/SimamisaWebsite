@@ -29,43 +29,6 @@
 <script src="assets/js/slick.min.js"></script>
 <script src="assets/js/main.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function () {
-  var url = window.location;
-  $('#menu').find('.active').removeClass('active');
-  $('#menu li a').each(function () {
-
-    if (this.href == url.href) {
-      console.log("Routing...");
-      $(this).parent().addClass('active');
-      console.log((this).parent());
-    }  console.log("Breakpoint");
-            if(url.href.includes("index3.html") || url.href.includes("index4.html") ){
-                //Account for dropdown item
-                console.log("dropdown item clicked");
-                $('#fundraising').parent().addClass('active');
-            }
-  });
- 
-  if(url.href.includes("login") || url.href.includes("register") ||  url.href.includes("m/") || url.href.endsWith('m')){
-
-    document.getElementById('nav').style.display = "none";
-    document.getElementById('footer').style.display = "none";
-    console.log(url.href);
-    
-  }
-  else{
-    document.getElementById('nav').style.display = "revert";
-    document.getElementById('footer').style.display = "revert";
-    console.log("Footer should be showing.");
-  }
-  reload= ()=>{
-   
-   window.location.reload();
- }
-});
-
-</script>
 <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
 </body>

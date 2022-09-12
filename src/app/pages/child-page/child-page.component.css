@@ -38,7 +38,8 @@ img {
 }
 .img-child{
     width: 100%;
-    padding: 70px;
+    padding: 30px 30px ;
+	padding-right: 45px;
 }
 
 a:focus,
@@ -1974,11 +1975,11 @@ a:hover {
 	width: 35px;
 	height: 35px;
 	border-radius: 50%;
-	margin-right: 15px;
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 35px;
 	flex: 0 0 35px;
     box-shadow: 0px 3px 5px rgb(0 0 0 / 30%);
+	margin-left: 10px;
 }
 
 
@@ -2359,7 +2360,7 @@ a:hover {
 
 /*======= Project Details =======*/
 .project-summery {
-	padding: 10 30px 10 40px;
+	padding-right: 40px;
 }
 
 .project-summery .category {
@@ -2382,21 +2383,25 @@ a:hover {
 	font-size: 30px;
 	margin-bottom: 2px;
 	line-height: 1.4;
+	margin-top: 20px;
 }
 
 .project-summery .meta {
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: inline-block;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
 }
 
 .project-summery .meta .author a {
-	color: #001d23;
+	color: #807066;
 	font-weight: 700;
-	margin-left: 10px;
+	margin: 10px 0px 25px 5px;
+}
+.project-summery .meta .author a:hover {
+	color: #33241A;
+
 }
 
 .project-summery .meta .date {
@@ -5180,4 +5185,13 @@ a:hover {
 .contact-form input:not(:focus),
 .contact-form textarea:not(:focus) {
 	border-color: transparent;
+}
+.top-heading{
+	font-size: 30px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    justify-content: center;
+    background: #FFB282;
+    padding: 15px;
 }

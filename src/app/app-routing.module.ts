@@ -15,6 +15,7 @@ import { ChildPageComponent } from './pages/child-page/child-page.component';
 import { ItemProposalsComponent } from './pages/item-proposals/item-proposals.component';
 import { LoadingIndicatorSpinnerComponent } from './others/loading-indicator-spinner/loading-indicator-spinner.component';
 import { DonateComponent } from './pages/donate/donate.component';
+import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-single.component';
 
 const routes: Routes = [
  
@@ -36,9 +37,9 @@ const routes: Routes = [
   { path: 'sponsor-child', component: SponsorChildComponent},
   { path: 'orphanage/:o_d/child/:c_id', component: ChildPageComponent},
   { path: 'item-proposals' , component: ItemProposalsComponent},
-  { path: 'spinner', component: LoadingIndicatorSpinnerComponent},
+  { path: 'spinner', component: LoadingIndicatorSpinnerComponent}, //TO REMOVE.
   { path: 'donate' , component: DonateComponent},
-
+  { path: 'orphanage-single' , component: OrphanageSingleComponent},
   {
     path: 'admin',
   // canActivate:[AuthGuard],

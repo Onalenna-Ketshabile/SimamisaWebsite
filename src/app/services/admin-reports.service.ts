@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { BASEURL } from '../constants/constants';
 import { adminNeedsReport } from '../models/adminNeedsReport';
+import { adminOrphanageNeeds } from '../models/adminOrphanageNeeds';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,12 @@ export class AdminReportsService {
   private adminNeedsReportOne = new BehaviorSubject<adminNeedsReport[]>([]);
   private adminNeedsReportTwo = new BehaviorSubject<adminNeedsReport[]>([]);
   private adminNeedsReportThree = new BehaviorSubject<adminNeedsReport[]>([]);
+  private orphanageNeedsReport = new BehaviorSubject<adminOrphanageNeeds[]>([]);
+
+  private numberOfOrphanages = new BehaviorSubject<number[]>([]);
+  private numberOfUsers = new BehaviorSubject<number[]>([]);
+  private numberOfChildren = new BehaviorSubject<number[]>([]);
+  private numberOfSponsors = new BehaviorSubject<number[]>([]);
   headers: any;
 
   readonly apiURL = `${BASEURL}`;
@@ -67,6 +74,76 @@ export class AdminReportsService {
       }
     );
   }
+    getNumberOfOrphanages():Observable<any>{
+    this._numberOfOrphanages();
+    return this.numberOfOrphanages;
+
+  }
+  getNumberOfUsers():Observable<any>{
+    this._numberOfUsers();
+    return this.numberOfUsers;
+
+  }
+  getNumberOfChildren():Observable<any>{
+    this._numberOfChildren();
+    return this.numberOfChildren;
+
+  }
+  getNumberOfSponsors():Observable<any>{
+    this._numberOfSponsors();
+    return this.numberOfSponsors;
+
+  }
+  _numberOfOrphanages(){
+    this.http.get<number[]>(this.apiURL.slice(0,-11)+'/admin/orphanages',{headers:this.headers}).subscribe(
+      (num)=>{
+        this.numberOfOrphanages.next(num);
+      }
+    );
+
+  }
+  _numberOfUsers(){
+    this.http.get<number[]>(this.apiURL.slice(0,-11)+'/admin/users',{headers:this.headers}).subscribe(
+      (num)=>{
+        this.numberOfUsers.next(num);
+      }
+    );
+
+  }
+  _numberOfChildren(){
+    this.http.get<number[]>(this.apiURL.slice(0,-11)+'/admin/children',{headers:this.headers}).subscribe(
+      (num)=>{
+        this.numberOfChildren.next(num);
+      }
+    );
+
+  }
+  _numberOfSponsors(){
+    this.http.get<number[]>(this.apiURL.slice(0,-11)+'/admin/sponsors',{headers:this.headers}).subscribe(
+      (num)=>{
+        this.numberOfSponsors.next(num);
+      }
+    );
+
+  }
+
+  getOrphanageNeedsReports():Observable<any>{
+    console.log('Inside getOrphanageNeedsReports');
+    this._orphanageNeedsReports();
+    console.log("About to return");
+    return this.orphanageNeedsReport;
+
+  }
+  _orphanageNeedsReports(){
+    this.http.get<adminOrphanageNeeds[]>(this.apiURL.slice(0,-11)+'/admin/unfulfilled',{headers:this.headers}).subscribe(
+      (orphNeed)=>{
+        this.orphanageNeedsReport.next(orphNeed);
+        console.log("orphNeed");
+      }
+    );
+  }
+
+
       
 
 }

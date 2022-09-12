@@ -14,7 +14,9 @@
 	<!--====== Project Details Area Start ======-->
 	<section class="project-details-area section-gap-extra-bottom">
 		<div class="container">
+	
 			<div class="row align-items-center justify-content-center body">
+				<div class="col-lg-12 col-md-10 top-heading">Child Profile</div>
 				<div class="col-lg-6 col-md-10">
 					<div class="project-thumb mb-md-50">
 						<img class="img-child" src="../../../assets/images/sponsor/dynamite.jpg" alt="Image">
@@ -24,21 +26,27 @@
 				<div class="col-lg-6">
 					<div class="project-summery">
 						<h3 class="project-title">
-							{{child.Nickname}}
+							{{child.Nickname}} (child.age Years Old.)
 						</h3>
-                        <p>6 Years Old</p>
+                       
 						<div class="meta">
 							<div class="author">
+								<span>From: </span>
 								<img src="../../../assets/images/orphanages/KingdomLife.png" alt="Thumb">
 								<a href="#">orphanage.Name</a>
 							</div>
   
 						</div>
+
+						
                         				
-						<div class="description-content">
-							<h4 class="description-title">Description</h4>
-                            child.description
-						    <h4 class="description-title">Interest</h4>
+						<div class="description-content" >
+							<p style="margin-bottom: 18px;">{{child.ChildDescription}}</p>
+                        
+							<h4 class="description-title">Struggles:</h4>
+						
+							<p style="margin: 10px 0px;">{{child.ChildStruggles}}</p>
+						    <h4 class="description-title">Interest:</h4>
 						   <ul>
 							<li>list</li>
 							<li>list</li>

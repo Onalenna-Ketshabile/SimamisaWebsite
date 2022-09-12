@@ -42,7 +42,7 @@ export class OrphanageService {
     return this.orphanages;
   }
 
-  getOrphanageByID(id: number): Observable<Orphanage|undefined>{
+  getOrphanageByID(id: number): Observable<any>{
     return this.getOrphanages().pipe(
         map(orphs => orphs.find(orph => orph.ID === id))
     );

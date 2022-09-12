@@ -36,48 +36,22 @@
                                         <!-- end row -->
                 
                                         <div class="table-responsive mb-4">
-                                            <table class="table align-middle datatable dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
+                                            <table class="table table-bordered table-responsive">
                                                 <thead>
                                                 <tr>
                                                     
                                                     <th scope="col">Name</th>
-                                                    <th scope="col">Position</th>
                                                     <th scope="col">Email</th>
-                                                    <th scope="col">Proposed Meeting Date</th>
                                                     <th scope="col">Child To Sponsor</th>
+                                                    <th scope="col">Venue</th>
+                                                    <th scope="col">Proposed Meeting Date</th>
                                                     <th style="width: 80px; min-width: 80px;">Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
 
-                                                    <tr>
-                                        
-                                                        <td>
-                                                            <div class="avatar-sm d-inline-block align-middle me-2">
-                                                                <div class="avatar-title bg-soft-primary text-primary font-size-20 m-0 rounded-circle">
-                                                                    <i class="bx bxs-user-circle"></i>
-                                                                </div>
-                                                            </div>
-                                                            <a href="#" class="text-body">William Swift</a>
-                                                        </td>
-                                                        <td>Volunteer</td>
-                                                        <td>williamswift@Dason.com</td>
-                                                        <td>15 October 2022 | 14h00</td>
-                                                        <td>
-                                                            Sunshine
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex gap-2">
-                                                              
-                                                                <div class=".hbtn .hbtn-primary">
-                                                                    <a href="project-details.html" class="hbtn hbtn-primary ">Accept <i class="far fa-arrow-right"></i></a>
-                                                                </div>
-                                                                <div class=".hbtn .hbtn-primary">
-                                                                    <a href="project-details.html" class="hbtn hbtn-primary ">Decline<i class="far fa-arrow-right"></i></a>
-                                                                </div>
-                                                              
-                                                            </div>
-                                                        </td>
+                                                    <tr app-sponsor-request-item *ngFor="let sponsorRequest of sponsorRequests" [sponsorRequest]="sponsorRequest">
+                          
                                                     </tr>
                                                 </tbody>
                                             </table>

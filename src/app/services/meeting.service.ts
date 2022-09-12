@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { BASEURL } from '../constants/constants';
+import { sponsorRequest } from '../models/sponsorRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class MeetingService {
 
   headers: any;
   readonly apiURLPost =`${BASEURL}/meetings`;
+
+  private sponsorMeetingRequest = new BehaviorSubject<sponsorRequest[]>([]);
   
   constructor(private http:HttpClient) { 
     this.headers = new HttpHeaders()
@@ -29,5 +32,19 @@ export class MeetingService {
        },
     ));
       }
+      
+  getSponsorMeetingRequests():Observable<any>{
+    this._sponsorMeetingRequest();
+    return this.sponsorMeetingRequest;
+
+  }
+  _sponsorMeetingRequest(){
+    // this.http.get<adminOrphanageNeeds[]>(this.apiURL.slice(0,-11)+'/admin/unfulfilled',{headers:this.headers}).subscribe(
+    //   (orphNeed)=>{
+    //     this.orphanageNeedsReport.next(orphNeed);
+    //     console.log("orphNeed");
+    //   }
+    // );
+  }
   
 }

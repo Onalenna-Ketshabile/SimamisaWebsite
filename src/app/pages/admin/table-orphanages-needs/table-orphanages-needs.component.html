@@ -1,0 +1,33 @@
+<div class="panel panel-default"> 
+    <div class="panel-heading"> 
+      <div class="panel-title">Orphanages Vs Needs.
+      </div> 
+
+    </div> 
+    <div class="panel-body with-table">
+      <table class="table table-bordered table-responsive"> 
+        <thead> 
+          <tr> 
+            <th>#
+            </th> 
+            <th>Orphanage Name
+            </th> 
+            <th>No. Of Needs proposed
+            </th> 
+            <th>No.Of Needs Unmet
+            </th> 
+          </tr> 
+        </thead> 
+        <tbody> 
+         
+              <tr app-row-orphanages-needs  *ngFor="let adminOrphNeeds of adminOrphanageNeeds" [admOrphanageNeeds]="adminOrphNeeds"  >
+                                        
+                      
+            </tr>
+          
+          
+        </tbody> 
+      </table>
+    </div> 
+  </div>
+  

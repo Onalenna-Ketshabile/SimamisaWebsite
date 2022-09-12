@@ -74,6 +74,10 @@ import { BarchartComponent } from './pages/admin/barchart/barchart.component';
 import { LineChartComponent } from './pages/admin/line-chart/line-chart.component';
 import { OrphanagesResolverService } from './services/resolvers/orphanages-resolver.service';
 import { LayoutComponent } from './pages/admin/layout/layout.component';
+import { TableOrphanagesNeedsComponent } from './pages/admin/table-orphanages-needs/table-orphanages-needs.component';
+import { RowOrphanagesNeedsComponent } from './pages/admin/row-orphanages-needs/row-orphanages-needs.component';
+import { SponsorRequestItemComponent } from './pages/manager/sponsor-request-item/sponsor-request-item.component';
+import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-single.component';
 
 
 @NgModule({
@@ -139,7 +143,11 @@ import { LayoutComponent } from './pages/admin/layout/layout.component';
     DashboardAdminComponent,
     BarchartComponent,
     LineChartComponent,
-    LayoutComponent
+    LayoutComponent,
+    TableOrphanagesNeedsComponent,
+    RowOrphanagesNeedsComponent,
+    SponsorRequestItemComponent,
+    OrphanageSingleComponent
 
   ],
   imports: [
@@ -155,8 +163,6 @@ import { LayoutComponent } from './pages/admin/layout/layout.component';
 ],
   bootstrap: [
     AppComponent,
-    AvatarComponent,
-    FooterComponent
   ]
 })
 export class AppModule { }

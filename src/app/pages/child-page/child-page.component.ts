@@ -10,7 +10,7 @@ declare var window: any;
 @Component({
   selector: 'app-child-page',
   templateUrl: './child-page.component.html',
-  styleUrls: ['./child-page.component.css']
+  styleUrls: ['./child-page.component.css','../../../assets/css/font-awesome.min.css']
 })
 export class ChildPageComponent implements OnInit {
 

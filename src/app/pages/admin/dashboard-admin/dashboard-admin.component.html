@@ -15,9 +15,9 @@
  <div class="col-sm-3 col-xs-6"> 
     <div class="tile-stats tile-red"> 
         <div class="icon"><i class="entypo-home"></i></div>
-           <div class="num" data-start="0" data-end="83" data-postfix="" data-duration="1500" data-delay="0">83</div>
-            <h3>Registered users</h3>
-             <p>so far in our b.</p>
+           <div class="num">{{numberOfOrphanages}}</div>
+            <h3>Orphanages</h3>
+             <p>registered with us.</p>
      </div> 
   </div>
   
@@ -26,9 +26,9 @@
       <div class="icon">
          <i class="entypo-users"></i>
       </div>
-      <div class="num" data-start="0" data-end="135" data-postfix="" data-duration="1500" data-delay="600">135</div>
-      <h3>Daily Visitors</h3>
-      <p>this is the average value.</p>
+      <div class="num">{{numberOfUsers}}</div>
+      <h3>Users</h3>
+      <p>registered with us.</p>
    </div>
 </div>
 
@@ -37,9 +37,9 @@
       <div class="icon">
          <i class="entypo-heart"></i>
       </div>
-      <div class="num" data-start="0" data-end="23" data-postfix="" data-duration="1500" data-delay="1200">23</div>
-      <h3>New Messages</h3>
-      <p>messages per day.</p>
+      <div class="num">{{numberOfChildren}}</div>
+      <h3>Children</h3>
+      <p>registered with us.</p>
    </div>
 </div>
 
@@ -48,9 +48,9 @@
       <div class="icon">
          <i class="entypo-user"></i>
       </div>
-      <div class="num" data-start="0" data-end="52" data-postfix="" data-duration="1500" data-delay="1800">52</div>
-      <h3>Subscribers</h3>
-      <p>on our site right now.</p>
+      <div class="num">{{numberOfSponsors}}</div>
+      <h3>Sponsors</h3>
+      <p>registered with us.</p>
    </div>
 </div>
 
@@ -59,8 +59,8 @@
      <div>
          <app-barchart></app-barchart>
   </div>
-    <div>
-       <app-line-chart></app-line-chart>
-      </div>
-
+  <div>
+   <app-table-orphanages-needs></app-table-orphanages-needs>
+   </div>
+ 
 </div>
