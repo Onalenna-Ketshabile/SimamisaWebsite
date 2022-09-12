@@ -36,11 +36,7 @@
             
         </div>
         <div class="donation-btns">
-            <div *ngIf="!isSponsor()">
-                <button type="submit" class="main-btn"   data-bs-toggle="modal" data-bs-target="#makeproposal-modal" (click)="openModal">Donate Item <i class="far fa-arrow-right"></i></button>
-                <button type="submit" class="main-btn"data-bs-toggle="modal" data-bs-target="#payNeed-modal" (click)="openModal()">Donate Money <i class="far fa-arrow-right"></i></button>
-               
-            </div>
+          
             <div *ngIf="isSponsor()">
                 <button  class="main-btn"   data-bs-toggle="modal" data-bs-target="#editNeed-modal"  (click)="editNeed()">Edit Need <i class="far fa-arrow-right"></i></button>
                 <button  class="main-btn" (click)="deleteNeed()">Delete Need <i class="far fa-arrow-right"></i></button>

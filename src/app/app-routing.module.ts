@@ -12,10 +12,10 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { AuthGuard } from './routeguards/auth.guard';
 import { SponsorChildComponent } from './pages/sponsor-child/sponsor-child.component';
 import { ChildPageComponent } from './pages/child-page/child-page.component';
-import { ItemProposalsComponent } from './pages/item-proposals/item-proposals.component';
 import { LoadingIndicatorSpinnerComponent } from './others/loading-indicator-spinner/loading-indicator-spinner.component';
 import { DonateComponent } from './pages/donate/donate.component';
 import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-single.component';
+import { ItemProposalsComponent } from './pages/item-proposals/item-proposals.component';
 
 const routes: Routes = [
  

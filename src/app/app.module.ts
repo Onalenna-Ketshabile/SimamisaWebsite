@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
@@ -74,10 +75,15 @@ import { BarchartComponent } from './pages/admin/barchart/barchart.component';
 import { LineChartComponent } from './pages/admin/line-chart/line-chart.component';
 import { OrphanagesResolverService } from './services/resolvers/orphanages-resolver.service';
 import { LayoutComponent } from './pages/admin/layout/layout.component';
+
 import { TableOrphanagesNeedsComponent } from './pages/admin/table-orphanages-needs/table-orphanages-needs.component';
 import { RowOrphanagesNeedsComponent } from './pages/admin/row-orphanages-needs/row-orphanages-needs.component';
 import { SponsorRequestItemComponent } from './pages/manager/sponsor-request-item/sponsor-request-item.component';
 import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-single.component';
+
+import { DropoffItemComponent } from './pages/manager/dropoff-item/dropoff-item.component';
+import { PickupItemComponent } from './pages/manager/pickup-item/pickup-item.component';
+
 
 
 @NgModule({
@@ -147,12 +153,14 @@ import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-sin
     TableOrphanagesNeedsComponent,
     RowOrphanagesNeedsComponent,
     SponsorRequestItemComponent,
-    OrphanageSingleComponent
+    OrphanageSingleComponent,
+    DropoffItemComponent,
+    PickupItemComponent
 
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule
+     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,
