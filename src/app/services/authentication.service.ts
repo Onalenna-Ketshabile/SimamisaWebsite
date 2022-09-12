@@ -33,7 +33,7 @@ export class AuthenticationService extends ObservableStore<StoreState>{
      this.headers = new HttpHeaders()
     .set('content-type', 'application/json');
   this.headers.set('Accept', 'application/json')
-  this.headers.set('Access-Control-Allow-Origin', '*');
+ 
   }
 
 

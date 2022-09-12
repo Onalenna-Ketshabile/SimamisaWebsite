@@ -6042,3 +6042,12 @@ body[data-layout-mode=dark] .pricing-table-bg {
 	border-radius: 10px !important;
 
 }
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup{
+	font-weight: bold;
+	color: #dbe8ef;
+  }
+  .ng-option-label{
+	color: red;
+  }
+  

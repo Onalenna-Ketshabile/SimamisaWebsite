@@ -5,6 +5,7 @@ import { DashboardAdminComponent } from '../../admin/dashboard-admin/dashboard-a
 import { HomeComponent } from '../../home/home.component';
 import { LogoutComponent } from '../../logout/logout.component';
 import { NewsfeedComponent } from '../../newsfeed/newsfeed.component';
+import { ItemProposalsComponent } from '../../item-proposals/item-proposals.component';
 import { SponsorChildComponent } from '../../sponsor-child/sponsor-child.component';
 import { CalendarComponent } from '../calendar/calendar.component';
 import { ChildNeedsComponent } from '../child-needs/child-needs.component';
@@ -21,6 +22,7 @@ import { ProfileQueriesComponent } from '../profile-queries/profile-queries.comp
 import { SponsorRequestComponent } from '../sponsor-request/sponsor-request.component';
 import { MainLayoutComponent } from './main-layout.component';
 
+
 const routes: Routes = [
   {path: '',
    redirectTo: 'home',
@@ -31,6 +33,7 @@ const routes: Routes = [
   children: [
     {path: 'home', component: HomeComponent},
     {path: 'newsfeed', component: NewsfeedComponent},
+    { path: 'item-proposals' , component: ItemProposalsComponent},
     {path:'newsfeed/editneed/:id',component:EditNeedComponent},
     {path:'logout',component:LogoutComponent},
     {path: 'orphanages', component: OrphanagesManagerComponent, resolve: { orphanages: OrphanagesResolverService}},
@@ -45,7 +48,7 @@ const routes: Routes = [
     {path: 'child-needs/editchildneed/:id', component: EditChildneedComponent},
     {path: 'child-updates/:id', component: ChildUpdatesComponent},
     {path: 'child-updates/editchildupdate/:id', component: EditChildupdateComponent},
-
+     
     {path: 'dashboard-admin', component: DashboardAdminComponent},
    ]
    }

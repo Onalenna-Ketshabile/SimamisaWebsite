@@ -1,0 +1,43 @@
+<td>{{proposalTitle}}</td>
+<td>{{proposal.NumberToGive}}</td>
+<td>{{propDate}}</td>
+<td>{{propTime}}</td>
+
+<td>
+   {{proposal.ProposalComment}}
+</td>
+<td>
+    0649267698
+</td>
+<td>
+  {{ status}}
+</td>
+<td>
+    <div class="d-flex gap-2">
+        <div *ngIf="!isFulfilled()">
+            <div *ngIf="showConfirm()" class="d-flex gap-2">
+      
+                <div class=".hbtn .hbtn-primary">
+                    <button  (click)="confirmProposal()" class="hbtn hbtn-primary">Confirm DropOff</button>
+                </div>
+           
+            </div>
+        
+            <div *ngIf="!showConfirm()" class="d-flex gap-2">
+              
+                <div class=".hbtn .hbtn-primary">
+                    <button  (click)="acceptProposal()" class="hbtn hbtn-primary">Approve</button>
+                </div>
+                <div class=".hbtn .hbtn-primary">
+                    <button  (click)="rejectProposal()" class="hbtn hbtn-primary">Reject</button>
+                </div>
+        
+            </div>
+    
+        </div>
+        <div *ngIf="isFulfilled()">
+              No Action Needed
+        </div>
+  
+    </div>
+</td>

@@ -17,7 +17,7 @@ export class OffersService {
     .set('content-type', 'application/json');
   this.headers.set('Accept', 'application/json')
   this.headers.set('Access-Control-Allow-Origin', '*');
-  this.MyOffer();
+ // this.MyOffer();
   }
 
 

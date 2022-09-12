@@ -12,7 +12,6 @@ import { LogoutComponent } from './pages/logout/logout.component';
 import { AuthGuard } from './routeguards/auth.guard';
 import { SponsorChildComponent } from './pages/sponsor-child/sponsor-child.component';
 import { ChildPageComponent } from './pages/child-page/child-page.component';
-import { ItemProposalsComponent } from './pages/item-proposals/item-proposals.component';
 import { LoadingIndicatorSpinnerComponent } from './others/loading-indicator-spinner/loading-indicator-spinner.component';
 import { DonateComponent } from './pages/donate/donate.component';
 
@@ -35,7 +34,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'sponsor-child', component: SponsorChildComponent},
   { path: 'orphanage/:o_d/child/:c_id', component: ChildPageComponent},
-  { path: 'item-proposals' , component: ItemProposalsComponent},
+  
   { path: 'spinner', component: LoadingIndicatorSpinnerComponent},
   { path: 'donate' , component: DonateComponent},
 
