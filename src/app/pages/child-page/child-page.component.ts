@@ -33,9 +33,9 @@ export class ChildPageComponent implements OnInit {
     this.orphanage_service.getOrphanageByID(this.route.snapshot.params['o_id']).subscribe(data=>{
       this.orphanage =data; });
 
-    this.formModal = new window.boostrap.Modal(
-      document.getElementById("custom-modal")
-    );
+    // this.formModal = new window.boostrap.Modal(
+    //   document.getElementById("custom-modal")
+    // );
 
   }
   openModal(){

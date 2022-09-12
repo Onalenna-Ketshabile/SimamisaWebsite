@@ -4,7 +4,7 @@ import { NeedsService } from 'src/app/services/needs.service';
 import { ProposalServiceService } from 'src/app/services/proposal-service.service';
 
 @Component({
-  selector: 'app-pickup-item',
+  selector: '[app-pickup-item]',
   templateUrl: './pickup-item.component.html',
   styleUrls: ['./pickup-item.component.css']
 })

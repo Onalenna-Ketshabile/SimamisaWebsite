@@ -28,15 +28,16 @@ export class NeeditemComponent implements OnInit {
   }
 
    ngOnInit():void {
-
+  
     let num =((this.need.AmountReceived/this.need.AmountNeeded)*100);
    this.progress= Math.round( num * 100 + Number.EPSILON ) / 100;
    //date
     this.date = this.need.DateEstablished.slice(0,10);
    //orphanage name
-
+   console.log("START <------------- ####");
    var orph = this.orphService.getOrphanageByID(this.need.orphanageID);
    orph.subscribe((orphanage)=>{this.orphName=orphanage?.OrphanageName});
+   console.log("STOP <------------- ####");
     console.log("name "+this.orphName);
     if (this.need.Description.length > 100) {
       this.descriptionToShow = this.need.Description.slice(0, 100);

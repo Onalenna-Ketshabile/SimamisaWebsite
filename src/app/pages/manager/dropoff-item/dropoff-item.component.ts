@@ -4,7 +4,7 @@ import { NeedsService } from 'src/app/services/needs.service';
 import { ProposalServiceService } from 'src/app/services/proposal-service.service';
 
 @Component({
-  selector: 'app-dropoff-item',
+  selector: '[app-dropoff-item]',
   templateUrl: './dropoff-item.component.html',
   styleUrls: ['./dropoff-item.component.css']
 })
@@ -54,7 +54,7 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
 
   }
   isFulfilled(){
-    if(this.status.includes("Fulfilled")){
+    if(this.status && this.status.includes("Fulfilled")){
       return true;
     } else{
       return false;

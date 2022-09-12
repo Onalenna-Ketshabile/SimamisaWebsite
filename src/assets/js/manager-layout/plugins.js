@@ -166,22 +166,6 @@ $(document).ready(function(){
 
 
 
-/* Tooltips */
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
-/* Popover */
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})
-
-
-/* Page Loading */
-$(window).load(function() {
-  $(".loading").fadeOut(750);
-})
-
 
 /* Update Fixed */
 /* Version 1.2 */
