@@ -46,7 +46,7 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
    
   }
   showConfirm(){
-    if(this.status.includes("Awaiting")){
+    if(this.status!=undefined && this.status.includes("Awaiting")){
       return true;
     } else{
       return false;
@@ -54,7 +54,9 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
 
   }
   isFulfilled(){
-    if(this.status && this.status.includes("Fulfilled")){
+    
+   
+    if(this.status!=undefined && this.status.includes("Fulfilled")){
       return true;
     } else{
       return false;
