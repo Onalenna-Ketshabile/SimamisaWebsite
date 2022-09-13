@@ -137,7 +137,7 @@ body {
   font-size: 13px;
   font-family: 'Open Sans', sans-serif;
   outline: 0;
-  text-Shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 ::-moz-selection {
   background: #D5EAFF;
