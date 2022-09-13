@@ -21,6 +21,7 @@ import { PartneringRequestsComponent } from '../partnering-requests/partnering-r
 import { ProfileQueriesComponent } from '../profile-queries/profile-queries.component';
 import { SponsorRequestComponent } from '../sponsor-request/sponsor-request.component';
 import { MainLayoutComponent } from './main-layout.component';
+import { DashboardManagerComponent } from '../dashboard-manager/dashboard-manager.component';
 
 
 const routes: Routes = [
@@ -49,7 +50,7 @@ const routes: Routes = [
     {path: 'child-updates/:id', component: ChildUpdatesComponent},
     {path: 'child-updates/editchildupdate/:id', component: EditChildupdateComponent},
      
-    {path: 'dashboard-admin', component: DashboardAdminComponent},
+    {path: 'dashboard', component: DashboardManagerComponent},
    ]
    }
    

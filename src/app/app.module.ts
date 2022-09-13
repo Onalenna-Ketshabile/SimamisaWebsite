@@ -83,6 +83,9 @@ import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-sin
 
 import { DropoffItemComponent } from './pages/manager/dropoff-item/dropoff-item.component';
 import { PickupItemComponent } from './pages/manager/pickup-item/pickup-item.component';
+import { DashboardManagerComponent } from './pages/manager/dashboard-manager/dashboard-manager.component';
+import { DoughnutChartProposalsComponent } from './pages/manager/doughnut-chart-proposals/doughnut-chart-proposals.component';
+import { LineChartNeedsComponent } from './pages/manager/line-chart-needs/line-chart-needs.component';
 
 
 
@@ -155,7 +158,10 @@ import { PickupItemComponent } from './pages/manager/pickup-item/pickup-item.com
     SponsorRequestItemComponent,
     OrphanageSingleComponent,
     DropoffItemComponent,
-    PickupItemComponent
+    PickupItemComponent,
+    DashboardManagerComponent,
+    DoughnutChartProposalsComponent,
+    LineChartNeedsComponent
 
   ],
   imports: [
