@@ -23902,7 +23902,7 @@ table p {
 }
 
 .bgcolor-theme3 {
-	background-color: #001d23!important;
+	background-color: #1a120d !important;
 }
 
 .text-theme-color {
@@ -29589,6 +29589,7 @@ table p {
 	padding: 75px 85px 78px 86px;
 	position: relative;
 	z-index: 1;
+	border-radius: 20px;
 }
 
 @media only screen and (max-width:767px) {
