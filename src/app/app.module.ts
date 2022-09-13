@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule} from '@angular/forms'
-
+import { QRCodeModule } from 'angularx-qrcode';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -83,6 +83,7 @@ import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-sin
 
 import { DropoffItemComponent } from './pages/manager/dropoff-item/dropoff-item.component';
 import { PickupItemComponent } from './pages/manager/pickup-item/pickup-item.component';
+import { ModalQrcodeComponent } from './others/modal-qrcode/modal-qrcode.component';
 
 
 
@@ -155,12 +156,13 @@ import { PickupItemComponent } from './pages/manager/pickup-item/pickup-item.com
     SponsorRequestItemComponent,
     OrphanageSingleComponent,
     DropoffItemComponent,
-    PickupItemComponent
+    PickupItemComponent,
+    ModalQrcodeComponent
 
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,
+     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,QRCodeModule
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,

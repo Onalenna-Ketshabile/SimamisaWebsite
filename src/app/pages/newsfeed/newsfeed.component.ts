@@ -8,10 +8,12 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class NewsfeedComponent implements OnInit {
   formModal:any;
+  myAngularQrCode:any
   constructor(private authService:AuthenticationService,) { }
  
 
   ngOnInit(): void {
+    this.myAngularQrCode="Simamisa Mobile App Link"
   }
 
   openModal(){
