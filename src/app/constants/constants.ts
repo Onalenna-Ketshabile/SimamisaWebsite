@@ -1,4 +1,7 @@
-export const BASEURL: string ="https://simamisa.herokuapp.com/simamisa/orphanages";
+
+import { environment } from "src/environments/environment.prod";
+
+export const BASEURL: string =environment.apiUrl;
 
 //localhost:8080/simamisa/orphanages
 
