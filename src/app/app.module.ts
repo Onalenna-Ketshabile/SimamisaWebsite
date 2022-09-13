@@ -84,6 +84,17 @@ import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-sin
 import { DropoffItemComponent } from './pages/manager/dropoff-item/dropoff-item.component';
 import { PickupItemComponent } from './pages/manager/pickup-item/pickup-item.component';
 import { ModalQrcodeComponent } from './others/modal-qrcode/modal-qrcode.component';
+import { DashboardManagerComponent } from './pages/manager/dashboard-manager/dashboard-manager.component';
+import { DoughnutChartProposalsComponent } from './pages/manager/doughnut-chart-proposals/doughnut-chart-proposals.component';
+import { LineChartNeedsComponent } from './pages/manager/line-chart-needs/line-chart-needs.component';
+
+<<<<<<< HEAD
+import { ModalQrcodeComponent } from './others/modal-qrcode/modal-qrcode.component';
+=======
+import { DashboardManagerComponent } from './pages/manager/dashboard-manager/dashboard-manager.component';
+import { DoughnutChartProposalsComponent } from './pages/manager/doughnut-chart-proposals/doughnut-chart-proposals.component';
+import { LineChartNeedsComponent } from './pages/manager/line-chart-needs/line-chart-needs.component';
+>>>>>>> 9a34e679ae39c33d388a87e5fca60218e9f3b048
 
 
 
@@ -157,7 +168,10 @@ import { ModalQrcodeComponent } from './others/modal-qrcode/modal-qrcode.compone
     OrphanageSingleComponent,
     DropoffItemComponent,
     PickupItemComponent,
-    ModalQrcodeComponent
+    ModalQrcodeComponent,
+    DashboardManagerComponent,
+    DoughnutChartProposalsComponent,
+    LineChartNeedsComponent
 
   ],
   imports: [
