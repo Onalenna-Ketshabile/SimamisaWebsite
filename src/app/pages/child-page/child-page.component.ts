@@ -18,6 +18,7 @@ export class ChildPageComponent implements OnInit {
 
   child?: Child;
   orphanage?: Orphanage;
+  interests?: string[]
   
   constructor(private route: ActivatedRoute,private children_service:ChildrenService,private orphanage_service:OrphanageService) { }
 
@@ -27,7 +28,12 @@ export class ChildPageComponent implements OnInit {
      
     //Get the child
     this.children_service.getChildByID(this.route.snapshot.params['c_id']).subscribe(data=>{
-      this.child =data; });
+      console.log("OBject:",data);
+      console.log("INterest:",data.ChildInterest);
+      this.child =data;
+      this.interests = this.child.ChildInterest.split(",");
+     console.log("I->"+this.interests);
+     });
     
     //Get the Orphanage
     this.orphanage_service.getOrphanageByID(this.route.snapshot.params['o_id']).subscribe(data=>{

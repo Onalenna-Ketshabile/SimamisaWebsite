@@ -23,12 +23,12 @@
             </div>		
             <div class="project-stats">
                 <div class="stats-value">
-                    <p class="value-title">Amount Needed <span class="value">R{{need.AmountNeeded}}</span></p>
+                    <p class="value-title">Amount Needed <span class="value">R{{amntNeeded}}</span></p>
                     <br/>
                     <span class="stats-percentage">{{progress}}%</span>
                 </div>
                 <!-- Use the progress here -->
-                <div class="stats-bar" data-value="79">
+                <div class="stats-bar" attr.data-value={{progress}}>
                     <div class="bar-line"></div>
                 </div>
             </div>
