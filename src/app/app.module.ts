@@ -87,7 +87,7 @@ import { ModalQrcodeComponent } from './others/modal-qrcode/modal-qrcode.compone
 import { DashboardManagerComponent } from './pages/manager/dashboard-manager/dashboard-manager.component';
 import { DoughnutChartProposalsComponent } from './pages/manager/doughnut-chart-proposals/doughnut-chart-proposals.component';
 import { LineChartNeedsComponent } from './pages/manager/line-chart-needs/line-chart-needs.component';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
@@ -169,7 +169,7 @@ import { LineChartNeedsComponent } from './pages/manager/line-chart-needs/line-c
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,QRCodeModule
+     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,QRCodeModule,MatProgressBarModule
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,
