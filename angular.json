@@ -15,7 +15,7 @@
           "options": {
             "allowedCommonJsDependencies": [
               "@codewithdan/observable-store"   , 
-             " @cordobo/qrcode "  
+             " @cordobo/qrcode"  
            ],
             "outputPath": "dist/simamisa-web-application",
             "index": "src/index.html",
