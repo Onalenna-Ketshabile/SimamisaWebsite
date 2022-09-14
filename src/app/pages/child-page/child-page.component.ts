@@ -21,6 +21,7 @@ export class ChildPageComponent implements OnInit {
   orphanage?: Orphanage;
   interests?: string[]
   age?: string;
+  orphName?:string;
   constructor(private route: ActivatedRoute, private children_service: ChildrenService, private orphanage_service: OrphanageService,private meetingService: MeetingService) { }
 
   ngOnInit(): void {
@@ -34,7 +35,7 @@ export class ChildPageComponent implements OnInit {
       console.log("OBject:", data);
       console.log("INterest:", data.ChildInterest);
       this.child = data;
-     
+       this.orphName=data.orphanage.OrphanageName;
       this.interests = this.child.ChildInterest.split(",");
      this.age = this.getAge(this.child.DOB).toString();
     });
