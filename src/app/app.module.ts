@@ -88,6 +88,7 @@ import { DashboardManagerComponent } from './pages/manager/dashboard-manager/das
 import { DoughnutChartProposalsComponent } from './pages/manager/doughnut-chart-proposals/doughnut-chart-proposals.component';
 import { LineChartNeedsComponent } from './pages/manager/line-chart-needs/line-chart-needs.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { PieChartDonorGenderComponent } from './pages/manager/pie-chart-donor-gender/pie-chart-donor-gender.component';
 
 
 
@@ -164,7 +165,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     ModalQrcodeComponent,
     DashboardManagerComponent,
     DoughnutChartProposalsComponent,
-    LineChartNeedsComponent
+    LineChartNeedsComponent,
+    PieChartDonorGenderComponent
 
   ],
   imports: [

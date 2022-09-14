@@ -18,12 +18,20 @@ export class LineChartNeedsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    var OrphanageID ="";
+    var OrphanageID ="6";
     //OrphanageID  = localStorage.getItem('OrphID');
 
+
+    Chart.register(...registerables); 
+    
+    this.needsReportPriorityOne = []
+    this.needsReportPriorityTwo = [];
+    this.needsReportPriorityThree =[];
+
+
     this.managerReports.getManagerNeedsReportOne(OrphanageID).subscribe(data=>{
-        this.needsReportPriorityTwo =data;
-        console.log(this.needsReportPriorityTwo);
+        this.needsReportPriorityOne =data;
+        console.log(this.needsReportPriorityOne);
          if(this.needsReportPriorityTwo.length != 0){
            console.log("Data Arrived.");
       
@@ -48,19 +56,37 @@ export class LineChartNeedsComponent implements OnInit {
          if(this.needsReportPriorityThree.length != 0){
            console.log("Data Arrived.");
 
-           
+           this.plotLineGraph();
          }
       });
 
+  }
+  plotLineGraph(){
     
-    Chart.register(...registerables); 
-const myChart = new Chart('myChart', {
+    console.log(this.needsReportPriorityOne,this.needsReportPriorityTwo,this.needsReportPriorityThree);
+    if(this.needsReportPriorityOne.length != 0  && this.needsReportPriorityTwo.length != 0  && this.needsReportPriorityThree.length != 0){
+      let needsMetTotal: number = 0; 
+      let needsProposedTotal: number = 0;
+      let needsmetPercentage:number[] = [0,0,0,0,0,0,0,0,0,0,0,0];
+    for(var i = 0; i < 12; i++){
+      needsProposedTotal = this.needsReportPriorityOne[i].needs
+                      + this.needsReportPriorityTwo[i].needs
+                      + this.needsReportPriorityThree[i].needs
+
+           needsMetTotal = this.needsReportPriorityOne[i].metNeeds
+                      + this.needsReportPriorityTwo[i].metNeeds
+                      + this.needsReportPriorityThree[i].metNeeds
+
+                      needsmetPercentage[i] = needsMetTotal/needsProposedTotal;
+    }  
+   
+   const myChart = new Chart('myChart', {
     type: 'line',
     data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct','Nov','Dec'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: needsmetPercentage,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -94,15 +120,17 @@ const myChart = new Chart('myChart', {
     },
     options: {
         scales: {
-            y: {
+            y:  {
+              ticks: {
+                format: {
+                    style: 'percent'
+                }},
+              
                 beginAtZero: true
             }
         }
     }
 });
   }
-  plotLineGraph(){
-
-  }
-
+ }
 }
