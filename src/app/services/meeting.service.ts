@@ -20,6 +20,19 @@ export class MeetingService {
   this.headers.set('Accept', 'application/json')
   this.headers.set('Access-Control-Allow-Origin', '*');
   }
+
+  makeSponsor(body:string):Observable<any>{
+    let url = `${BASEURL}/requests`
+    return this.http.post<any>(url,body,{headers:this.headers}).pipe(
+      map((res)=>{
+        if(res && res.ID){
+         console.log(res); 
+         return res;
+        }
+       
+       },
+    ));
+  }
   setUpMeeting(body:string):Observable<any>{
 
     return this.http.post<any>(this.apiURLPost,body,{headers:this.headers}).pipe(

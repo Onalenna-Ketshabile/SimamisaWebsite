@@ -1,5 +1,5 @@
-  
-  <div class="modal" tabindex="-1" id="custom-modal" data-backdrop="false" role="dialog" aria-hidden="true">
+<!--   
+  <div class="modal" tabindex="-1" id="custom-modal" data-backdrop="false" role="dialog" aria-hidden="true" class="modal" tabindex="-1" id="custom-modal" data-backdrop="false" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-light">
@@ -38,6 +38,37 @@
                   <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
           </form>
       </div>
+      </div>
+    </div>
+  </div> -->
+  <div  class="modal" tabindex="-1" id="custom-modal" data-backdrop="false" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-light">
+          <h4 class="modal-title" id="myCenterModalLabel">Get The Mobile App</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+        </div>
+        <div class="modal-body">
+          <div *ngIf="showQR()">
+            <p>Sponsoring A child is A Beautiful commitment, Get The Mobile app stay connected</p>
+            <qrcode qrdata="myAngularQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+            <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+        
+          </div>
+          <div *ngIf="!showQR()">
+            <p>Don't have an account? Register With Simamisa</p>
+            <div class="col-sm-7">
+              <div class="b-text">
+                <a href="/register" routerLink="/register" class="hbtn hbtn-primary hbtn-lg btn-donate" data-bs-dismiss="modal" >Register</a>
+    
+              </div>
+              
+                 </div>
+                 <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+        
+          </div>
+           
+        </div>
       </div>
     </div>
   </div>

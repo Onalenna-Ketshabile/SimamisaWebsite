@@ -157,6 +157,7 @@ export class AuthenticationService extends ObservableStore<StoreState>{
     localStorage.setItem('loggedIn', 'false');
     localStorage.setItem('userRole', '');
     localStorage.setItem('userName', '');
+    localStorage.setItem('userID', '');
     let user = from([empty]);
     return user;
   }

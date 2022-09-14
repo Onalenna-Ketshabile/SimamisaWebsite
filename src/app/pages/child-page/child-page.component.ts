@@ -23,6 +23,7 @@ export class ChildPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private children_service: ChildrenService, private orphanage_service: OrphanageService) { }
 
   ngOnInit(): void {
+
     console.log("Page Loaded");
     console.log("o_id:" + this.route.snapshot.params['o_id'] + " c_id: " + this.route.snapshot.params['c_id']);
 
@@ -31,6 +32,7 @@ export class ChildPageComponent implements OnInit {
       console.log("OBject:", data);
       console.log("INterest:", data.ChildInterest);
       this.child = data;
+      localStorage.setItem("ChildID",data.ID.toString());
       this.interests = this.child.ChildInterest.split(",");
      this.age = this.getAge(this.child.DOB).toString();
     });
