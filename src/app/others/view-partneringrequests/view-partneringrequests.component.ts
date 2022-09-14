@@ -22,11 +22,13 @@ export class ViewPartneringrequestsComponent implements OnInit {
     });
   }
   AcceptPartneringRequest(): void {
-  //       this.partneringService.AcceptRequest(this.orphanage.ID+"",localStorage.getItem("orphID")).subscribe(data => {
-  //     console.log(data);
+        this.partneringService.AcceptRequest(this.orphanage.ID+"",localStorage.getItem("orphID")).subscribe(data => {
+      console.log(data);
+      window.alert("Partnering Request has been accepted.");
         
-  // });
-    console.log("Send Partnering Request from" + this.orphanage.ID + " To " + localStorage.getItem("orphID"));
+  });
+   
+     console.log("Accepting partnering request.");
   }
 
 }
