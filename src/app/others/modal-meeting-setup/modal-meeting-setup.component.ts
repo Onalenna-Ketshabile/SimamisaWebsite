@@ -17,7 +17,7 @@ export class ModalMeetingSetupComponent implements OnInit {
 
   ngOnInit(): void {
     this.myAngularQrCode = "Simamisa Mobile App Link"
-    if (localStorage.getItem("userRole") === "" && localStorage.getItem("userName") === "") {
+    if (localStorage.getItem("userRole") == null && localStorage.getItem("userName") == null) {
       this.show = false;
     } else {
       this.show = true;
@@ -27,15 +27,10 @@ export class ModalMeetingSetupComponent implements OnInit {
   }
 
   showQR(): boolean {
-    if (localStorage.getItem("userRole") == "" && localStorage.getItem("userName") == "") {
+    if (localStorage.getItem("userRole") ==null && localStorage.getItem("userName") == null) {
 
       return false;
     } else {
-      let body = {
-        registeredUserID: localStorage.getItem("userID"),
-        childID: localStorage.getItem("ChildID")
-      };
-     
       return true;
     }
   }

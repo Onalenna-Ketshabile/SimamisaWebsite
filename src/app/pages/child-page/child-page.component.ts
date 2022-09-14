@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Child } from 'src/app/models/child';
 import { Orphanage } from 'src/app/models/orphanage';
 import { ChildrenService } from 'src/app/services/children.service';
+import { MeetingService } from 'src/app/services/meeting.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 
 declare var window: any;
@@ -20,7 +21,7 @@ export class ChildPageComponent implements OnInit {
   orphanage?: Orphanage;
   interests?: string[]
   age?: string;
-  constructor(private route: ActivatedRoute, private children_service: ChildrenService, private orphanage_service: OrphanageService) { }
+  constructor(private route: ActivatedRoute, private children_service: ChildrenService, private orphanage_service: OrphanageService,private meetingService: MeetingService) { }
 
   ngOnInit(): void {
 
@@ -32,7 +33,7 @@ export class ChildPageComponent implements OnInit {
       console.log("OBject:", data);
       console.log("INterest:", data.ChildInterest);
       this.child = data;
-      localStorage.setItem("ChildID",data.ID.toString());
+     
       this.interests = this.child.ChildInterest.split(",");
      this.age = this.getAge(this.child.DOB).toString();
     });
@@ -59,8 +60,25 @@ export class ChildPageComponent implements OnInit {
     return age;
   }
   openModal() {
-    this.formModal.show();
-    console.log("Modal function is called...");
+   
+
+
+    if (localStorage.getItem("userRole") == null && localStorage.getItem("userName") == null) {
+      //Do Nothing
+    } else {
+      console.log("I have been clicked");
+      let body = {
+        registeredUserID: localStorage.getItem("userID"),
+        childID: this.child?.ID
+      };
+     
+      this.meetingService.makeSponsor(JSON.stringify(body)).subscribe(data => {
+        console.log(data);
+        localStorage.removeItem("ChildID");
+      });
+      //Make person a sponsor
+    }
+    
   }
 
 }
