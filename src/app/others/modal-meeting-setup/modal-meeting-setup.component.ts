@@ -35,10 +35,7 @@ export class ModalMeetingSetupComponent implements OnInit {
         registeredUserID: localStorage.getItem("userID"),
         childID: localStorage.getItem("ChildID")
       };
-      this.meetingService.makeSponsor(JSON.stringify(body)).subscribe(data => {
-        console.log(data);
-        localStorage.removeItem("ChildID");
-      });
+     
       return true;
     }
   }
