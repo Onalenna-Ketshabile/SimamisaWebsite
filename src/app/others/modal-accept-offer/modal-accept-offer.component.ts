@@ -13,7 +13,7 @@ export class ModalAcceptOfferComponent implements OnInit {
   offerID = 0;
   offer! : Offer;
 
-  Amount = 0;
+  Amount! :string;
   Title = "";
   IDstr: any;
 
@@ -23,17 +23,22 @@ export class ModalAcceptOfferComponent implements OnInit {
  }
 
   ngOnInit(): void {
+    this.Amount = localStorage.getItem("quantity")!;
+    this.IDstr=localStorage.getItem("ID-ot");
+    this.Title= localStorage.getItem("Title")!;
+    // localStorage.setItem("quantity",offer.Quantity.toString());
+    // localStorage.setItem("ID-ot",offer.ID.toString());
 
-    console.log("Modal successfully open!");
-    console.log(this.offer);
-    this.dataToModals.offerDatasent$.subscribe(
-      data => {
-        this.offer = data;
-        this.Title = this.offer.Title;
-        this.Amount= this.offer.Quantity;
-        console.log(this.offer);
-      }
-    )
+    // console.log("Modal successfully Trash open!");
+    // console.log(this.offer);
+    // this.dataToModals.offerDatasent$.subscribe(
+    //   data => {
+    //     this.offer = data;
+    //     this.Title = this.offer.Title;
+    //     this.Amount= this.offer.Quantity;
+    //     console.log(this.offer);
+    //   }
+    // )
 
   }
 
@@ -42,7 +47,7 @@ export class ModalAcceptOfferComponent implements OnInit {
     var strID  = "";
     strID = String(localStorage.getItem("orphID"));
     let OfferAccept = {
-      offerItemID:  this.offer.ID,
+      offerItemID:  this.IDstr,
       id: parseInt(strID),
       amount: offerDetails.quantity,
 
@@ -52,11 +57,11 @@ export class ModalAcceptOfferComponent implements OnInit {
     const body = JSON.stringify(OfferAccept);
 
     this.offersService.AcceptOffer(body).subscribe(data => {
-      console.log(data);
-        
+      console.log(data);     
     console.log("accepted?");
-
-
+    localStorage.removeItem("quantity");
+    localStorage.removeItem("ID-ot");
+    localStorage.removeItem("Title");
  });
 
  }
