@@ -19,8 +19,11 @@ export class ViewMypartnersComponent implements OnInit {
   constructor(private partneringService: PartneringService) { }
 
   ngOnInit(): void {
+    console.log("Initializing my partners");
     this.partneringService.GetMyPartners().subscribe(data=>{
       this.orphanages =data;
+      
+      console.log("Data returned:", this.orphanages);
     });
   }
   openModal(){
