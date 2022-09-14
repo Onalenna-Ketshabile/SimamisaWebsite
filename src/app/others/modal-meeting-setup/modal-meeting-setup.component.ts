@@ -17,36 +17,20 @@ export class ModalMeetingSetupComponent implements OnInit {
 
   ngOnInit(): void {
     this.myAngularQrCode = "Simamisa Mobile App Link"
-    if (localStorage.getItem("userRole") === "" && localStorage.getItem("userName") === "") {
+    if (localStorage.getItem("userRole") == null && localStorage.getItem("userName") == null) {
       this.show = false;
     } else {
       this.show = true;
-      let body = {
-        registeredUserID: localStorage.getItem("UserID"),
-        childID: localStorage.getItem("ChildID")
-      }
-      this.meetingService.makeSponsor(JSON.stringify(body)).subscribe(data => {
-        console.log(data);
-        localStorage.removeItem("ChildID");
-      });
       //Make person a sponsor
     }
 
   }
 
   showQR(): boolean {
-    if (localStorage.getItem("userRole") == "" && localStorage.getItem("userName") == "") {
+    if (localStorage.getItem("userRole") ==null && localStorage.getItem("userName") == null) {
 
       return false;
     } else {
-      let body = {
-        registeredUserID: localStorage.getItem("userID"),
-        childID: localStorage.getItem("ChildID")
-      };
-      this.meetingService.makeSponsor(JSON.stringify(body)).subscribe(data => {
-        console.log(data);
-        localStorage.removeItem("ChildID");
-      });
       return true;
     }
   }

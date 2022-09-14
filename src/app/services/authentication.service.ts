@@ -154,10 +154,7 @@ export class AuthenticationService extends ObservableStore<StoreState>{
       isVolunteer: false,
       Status: ""
     }
-    localStorage.setItem('loggedIn', 'false');
-    localStorage.setItem('userRole', '');
-    localStorage.setItem('userName', '');
-    localStorage.setItem('userID', '');
+  localStorage.clear();
     let user = from([empty]);
     return user;
   }
