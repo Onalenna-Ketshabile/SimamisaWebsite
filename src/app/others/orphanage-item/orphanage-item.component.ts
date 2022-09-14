@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Orphanage } from 'src/app/models/orphanage';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 
@@ -11,12 +12,16 @@ export class OrphanageItemComponent implements OnInit {
   @Input()
   orphanage!: Orphanage;
 
-  constructor(private orphService:OrphanageService) {
+  constructor(private orphService:OrphanageService,private router: Router) {
 
   }
 
    ngOnInit():void {
 
     }
+    onSelected(_orphanage: Orphanage): void{
+      console.log(_orphanage);
+      this.router.navigate(['/orphanage-single/'+this.orphanage.ID]);
+   }
 
 }

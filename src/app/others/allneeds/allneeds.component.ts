@@ -22,7 +22,6 @@ export class AllneedsComponent implements OnInit {
   ngOnInit(): void {
      this.orphService.init();
     this.getNeeds();
-    console.log("Looking for the error!");
     
   }
    getNeeds(){

@@ -17,8 +17,8 @@ export class ChildPageComponent implements OnInit {
   formModal:any;
 
   child?: Child;
-  orphanage?: Orphanage;
-  
+  orphanage!: Orphanage;
+  Age!: number;
   constructor(private route: ActivatedRoute,private children_service:ChildrenService,private orphanage_service:OrphanageService) { }
 
   ngOnInit(): void {
@@ -27,20 +27,24 @@ export class ChildPageComponent implements OnInit {
      
     //Get the child
     this.children_service.getChildByID(this.route.snapshot.params['c_id']).subscribe(data=>{
-      this.child =data; });
+      this.child =data;
+      this.Age = new Date().getFullYear() - Number(this.child.DOB.slice(0,4)); 
+      console.log(data);
+    });
     
     //Get the Orphanage
+    this.orphanage_service.init();
     this.orphanage_service.getOrphanageByID(this.route.snapshot.params['o_id']).subscribe(data=>{
-      this.orphanage =data; });
+      this.orphanage =data; 
+    console.log(this.orphanage)});
 
     // this.formModal = new window.boostrap.Modal(
     //   document.getElementById("custom-modal")
     // );
 
   }
-  openModal(){
-    this.formModal.show();
-     console.log("Modal function is called...");
- }
+  SponsorChildRequest(){
+    
+  }
 
 }

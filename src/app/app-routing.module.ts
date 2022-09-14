@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'item-proposals' , component: ItemProposalsComponent},
   { path: 'spinner', component: LoadingIndicatorSpinnerComponent}, //TO REMOVE.
   { path: 'donate' , component: DonateComponent},
-  { path: 'orphanage-single' , component: OrphanageSingleComponent},
+  { path: 'orphanage-single/:id' , component: OrphanageSingleComponent},
   {
     path: 'admin',
   // canActivate:[AuthGuard],

@@ -7,5 +7,7 @@ ChildStruggles: string,
 Avatar : any
 ChildPassword: string
 orphanageID: number
+ChildInterest: string,
+DOB: string
 
 }

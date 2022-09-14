@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Orphanage } from 'src/app/models/orphanage';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 
@@ -10,16 +11,19 @@ import { OrphanageService } from 'src/app/services/orphanage.service';
 export class OrphanageSingleComponent implements OnInit {
 
   orphanage!: Orphanage;
-
-  constructor(private orphanageService: OrphanageService) { }
+ 
+  constructor(private route: ActivatedRoute,private orphanageService: OrphanageService) { }
 
   ngOnInit(): void {
     
+
+    
     this.orphanageService.init();
-    this.orphanageService.getOrphanageByID(1).subscribe(data=>{
-      this.orphanage =   data;
-      console.log("The orphanage by ID");
-      console.log(this.orphanage)
+    this.orphanageService.getOrphanages().subscribe(data=>{
+     this.orphanage =   data.filter( orph => (orph.ID = Number(this.route.snapshot.params['id'])))[0];
+      console.log("The orphanage by ID: " + this.route.snapshot.params['id']) ;
+      console.log(data)
+      console.log("###################");
     });
       
   }

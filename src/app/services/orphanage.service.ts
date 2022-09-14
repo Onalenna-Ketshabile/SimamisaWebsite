@@ -36,7 +36,7 @@ export class OrphanageService {
   }
 
   public getOrphanages():Observable<Orphanage[]>{
-  console.log("Inside a method");
+  console.log(this.apiURL);
   console.log(this.orphanages);
   
     return this.orphanages;

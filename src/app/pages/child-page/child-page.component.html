@@ -25,10 +25,12 @@
 				<div *ngIf="child">
 				<div class="col-lg-6">
 					<div class="project-summery">
-						<h3 class="project-title">
-							{{child.Nickname}} (child.age Years Old.)
+						<span>
+						<h3 class="project-title" >
+							{{child.Nickname}}
 						</h3>
-                       
+					</span> 
+					<span  class="project-title"> ({{Age}} Years Old)</span>
 						<div class="meta">
 							<div class="author">
 								<span>From: </span>
@@ -47,16 +49,12 @@
 						
 							<p style="margin: 10px 0px;">{{child.ChildStruggles}}</p>
 						    <h4 class="description-title">Interest:</h4>
-						   <ul>
-							<li>list</li>
-							<li>list</li>
-							<li>list</li>
-						   </ul>
+							<p style="margin: 10px 0px;">{{child.ChildInterest}}</p>
 						</div>
 			
 						<div class="project-form">
-								<button type="submit" class="main-btn">Query Profile<i class="far fa-arrow-right"></i></button>
-								<button type="submit" class="main-btn" data-bs-toggle="modal" data-bs-target="#custom-modal" (click)="openModal()">Sponsor this Child<i class="far fa-arrow-right"></i></button>
+						
+								<button type="submit" class="main-btn" >Sponsor this Child<i class="far fa-arrow-right"></i></button>
 							
 						</div>
 					</div>

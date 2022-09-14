@@ -26,7 +26,7 @@ export class OrphanagesManagerComponent implements OnInit {
   ngOnInit(): void {
    this.orphService.init();
     this.orphService.getOrphanages().subscribe(data=>{
-      this.orphanages =data;
+      this.orphanages =data.filter( orph => (orph.ID != Number(localStorage.getItem('orphID'))));
     });
   }
 }
