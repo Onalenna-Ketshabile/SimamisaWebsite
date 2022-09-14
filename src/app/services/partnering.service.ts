@@ -74,6 +74,7 @@ export class PartneringService {
       (myOrphanagePartner)=>{
         this.myOrphanagePartners.next(myOrphanagePartner);
         console.log(this.myOrphanagePartners);
+        console.log(this.apiURLGetRequest+localStorage.getItem("orphID"));
       }
     );
   }
