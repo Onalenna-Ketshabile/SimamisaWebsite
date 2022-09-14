@@ -21,14 +21,6 @@ export class ModalMeetingSetupComponent implements OnInit {
       this.show = false;
     } else {
       this.show = true;
-      let body = {
-        registeredUserID: localStorage.getItem("UserID"),
-        childID: localStorage.getItem("ChildID")
-      }
-      this.meetingService.makeSponsor(JSON.stringify(body)).subscribe(data => {
-        console.log(data);
-        localStorage.removeItem("ChildID");
-      });
       //Make person a sponsor
     }
 
