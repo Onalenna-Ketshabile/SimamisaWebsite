@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Orphanage } from 'src/app/models/orphanage';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 import { PartneringService } from 'src/app/services/partnering.service';
 
@@ -16,7 +17,7 @@ export class ViewMypartnersComponent implements OnInit {
   orphanages?: Orphanage[];
   formModal:any;
   makeOfferModal: any;
-  constructor(private partneringService: PartneringService) { }
+  constructor(private partneringService: PartneringService, private dataToModels: DataToModalsService) { }
 
   ngOnInit(): void {
     console.log("Initializing my partners");
@@ -32,6 +33,10 @@ export class ViewMypartnersComponent implements OnInit {
  }
  openMakeOfferModal(){
    this.makeOfferModal.show();
+ }
+ selected(orphanage: Orphanage){
+   // this.dataToModels.setToOrphanageID(orphanage.ID);
+    localStorage.setItem("recID",orphanage.ID.toString());
  }
 
 }
