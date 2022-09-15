@@ -33,11 +33,7 @@ export class ViewMyoffersComponent implements OnInit {
   return localStorage.getItem('userRole')=="M";
  }
  selected(offer: Offer){
-  console.log("Tasdf",offer.Quantity);
-     localStorage.setItem("quantity",offer.Quantity.toString());
-     localStorage.setItem("ID-ot",offer.ID.toString());
-     localStorage.setItem("Title",offer.Title);
-
+   
 
  }
 }
