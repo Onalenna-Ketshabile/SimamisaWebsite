@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { managerInventoryReport } from 'src/app/models/managerInventoryReport';
+import { ManagerReportsService } from 'src/app/services/manager-reports.service';
 
 @Component({
   selector: 'app-table-inventory',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableInventoryComponent implements OnInit {
 
-  constructor() { }
+  managerInventoryReports!: managerInventoryReport[];
+
+  constructor(private managerReport: ManagerReportsService) { }
 
   ngOnInit(): void {
+    this.managerReport.getManagerInventoryReport().subscribe(data=>{
+      this.managerInventoryReports = data;
+ 
+      console.log(this.managerInventoryReports);
+
+    });
   }
 
 }

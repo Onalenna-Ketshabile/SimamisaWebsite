@@ -1,1 +1,32 @@
-<p>table-inventory works!</p>
+<div class="panel panel-default"> 
+    <div class="panel-heading"> 
+      <div class="panel-title">Orphanage Item Inventory.
+      </div> 
+
+    </div> 
+    <div class="panel-body with-table">
+      <table class="table table-bordered table-responsive"> 
+        <thead> 
+          <tr> 
+            <th>#
+            </th> 
+            <th>Item Name
+            </th> 
+            <th>Quantity
+            </th> 
+        
+          </tr> 
+        </thead> 
+        <tbody> 
+         
+              <tr app-table-row-inventory  *ngFor="let managerInventoryReport of managerInventoryReports" [managerInventoryReport]="managerInventoryReport"  >
+                                        
+                      
+            </tr>
+          
+          
+        </tbody> 
+      </table>
+    </div> 
+  </div>
+  

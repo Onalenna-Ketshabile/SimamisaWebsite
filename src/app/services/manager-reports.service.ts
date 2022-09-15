@@ -52,6 +52,7 @@ export class ManagerReportsService {
     this.http.get<managerNeedsReport[]>(this.apiURL+'om/report/needs?id='+orphanageID+'&rating='+1,{headers:this.headers}).subscribe(
       (needsReport)=>{
         this.managerNeedsReportOne.next(needsReport);
+        console.log(this.apiURL+'om/report/needs?id='+orphanageID+'&rating='+1);
       }
     );
   }

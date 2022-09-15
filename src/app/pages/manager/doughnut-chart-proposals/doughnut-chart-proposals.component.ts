@@ -38,10 +38,10 @@ export class DoughnutChartProposalsComponent implements OnInit {
     const myChart = new Chart('mydoughnutChart', {
       type: 'doughnut',
       data: {
-          labels: ['Need Met', 'Need Unmet', 'Needs Pending'],
+          labels: ['Proposals Met', 'Proposals Unmet', 'Proposals Pending'],
           datasets: [{
               label: '# of Votes',
-              data: [12, 19, 3],
+              data: [this.managerProposalReport.fulfilled, this.managerProposalReport.unmet, this.managerProposalReport.unmet],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',

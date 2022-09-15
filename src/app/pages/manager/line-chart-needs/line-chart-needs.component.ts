@@ -65,28 +65,29 @@ export class LineChartNeedsComponent implements OnInit {
     
     console.log(this.needsReportPriorityOne,this.needsReportPriorityTwo,this.needsReportPriorityThree);
     if(this.needsReportPriorityOne.length != 0  && this.needsReportPriorityTwo.length != 0  && this.needsReportPriorityThree.length != 0){
-      let needsMetTotal: number = 0; 
-      let needsProposedTotal: number = 0;
+      let needsMetTotal: number[] = [0,0,0,0,0,0,0,0,0,0,0,0]; 
+      let needsProposedTotal: number[]= [0,0,0,0,0,0,0,0,0,0,0,0];
       let needsmetPercentage:number[] = [0,0,0,0,0,0,0,0,0,0,0,0];
     for(var i = 0; i < 12; i++){
-      needsProposedTotal = this.needsReportPriorityOne[i].needs
+      needsProposedTotal[i] = this.needsReportPriorityOne[i].needs
                       + this.needsReportPriorityTwo[i].needs
                       + this.needsReportPriorityThree[i].needs
 
-           needsMetTotal = this.needsReportPriorityOne[i].metNeeds
+           needsMetTotal[i] = this.needsReportPriorityOne[i].metNeeds
                       + this.needsReportPriorityTwo[i].metNeeds
                       + this.needsReportPriorityThree[i].metNeeds
 
                      // needsmetPercentage[i] = needsMetTotal/needsProposedTotal;
     }  
    
+      console.log();
    const myChart = new Chart('myChart', {
     type: 'line',
     data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct','Nov','Dec'],
         datasets: [{
-            label: '# of Votes',
-            data: [2,3,5,2,2,2,1,4,2,1,3,6],
+            label: 'Needs Proposed',
+            data: needsProposedTotal,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -118,8 +119,8 @@ export class LineChartNeedsComponent implements OnInit {
             borderWidth: 1
         },
         {
-          label: '# of Votes',
-          data: [3,4,8,5,4,5,7,7,4,4,5,7],
+          label: 'Needs Met',
+          data: needsMetTotal,
           backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
