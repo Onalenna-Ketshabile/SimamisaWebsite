@@ -13,7 +13,6 @@ export class DashboardAdminComponent implements OnInit {
   numberOfChildren!: number[];
   numberOfSponsors!: number[];
           
-
   constructor(private adminReports: AdminReportsService) { }
 
   ngOnInit(): void {

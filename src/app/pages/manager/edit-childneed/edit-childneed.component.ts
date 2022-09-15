@@ -41,9 +41,9 @@ export class EditChildneedComponent implements OnInit {
       })
       
     })
-    this.nService.getChildNeedByID(this.id).subscribe((data)=>{
+    // this.nService.getChildNeedByID(this.id).subscribe((data)=>{
 
-    })
+    // })
 
   }
   editChildNeed(details: { name: string; description: any; amount: any; }) {

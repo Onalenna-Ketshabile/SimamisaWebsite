@@ -22,6 +22,9 @@ export class DataToModalsService {
   private _childUpdateDataSource = new Subject<ChildUpdate>();
   childUpdateDatasent$ = this._childUpdateDataSource.asObservable();
 
+  private _makeOfferDataSource = new Subject<Number>();
+  makeOfferDatasent$ = this._makeOfferDataSource.asObservable();
+
    
   constructor() { }
   
@@ -37,6 +40,10 @@ export class DataToModalsService {
   }
   setChildUpdateDetails(childUpdate: ChildUpdate){
     this._childUpdateDataSource.next(childUpdate);
+  }
+  setToOrphanageID(ID: number){
+    console.log("Orphanaged clicked has ID " + ID);
+   this._makeOfferDataSource.next(ID);
   }
 
 }

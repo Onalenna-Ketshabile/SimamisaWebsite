@@ -2,7 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { BASEURL } from '../constants/constants';
+import { managerDemographicsReport } from '../models/managerDemographicsReport';
+import { managerInventoryReport } from '../models/managerInventoryReport';
 import { managerNeedsReport } from '../models/managerNeedsReports';
+import { managerProposalReport } from '../models/managerProposalReport';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +15,13 @@ export class ManagerReportsService {
   private managerNeedsReportTwo = new BehaviorSubject<managerNeedsReport[]>([]);
   private managerNeedsReportThree = new BehaviorSubject<managerNeedsReport[]>([]);
 
+  private managerProposalReport = new BehaviorSubject<managerProposalReport[]>([]);
+  private managerInventoryReport = new BehaviorSubject<managerInventoryReport[]>([]);
+  private managerDemographicsReport = new BehaviorSubject<managerDemographicsReport[]>([]);
+
   headers: any;
 
-  readonly apiURL = `${BASEURL}`;
+  readonly apiURL = `${BASEURL}/`;
   
   constructor(private http:HttpClient) {
      
@@ -59,6 +66,49 @@ export class ManagerReportsService {
     this.http.get<managerNeedsReport[]>(this.apiURL+'om/report/needs?id='+orphanageID+'&rating='+3,{headers:this.headers}).subscribe(
       (needsReport)=>{
         this.managerNeedsReportThree.next(needsReport);
+      }
+    );
+  }
+
+
+
+
+  getManagerProposalsReport(orphanageID:string):Observable<any>{
+    this._managerProposalsReport(orphanageID);
+    return this.managerProposalReport;
+
+  } 
+   _managerProposalsReport(orphanageID:string){
+    this.http.get<managerProposalReport[]>(this.apiURL+'om/report/proposal?id='+orphanageID,{headers:this.headers}).subscribe(
+      (proposalReport)=>{
+        this.managerProposalReport.next(proposalReport);
+      }
+    );
+  }
+
+
+  getManagerInventoryReport():Observable<any>{
+    this._managerInventoryReport();
+    return this.managerInventoryReport;
+
+  } 
+   _managerInventoryReport(){
+    this.http.get<managerInventoryReport[]>(this.apiURL+'om/report/inventory?id='+localStorage.getItem('orphID'),{headers:this.headers}).subscribe(
+      (inventoryReport)=>{
+        this.managerInventoryReport.next(inventoryReport);
+      }
+    );
+  }
+
+  getManagerDemographicsReport():Observable<any>{
+    this._managerDemographicsReport();
+    return this.managerDemographicsReport;
+
+  } 
+   _managerDemographicsReport(){
+    this.http.get<managerDemographicsReport[]>(this.apiURL+'om/report/demographics?id='+localStorage.getItem('orphID'),{headers:this.headers}).subscribe(
+      (demographicsReport)=>{
+        this.managerDemographicsReport.next(demographicsReport);
       }
     );
   }

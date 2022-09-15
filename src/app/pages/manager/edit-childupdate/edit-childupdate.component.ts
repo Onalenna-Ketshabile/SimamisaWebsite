@@ -30,10 +30,10 @@ export class EditChildupdateComponent implements OnInit {
       this.editChildUpdateForm.controls["description"].setValue(this.childUpdate.Description);
       console.log(this.childUpdate);
     });
-   this.cService.getChildUpdateByID(this.id).subscribe((data)=>{
- 
-    })
-   
+  //  this.cService.getChildUpdateByID(this.id).subscribe((data)=>{
+
+  //   })
+
   }
   editChildUpdate(details: { name: string; description: any; }) {
     this.id = this.childUpdate.ID;

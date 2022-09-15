@@ -65,14 +65,15 @@ export class PartneringService {
   }
   
   GetMyPartners():Observable<any>{
-
+      
       return this.myOrphanagePartners;
     }
   MyPartners(): void{
-    console.log("Loading partners2");
-    this.http.get<Orphanage[]>(this.apiURLGetRequest+localStorage.getItem("orphID"),{headers:this.headers}).subscribe(
+    console.log("Loading my partners");
+    this.http.get<Orphanage[]>(this.apiURLGetPartner+localStorage.getItem("orphID"),{headers:this.headers}).subscribe(
       (myOrphanagePartner)=>{
         this.myOrphanagePartners.next(myOrphanagePartner);
+        console.log(this.apiURLGetPartner+localStorage.getItem("orphID"));
         console.log(this.myOrphanagePartners);
         console.log(this.apiURLGetRequest+localStorage.getItem("orphID"));
       }

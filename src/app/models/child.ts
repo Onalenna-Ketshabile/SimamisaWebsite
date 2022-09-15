@@ -1,4 +1,5 @@
 export interface Child {
+orphanage: any
 ID: number,
 Username: string, 
 Nickname: string,

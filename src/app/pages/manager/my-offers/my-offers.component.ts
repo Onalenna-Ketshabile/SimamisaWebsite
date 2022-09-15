@@ -16,6 +16,7 @@ export class MyOffersComponent implements OnInit {
     this.offersService.getMyOffer().subscribe(data=>{
       
       this.offers =data;
+      console.log("offers",this.offers);
     });
   }
 
