@@ -22,6 +22,7 @@ export class ViewMyoffersComponent implements OnInit {
   constructor(private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
+    
   }
   
   openModal(){
@@ -31,15 +32,8 @@ export class ViewMyoffersComponent implements OnInit {
  show():boolean{
   return localStorage.getItem('userRole')=="M";
  }
- showAcceptOfferModal():void{
-   console.log("About to show a modal form.");
-  // this.acceptOfferModal.show();
-  console.log("This could work");
-  console.log(this.offer.ID);
+ selected(offer: Offer){
+   
 
-  this.dataToModals.setOfferDetails(this.offer);
-  console.log("offere details were set.");
- 
-     
  }
 }

@@ -35,7 +35,7 @@ export class PartneringService {
     );
    
   }
-  sendRequest(fromID:string|null,toID: string):Observable<any>{
+  sendRequest(fromID:string,toID: string):Observable<any>{
 
     return this.http.post<any>(this.apiURLPostRequest+"from="+fromID+"&to="+toID,{headers:this.headers}).pipe(
       map((res)=>{

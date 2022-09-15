@@ -40,9 +40,10 @@ export class OffersService {
           return this.myOffers;
         }
       MyOffer(): void{
-
+         console.log(this.apiURL+"?id="+localStorage.getItem("orphID"));
         this.http.get<Offer[]>(this.apiURL+"?id="+localStorage.getItem("orphID"),{headers:this.headers}).subscribe(
           (myOffer)=>{
+            console.log("Obj",myOffer);
             this.myOffers.next(myOffer);
           }
         );

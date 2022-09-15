@@ -1,27 +1,29 @@
 <div class="modal" tabindex="-1" id="showQR" data-backdrop="false" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" >
         <div class="modal-header bg-light">
           <h4 class="modal-title" id="myCenterModalLabel">Get The Mobile App</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" >
           <div *ngIf="show">
-            <p>Donate Money, Arrange to drop off items that you have, be a helping hand</p>
-            <qrcode qrdata="myAngularQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
-            <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+            <p><strong> Donate Money, Arrange to drop off items that you have, be a helping hand</strong></p>
+            <qrcode style="display: flex;justify-content: center;" qrdata="myAngularQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+            <button type="button" style="padding: 7px;" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
         
           </div>
-          <div *ngIf="!show">
-            <p>Don't have an account? Register With Simamisa</p>
-            <div class="col-sm-7">
-              <div class="b-text">
+          <div *ngIf="!show" style="margin-bottom: 50px; margin-left: 120px;">
+            <!-- sdf -->
+            <p><strong> Don't have an account? Register With Simamisa</strong></p>
+            <div class="col-sm-7" >
+              <div class="b-text" style="display: flex;justify-content: space-evenly; margin-left: 25px; width:100%;">
                 <a href="/register" routerLink="/register" class="hbtn hbtn-primary hbtn-lg btn-donate" data-bs-dismiss="modal" >Register</a>
+                <a href="#" class="hbtn hbtn-primary hbtn-lg btn-donate" data-bs-dismiss="modal" >Cancel</a>
     
               </div>
               
                  </div>
-                 <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+                 <!-- <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button> -->
         
           </div>
            

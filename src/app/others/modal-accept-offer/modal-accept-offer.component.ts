@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Offer } from 'src/app/models/offer';
 import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { OffersService } from 'src/app/services/offers.service';
@@ -9,11 +9,11 @@ import { OffersService } from 'src/app/services/offers.service';
   styleUrls: ['../../../assets/css/modal.css']
 })
 export class ModalAcceptOfferComponent implements OnInit {
-
+@Input()
+offer! : Offer;
   offerID = 0;
-  offer! : Offer;
-
-  Amount = 0;
+ 
+  Amount! :string;
   Title = "";
   IDstr: any;
 
@@ -23,22 +23,25 @@ export class ModalAcceptOfferComponent implements OnInit {
  }
 
   ngOnInit(): void {
+  
+    // localStorage.setItem("quantity",offer.Quantity.toString());
+    // localStorage.setItem("ID-ot",offer.ID.toString());
 
-    console.log("Modal successfully open!");
-    console.log(this.offer);
-    this.dataToModals.offerDatasent$.subscribe(
-      data => {
-        this.offer = data;
-        this.Title = this.offer.Title;
-        this.Amount= this.offer.Quantity;
-        console.log(this.offer);
-      }
-    )
+    // console.log("Modal successfully Trash open!");
+    // console.log(this.offer);
+    // this.dataToModals.offerDatasent$.subscribe(
+    //   data => {
+    //     this.offer = data;
+    //     this.Title = this.offer.Title;
+    //     this.Amount= this.offer.Quantity;
+    //     console.log(this.offer);
+    //   }
+    // )
 
   }
 
   acceptOffer( offerDetails: {quantity: number}) {
-   
+  
     var strID  = "";
     strID = String(localStorage.getItem("orphID"));
     let OfferAccept = {
@@ -52,11 +55,8 @@ export class ModalAcceptOfferComponent implements OnInit {
     const body = JSON.stringify(OfferAccept);
 
     this.offersService.AcceptOffer(body).subscribe(data => {
-      console.log(data);
-        
-    console.log("accepted?");
-
-
+      window.alert(data);
+      console.log(data);     
  });
 
  }

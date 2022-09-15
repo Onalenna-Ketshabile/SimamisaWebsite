@@ -33,8 +33,13 @@ export class NeeditemComponent implements OnInit {
     let num =((this.need.AmountReceived/this.need.AmountNeeded)*100);
     
    this.progress= Math.round( num * 100 + Number.EPSILON ) / 100;
-  
-   this.amntNeeded = this.need.AmountNeeded - Number(this.need.AmountReceived);
+  let amtNeed = this.need.AmountNeeded - Number(this.need.AmountReceived);
+  if(amtNeed < 0){
+    this.amntNeeded =0;
+  }else{
+    this.amntNeeded = amtNeed;
+   
+  }
    //date
     this.date = this.need.DateEstablished.slice(0,10);
    //orphanage name

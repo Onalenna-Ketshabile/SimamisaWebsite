@@ -24,9 +24,11 @@ export class NeedsService {
   getAllNeeds(): Observable<Need[]> {
     return this.http.get<Need[]>(this.apiURL + "/active", { headers: this.headers });
   }
-
+  getAllHNeeds(): Observable<Need[]> {
+    return this.http.get<Need[]>(this.apiURL + "/", { headers: this.headers });
+  }
   getNeedByID(id: string): Observable<Need> {
-    return this.http.get<any>(this.apiURL+"/", { headers: this.headers }).pipe(
+    return this.http.get<any>(this.apiURL+"/active", { headers: this.headers }).pipe(
       map(res => res.find((need:any) => need.ID == id)));
   }
   getOrphanageNeeds = () => {

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Proposal } from 'src/app/models/proposal';
 import { NeedsService } from 'src/app/services/needs.service';
 import { ProposalServiceService } from 'src/app/services/proposal-service.service';
@@ -19,7 +20,7 @@ export class PickupItemComponent implements OnInit {
   @Output()
 elementUpdated: EventEmitter<any> = new EventEmitter();
 
-  constructor(private proposalService: ProposalServiceService,private nService:NeedsService) { }
+  constructor(private proposalService: ProposalServiceService,private nService:NeedsService,private router:Router) { }
 
   ngOnInit(): void {
     this.nService.getNeedByID(this.proposal.itemNeedID.toString()).subscribe((res)=>{
@@ -64,8 +65,9 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
     this.proposalService.confirmProposal(this.proposal.ID).subscribe(data => {  
       console.log("Posted");
       console.log(data);
+      this.router.navigate(['manager/newsfeed/'+this.proposal.itemNeedID]);
       this.elementUpdated.emit();//Notifies parent to reload
-     
+      
     });
   }
   acceptProposal(){
