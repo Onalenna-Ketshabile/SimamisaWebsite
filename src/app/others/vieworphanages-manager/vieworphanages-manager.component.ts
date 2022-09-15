@@ -23,7 +23,8 @@ export class VieworphanagesManagerComponent implements OnInit {
     // });
   }
   sendPartneringRequest(): void{
-    this.partneringService.sendRequest(localStorage.getItem("orphID"),this.orphanage.ID+"").subscribe(data => {
+    console.log("I want to partner",localStorage.getItem("orphID"))
+    this.partneringService.sendRequest(localStorage.getItem("orphID")!,this.orphanage.ID+"").subscribe(data => {
       console.log(data);
       window.alert("Partnering request was succefully sent.")
         

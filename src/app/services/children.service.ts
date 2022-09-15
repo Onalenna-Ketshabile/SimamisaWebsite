@@ -22,7 +22,7 @@ export class ChildrenService {
   
   readonly apiURL =`${BASEURL}/children`;
   readonly getChildURL = `${BASEURL}/children/child/?id=`;
-  readonly getChildrenOrph = `${BASEURL}/children/orphanage/child?id=`;
+  readonly getChildrenOrph = `${BASEURL}/children/orphanage/child?OrphID=`;
   public init():void {
     this.http.get<Child[]>(this.apiURL,{headers:this.headers}).subscribe(
       (child)=>{
@@ -47,15 +47,12 @@ readonly getSpURL= `${BASEURL}/children/sponsorship/?childID=`
     return this.http.get<Child>(this.getChildURL+id,{headers:this.headers});
    }
    //Child's update posts  ********************************************
-    readonly childUpdatesUrl = `${BASEURL}/children/posts/?id=`//May be incorrect
+    readonly childUpdatesUrl = `${BASEURL}/children/child/post/?id=`//May be incorrect
    getChildUpdatesByID(id:string):Observable<ChildUpdate[]>{
   
     return this.http.get<any>(this.childUpdatesUrl + id, { headers: this.headers }).pipe(
       map((res) => {
-        if (res) {
-          return (res[0]);
-        }
-
+        return res;
       },
       ));;
    }

@@ -34,6 +34,7 @@ const routes: Routes = [
   children: [
     {path: 'home', component: HomeComponent},
     {path: 'newsfeed', component: NewsfeedComponent},
+    {path: 'newsfeed/:id', component: NewsfeedComponent},
     { path: 'item-proposals' , component: ItemProposalsComponent},
     {path:'newsfeed/editneed/:id',component:EditNeedComponent},
     {path:'logout',component:LogoutComponent},

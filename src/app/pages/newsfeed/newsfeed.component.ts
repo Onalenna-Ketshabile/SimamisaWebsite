@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -9,10 +10,13 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class NewsfeedComponent implements OnInit {
   formModal:any;
   myAngularQrCode:any
-  constructor(private authService:AuthenticationService,) { }
+  id: any;
+  constructor(private authService:AuthenticationService,private _Activatedroute: ActivatedRoute) { }
  
 
   ngOnInit(): void {
+    this.id = this._Activatedroute.snapshot.paramMap.get("id");
+
     this.myAngularQrCode="Simamisa Mobile App Link"
   }
 

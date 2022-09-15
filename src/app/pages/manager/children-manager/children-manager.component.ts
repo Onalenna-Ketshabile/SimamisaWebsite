@@ -16,7 +16,8 @@ export class ChildrenManagerComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadingHandler.start();
-    this.cService.getAllChildren().subscribe(data=>{
+   let  id = localStorage.getItem("orphID")!;
+    this.cService.getChildrenByOrphanage(id).subscribe(data=>{
       this.loadingHandler.finish();
       this.children =data;
     });

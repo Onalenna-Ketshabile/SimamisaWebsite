@@ -76,7 +76,7 @@ export class ChildPageComponent implements OnInit {
       };
      
       this.meetingService.makeSponsor(JSON.stringify(body)).subscribe(data => {
-        console.log(data);
+        console.log("Made Sponsor",data);
         localStorage.removeItem("ChildID");
       });
       //Make person a sponsor
