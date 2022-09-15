@@ -30,6 +30,7 @@ this.managerReports.getManagerDemographicsReport().subscribe(data=>{
 }
 
 plotGraph(){
+
  
   const myChart = new Chart('myPieChart', {
       type: 'pie',
@@ -53,5 +54,7 @@ plotGraph(){
       },
   
   });
+ 
 }
+
 }
