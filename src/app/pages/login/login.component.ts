@@ -24,7 +24,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if(localStorage.getItem('loggedIn')==='true'&&localStorage.getItem('userRole')==='M'){
-      this.router.navigate(['/manager']); localStorage.getItem("orphID")
+      this.router.navigate(['/manager']); localStorage.getItem("orphID");
+      console.log("The manager logged in.");
+    }
+    if(localStorage.getItem('loggedIn')==='true'&&localStorage.getItem('userRole')==='A'){
+      this.router.navigate(['/admin']);//localStorage.getItem("orphID")
+      console.log("The admin logged in.");
     }
   }
 
@@ -42,6 +47,9 @@ export class LoginComponent implements OnInit {
       this.loadingHandler.finish();
       this.returnUrl= this.route.snapshot.queryParams['returnUrl'];
       if(this.authService.getUserRole==="M") this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/manager';
+      this.router.navigateByUrl(this.returnUrl);
+
+      if(this.authService.getUserRole==="A") this.returnUrl = this.route.snapshot.queryParams['returnUrl']||'/admin';
       this.router.navigateByUrl(this.returnUrl);
   
     });

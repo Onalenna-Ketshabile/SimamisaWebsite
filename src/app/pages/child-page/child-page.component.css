@@ -447,6 +447,7 @@ a:hover {
 	z-index: 1;
 	border: 1px solid transparent;
 	margin-right: 30px;
+	float: right;
 }
 
 .main-btn i {
