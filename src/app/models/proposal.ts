@@ -1,4 +1,5 @@
 export interface Proposal {
+    Title: string;
     ID: number,
     PickUpTime: string,
     PickUpPlace: string,

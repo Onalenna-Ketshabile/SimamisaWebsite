@@ -24,7 +24,7 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
     this.nService.getNeedByID(this.proposal.itemNeedID.toString()).subscribe((res)=>{
-      this.proposalTitle= res.Title;
+      this.proposalTitle= this.proposal.Title
       this.setStatus();
       this.propDate = this.proposal.PickUpTime.substring(0,10);
       this.propTime = this.proposal.PickUpTime.substring(11,16);
