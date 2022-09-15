@@ -41,7 +41,7 @@ offer! : Offer;
   }
 
   acceptOffer( offerDetails: {quantity: number}) {
-  
+     console.log(this.offer)
     var strID  = "";
     strID = String(localStorage.getItem("orphID"));
     let OfferAccept = {
@@ -51,7 +51,7 @@ offer! : Offer;
 
     };
 
-    console.log(OfferAccept);
+    //console.log(OfferAccept);
     const body = JSON.stringify(OfferAccept);
 
     this.offersService.AcceptOffer(body).subscribe(data => {
