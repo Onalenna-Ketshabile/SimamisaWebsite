@@ -11,8 +11,9 @@
 					
 					</div>
 				</div>
-<app-needitem *ngFor="let need of needs" [need]="need" (elementDeleted)="onElementDeleted($event)">{{need.Title}}</app-needitem>
-				
+	
+ <app-needitem *ngFor="let need of needs" [need]="need" (elementDeleted)="onElementDeleted($event)">{{need.Title}}</app-needitem>
+
 			</div>
 		</div>
 	</section>

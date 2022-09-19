@@ -33,7 +33,7 @@ export class ViewMyoffersComponent implements OnInit {
   return localStorage.getItem('userRole')=="M";
  }
  selected(offer: Offer){
-   
-
+   console.log('Selected: ' + offer.Title+ "||| ID: " + offer.ID);
+   this.dataToModals.setOfferDetails(offer);
  }
 }

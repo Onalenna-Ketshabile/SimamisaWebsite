@@ -1,5 +1,5 @@
 
-<div id="header-holder" hidden class="innerpage grey-bg">
+<div  *ngIf="!show()" id="header-holder" class="innerpage grey-bg">
     <div id="top-content" class="container-fluid">
         <div class="container">
             <div class="row">
@@ -19,7 +19,7 @@
 <div class=" container-fluid"  style="padding-right: 0px;padding-left: 0px;">
   <div class="container"  style="padding-right: 0px; padding-left: 0px;">
       <!-- Start Page Header -->
-  <div class="page-header" >
+  <div   *ngIf="show()" class="page-header" >
     <h1 class="title">Newsfeed</h1>
       <ol class="breadcrumb">
         <li class="active">Your Orphanage Needs</li>
@@ -50,7 +50,7 @@
           </div>
           <div  *ngIf="!show()" class="col-sm-12">
             <div class="search-question-holder">
-                <button  class="main-btn"   data-bs-toggle="modal" data-bs-target="#showQR" >Get the mobile app<i class="far fa-arrow-right"></i></button>
+                <button  class="main-btn"   data-bs-toggle="modal" data-bs-target="#showQR" >Get our mobile app<i class="fa fa-download"></i></button>
             </div> 
         </div>
       </div>

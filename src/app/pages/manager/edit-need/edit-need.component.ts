@@ -8,7 +8,7 @@ import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 @Component({
   selector: 'app-edit-need',
   templateUrl: './edit-need.component.html',
-  styleUrls: ['./edit-need.component.css']
+  styleUrls: ['./edit-need.component.css','../../../../assets/css/modal.css']
 })
 export class EditNeedComponent implements OnInit {
   @ViewChild('editNeedForm') editNeedForm!: NgForm;

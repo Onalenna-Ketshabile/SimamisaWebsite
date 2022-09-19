@@ -1,15 +1,24 @@
-<div class="col-xl-10">
+<div class="col-lg-6 col-md-6 col-sm-10">
     <div class="project-item mb-30">
-        <img hidden class="thumb" src={{need.ItemImage}} >
+        <img hidden  class="thumb" src='../../../assets/images/newsfeed/schoolshoe.jpg' >
         <div class="content">
+        
+            <div class = 'row'>
 
+                <div class="col-lg-6">
+                    <img   class="thumb" src='../../../assets/images/newsfeed/schoolshoe.jpg' >
+                </div>
+                
+            <div class="col-lg-6" style="padding-left: 0px; padding-right: 0px;">
             <h4 class="title">
                 <a href="project-details.html">{{need.Title}}</a>
             </h4>
             <div class="author">
-                <img src="../../../assets/images/orphanages/KingdomLife.png" alt="Thumb">
+                <img src="../../../assets/images/orphanages/KingdomLife.png" alt="Thumb" style="margin-right: 8px;">
                 <a href="#">{{orphName}}</a>
             </div>	
+            </div>
+
             <div class="project-details-tab">
 
                 <div class="description-content">
@@ -20,8 +29,13 @@
             
                 </div>
 
-            </div>		
-            <div class="project-stats">
+            </div>
+
+       
+            </div>
+
+    		
+            <div class="project-stats" style="margin: 15px 0">
                 <div class="stats-value">
                     <p class="value-title">Amount Needed <span class="value">R{{amntNeeded}}</span></p>
                     <br/>
@@ -35,13 +49,10 @@
             <span class="date"><i class="far fa-calendar-alt"></i> {{date}}</span>
             
         </div>
-        <div class="donation-btns">
-          
-            <div *ngIf="isSponsor()">
-                <button  class="main-btn"   data-bs-toggle="modal" data-bs-target="#editNeed-modal"  (click)="editNeed()">Edit Need <i class="far fa-arrow-right"></i></button>
-                <button  class="main-btn" (click)="deleteNeed()">Delete Need <i class="far fa-arrow-right"></i></button>
-               
-            </div>
+        <div class="donation-btns" *ngIf="isSponsor()">
+                <button  class="main-btn"   data-bs-toggle="modal" data-bs-target="#editNeed-modal"  (click)="editNeed()">Edit Need <i class="far fa fa-pencil"></i></button>
+                <button  class="main-btn" (click)="deleteNeed()">Delete Need <i class="fa fa-trash"></i></button>
+            
         </div>
     </div>
 </div>

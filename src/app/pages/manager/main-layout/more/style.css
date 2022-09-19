@@ -146,12 +146,13 @@ body {
   background: #D5EAFF;
 }
 a {
-  color: #399BFF;
+  color: #FF7B29;
   text-decoration: none;
 }
 a:hover,
 a:focus {
   text-decoration: none;
+  color: #CC8E68;
 }
 b,
 strong {
@@ -429,12 +430,12 @@ Sidepanel Open Button - Show or Hide Sidepanel
 .sidepanel-open-button {
   height: 60px;
   font-size: 22px;
-  display: block;
   width: 62px;
   text-align: center;
   float: right;
-  color: rgba(0, 0, 0, 0.6);
-  padding-top: 19px;
+  display: flex;
+  align-items: center;
+    justify-content: center;
   border-left: 1px solid rgba(0, 0, 0, 0.14);
   z-index: 1;
 }
@@ -698,10 +699,9 @@ Sidepanel
   position: fixed;
   display: none;
   width: 300px;
-  top: 60px;
+  top: 90px;
   bottom: 0;
   right: 0;
-  padding-top: 20px;
   overflow: auto;
   box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.2);
   background: #FBFBFD;
@@ -723,7 +723,7 @@ Sidepanel
   position: fixed;
   background: #3D464D;
   z-index: 2;
-  top: 60px;
+  top: 90px;
   padding: 0;
 }
 .sidepanel .nav-tabs > li {
@@ -823,11 +823,11 @@ Sidepanel
 }
 /* General Sidepanel Title */
 .gn-title {
-  background: #E4E4E4;
+  background: #CC8E68;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   margin: 0 -20px;
-  padding: 4px 0 4px 20px;
+  padding: 6px 0 6px 20px;
 }
 /* Todo List */
 .todo-list li {
@@ -2961,7 +2961,7 @@ div[data-role="editor-toolbar"] {
 /* Tabs */
 .tab-content {
   background: #fff;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
 }
 .nav-tabs {
   border-bottom: none;
@@ -4108,4 +4108,36 @@ Widgets
   display: inline;
   margin-left: auto;
   margin-right: 20px;
+}
+.mdi{
+  color: #FF7B29;
+}
+
+.icon-button{
+  background: #CC8E68 ;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  justify-content: center;
+  padding: unset !important;
+
+}
+.icon-button__badge{
+   position: absolute;
+   top: -10px;
+   right: -11px;
+   width: 25px;
+   height: 25px;
+   background: #FFB282;
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50px;
+   font-size: 14px;
 }

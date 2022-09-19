@@ -7,7 +7,7 @@ import { OrphanageService } from 'src/app/services/orphanage.service';
 @Component({
   selector: 'app-needitem',
   templateUrl: './needitem.component.html',
-  styleUrls: ['./needitem.component.css']
+  styleUrls: ['./needitem.component.css','../../../assets/css/font-awesome.min.css']
 })
 export class NeeditemComponent implements OnInit {
   @Input()

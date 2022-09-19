@@ -5,7 +5,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
   selector: 'app-newsfeed',
   templateUrl: './newsfeed.component.html',
-  styleUrls: ['./newsfeed.component.css']
+  styleUrls: ['./newsfeed.component.css','../../../assets/css/font-awesome.min.css']
 })
 export class NewsfeedComponent implements OnInit {
   formModal:any;

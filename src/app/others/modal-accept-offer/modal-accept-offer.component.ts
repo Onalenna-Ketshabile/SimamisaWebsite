@@ -9,7 +9,6 @@ import { OffersService } from 'src/app/services/offers.service';
   styleUrls: ['../../../assets/css/modal.css']
 })
 export class ModalAcceptOfferComponent implements OnInit {
-@Input()
 offer! : Offer;
   offerID = 0;
  
@@ -18,8 +17,12 @@ offer! : Offer;
   IDstr: any;
 
   constructor(private dataToModals: DataToModalsService, private offersService: OffersService) {    
-    
 
+  this.dataToModals.offerDatasent$.subscribe(data=>{
+    this.offer = data;
+    console.log("Data has arrived.");
+    console.log("Offer Data => ",this.offer)
+  })
  }
 
   ngOnInit(): void {

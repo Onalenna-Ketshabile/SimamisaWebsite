@@ -7,7 +7,7 @@ import { NeedsService } from 'src/app/services/needs.service';
 @Component({
   selector: 'app-modal-add-need',
   templateUrl: './modal-add-need.component.html',
-  styleUrls: ['./modal-add-need.component.css']
+  styleUrls: ['./modal-add-need.component.css','../../../assets/css/modal.css']
 })
 export class ModalAddNeedComponent implements OnInit {
   ratings: number[] = [1, 2, 3];

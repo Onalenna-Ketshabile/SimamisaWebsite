@@ -2,7 +2,8 @@
     <div class="modal-dialog" >
       <div class="modal-content">
         <div class="modal-header bg-light">
-          <h4 class="modal-title" id="myCenterModalLabel">Add New Need</h4>
+          <h4 class="modal-title" id="myCenterModalLabel">Edit New Need</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
         </div>
         <div class="modal-body">
             <form #editNeedForm="ngForm" (ngSubmit)="editNeed(editNeedForm.value)">
@@ -44,7 +45,7 @@
   
   
             <button type="submit" class="btn btn-light waves-effect waves-light">   Save   </button>
-            <button type="button" class="btn btn-danger waves-effect waves-light" >Cancel</button>
+            <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal" >Cancel</button>
      
           </form>
         </div>
