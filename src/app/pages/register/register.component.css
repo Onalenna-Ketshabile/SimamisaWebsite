@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+   
 }
 
 .body{
@@ -257,4 +258,30 @@ margin-bottom: 35px;
     background-position: 50% -30%;
     opacity: 0.50;
     z-index: 0;
+}
+select{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+select:is(:focus){
+    border-bottom-color: #FFB282;
+}
+.select i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+.select:is(:focus) ~ i{
+    color: #FFB282;
 }

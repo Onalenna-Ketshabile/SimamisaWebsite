@@ -4,7 +4,6 @@ import { Proposal } from 'src/app/models/proposal';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { ProposalServiceService } from 'src/app/services/proposal-service.service';
 
-
 interface Filter {
   id: number,
   name: string
@@ -12,7 +11,7 @@ interface Filter {
 @Component({
   selector: 'app-item-proposals',
   templateUrl: './item-proposals.component.html',
-  styleUrls: ['./item-proposals.component.css', '../manager/child-needs/bootstrap.min.css', './../../../assets/css/icons.min.css', '../../../assets/css/bootstrap.min.css']
+  styleUrls: ['./item-proposals.component.css', '../manager/child-needs/bootstrap.min.css','../../../assets/css/bootstrap.min.css','../../../assets/css/table.css']
 })
 
 export class ItemProposalsComponent implements OnInit, OnChanges {
@@ -20,6 +19,12 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
   public activeLayout = "pickups"
   proposals?: Proposal[];
   loadingHandler = new LoadingHandler();
+
+  bsPickUp = 'inset 1px 2px 5px #777';
+  bsDropOff = 'unset'
+  btnPickUp = '#ed7226';
+  btnDropOff = '#FF7B29';
+
 
   filters: Filter[] = [
     { id: 1, name: 'All' },
@@ -92,13 +97,28 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
 
   }
   showPickUps(): void {
+    this.pickUpFocused();
     this.activeLayout = "pickups";//Get the pickups
-    this.updateFilter()
+    this.updateFilter();
+   
 
   }
   showDropOff(): void {
+    this.dropOffFocused();
     this.activeLayout = "dropoffs";//Get the dropoffs
     this.updateFilter();
+  }
+  pickUpFocused(){
+   this.btnPickUp = '#ed7226';
+  this.bsPickUp = 'inset 1px 2px 5px #777';
+   this.btnDropOff = '#FF7B29';
+   this.bsDropOff = 'unset';
+  }
+  dropOffFocused(){
+    this.btnDropOff  = '#ed7226';
+    this.bsDropOff = 'inset 1px 2px 5px #777';
+     this.btnPickUp = '#FF7B29';
+     this.bsPickUp = 'unset';
   }
 
 }

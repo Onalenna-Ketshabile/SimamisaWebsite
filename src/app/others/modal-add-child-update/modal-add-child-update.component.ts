@@ -6,7 +6,7 @@ import { NeedsService } from 'src/app/services/needs.service';
 @Component({
   selector: 'app-modal-add-child-update',
   templateUrl: './modal-add-child-update.component.html',
-  styleUrls: ['./modal-add-child-update.component.css']
+  styleUrls: ['./modal-add-child-update.component.css','../../../assets/css/modal.css']
 })
 export class ModalAddChildUpdateComponent implements OnInit {
   spID: any;

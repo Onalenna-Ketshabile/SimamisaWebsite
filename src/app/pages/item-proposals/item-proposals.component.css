@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300);
-
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
 body[data-layout-mode=dark] {
 	background-color: #191e22;
 	color: #ced4da;
@@ -6032,7 +6032,7 @@ body[data-layout-mode=dark] .pricing-table-bg {
 }
 .switch-buttons{
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
     margin: 10px;
 
 }
@@ -6050,4 +6050,9 @@ body[data-layout-mode=dark] .pricing-table-bg {
   .ng-option-label{
 	color: red;
   }
-  
+.left-btn{
+	border-radius: 5px 0px 0px 5px;
+}
+.right-btn{
+    border-radius: 0px 5px 5px 0px;
+}

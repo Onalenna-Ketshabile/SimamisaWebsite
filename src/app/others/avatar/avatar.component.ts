@@ -8,11 +8,13 @@ import { Component, OnInit, ViewEncapsulation,Input } from '@angular/core';
 export class AvatarComponent implements OnInit {
   @Input()
   name!: String|null;
+  userName!: String;
   mybootstrapJs: HTMLScriptElement;
   myMinJs: HTMLScriptElement;
 
   constructor() { 
 
+    this.userName = String(localStorage.getItem('userName'));
     this.mybootstrapJs = document.createElement("script");
     this.mybootstrapJs.src = "../../../assets/js/avatar/bootstrap.bundle.min.js";
     document.body.appendChild(this.mybootstrapJs);
