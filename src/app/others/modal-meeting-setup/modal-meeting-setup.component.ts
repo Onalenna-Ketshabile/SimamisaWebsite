@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-modal-meeting-setup',
   templateUrl: './modal-meeting-setup.component.html',
-  styleUrls: ['./modal-meeting-setup.component.css']
+  styleUrls: ['./modal-meeting-setup.component.css','../../../assets/css/modal.css']
 })
 export class ModalMeetingSetupComponent implements OnInit {
   myAngularQrCode: any

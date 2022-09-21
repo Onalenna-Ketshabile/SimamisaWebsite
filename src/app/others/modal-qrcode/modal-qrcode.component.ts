@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-modal-qrcode',
   templateUrl: './modal-qrcode.component.html',
-  styleUrls: ['./modal-qrcode.component.css']
+  styleUrls: ['./modal-qrcode.component.css','../../../assets/css/modal.css']
 })
 export class ModalQrcodeComponent implements OnInit {
   myAngularQrCode:any

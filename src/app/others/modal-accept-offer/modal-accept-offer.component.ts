@@ -12,14 +12,23 @@ export class ModalAcceptOfferComponent implements OnInit {
 offer! : Offer;
   offerID = 0;
  
-  Amount! :string;
+  Amount! :number;
   Title = "";
   IDstr: any;
-
+  linkingVerb = "";
   constructor(private dataToModals: DataToModalsService, private offersService: OffersService) {    
 
   this.dataToModals.offerDatasent$.subscribe(data=>{
     this.offer = data;
+    this.Amount = this.offer.Quantity;
+    this.Title = this.offer.Title;
+
+    if(this.Amount == 1){
+      this.linkingVerb = "was";
+    }
+    else{ // > 1
+      this.linkingVerb = "were";
+    }
     console.log("Data has arrived.");
     console.log("Offer Data => ",this.offer)
   })
@@ -58,8 +67,8 @@ offer! : Offer;
     const body = JSON.stringify(OfferAccept);
 
     this.offersService.AcceptOffer(body).subscribe(data => {
-      window.alert(data);
-      console.log(data);     
+      window.alert("You succefully accepted " + offerDetails.quantity + " item(s) from the offer: "  + this.Title + "."); 
+      window.location.reload();  
  });
 
  }
