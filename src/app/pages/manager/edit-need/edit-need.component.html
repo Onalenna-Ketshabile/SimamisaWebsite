@@ -16,7 +16,7 @@
               <select id="priority" name ="priority" class="form-control" required ngModel>
                 <option class="rating-option" disabled selected>Select A priority Rating</option>
   
-                <option *ngFor="let obj of ratings" [ngValue]="obj">{{obj}}</option>
+                <option *ngFor="let obj of ratings" [ngValue]="obj.num">{{obj.name}}</option>
               </select>
             </div>
             <div class="mb-3 form-group">

@@ -24,12 +24,11 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
     console.log(this.proposal.DropOffTime);
-    this.nService.getNeedByID(this.proposal.itemNeedID.toString()).subscribe((res)=>{
-      this.proposalTitle= this.proposal.Title
+      this.proposalTitle= this.proposal.itemNeed.Title
       this.setStatus();
       this.propDate = this.proposal.DropOffTime.substring(0,10);
       this.propTime = this.proposal.DropOffTime.substring(11,16);;
-    })
+
   }
   setStatus() {
     if(!this.proposal.isAccepted && !this.proposal.isFulfilled){

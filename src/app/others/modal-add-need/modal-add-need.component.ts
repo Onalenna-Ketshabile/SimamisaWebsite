@@ -10,7 +10,18 @@ import { NeedsService } from 'src/app/services/needs.service';
   styleUrls: ['./modal-add-need.component.css','../../../assets/css/modal.css']
 })
 export class ModalAddNeedComponent implements OnInit {
-  ratings: number[] = [1, 2, 3];
+ // ratings: number[] = [1, 2, 3];
+  ratings = [{
+    name:"low",
+    num:3,
+  },{
+    name:"medium",
+    num:2,
+  },
+  {
+    name:"high",
+    num:1,
+  }];
   imageError!: string;
   isImageSaved!: boolean;
   cardImageBase64!: string;

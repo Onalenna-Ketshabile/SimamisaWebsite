@@ -23,12 +23,12 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
   constructor(private proposalService: ProposalServiceService,private nService:NeedsService,private router:Router) { }
 
   ngOnInit(): void {
-    this.nService.getNeedByID(this.proposal.itemNeedID.toString()).subscribe((res)=>{
-      this.proposalTitle= this.proposal.Title
-      this.setStatus();
+    this.setStatus();
+   
+      this.proposalTitle= this.proposal.itemNeed.Title;   
       this.propDate = this.proposal.PickUpTime.substring(0,10);
       this.propTime = this.proposal.PickUpTime.substring(11,16);
-    })
+   
   }
   setStatus() {
     if(!this.proposal.isAccepted && !this.proposal.isFulfilled){

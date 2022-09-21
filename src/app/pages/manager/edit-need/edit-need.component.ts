@@ -14,8 +14,17 @@ export class EditNeedComponent implements OnInit {
   @ViewChild('editNeedForm') editNeedForm!: NgForm;
   need!: Need;
   id!: number;
-  ratings: number[] = [1, 2, 3];
-
+  ratings = [{
+    name:"low",
+    num:3,
+  },{
+    name:"medium",
+    num:2,
+  },
+  {
+    name:"high",
+    num:1,
+  }];
   elementDeleted: EventEmitter<any> = new EventEmitter();
   
   constructor(private nService: NeedsService,
