@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation,Input } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-avatar',
@@ -12,7 +13,7 @@ export class AvatarComponent implements OnInit {
   mybootstrapJs: HTMLScriptElement;
   myMinJs: HTMLScriptElement;
 
-  constructor() { 
+  constructor(private authService: AuthenticationService) { 
 
     this.userName = String(localStorage.getItem('userName'));
     this.mybootstrapJs = document.createElement("script");
@@ -28,5 +29,12 @@ export class AvatarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+   
+  logout(){
+    this.authService.logout().subscribe((res)=>{
+       console.log("OUT");
+    });
+   // this.router.navigate(['/home']);
+    window.location.href = 'home';
+  }
 }

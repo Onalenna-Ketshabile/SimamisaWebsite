@@ -19,6 +19,7 @@ export class LogoutComponent implements OnInit {
     this.authService.logout().subscribe((res)=>{
        console.log("OUT");
     });
-    this.router.navigate(['/home']);
+   // this.router.navigate(['/home']);
+    window.location.href = 'home';
   }
 }

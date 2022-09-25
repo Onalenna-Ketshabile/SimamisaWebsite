@@ -1,8 +1,14 @@
 <div class="col-lg-6 col-md-6 col-sm-10">
     <div class="project-item mb-30">
-        <img hidden  class="thumb" src='../../../assets/images/newsfeed/schoolshoe.jpg' >
+       
         <div class="content">
-        
+            <div style="height: 48px;display: flex; justify-content: flex-end;">
+                <span class="priority-container">
+                <span style="font-weight:500">Priority:</span>
+                <span [style.backgroundColor]="priorityColor" class="need-priority">{{priority}}</span>
+                </span>
+            </div>
+             
             <div class = 'row'>
 
                 <div class="col-lg-6">

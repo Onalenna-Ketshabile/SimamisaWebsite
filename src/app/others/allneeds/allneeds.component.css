@@ -399,7 +399,7 @@ a:hover {
 }
 
 .project-items .project-item .content {
-	padding: 45px 30px 25px;
+	padding: 0px 30px 25px;
 	background-color: var(--white);
 	position: relative;
 
@@ -1532,4 +1532,19 @@ i, span, a {
     justify-content: center;
 	width: 100%;
 	column-gap: 10px;
+}
+
+.need-priority{
+
+  height: fit-content;
+  margin-left: 5px;
+  border-radius: 5px;
+  padding: 1px 4px;
+  align-items: center;
+}
+.priority-container{
+	height: fit-content;
+    padding: 5px;
+    box-shadow: 0 0px 10px rgb(0 0 0 / 10%);
+    border-radius: 5px;
 }

@@ -3,7 +3,7 @@
       <div class="modal-content">
         <div class="modal-header bg-light">
           <h4 class="modal-title" id="myCenterModalLabel">Edit Child's Need</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
         </div>
         <div class="modal-body">
           <form #editChildNeedForm="ngForm"(ngSubmit)="editChildNeed(editChildNeedForm.value)">
@@ -28,7 +28,7 @@
             
             <div class="mb-3 form-group">
               <label for="" class="form-label">Enter the amount for the need </label>
-              <input type="number" id="amount" name="amount"placeholder="Enter unit cost of the need in Rands" class="form-control"
+              <input type="number" id="unitCost" name="unitCost"placeholder="0" class="form-control"
                 required ngModel>
             </div>
             <button type="submit" class="btn btn-light waves-effect waves-light">   Save   </button>

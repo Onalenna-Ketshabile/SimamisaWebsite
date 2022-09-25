@@ -9,7 +9,7 @@ import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 @Component({
   selector: 'app-edit-childneed',
   templateUrl: './edit-childneed.component.html',
-  styleUrls: ['./edit-childneed.component.css']
+  styleUrls: ['./edit-childneed.component.css','../../../../assets/css/modal.css']
 })
 export class EditChildneedComponent implements OnInit {
   @ViewChild('editChildNeedForm') editChildNeedForm!: NgForm;
@@ -36,7 +36,7 @@ export class EditChildneedComponent implements OnInit {
         console.log("BreakPoint");
         this.editChildNeedForm.controls["name"].setValue(this.childNeed.Title);
         this.editChildNeedForm.controls["duedate"].setValue(this.childNeed.DueDate.slice(0,10));
-        this.editChildNeedForm.controls["amount"].setValue(this.childNeed.AmountNeeded);
+        this.editChildNeedForm.controls["unitCost"].setValue(this.childNeed.AmountNeeded);
         this.editChildNeedForm.controls["description"].setValue(this.childNeed.Description);
       })
       
@@ -46,7 +46,7 @@ export class EditChildneedComponent implements OnInit {
     // })
 
   }
-  editChildNeed(details: { name: string; description: any; amount: any; }) {
+  editChildNeed(details: { name: string; description: any; unitCost: any; }) {
     //Check if I need the to send sponsor ID as well
     console.log("Add: " + details.name);
     this.id = this.childNeed.ID;
@@ -54,7 +54,7 @@ export class EditChildneedComponent implements OnInit {
       id: this.id,
       Title: details.name,
       Description: details.description,
-      AmountNeeded: details.amount,
+      AmountNeeded: details.unitCost,
 
     }
     const body = JSON.stringify(needDetails);

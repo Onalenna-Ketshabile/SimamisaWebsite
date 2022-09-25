@@ -14359,3 +14359,12 @@ body[data-layout-color=dark] .datepicker .datepicker-switch:hover,body[data-layo
     border-radius: 10px;
 
 }
+
+
+
+  #unitCost {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="30"><text x="12" y="21" style="font: regular 14px Montserrat;">R</text></svg>') no-repeat, #ffffff;
+
+    padding-left: 25px;
+
+  }

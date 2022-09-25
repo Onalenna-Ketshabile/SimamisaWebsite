@@ -24,12 +24,16 @@ export class NeeditemComponent implements OnInit {
   date!: string;
   formModal: any;
   amntNeeded! : number;
+  priorityColor = '#FF7B29'; //default
+
+  priority: string="";
   constructor(private orphService:OrphanageService,private needService:NeedsService,private dataToModals: DataToModalsService) {
 
   }
 
    ngOnInit():void {
-  
+    this.needPriorityFormat();
+
     let num =((this.need.AmountReceived/this.need.AmountNeeded)*100);
     
    this.progress= Math.round( num * 100 + Number.EPSILON ) / 100;
@@ -95,6 +99,21 @@ export class NeeditemComponent implements OnInit {
  }
  editNeed(){
   this.dataToModals.setNeedDetails(this.need);
+ }
+
+ needPriorityFormat(){
+    if(this.need.PriorityRating == 1){
+      this.priority = "high"
+      this.priorityColor = '#FF7B29';
+    }
+    if(this.need.PriorityRating == 2 ){
+      this.priority = "medium";
+      this.priorityColor = '#FFB282';
+    }
+    if(this.need.PriorityRating == 3){
+      this.priority = "low";
+      this.priorityColor = '#CC8E68';
+    }
  }
 
 }

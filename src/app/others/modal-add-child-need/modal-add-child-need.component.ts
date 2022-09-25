@@ -19,7 +19,7 @@ export class ModalAddChildNeedComponent implements OnInit {
       this.spID = data;
     });
   }
-  addChildNeed(details: { name: string; duedate: any; description: any; amount: any; }) {
+  addChildNeed(details: { name: string; duedate: any; description: any; unitCost: any; }) {
   
     let needDetails = {
       DueDate : details.duedate,
@@ -29,7 +29,7 @@ export class ModalAddChildNeedComponent implements OnInit {
       orphanageID : localStorage.getItem("orphID"),
       sponsorshipID :this.spID,
       AmountReceived : "0",
-      AmountNeeded : details.amount
+      AmountNeeded : details.unitCost
     }
     const body = JSON.stringify(needDetails);
     console.log(body);

@@ -9,7 +9,7 @@ import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 @Component({
   selector: 'app-edit-childupdate',
   templateUrl: './edit-childupdate.component.html',
-  styleUrls: ['./edit-childupdate.component.css']
+  styleUrls: ['./edit-childupdate.component.css','../../../../assets/css/modal.css']
 })
 export class EditChildupdateComponent implements OnInit {
   @ViewChild('editUpdateForm') editChildUpdateForm!: NgForm;

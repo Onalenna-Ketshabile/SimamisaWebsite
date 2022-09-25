@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  getUserRegistrationData(data: { name: string, surname: string,address: string, email: string, phone: string, password: string, password_confirm: string }) {
+  getUserRegistrationData(data: { name: string, surname: string,gender: string, dob: string, address: string, email: string, phone: string, password: string, password_confirm: string }) {
     let userData = {
       FirstName: data.name,
       Surname: data.surname,
