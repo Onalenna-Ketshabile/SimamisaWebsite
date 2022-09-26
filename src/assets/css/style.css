@@ -203,7 +203,8 @@ body {
  display: flex;
  justify-content: center;
  align-items: center;
- padding: 1px 0px 0px 0px;
+ padding: 1px 0px 0px 50px;
+ margin-bottom: 5px;
  
 }
 .auth-btns > li{
@@ -1143,8 +1144,8 @@ nav.navbar .nav .open>a:focus {
     font-size: 18px;
     font-weight: 300;
     color: #33241A;
-    margin-top: 10px;
-}
+    margin-top: 25px;
+}d
 
 .light-header #top-content .page-title {
     color: #2A74E3;
@@ -1594,7 +1595,7 @@ nav.navbar .nav .open>a:focus {
 
 @media (max-width: 1200px) {
     .main-slider .slide {
-        padding-top: 120px;
+        padding-top: 115px;
     }
     .main-slider .b-text {
         font-size: 50px;

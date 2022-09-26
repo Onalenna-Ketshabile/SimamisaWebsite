@@ -14334,3 +14334,40 @@ body[data-layout-color=dark] .datepicker .datepicker-switch:hover,body[data-layo
 .image-upload{
     display: inline-block
 }
+
+#tooltip{
+    position: reltive;
+    cursor: pointer;
+    border-bottom: 2px dotted;
+    padding: 7px;
+
+}
+
+#tooltipText{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50px);
+    background-color: #000;
+    color: #fff;
+    white-space: nowrap;
+    padding: 10px 15px;
+    border-radius: 7px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#tooltipText::before{
+    content: "";
+    position: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+    border : 15px solid;
+    border-color: #000 #0000 #0000 #0000;
+
+}
+#tooltip:hover #tooltipText{
+ top: -130px;
+ visibility: visible;
+ opacity: 1;
+}
