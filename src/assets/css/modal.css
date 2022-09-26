@@ -808,6 +808,8 @@
     display:flex;
     flex-direction:column;
     width:100%;
+    height:90%;
+    overflow-y: scroll;
     pointer-events:auto;
     background-color: #fdede4;
     background-clip:padding-box;

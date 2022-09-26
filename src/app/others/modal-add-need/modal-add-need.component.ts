@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { async } from '@angular/core/testing';
 import { Router } from '@angular/router';
+import { AwsimagesService } from 'src/app/services/awsimages.service';
 import { NeedsService } from 'src/app/services/needs.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { NeedsService } from 'src/app/services/needs.service';
   styleUrls: ['./modal-add-need.component.css','../../../assets/css/modal.css']
 })
 export class ModalAddNeedComponent implements OnInit {
+
  // ratings: number[] = [1, 2, 3];
   ratings = [{
     name:"low",
@@ -23,11 +25,14 @@ export class ModalAddNeedComponent implements OnInit {
     num:1,
   }];
   imageError!: string;
-  isImageSaved!: boolean;
+  isImageSaved: boolean = false;
   cardImageBase64!: string;
   oldSrc: string = './../../../assets/images/placeholder.png';
   newSrc: string = './../../../assets/images/placeholder.png';
-  constructor(private needsService: NeedsService,private router:Router,private location:Location) { }
+  imgURL: any;
+  @Output()
+  elementAdded: EventEmitter<any> = new EventEmitter();
+  constructor(private needsService: NeedsService,private awsS3:AwsimagesService,private location:Location) { }
 
   ngOnInit(): void {
 
@@ -41,7 +46,7 @@ export class ModalAddNeedComponent implements OnInit {
       Title: details.name,
       Description: details.description,
       PriorityRating: details.priority,
-      ItemImage: this.cardImageBase64,
+      ItemImage: this.imgURL,
       NumberNeeded: details.numNeeded,
       UnitCost: details.unitCost,
       orphanageID: localStorage.getItem("orphID"),
@@ -53,11 +58,13 @@ export class ModalAddNeedComponent implements OnInit {
       console.log("Posted");
       console.log(data);
       //Close modal and show the newsfeed
-      window.location.reload();
+      this.elementAdded.emit();
     });
   }
 
   previwImage = async (fileInput: any) => {
+
+    console.log("Image Added")
     this.imageError = "";
     if (fileInput.target.files && fileInput.target.files[0]) {
 
@@ -94,12 +101,23 @@ export class ModalAddNeedComponent implements OnInit {
         const olds = this.calc_image_size(res)
         console.log('Old ize => ', olds, 'KB')
         this.oldSrc = res
-       if(olds> 200){
+       if(olds>1){
         const resized = await this.reduce_image_file_size(res);
         const news = this.calc_image_size(resized as string)
         console.log('new size => ', news, 'KB')
         this.newSrc = resized as string;
+       
+        this.awsS3.getUploadURL().subscribe(response=>{
+        
+          const file = fileInput.target.files[0];
+          this.awsS3.uploadImage(response.URL,file).subscribe((res: any)=>{
+            this.imgURL = response.URL.split('?')[0];
+            
+            this.isImageSaved=true;
+          })
+        });
         this.cardImageBase64 = this.newSrc;
+        
        }
         
       }
@@ -108,6 +126,8 @@ export class ModalAddNeedComponent implements OnInit {
 
     return true;
   }
+
+ 
   image_to_base64 = (fileInput: any) => {
    
     const reader = new FileReader();

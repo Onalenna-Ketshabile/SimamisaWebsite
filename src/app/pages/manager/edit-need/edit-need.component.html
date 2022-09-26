@@ -20,6 +20,20 @@
               </select>
             </div>
             <div class="mb-3 form-group">
+              <label for="image" class="form-label"> Upload New Image</label>          
+           
+              <input id="file" placeholder="choose new image" accept=".jpg, .png, .jpeg" type="file" (change)="previwImage($event)" name="image" class="form-control" required ngModel>
+              <br>
+              <img src={{imgURL}} id="new" style="border: 1px solid #ddd;
+              border-radius: 4px;
+              padding: 5px;
+              width: 150px;" id="old">
+            
+              <br>
+            
+            
+            </div>
+            <div class="mb-3 form-group">
               <label for="" class="form-label">Need's Due Date</label>
               <input type="text" id="duedate" runat="server" name="duedate"  class="form-control" placeholder="Due Date"
                 onfocus="(this.type='date')" required ngModel>

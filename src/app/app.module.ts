@@ -68,6 +68,7 @@ import { LoadingIndicatorSpinnerComponent } from './others/loading-indicator-spi
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar" ;
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { NgxSpinnerModule } from "ngx-spinner"; 
 import { NetworkInterceptor } from './network.interceptor';
 import { DonateComponent } from './pages/donate/donate.component';
 import { DashboardAdminComponent } from './pages/admin/dashboard-admin/dashboard-admin.component';
@@ -175,7 +176,7 @@ import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,QRCodeModule,MatProgressBarModule
+     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,QRCodeModule,MatProgressBarModule,NgxSpinnerModule
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,

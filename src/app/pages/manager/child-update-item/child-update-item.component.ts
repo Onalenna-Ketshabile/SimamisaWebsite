@@ -16,6 +16,7 @@ export class ChildUpdateItemComponent implements OnInit {
   constructor(private cService:ChildrenService, private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
+   
   }
   deleteChildNeed(){
     console.log("Trying") 
