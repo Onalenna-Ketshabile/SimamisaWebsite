@@ -19,7 +19,20 @@
               <textarea id="description" name="description" placeholder="Enter text to update the sponsor" class="form-control"
                 required ngModel></textarea>
             </div>
-      
+            <div class="mb-3 form-group">
+              <label for="image" class="form-label"> Upload New Image</label>          
+           
+              <input id="file" placeholder="choose new image" accept=".jpg, .png, .jpeg" type="file" (change)="previwImage($event)" name="image" class="form-control" required ngModel>
+              <br>
+              <img src={{imgURL}} id="new" style="border: 1px solid #ddd;
+              border-radius: 4px;
+              padding: 5px;
+              width: 150px;" id="old">
+            
+              <br>
+            
+            
+            </div>
   
             <button type="submit" class="btn btn-light waves-effect waves-light">   Save   </button>
             <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>

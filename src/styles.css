@@ -21,7 +21,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .form-group {
  
-    margin: 0px 10px 0px 10px !important;
+    margin: 0px 0px 0px 0px !important;
 }
 .ng-select-container {
     border: 1px solid #FFB282 !important;

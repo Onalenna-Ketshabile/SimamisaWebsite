@@ -11,6 +11,7 @@
             <label for="name" class="form-label">Title</label>
             <input type="text" name="name" placeholder="Enter name of the need" class="form-control" required ngModel>
           </div>
+  
       <div class="mb-3 form-group">
             <label for="priority">Priority Rating:</label>
             <select id="priority" name ="priority" class="form-control" placeholder="Select a priority rating" required ngModel>
@@ -20,6 +21,23 @@
             </select>
           </div>
           <div class="mb-3 form-group">
+            <label for="image" class="form-label"> Upload Image</label>          
+         
+            <input id="file" accept=".jpg, .png, .jpeg" type="file" (change)="previwImage($event)" name="image" class="form-control" required ngModel>
+            <br>
+            <img *ngIf="isImageSaved"src={{imgURL}} id="new" style="border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;" id="old">
+          
+            <br>
+            <img *ngIf="!isImageSaved" src={{oldSrc}} style="border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;" id="old">
+          
+          </div>
+          <div hidden class="mb-3 form-group">
             <label for="" class="form-label">Need's Due Date</label>
             <input type="text" id="duedate" runat="server" name="duedate" class="form-control" placeholder="Due Date"
               onfocus="(this.type='date')" required ngModel>
@@ -44,7 +62,7 @@
           </div>
 
 
-          <button type="submit" class="btn btn-light waves-effect waves-light">Add</button>
+          <button type="submit" class="btn btn-light waves-effect waves-light" data-bs-dismiss="modal">Add</button>
           <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
         </form>
       </div>

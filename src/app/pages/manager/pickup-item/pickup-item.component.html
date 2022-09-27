@@ -28,13 +28,13 @@
         
             </div>
         
-            <div *ngIf="!showConfirm()" class="d-flex gap-2">
+            <div *ngIf="!showConfirm()" class="d-flex gap-2 tableBtns">
               
                 <div class=".hbtn .hbtn-primary">
                     <button  (click)="acceptProposal()" class="hbtn hbtn-primary">Approve</button>
                 </div>
                 <div class=".hbtn .hbtn-primary">
-                    <button  (click)="rejectProposal()" class="hbtn hbtn-primary">Reject</button>
+                    <button style="margin-top: 5px;" (click)="rejectProposal()" class="hbtn hbtn-primary">Reject</button>
                 </div>
         
             </div>

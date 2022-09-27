@@ -399,7 +399,7 @@ a:hover {
 }
 
 .project-items .project-item .content {
-	padding: 0px 30px 25px;
+	padding: 0px 30px 15px;
 	background-color: var(--white);
 	position: relative;
 

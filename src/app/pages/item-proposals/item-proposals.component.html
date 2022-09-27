@@ -24,9 +24,9 @@
                         <a [style.box-shadow]="bsDropOff"  [style.backgroundColor]="btnDropOff" class="hbtn hbtn-primary right-btn" (click)="showDropOff()">DropOffs</a>
   
                     </div>
-                    <div>           <div class="form-group" >
-                        <span><i class="fa fa-sort" aria-hidden="true"></i>Filter</span>
-                        <ng-select [clearable]="false" [items]="filters" class="ngselectStyle"
+                    <div>           <div class="form-group" style="margin-left: 10px !important;display: flex;align-items: center; ">
+                        <span><i style="margin-right: 3px;" class="fa fa-filter" aria-hidden="true"></i>Filter:</span>
+                        <ng-select style="margin-top: 5px;display: inline-flex; padding-bottom: 0px; margin-left: 5px" [clearable]="false" [items]="filters" class="ngselectStyle"
                         bindLabel="name"
                         bindValue="id"
                         (change)="updateFilter()"

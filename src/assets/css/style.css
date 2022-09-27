@@ -189,7 +189,7 @@ body {
 
 .hbtn.hbtn-primary:hover,.hbtn.hbtn-tertiary:hover,.hbtn.hbtn-default:hover {
     text-decoration: none;
-    background-color: #FFB282;
+    background-color: #FFB282 !important;
     border-color: #FFB282;
     color: #ffffff;
 }

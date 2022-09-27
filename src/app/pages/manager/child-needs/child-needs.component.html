@@ -1,5 +1,5 @@
  
- <app-modal-add-child-need (elementAdded)="onElementAdded($event)"></app-modal-add-child-need>
+ <app-modal-add-child-need (elementAdded)="onElementAdded($event)" ></app-modal-add-child-need>
 <div class="page-header" >
     <h1 class="title">Sponsorship</h1>
       <ol class="breadcrumb" style="padding-left: 0px;">
@@ -48,11 +48,19 @@
                                         <!-- end row -->
                 
                                         <div class="table-responsive mb-4">
-                                            <table class="table align-middle  dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
+                                            <div *ngIf="loadingHandler.isLoading | async" class="row" >
+                                                <div class="col-sm-12">
+                                                    <div style="margin-left:370px; margin-top:30px">
+                                                        <app-loading-indicator></app-loading-indicator>
+                                                    </div>
+                                                
+                                                </div>
+                                            </div>
+                                            <table class="table table-bordered table-responsive" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
                                                 <thead>
                                                 <tr>
                                                     
-                                                    <th scope="col"></th>
+                                                  
                                                     <th scope="col">Title</th>
                                                     <th scope="col">Description</th>
                                                     <th scope="col">Amount Needed</th>

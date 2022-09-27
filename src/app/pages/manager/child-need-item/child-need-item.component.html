@@ -1,23 +1,28 @@
-<td>
+<!-- <td>
                                                  
     <div class="need-image">
         <img src="./../../../../assets/../assets/images/newsfeed/schoolshoe.jpg" alt="Image">
     </div>
 
-</td>
+</td> -->
 <td>{{childneed.Title}}</td>
 <td>{{childneed.Description}}</td>
 <td>{{childneed.AmountNeeded}}</td>
 
 <td>
-<div class="d-flex gap-2">
+ <div *ngIf="loadingHandler.isLoading | async" class="d-flex gap-2 row" >
+      
+          <p>Deleting....</p>
+        
+    </div>
+<div *ngIf="!(loadingHandler.isLoading | async)" class="d-flex gap-2">
   
     <div class=".hbtn .hbtn-primary">
-        <a (click)="editChildNeed()" data-bs-toggle="modal" data-bs-target="#editChildNeed-modal" class="hbtn hbtn-primary" >Edit</a>
+        <a (click)="editChildNeed()" data-bs-toggle="modal" data-bs-target="#editChildNeed-modal" class="hbtn hbtn-primary" >Edit <i class="far fa fa-pencil"></i></a>
     </div>
-    <div class=".hbtn .hbtn-primary">
+    <div>
         
-        <button  (click)="deleteChildNeed()" class="hbtn hbtn-primary">Delete</button>
+        <button  (click)="deleteChildNeed()" class="hbtn hbtn-primary">Delete<i class="fa fa-trash"></i></button>
     </div>
   
 </div>

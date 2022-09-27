@@ -3,29 +3,30 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-light">
-          <h4 class="modal-title" id="myCenterModalLabel">Upload The Required Documents For Sponsoring A Child</h4>
+          <h4 class="modal-title" id="myCenterModalLabel">Upload Required Documents</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
       </div>
       <div class="modal-body">
+        <div *ngIf="showQR()">
           <form #setUpMeetingForm="ngForm">
 
             <div class="mb-3">
               <label for="" class="form-label">Upload Your National ID</label>
               <div>
-                <input type="file" style="width: 100%; padding: 5px ; border-radius: 5px;border: 1px solid #ccc ;background-color: white" ngModel required>
+                <input name = "id" type="file" style="width: 100%; padding: 5px ; border-radius: 5px;border: 1px solid #ccc ;background-color: white" ngModel required>
              
               </div>
           </div>
 
           <div class="mb-3">
             <label for="" class="form-label">Income statement / Affidavit 
-              <div id="tooltip">
+              <div hidden id="tooltip">
               <span id="tooltipText">Info</span>
               <span><i  class="fa fa-info-circle" aria-hidden="true"></i></span>
               </div>
             </label>
             <div>
-              <input type="file" style="width: 100%; padding: 5px ; border-radius: 5px;border: 1px solid #ccc ;background-color: white" ngModel required>
+              <input type="file" name="StateAffi" style="width: 100%; padding: 5px ; border-radius: 5px;border: 1px solid #ccc ;background-color: white" ngModel required>
            
             </div>
         </div>
@@ -58,6 +59,19 @@
                   <button type="submit" class="btn btn-light waves-effect waves-light">Submit</button>
                   <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
           </form>
+          </div>
+          <div *ngIf="!showQR()" style="display: flex; justify-content: center; flex-wrap: wrap;">
+            <p><strong>Don't have an account? Register With Simamisa</strong></p>
+            <div class="col-sm-7">
+              <div class="b-text" style="display: flex;justify-content: space-evenly; width:100%;">
+                <a href="/register" routerLink="/register" class="hbtn hbtn-primary hbtn-lg btn-donate" data-bs-dismiss="modal" >Register</a>
+                <a  class="hbtn hbtn-primary hbtn-lg btn-donate" data-bs-dismiss="modal" >Cancel</a>
+              </div>
+              
+                 </div>
+    
+        
+          </div>
       </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <td>
                                                  
     <div class="need-image">
-        <!-- <img src="./../../../../assets/../assets/images/newsfeed/schoolshoe.jpg" alt="Image"> -->
+        <img src="{{childUpdate.PostImage }}" style=" width:100px" alt="Image">
     </div>
 
 </td>
@@ -13,11 +13,11 @@
 <div class="d-flex gap-2">
   
     <div class=".hbtn .hbtn-primary">
-        <a class="hbtn hbtn-primary" (click)="editChildUpdate()" data-bs-toggle="modal" data-bs-target="#editChildUpdate-modal">Edit</a>
+        <a class="hbtn hbtn-primary" (click)="editChildUpdate()" data-bs-toggle="modal" data-bs-target="#editChildUpdate-modal">Edit <i class="far fa fa-pencil"></i></a>
     </div>
     <div class=".hbtn .hbtn-primary">
         
-        <button  (click)="deleteChildNeed()" class="hbtn hbtn-primary">Delete</button>
+        <button  (click)="deleteChildNeed()" class="hbtn hbtn-primary">Delete<i class="fa fa-trash"></i></button>
     </div>
   
 </div>

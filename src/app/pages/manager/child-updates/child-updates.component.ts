@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Child } from 'src/app/models/child';
 import { ChildUpdate } from 'src/app/models/childupdate';
+import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { ChildrenService } from 'src/app/services/children.service';
 
 @Component({
   selector: 'app-child-updates',
   templateUrl: './child-updates.component.html',
-  styleUrls: ['./child-updates.component.css', './bootstrap.min.css', '../../../../assets/css/icons.min.css', '../../../../assets/css/bootstrap.min.css']
+  styleUrls: ['./child-updates.component.css', './bootstrap.min.css', '../../../../assets/css/icons.min.css', '../../../../assets/css/bootstrap.min.css','../../../../assets/css/table.css']
 })
 export class ChildUpdatesComponent implements OnInit {
   formModal: any;
@@ -15,10 +16,11 @@ export class ChildUpdatesComponent implements OnInit {
   child!: Child;
   childupdates!: ChildUpdate[];
   name! :string ;
-  
+  loadingHandler = new LoadingHandler();
   constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService) { }
 
   ngOnInit(): void {
+    this.loadingHandler.start();
     this.getChildUpdates();
   }
 
@@ -32,7 +34,7 @@ export class ChildUpdatesComponent implements OnInit {
     });
     this.cService.getChildUpdatesByID(this.id!).subscribe(data => {
       this.childupdates = data;
-     
+      this.loadingHandler.finish();  
     });
 
   }

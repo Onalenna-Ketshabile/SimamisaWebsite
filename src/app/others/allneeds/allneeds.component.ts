@@ -56,6 +56,10 @@ export class AllneedsComponent implements OnInit {
     console.log(element)
    this.getNeeds();
   }
+  onElementAdded(element: any) {
+    console.log(element)
+   this.getNeeds();
+  }
   onElementUpdated(element:any){
   
     this.getNeeds();

@@ -6,7 +6,7 @@ import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 @Component({
   selector: '[app-child-update-item]',
   templateUrl: './child-update-item.component.html',
-  styleUrls: ['./child-update-item.component.css']
+  styleUrls: ['./child-update-item.component.css','../../../../assets/css/font-awesome.min.css']
 })
 export class ChildUpdateItemComponent implements OnInit {
   @Input()
@@ -16,6 +16,7 @@ export class ChildUpdateItemComponent implements OnInit {
   constructor(private cService:ChildrenService, private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
+   
   }
   deleteChildNeed(){
     console.log("Trying") 

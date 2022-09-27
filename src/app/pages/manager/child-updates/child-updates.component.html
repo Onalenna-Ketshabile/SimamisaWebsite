@@ -45,7 +45,15 @@
                                         <!-- end row -->
                 
                                         <div class="table-responsive mb-4">
-                                            <table class="table align-middle datatable dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
+                                            <div *ngIf="loadingHandler.isLoading | async" class="row" >
+                                                <div class="col-sm-12">
+                                                    <div style="margin-left:370px; margin-top:30px">
+                                                        <app-loading-indicator></app-loading-indicator>
+                                                    </div>
+                                                
+                                                </div>
+                                            </div>
+                                            <table class="table table-bordered table-responsive" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
                                                 <thead>
                                                 <tr>
                                                     
