@@ -25,7 +25,7 @@ UserName!: Observable<String>;
     this.UserName= this.authService.currentuserName;
   }
   showHeader():boolean{
-    return (this.router.routerState.snapshot.url.includes('login')||this.router.routerState.snapshot.url.includes('register')||this.UserRole.getValue()=='M'|| this.UserRole.getValue()=='A');
+    return (this.router.routerState.snapshot.url.includes('login')||this.router.routerState.snapshot.url.includes('logout')||this.router.routerState.snapshot.url.includes('register')||this.UserRole.getValue()=='M'|| this.UserRole.getValue()=='A');
 
   }
  

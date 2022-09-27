@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
@@ -7,13 +7,13 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   templateUrl: './logout.component.html',
   styleUrls: ['./logout.component.css']
 })
-export class LogoutComponent implements OnInit {
+export class LogoutComponent implements OnInit, AfterViewInit {
 
   constructor(private authService:AuthenticationService,
     private router:Router) { }
 
   ngOnInit(): void {
-   this.logout();
+   
   }
   logout(){
     this.authService.logout().subscribe((res)=>{
@@ -21,5 +21,8 @@ export class LogoutComponent implements OnInit {
     });
    // this.router.navigate(['/home']);
     window.location.href = 'home';
+  }
+  ngAfterViewInit(): void{
+    this.logout();
   }
 }
