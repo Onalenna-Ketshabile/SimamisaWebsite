@@ -808,6 +808,7 @@ Sidepanel
   font-size: 11px;
   color: #76757B;
   top: 23px;
+  
 }
 .list-w-title a {
   display: block;
@@ -818,8 +819,10 @@ Sidepanel
 }
 .list-w-title h4 {
   margin: 5px 0;
-  font-size: 13px;
+  font-size: 14px;
   font-family: 'Montserrat', sans-serif;
+  margin-top: 28px;
+    font-weight: 500;
 }
 /* General Sidepanel Title */
 .gn-title {

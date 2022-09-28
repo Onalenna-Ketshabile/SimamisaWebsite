@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { notificationAll } from 'src/app/models/notificationAll';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { NotificationsService } from 'src/app/services/notifications.service';
 
 declare var window: any;
 
@@ -21,8 +23,12 @@ UserName!: Observable<String>;
   formModal:any;
   makeOfferModal: any;
   acceptOffer: any;
+
   
-  constructor(private authService:AuthenticationService) {
+  managerNotifications!: notificationAll;
+  notifications?: any[];
+  
+  constructor(private authService:AuthenticationService, private notificationService: NotificationsService) {
     
 
     
@@ -49,23 +55,13 @@ UserName!: Observable<String>;
    }
 
   ngOnInit(): void {
-    // this.formModal = new window.boostrap.Modal(
-    //   document.getElementById("custom-modal")
-    // );
-    // this.makeOfferModal = new window.boostrap.Modal(
-    //   document.getElementById("make-offer-modal")
-    // );
-    // console.log("This could work");
-    // this.acceptOffer = new window.boostrap.Modal(
-    //   document.getElementById("acceptOffer-modal")
+
+    this.notificationService.getManagerNotifications().subscribe(data=>{
+      this.managerNotifications =data;
+      this.notifications = data.Notes;
       
-    // );
-
-    console.log(document.getElementById("acceptOffer-modal")?.getAttribute("data-id"));
-
-    console.log("Getting information to modal.")
-    console.log(document.getElementById("acceptOffer-modal")?.id);
-  
+      console.log("Data returned:", this.notifications);
+    });
   }
   openModal(){
      this.formModal.show();

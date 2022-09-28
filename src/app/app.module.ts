@@ -94,8 +94,6 @@ import { PieChartDonorGenderComponent } from './pages/manager/pie-chart-donor-ge
 import { TableInventoryComponent } from './pages/manager/table-inventory/table-inventory.component';
 import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/table-row-inventory.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
