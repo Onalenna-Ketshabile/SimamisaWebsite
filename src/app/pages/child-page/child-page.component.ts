@@ -44,8 +44,9 @@ export class ChildPageComponent implements OnInit {
     this.orphanage_service.getOrphanageByID(this.route.snapshot.params['o_id']).subscribe(data => {
       this.orphanage = data;
     });
-
-
+    let val :number= 0;
+    val = this.route.snapshot.params['c_id'];
+    localStorage.setItem("ChildID",val.toString());
     // this.formModal = new window.boostrap.Modal(
     //   document.getElementById("custom-modal")
     // );
@@ -66,21 +67,21 @@ export class ChildPageComponent implements OnInit {
    
 
 
-    if (localStorage.getItem("userRole") == null && localStorage.getItem("userName") == null) {
-      //Do Nothing
-    } else {
-      console.log("I have been clicked");
-      let body = {
-        registeredUserID: localStorage.getItem("userID"),
-        childID: this.child?.ID
-      };
+    // if (localStorage.getItem("userRole") == null && localStorage.getItem("userName") == null) {
+    //   //Do Nothing
+    // } else {
+    //   console.log("I have been clicked");
+    //   let body = {
+    //     registeredUserID: localStorage.getItem("userID"),
+    //     childID: this.child?.ID
+    //   };
      
-      this.meetingService.makeSponsor(JSON.stringify(body)).subscribe(data => {
-        console.log("Made Sponsor",data);
-        localStorage.removeItem("ChildID");
-      });
-      //Make person a sponsor
-    }
+    //   this.meetingService.makeSponsor(JSON.stringify(body)).subscribe(data => {
+    //     console.log("Made Sponsor",data);
+    //     localStorage.removeItem("ChildID");
+    //   });
+    //   //Make person a sponsor
+    // }
     
   }
 

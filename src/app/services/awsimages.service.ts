@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AwsimagesService {
+ 
   headers: any;
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders()
@@ -21,8 +22,20 @@ export class AwsimagesService {
     return this.http.get<any>(this.apiURL, { headers: this.headers });
   }
 
+
   uploadImage(urlL: string, file: any): Observable<any> {
     const hd: any = new HttpHeaders().set('content-type', 'image/jpeg');
+     return this.http.put<any>(urlL,file, { headers: hd });
+
+
+  }
+
+  readonly docsURL = `https://simamisa.herokuapp.com/s3docs`;
+  getUploadDocsURL(): Observable<any> {
+    return this.http.get<any>(this.docsURL, { headers: this.headers });
+  }
+  uploadDocument(urlL: string, file: any): Observable<any> {
+    const hd: any = new HttpHeaders().set('content-type', 'multipart/form-data');
      return this.http.put<any>(urlL,file, { headers: hd });
 
 

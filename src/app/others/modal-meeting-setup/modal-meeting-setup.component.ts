@@ -4,6 +4,7 @@ import { formatDate } from '@angular/common';
 import { timeInterval } from 'rxjs';
 import { MeetingService } from 'src/app/services/meeting.service';
 import { Router } from '@angular/router';
+import { AwsimagesService } from 'src/app/services/awsimages.service';
 
 @Component({
   selector: 'app-modal-meeting-setup',
@@ -13,7 +14,15 @@ import { Router } from '@angular/router';
 export class ModalMeetingSetupComponent implements OnInit {
   myAngularQrCode: any
   show!: boolean;
-  constructor(private meetingService: MeetingService) { }
+  uploaded: boolean = false;
+  loadingID:boolean = false;
+  loadingIncome:boolean=false;
+  gotID :boolean =false;
+  gotIncome:boolean = false;
+   check:string ='../../../assets/images/check.png';
+   idURL! :string;
+   incomeURL!:string;
+  constructor(private awsS3:AwsimagesService,private mService:MeetingService) { }
 
   ngOnInit(): void {
     this.myAngularQrCode = "Simamisa Mobile App Link"
@@ -33,7 +42,72 @@ export class ModalMeetingSetupComponent implements OnInit {
     } else {
       return true;
     }
+
+  
   }
+
+  onSubmit=()=>{
+
+    let body={
+       registeredUserID: localStorage.getItem("userID"),
+              DocUrl:this.idURL+"sep"+this.incomeURL,
+            childID :  localStorage.getItem("ChildID")
+    }
+    console.log(body);
+    this.mService.setUpMeeting(JSON.stringify(body)).subscribe((res)=>{
+
+    })
+  } 
+
+  uploadIncomeS  = async (fileInput: any) => {
+    this.loadingIncome=true
+    if (fileInput.target.files && fileInput.target.files[0]) {
+
+        
+      this.awsS3.getUploadDocsURL().subscribe(response=>{
+        console.log(response.URL)
+        this.incomeURL = response.URL
+        const file = fileInput.target.files[0];
+        this.awsS3.uploadDocument(response.URL,file).subscribe((res: any)=>{
+          console.log(res,"SSS")
+        this.loadingIncome=false;
+        this.gotIncome=true;
+        })
+      });
+   
+      
+     }
+     return true;
+  }
+  uploadID =  async (fileInput: any) => {
+    this.loadingID=true;
+    if (fileInput.target.files && fileInput.target.files[0]) {
+
+     
+      this.awsS3.getUploadDocsURL().subscribe(response=>{
+        this.idURL = response.URL;
+        console.log(response.URL)
+        const file = fileInput.target.files[0];
+        this.awsS3.uploadDocument(response.URL,file).subscribe((res: any)=>{
+          console.log(res,"SSS")
+       this.loadingID=false;
+       this.gotID=true;
+        })
+      });
+   
+      
+     }
+     return true;
+  }
+ 
+    
+  
+
+   
+  
+
+ 
+  
   // constructor(private meetingService: MeetingService,private router: Router)  { }
   //
   //   ngOnInit(): void {

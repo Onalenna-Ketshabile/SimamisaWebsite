@@ -3,8 +3,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {FormsModule} from '@angular/forms'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 import { QRCodeModule } from 'angularx-qrcode';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -66,10 +66,10 @@ import { ModalMakeOfferComponent } from './others/modal-make-offer/modal-make-of
 import { ModalAcceptOfferComponent } from './others/modal-accept-offer/modal-accept-offer.component';
 import { LoadingIndicatorSpinnerComponent } from './others/loading-indicator-spinner/loading-indicator-spinner.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from "@angular/material/toolbar" ;
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {MatTooltipModule} from '@angular/material/tooltip';
-import { NgxSpinnerModule } from "ngx-spinner"; 
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgxSpinnerModule } from "ngx-spinner";
 import { NetworkInterceptor } from './network.interceptor';
 import { DonateComponent } from './pages/donate/donate.component';
 import { DashboardAdminComponent } from './pages/admin/dashboard-admin/dashboard-admin.component';
@@ -97,7 +97,7 @@ import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/
 
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
@@ -173,21 +173,21 @@ import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/
     PieChartDonorGenderComponent,
     TableInventoryComponent,
     TableRowInventoryComponent,
-    
+
 
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
-     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,QRCodeModule,MatProgressBarModule,MatTooltipModule,
-     BrowserAnimationsModule, MatProgressSpinnerModule,MatToolbarModule,HttpClientModule,NgSelectModule,QRCodeModule,MatProgressBarModule,NgxSpinnerModule
+    BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    BrowserAnimationsModule, MatProgressSpinnerModule, MatToolbarModule, HttpClientModule, NgSelectModule, QRCodeModule, MatProgressBarModule, MatTooltipModule,
+    NgxSpinnerModule
   ],
-  providers: [ {
+  providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: NetworkInterceptor,
     multi: true
-  }, 
-  OrphanagesResolverService
-],
+  },
+    OrphanagesResolverService
+  ],
   bootstrap: [
     AppComponent,
   ]

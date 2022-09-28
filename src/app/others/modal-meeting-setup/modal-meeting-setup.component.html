@@ -8,13 +8,23 @@
       </div>
       <div class="modal-body">
         <div *ngIf="showQR()">
-          <form #setUpMeetingForm="ngForm">
-
+          <form #Form="ngForm">
+<div>
+  <h1>Togethe we can grow</h1>
+  <h2>Begin you Sponsoring Journey</h2>
+  <h3>Upload your documents, the manager at this orphanage will email you a meeting invite</h3>
+  <br>
+</div>
             <div class="mb-3">
               <label for="" class="form-label">Upload Your National ID</label>
               <div>
-                <input name = "id" type="file" style="width: 100%; padding: 5px ; border-radius: 5px;border: 1px solid #ccc ;background-color: white" ngModel required>
-             
+                <input name = "id" type="file"  (change)="uploadID($event)"  style="width: 100%; padding: 5px ; border-radius: 5px;border: 1px solid #ccc ;background-color: white" ngModel required>
+                <mat-progress-spinner *ngIf="loadingID" mode="indeterminate" color="warn" diameter="20">
+                </mat-progress-spinner>
+                <img *ngIf="gotID" src={{check}} id="new" style="border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 30px;" id="old">
               </div>
           </div>
 
@@ -26,8 +36,13 @@
               </div>
             </label>
             <div>
-              <input type="file" name="StateAffi" style="width: 100%; padding: 5px ; border-radius: 5px;border: 1px solid #ccc ;background-color: white" ngModel required>
-           
+              <input type="file" name="StateAffi" (change)="uploadIncomeS($event)" style="width: 100%; padding: 5px ; border-radius: 5px;border: 1px solid #ccc ;background-color: white" ngModel required>
+              <mat-progress-spinner *ngIf="loadingIncome" mode="indeterminate" color="warn" diameter="20">
+              </mat-progress-spinner>
+              <img *ngIf="gotIncome" src={{check}} id="new" style="border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 30px;" id="old">
             </div>
         </div>
 
