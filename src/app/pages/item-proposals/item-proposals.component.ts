@@ -18,6 +18,7 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
   @ViewChild('editFilter') editFilter!: NgForm;
   public activeLayout = "pickups"
   proposals?: Proposal[];
+  allProps?:Proposal[];
   loadingHandler = new LoadingHandler();
 
   bsPickUp = 'inset 1px 2px 5px #777';
@@ -43,57 +44,57 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
     this.getProposals();
   }
   getProposals() {
-    this.loadingHandler.start();
-
-    this.proposalService.getOrphanageProposals().subscribe(data => {
-      
-      if (this.activeLayout == 'pickups') {
-        this.proposals = data.filter(prop => (prop.PickUpPlace !== 'Orphanage' && prop.ProposalType=='ITEM'))
-      }
-      if (this.activeLayout == 'dropoffs') {
-        this.proposals = data.filter(prop => (prop.PickUpPlace === 'Orphanage' && prop.ProposalType=='ITEM'))
-      }
-      console.log(this.proposals);
-
-      let selected = this.filters.find(prop => (prop.id == this.filterval))!;
-  
-      if (selected.name == 'All') {//Get rejected
-        this.proposals = this.proposals?.filter(prop => (
-        !(  !prop.isAccepted && prop.isFulfilled)//All except the rejected ones
-        ));
-        console.log('All')
-      }
-      if (selected.name == 'Pending') {//Get all accepted but not yet delivered or picked up
-      this.proposals = this.proposals?.filter(prop => (
-        prop.isAccepted && !prop.isFulfilled
-      ));
-      console.log('Pending')
-    }
-    if (selected.name == 'Fulfilled') {//Get all accepted and delivered
-      this.proposals = this.proposals?.filter(prop => (
-        prop.isAccepted ==true && prop.isFulfilled==true
-      ));
-      console.log('Fulfiled');
-    }
-   
-    if (selected.name == 'Rejected') {//Get rejected
-      this.proposals = this.proposals?.filter(prop => (
-        !prop.isAccepted && prop.isFulfilled//All  the rejected ones
-      ));
-      console.log('Rejected')
-    }
+    this.loadingHandler.start();   
+    this.proposalService.getOrphanageProposals().subscribe((data) => {
+      this.allProps= data;
+      this.updateFilter();
       this.loadingHandler.finish();
     });
 
   }
   updateFilter(): void {
     
-    this.getProposals();//Get all proposals again
+    if (this.activeLayout == 'pickups') {
+      this.proposals = this.allProps!.filter(prop => (prop.PickUpPlace != 'Orphanage' && prop.ProposalType=='ITEM'))
+    }
+    if (this.activeLayout == 'dropoffs') {
+      this.proposals = this.allProps!.filter(prop => (prop.PickUpPlace == 'Orphanage' && prop.ProposalType=='ITEM'))
+    }
+    console.log(this.proposals);
+
+    let selected = this.filters.find(prop => (prop.id == this.filterval))!;
+    
+    if (selected.name == 'All') {//Get rejected
+      this.proposals = this.proposals?.filter(prop => (
+      !(  !prop.isAccepted && prop.isFulfilled)//All except the rejected ones
+      ));
+     
+    }
+    if (selected.name == 'Pending') {//Get all accepted but not yet delivered or picked up
+    this.proposals = this.proposals?.filter(prop => (
+      prop.isAccepted && !prop.isFulfilled
+    ));
+  
+  }
+  if (selected.name == 'Fulfilled') {//Get all accepted and delivered
+    this.proposals = this.proposals?.filter(prop => (
+      prop.isAccepted ==true && prop.isFulfilled==true
+    ));
+   
+  }
+ 
+  if (selected.name == 'Rejected') {//Get rejected
+    this.proposals = this.proposals?.filter(prop => (
+      !prop.isAccepted && prop.isFulfilled//All  the rejected ones
+    ));
+    
+  }
+    this.loadingHandler.finish();
     
   }
   onElementUpdated(element: any) {
-
-    this.updateFilter();
+    this.getProposals();
+    
 
   }
   showPickUps(): void {
@@ -104,6 +105,7 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
 
   }
   showDropOff(): void {
+    this.loadingHandler.start();
     this.dropOffFocused();
     this.activeLayout = "dropoffs";//Get the dropoffs
     this.updateFilter();

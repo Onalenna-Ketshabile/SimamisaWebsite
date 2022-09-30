@@ -47,7 +47,7 @@ export class ModalMeetingSetupComponent implements OnInit {
   }
 
   onSubmit=()=>{
-
+console.log("Submitting");
     let body={
        registeredUserID: localStorage.getItem("userID"),
               DocUrl:this.idURL+"sep"+this.incomeURL,

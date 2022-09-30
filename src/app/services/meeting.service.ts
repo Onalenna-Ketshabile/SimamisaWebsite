@@ -36,7 +36,7 @@ export class MeetingService {
   readonly makePostURL =`${BASEURL}/requests`;
   setUpMeeting(body:string):Observable<any>{
 
-    return this.http.post<any>(this.apiURLPost,body,{headers:this.headers}).pipe(
+    return this.http.post<any>(this.makePostURL,body,{headers:this.headers}).pipe(
       map((res)=>{
         if(res && res.ID){
          console.log(res); 

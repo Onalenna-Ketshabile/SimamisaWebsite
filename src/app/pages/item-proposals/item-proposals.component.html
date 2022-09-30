@@ -50,6 +50,14 @@
 
 
                                 <div class="panel-body with-table">
+                                    <div  *ngIf="loadingHandler.isLoading | async" class="row" >
+                                        <div class="col-sm-12">
+                                            <div style="margin-left:130px; margin-bottom:30px">
+                                                <app-loading-indicator></app-loading-indicator>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
                                     <table class="table table-bordered table-responsive"
                                         style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
                                         <thead>
@@ -67,9 +75,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            
 
-
-                                            <tr app-dropoff-item *ngFor="let proposal of proposals"
+                                            <tr  app-dropoff-item *ngFor="let proposal of proposals"
                                             [proposal]="proposal" (elementUpdated)="onElementUpdated($event)">
 
                                       
