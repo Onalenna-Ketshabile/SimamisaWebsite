@@ -97,6 +97,7 @@ import {PdfViewerModule} from 'ng2-pdf-viewer';
 import {SafePipeModule} from 'safe-pipe';
 import { ModalViewPdfComponent } from './others/modal-view-pdf/modal-view-pdf.component';
 import { MeetingSetupComponent } from './others/meeting-setup/meeting-setup.component';
+import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/modal-distribute-funds.component';
 
 @NgModule({
   declarations: [
@@ -178,6 +179,7 @@ import { MeetingSetupComponent } from './others/meeting-setup/meeting-setup.comp
     ModalViewPdfComponent,
     MeetingSetupComponent,
      
+    ModalDistributeFundsComponent,
 
 
   ],

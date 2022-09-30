@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { notification } from 'src/app/models/notification';
 import { notificationAll } from 'src/app/models/notificationAll';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NotificationsService } from 'src/app/services/notifications.service';
@@ -24,13 +25,15 @@ UserName!: Observable<String>;
   makeOfferModal: any;
   acceptOffer: any;
 
-  
+  sidePanelOpen = false;
+
+  notificationNum: number = 0;
   managerNotifications!: notificationAll;
-  notifications?: any[];
+  notifications?: notification[];
   
   constructor(private authService:AuthenticationService, private notificationService: NotificationsService) {
     
-
+    console.log("SidePanelOpen: ",this.sidePanelOpen);
     
     this.mybootstrapJs = document.createElement("script");
     this.mybootstrapJs.src = "../../../assets/js/manager-layout/bootstrap.min.js";
@@ -56,13 +59,31 @@ UserName!: Observable<String>;
 
   ngOnInit(): void {
 
-    this.notificationService.getManagerNotifications().subscribe(data=>{
-      this.managerNotifications =data;
-      this.notifications = data.Notes;
+    this.notificationService.getManagerNotificationsNum().subscribe(data=>{
+ 
+      this.notificationNum = data;
       
-      console.log("Data returned:", this.notifications);
+      console.log("Data returned:", this.notificationNum);
     });
   }
+  openNotification(){
+    this.sidePanelOpen = !this.sidePanelOpen;
+    console.log("SidePanelOpen: ",this.sidePanelOpen);
+
+    if(this.sidePanelOpen){
+        
+    this.notificationService.getAllNotifications().subscribe(data=>{
+      this.notifications = data;
+                  
+          
+     this.notificationNum = 0;
+                  
+             
+    });
+    }
+  }
+
+
   openModal(){
      this.formModal.show();
       console.log("Modal function is called...");

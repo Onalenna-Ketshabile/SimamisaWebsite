@@ -25,8 +25,8 @@
 				<div *ngIf="child">
 				<div class="col-lg-6">
 					<div class="project-summery">
-						<h3 class="project-title">
-							{{child.Nickname}} ({{age}} Years Old.)
+						<h3 class="project-title" style="display: flex; align-items: center;" >
+							{{child.Nickname}} <span style="font-size: 25px; margin-left: 3px;">({{age}} Years Old.)</span>
 						</h3>
                        
 						<div class="meta">
@@ -41,12 +41,12 @@
 						
                         				
 						<div class="description-content" >
-							<p style="margin-bottom: 18px;">{{child.ChildDescription}}</p>
+							<p style="margin-bottom: 25px;">{{child.ChildDescription}}</p>
                         
 							<h4 class="description-title">Struggles:</h4>
 						
-							<p style="margin: 10px 0px;">{{child.ChildStruggles}}</p>
-						    <h4 class="description-title">Interest:</h4>
+							<p style="margin: 15px 0px;">{{child.ChildStruggles}}</p>
+						    <h4 class="description-title" style="margin: 15px 0px; ">Interest:</h4>
 						   <ul>
 							<li *ngFor="let i of interests" >{{i}}</li>
 

@@ -6,5 +6,6 @@ itemNeed: any;
     DateMade:string,
     isAvailable: string,
     Quantity: number,
-    OrphanageID:number
+    OrphanageID:number,
+    Sender: string
 }

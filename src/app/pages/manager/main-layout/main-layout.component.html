@@ -25,10 +25,10 @@
     <ul class="top-right" >
 
           <!-- Start Sidepanel Show-Hide Button -->
-  <span class="sidepanel-open-button">
-    <a class="icon-button"  style="    box-shadow: 0 0px 10px rgb(0 0 0 / 20%)">
+  <span class="sidepanel-open-button" >
+    <a (click)="openNotification()" class="icon-button"  style="    box-shadow: 0 0px 10px rgb(0 0 0 / 20%)">
       <i style="color: #33241A;" class="fa fa-bell"></i>
-      <span class="icon-button__badge">{{managerNotifications.num}}</span>
+      <span class="icon-button__badge">{{notificationNum}}</span>
     </a>
   </span>
     <!-- End Sidepanel Show-Hide Button -->
@@ -118,9 +118,9 @@
         <li *ngFor="let notification of notifications">
           <a href="#">
            <span class="label label-danger"></span> 
-            <span class="date" style="margin-bottom: 10px">9 hours ago</span>
-            <h4>{{notification.Title}}</h4>
-           {{notification.Body}}
+            <span class="date" style="margin-bottom: 10px">{{notification?.NotificationTime}}</span>
+            <h4>{{notification?.Title}}</h4>
+           {{notification?.Body}}
           </a>
         </li>
       </ul>
