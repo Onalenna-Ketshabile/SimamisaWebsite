@@ -93,6 +93,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PieChartDonorGenderComponent } from './pages/manager/pie-chart-donor-gender/pie-chart-donor-gender.component';
 import { TableInventoryComponent } from './pages/manager/table-inventory/table-inventory.component';
 import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/table-row-inventory.component';
+import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/modal-distribute-funds.component';
 
 @NgModule({
   declarations: [
@@ -171,6 +172,7 @@ import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/
     PieChartDonorGenderComponent,
     TableInventoryComponent,
     TableRowInventoryComponent,
+    ModalDistributeFundsComponent,
 
 
   ],
