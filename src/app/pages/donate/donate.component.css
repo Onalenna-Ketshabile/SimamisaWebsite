@@ -9592,7 +9592,7 @@ a.bg-dark:focus,a.bg-dark:hover,button.bg-dark:focus,button.bg-dark:hover {
 }
 
 .text-white {
-	color: #fff!important;
+	color: #33241A !important;
 }
 
 .text-primary {
@@ -22744,8 +22744,7 @@ table p {
 }
 
 .btn-theme {
-	background-color: #fc6539;
-	border-color: #fc6539;
+
 	border-radius: 32.5px;
 	color: #fff;
 	display: inline-block;
@@ -22753,7 +22752,7 @@ table p {
 	font-weight: 500;
 	line-height: 1.375;
 	min-width: 200px;
-	padding: 21px 37px;
+	padding: 18px 32px;
 	position: relative;
 	transition: .3s;
 }
@@ -23902,7 +23901,7 @@ table p {
 }
 
 .bgcolor-theme3 {
-	background-color: #1a120d !important;
+	background-color: #fff !important;
 }
 
 .text-theme-color {
@@ -29570,7 +29569,7 @@ table p {
 }
 
 .donation-page-wrapper .donation-wrapper {
-	padding: 20px 0 390px;
+	padding: 40px 0 40px;
 }
 
 @media only screen and (max-width:1199px) {
@@ -29590,11 +29589,13 @@ table p {
 	position: relative;
 	z-index: 1;
 	border-radius: 20px;
+	box-shadow: 0 3px 20px rgb(0 0 0 / 20%)
 }
 
 @media only screen and (max-width:767px) {
 	.donation-form {
 		padding: 55px 35px 58px;
+		
 	}
 }
 
@@ -29634,7 +29635,7 @@ table p {
 }
 
 .donation-form form .amount-info .donate-amount {
-	background-color: #001d23;
+	background-color: #807066;
 	border: 2px solid #203438;
 	color: #fff;
 	font-size: 18px;
@@ -29680,7 +29681,7 @@ table p {
 }
 
 .donation-form form .amount-info .donate-amount.donate-custom-amount .form-control {
-	background-color: #001d23;
+	background-color: #807066;
 	border: none;
 	box-shadow: none;
 	color: #fff;
@@ -29796,11 +29797,11 @@ table p {
 }
 
 .donation-form form .personal-info .form-group .form-control {
-	background-color: #001d23;
-	border: 2px solid #203438;
+	background-color: #F7F6F5;
+	border: 2px solid transparent;
 	border-radius: 0;
 	box-shadow: none;
-	color: #fff;
+	color: #000;
 	font-size: 18px;
 	font-weight: 400;
 	height: 55px;

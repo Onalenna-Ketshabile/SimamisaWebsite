@@ -35,7 +35,6 @@ export class ModalMakeOfferComponent implements OnInit {
 
     console.log("MyOffer",Offer);
     const body = JSON.stringify(Offer);
-    window.alert(localStorage.getItem("recID"));
     this.offersService.MakeOffer(body).subscribe(data => {
       console.log(data);
       window.alert("The offer was succefully sent.");

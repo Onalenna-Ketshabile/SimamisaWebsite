@@ -5,7 +5,7 @@
               <div class="row">
                   <div class="col-sm-12">
                       <div class="page-title">Donate</div>
-                      <div class="page-subtitle">Make a donation</div>
+                      <div class="page-subtitle">“Donate now and change lives today!”</div>
                   </div>
               </div>
               <div class="clouds">
@@ -28,7 +28,7 @@
                             <div class="section-title">
                                 <h5 class="subtitle line-theme-color mb-14">Make A Donation</h5>
                                 <h2 class="title text-white">Donate Now</h2>
-                                <img hidden src="" alt="image" class="line-shape">
+                                <img src="../../../assets/images/line-t3.png" alt="image" class="line-shape">
                             </div>
                             <form>
                                 <div class="amount-info">
@@ -44,7 +44,7 @@
                                     <div class="payment-method">
                                         <div class="payment-type">
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="form-check-input">
+                                                <input type="radio" checked name="inlineRadioOptions" id="inlineRadio1" value="option1" class="form-check-input">
                                                 <label for="inlineRadio1" class="form-check-label">Credit Card</label>
                                             </div>
                                             <div class="form-check form-check-inline">
@@ -52,7 +52,7 @@
                                                 <label for="inlineRadio2" class="form-check-label">Paypal</label>
                                             </div>
                                         </div>
-                                        <img hidden src="../images/photos/payment-card.png" alt="image">
+                                        <img  src="./../../../assets/images/payment-card.png" alt="image">
                                     </div>
                                 </div>
                                 <div class="personal-info">
@@ -60,27 +60,28 @@
                                     <div class="row row-gutter-20">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input name="con_name" placeholder="Name" class="form-control">
+                                                <input name="con_name" placeholder="Name On Card" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="email" name="con_email" placeholder="Email" class="form-control">
+                                                <input  type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="Credit Card Numb" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input name="con_phone" placeholder="Phone" class="form-control">
+                                                <input name="exp_year" placeholder="Exp Year" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input name="con_address" placeholder="Address" class="form-control">
+                                                <input name="exp_month" placeholder="Exp Month" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group mb-0">
-                                                <textarea name="con_message" placeholder="Message" class="form-control textarea"></textarea>
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input name="cvv" placeholder="CVV" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -89,9 +90,9 @@
 
                                     <!-- <a href="#" class="btn-theme" data-bs-toggle="modal" data-bs-target="#payNeed-modal">Donate Now
                                     </a> -->
-                                    <a href="#" class="btn-theme" >Donate Now
+                                    <a href="#" class="btn-theme hbtn hbtn-primary" >Donate Now
                                     </a>
-                                    <a hidden href="#" class="btn-theme  btn-border">Total Donation: R500</a>
+                                    <a hidden href="#" class="hbtn hbtn-primary">Total Donation: R500</a>
                                 </div>
                             </form>
                             <div hidden class="layer-style">
