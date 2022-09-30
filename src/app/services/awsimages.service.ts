@@ -35,7 +35,7 @@ export class AwsimagesService {
     return this.http.get<any>(this.docsURL, { headers: this.headers });
   }
   uploadDocument(urlL: string, file: any): Observable<any> {
-    const hd: any = new HttpHeaders().set('content-type', 'multipart/form-data');
+    const hd: any = new HttpHeaders().set('content-type', 'application/pdf');
      return this.http.put<any>(urlL,file, { headers: hd });
 
 

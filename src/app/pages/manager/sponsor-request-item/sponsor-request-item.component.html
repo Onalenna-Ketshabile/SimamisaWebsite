@@ -1,27 +1,50 @@
-              
-                                                        <td>
-                                                            <div class="avatar-sm d-inline-block align-middle me-2">
-                                                                <div class="avatar-title bg-soft-primary text-primary font-size-20 m-0 rounded-circle">
-                                                                    <i class="bx bxs-user-circle"></i>
-                                                                </div>
-                                                            </div>
-                                                            <a  class="text-body">William Swift</a>
-                                                        </td>
-                                                        <td>williamswift@Dason.com</td>
-                                                        <td>Sunshine</td>
-                                                        <td><i style="margin-right: 5px;" class="fa fa-file-pdf-o" aria-hidden="true"></i><a href="#">CertifiedID.pdf</a></td>
-                                                        <td>
-                                                            <i style="margin-right: 5px;" class="fa fa-file-pdf-o" aria-hidden="true"></i><a href="#">myAffidavit.pdf</a>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex gap-2">
-                                                              
-                                                                <div class=".hbtn .hbtn-primary">
-                                                                    <a href="project-details.html" class="hbtn hbtn-primary ">Accept <i class="fa fa-arrow-right"></i></a>
-                                                                </div>
-                                                                <div class=".hbtn .hbtn-primary">
-                                                                    <a href="project-details.html" class="hbtn hbtn-primary ">Decline<i class="fa fa-arrow-right"></i></a>
-                                                                </div>
-                                                              
-                                                            </div>
-                                                        </td>
+<app-modal-view-pdf *ngIf="false" ></app-modal-view-pdf>
+
+<td>
+    <div class="avatar-sm d-inline-block align-middle me-2">
+        <div class="avatar-title bg-soft-primary text-primary font-size-20 m-0 rounded-circle">
+            <i class="bx bxs-user-circle"></i>
+        </div>
+    </div>
+    <a class="text-body">{{sponsorRequest.registeredUser.FirstName}}</a>
+</td>
+<td>{{sponsorRequest.registeredUser.Email}}</td>
+<td>{{sponsorRequest.child.Nickname}}</td>
+<td>
+    <i style="margin-right: 5px;" class="fa fa-file-pdf-o" aria-hidden="true"></i>
+    <a href="#">{{sponsorRequest.registeredUser.FirstName}}ID.pdf</a>
+    <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
+        data-bs-target="#showDoc" (click)="setID()"><span class="iconify" data-icon="mdi:eye"></span></button>
+
+</td>
+<td>
+    <i style="margin-right: 5px;" class="fa fa-file-pdf-o" aria-hidden="true"></i>
+    <a href="#">{{sponsorRequest.registeredUser.FirstName}}IS.pdf</a>
+    <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
+        data-bs-target="#showDoc" (click)="setInc()"><span class="iconify" data-icon="mdi:eye"></span></button>
+
+</td>
+<td>
+    <div *ngIf="needsAction" class="d-flex gap-2">
+        <div *ngIf="status=='Set Up Meeting'" class=".hbtn .hbtn-primary">
+            <button  type="button" (click)="setupMeeting()"  data-bs-toggle="modal"
+            data-bs-target="#sponsorM" class="hbtn hbtn-primary">Set Up Meeting</button>
+
+        </div>
+        <div *ngIf="status=='Approve'" class=".hbtn .hbtn-primary">
+            <button (click)="acceptSponsor()" class="hbtn hbtn-primary">Approve</button>
+        </div>
+        <div *ngIf="status=='Approve'" class=".hbtn .hbtn-primary">
+            <button (click)="rejectSponsor()" class="hbtn hbtn-primary">Reject</button>
+        </div>
+
+    </div>
+    <div *ngIf="!needsAction" class="d-flex gap-2">
+        <div *ngIf="status=='Accepted'">
+            <p>Accepted</p>
+        </div>
+        <div *ngIf="status=='Rejected'">
+            <p>Rejected</p>
+        </div>
+    </div>
+</td>

@@ -1,3 +1,5 @@
+<app-modal-view-pdf ></app-modal-view-pdf>
+
 <div class="page-header" >
     <h1 class="title">Sponsorship</h1>
       <ol class="breadcrumb" style="padding-left: 0px;">
@@ -44,15 +46,15 @@
                                                     <th scope="col">Email</th>
                                                     <th scope="col">Child To Sponsor</th>
                                                     <th scope="col">National ID</th>
-                                                    <th scope="col">Income Statement/ Affidavit</th>
+                                                    <th scope="col">Income Statement/Affidavit</th>         
                                                     <th style="width: 80px; min-width: 80px;">Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-
-                                                    <tr app-sponsor-request-item >  <!-- *ngFor="let sponsorRequest of sponsorRequests" [sponsorRequest]="sponsorRequest" -->
+                                                  <tr app-sponsor-request-item  *ngFor="let sponsorRequest of sponsorRequests" [sponsorRequest]="sponsorRequest" (elementUpdated)="onElementUpdated($event)" >
                                                      
-                                                    </tr>
+                                                  </tr>
+                                                    <!-- <tr app-sponsor-request-item >   *ngFor="let sponsorRequest of sponsorRequests" [sponsorRequest]="sponsorRequest" </tr> -->
                                                 </tbody>
                                             </table>
                                             <!-- end table -->

@@ -1,7 +1,11 @@
 export interface sponsorRequest {
     ID: number,
-    MeetingDate: string,
-    MeetingVenue:string,
-    OrphanageImage:string,
-    registeredUserID: number
+    RequestDate: string,
+    isAccepted:boolean,
+    isRejected:boolean,
+    registeredUserID: number,
+    childID:number,
+    registeredUser:any,
+    child:any,
+    documents:any
 }

@@ -1,0 +1,49 @@
+<div class="modal" tabindex="-1" id="sponsorM" data-backdrop="false" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h4 class="modal-title" id="myCenterModalLabel">Get The Mobile App</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"
+            aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body">
+
+        <form #meetingForm="ngForm" (ngSubmit)="setUpMeeting(meetingForm.value)">
+          <div class="mb-3 form-group">
+            <label for="name" class="form-label">Meeting With</label>
+            <input type="text" name="name"  class="form-control" value={{name}} readonly required ngModel>
+          </div>
+
+
+          <div class="mb-3 form-group">
+            <label for="" class="form-label">Meeting Date</label>
+            <input type="text" id="date" runat="server" name="date" class="form-control"
+              placeholder="Date For Meeting" onfocus="(this.type='date')" required ngModel>
+            <i class="uil uil-calendar-alt"></i>
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="" class="form-label">Meeting Time</label>
+            <input type="text" id="time" runat="server" name="time" class="form-control" placeholder="Time For Meeting"
+              onfocus="(this.type='time')" required ngModel>
+            <i class="uil uil-calendar-alt"></i>
+          </div>
+
+
+          <div class="mb-3 form-group">
+            <label for="" class="form-label">Message</label>
+            <textarea id="description" name="description" placeholder="Enter message for the potential sponsor"
+              class="form-control" required ngModel></textarea>
+          </div>
+          <div class="mb-3 form-group">
+            <button class="btn btn-light waves-effect waves-light" (click)="setUpMeeting(meetingForm.value)">Generate Meeting</button>
+            <mat-progress-spinner *ngIf="gettingLink" mode="indeterminate" color="warn" diameter="20"></mat-progress-spinner>
+            <p>{{meetingLink}}</p>
+          </div>
+
+         <button type="button" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

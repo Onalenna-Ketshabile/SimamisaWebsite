@@ -1,0 +1,28 @@
+<div class="modal" tabindex="-1" id="showDoc" data-backdrop="false" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h4 class="modal-title" id="myCenterModalLabel">Sponsor Documents</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"
+            aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body">
+      
+          <iframe [src]="transform()" width="100%" height="400px"></iframe>
+          <!-- <pdf-viewer [src]="docURL" [original-size]="false" style="width: 10px;
+
+     align-items: center;
+     justify-content: center;
+     filter: drop-shadow(5px 5px 5px #222222);">
+
+          </pdf-viewer> -->  
+          <!-- <ngx-extended-pdf-viewer
+     src="{{docURL}}"
+     >
+</ngx-extended-pdf-viewer>
+          <h1>{{docURL}}</h1> -->
+       
+      </div>
+    </div>
+  </div>
+</div>

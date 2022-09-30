@@ -93,6 +93,10 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PieChartDonorGenderComponent } from './pages/manager/pie-chart-donor-gender/pie-chart-donor-gender.component';
 import { TableInventoryComponent } from './pages/manager/table-inventory/table-inventory.component';
 import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/table-row-inventory.component';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import {SafePipeModule} from 'safe-pipe';
+import { ModalViewPdfComponent } from './others/modal-view-pdf/modal-view-pdf.component';
+import { MeetingSetupComponent } from './others/meeting-setup/meeting-setup.component';
 
 @NgModule({
   declarations: [
@@ -171,13 +175,16 @@ import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/
     PieChartDonorGenderComponent,
     TableInventoryComponent,
     TableRowInventoryComponent,
+    ModalViewPdfComponent,
+    MeetingSetupComponent,
+     
 
 
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     BrowserAnimationsModule, MatProgressSpinnerModule, MatToolbarModule, HttpClientModule, NgSelectModule, QRCodeModule, MatProgressBarModule, MatTooltipModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,PdfViewerModule,SafePipeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
