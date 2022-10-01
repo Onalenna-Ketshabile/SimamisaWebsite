@@ -17,7 +17,7 @@ export class ChildPageComponent implements OnInit {
 
   formModal: any;
 
-  child?: Child;
+  child!: Child;
   orphanage?: Orphanage;
   interests?: string[]
   age?: string;

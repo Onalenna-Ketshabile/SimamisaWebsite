@@ -7,7 +7,7 @@ import { LoadingHandler } from '../loading-indicator/loading-handler';
 @Component({
   selector: 'app-meeting-setup',
   templateUrl: './meeting-setup.component.html',
-  styleUrls: ['./meeting-setup.component.css']
+  styleUrls: ['./meeting-setup.component.css','../../../assets/css/modal.css']
 })
 export class MeetingSetupComponent implements OnInit {
   @Output()

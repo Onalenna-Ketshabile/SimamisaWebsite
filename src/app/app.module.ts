@@ -94,7 +94,7 @@ import { PieChartDonorGenderComponent } from './pages/manager/pie-chart-donor-ge
 import { TableInventoryComponent } from './pages/manager/table-inventory/table-inventory.component';
 import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/table-row-inventory.component';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
-import {SafePipeModule} from 'safe-pipe';
+
 import { ModalViewPdfComponent } from './others/modal-view-pdf/modal-view-pdf.component';
 import { MeetingSetupComponent } from './others/meeting-setup/meeting-setup.component';
 import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/modal-distribute-funds.component';
@@ -186,7 +186,7 @@ import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/m
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     BrowserAnimationsModule, MatProgressSpinnerModule, MatToolbarModule, HttpClientModule, NgSelectModule, QRCodeModule, MatProgressBarModule, MatTooltipModule,
-    NgxSpinnerModule,PdfViewerModule,SafePipeModule
+    NgxSpinnerModule,PdfViewerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
