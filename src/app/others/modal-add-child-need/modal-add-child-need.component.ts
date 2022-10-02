@@ -22,7 +22,7 @@ export class ModalAddChildNeedComponent implements OnInit {
   addChildNeed(details: { name: string; duedate: any; description: any; unitCost: any; }) {
   
     let needDetails = {
-    //  DueDate : details.duedate,
+      DueDate : details.duedate,
       Title : details.name,
       Description : details.description,
       isFullfilled : "false",
