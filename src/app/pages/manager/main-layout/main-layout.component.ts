@@ -27,10 +27,17 @@ UserName!: Observable<String>;
 
   sidePanelOpen = false;
 
-  notificationNum: number = 0;
+  notificationNum: number = 1;
   managerNotifications!: notificationAll;
   notifications?: notification[];
-  
+  newNotifications?: notification[];
+  oldNotifications?: notification[];
+  numNewNotifications:number=0;
+  maxNotificatios = 25;
+
+  time:string ="";
+  date:string =""
+
   constructor(private authService:AuthenticationService, private notificationService: NotificationsService) {
     
     console.log("SidePanelOpen: ",this.sidePanelOpen);
@@ -73,9 +80,26 @@ UserName!: Observable<String>;
     if(this.sidePanelOpen){
         
     this.notificationService.getAllNotifications().subscribe(data=>{
-      this.notifications = data;
-                  
-          
+      this.newNotifications = data.new;
+      this.oldNotifications = data.old;
+      //this.numNewNotifications = this.newNotifications?.length;
+
+      if(this.newNotifications?.length){
+        console.log("New Notification  Defined.");
+         // this.numNewNotifications = 10; //Max
+         if(this.newNotifications.length> this.maxNotificatios){
+          this.numNewNotifications = this.maxNotificatios;
+         }
+      }
+      else{
+        
+        console.log("No New Notifications .");
+        this.numNewNotifications = 0;
+        console.log("num", this.numNewNotifications);
+      }
+
+      console.log("new",data.new);
+      console.log("old",data.old);
      this.notificationNum = 0;
                   
              

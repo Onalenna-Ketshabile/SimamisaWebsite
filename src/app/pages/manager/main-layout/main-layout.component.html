@@ -114,13 +114,21 @@
 
       <div class="gn-title">Nofications</div>
 
-      <ul class="list-w-title">
-        <li *ngFor="let notification of notifications">
+      <ul class="list-w-title" style="background: #fef8f5">
+        <li *ngFor="let newNotification of newNotifications?.slice(0,numNewNotifications)" style="background: #fef5ef">
+          <a href="#">
+           <span class="label label-danger">New</span> 
+            <span class="date" style="margin-bottom: 10px">{{newNotification?.NotificationTime?.slice(0,10)}} {{newNotification?.NotificationTime?.slice(11,16)}}</span>
+            <h4>{{newNotification?.Title}}</h4>
+           {{newNotification?.Body}}
+          </a>
+        </li>
+        <li *ngFor="let oldNotification of oldNotifications?.slice(0,maxNotificatios - numNewNotifications)">
           <a href="#">
            <span class="label label-danger"></span> 
-            <span class="date" style="margin-bottom: 10px">{{notification?.NotificationTime}}</span>
-            <h4>{{notification?.Title}}</h4>
-           {{notification?.Body}}
+            <span class="date" style="margin-bottom: 10px">{{oldNotification?.NotificationTime?.slice(0,10)}} {{oldNotification?.NotificationTime?.slice(11,16)}}</span>
+            <h4>{{oldNotification?.Title}}</h4>
+           {{oldNotification?.Body}}
           </a>
         </li>
       </ul>

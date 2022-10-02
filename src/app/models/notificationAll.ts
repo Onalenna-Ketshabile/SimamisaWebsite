@@ -1,4 +1,4 @@
 export interface notificationAll {
-    Notes: any;
-     num: number
+    new: any;
+     old: any;
  }
