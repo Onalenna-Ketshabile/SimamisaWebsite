@@ -99,6 +99,8 @@ import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/
 import { ModalViewPdfComponent } from './others/modal-view-pdf/modal-view-pdf.component';
 import { MeetingSetupComponent } from './others/meeting-setup/meeting-setup.component';
 import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/modal-distribute-funds.component';
+import { TableUnreliableUsersComponent } from './pages/manager/table-unreliable-users/table-unreliable-users.component';
+import { TableRowUnreliableUsersComponent } from './pages/manager/table-row-unreliable-users/table-row-unreliable-users.component';
 
 
 @NgModule({
@@ -182,6 +184,8 @@ import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/m
     MeetingSetupComponent,
 
     ModalDistributeFundsComponent,
+      TableUnreliableUsersComponent,
+      TableRowUnreliableUsersComponent,
 
   ],
   imports: [

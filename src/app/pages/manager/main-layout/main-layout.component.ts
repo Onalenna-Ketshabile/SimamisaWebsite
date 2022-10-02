@@ -90,6 +90,7 @@ UserName!: Observable<String>;
          if(this.newNotifications.length> this.maxNotificatios){
           this.numNewNotifications = this.maxNotificatios;
          }
+         this.numNewNotifications = this.newNotifications.length;
       }
       else{
         

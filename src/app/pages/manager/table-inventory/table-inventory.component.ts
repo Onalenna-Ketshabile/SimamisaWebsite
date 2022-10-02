@@ -17,7 +17,7 @@ export class TableInventoryComponent implements OnInit {
     this.managerReport.getManagerInventoryReport().subscribe(data=>{
       this.managerInventoryReports = data;
  
-      console.log(this.managerInventoryReports);
+      console.log("Inventory",this.managerInventoryReports);
 
     });
   }

@@ -6,6 +6,7 @@ import { managerDemographicsReport } from '../models/managerDemographicsReport';
 import { managerInventoryReport } from '../models/managerInventoryReport';
 import { managerNeedsReport } from '../models/managerNeedsReports';
 import { managerProposalReport } from '../models/managerProposalReport';
+import { unreliableUser } from '../models/unreliableUser';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class ManagerReportsService {
   private managerProposalReport = new BehaviorSubject<managerProposalReport[]>([]);
   private managerInventoryReport = new BehaviorSubject<managerInventoryReport[]>([]);
   private managerDemographicsReport = new BehaviorSubject<managerDemographicsReport[]>([]);
+  private managerFlaggedUsersReport = new BehaviorSubject<unreliableUser[]>([]);
 
   headers: any;
 
@@ -113,4 +115,19 @@ export class ManagerReportsService {
       }
     );
   }
+
+  getManagerUnreliableUsers():Observable<any>{
+    this._managerUnreliableUsers();
+    return this.managerFlaggedUsersReport;
+
+  } 
+   _managerUnreliableUsers(){
+    this.http.get<unreliableUser[]>(this.apiURL+'om/flags?id='+localStorage.getItem('orphID'),{headers:this.headers}).subscribe(
+      (inventoryReport)=>{
+        this.managerFlaggedUsersReport.next(inventoryReport);
+      }
+    );
+  }
+
+
 }

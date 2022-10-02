@@ -2964,7 +2964,7 @@ div[data-role="editor-toolbar"] {
 /* Tabs */
 .tab-content {
   background: #fff;
-  padding: 0px 20px 20px 20px;
+  padding: 0px 20px 0px 20px;
 }
 .nav-tabs {
   border-bottom: none;
