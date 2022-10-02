@@ -16,8 +16,8 @@
     </div>
     <!-- End Page Header Right Div -->
   </div>
-  <div class="con" style="min-height: 420px;">
-    <div>You have no partners</div>
+  <div class="con" style="min-height: 420px;" [style.backgroundColor]>
+    <div hidden>You have no partners</div>
   <app-view-mypartners hidden *ngFor="let orphanage of orphanages" [orphanage]="orphanage"></app-view-mypartners>
   </div>
   
