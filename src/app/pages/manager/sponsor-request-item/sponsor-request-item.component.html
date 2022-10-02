@@ -13,29 +13,29 @@
 <td>
     <i style="margin-right: 5px;" class="fa fa-file-pdf-o" aria-hidden="true"></i>
     <a href="#">{{sponsorRequest.registeredUser.FirstName}}ID.pdf</a>
-    <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
+    <button type="button" style= "margin-left: 5px;" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
         data-bs-target="#showDoc" (click)="setID()"><span class="iconify" data-icon="mdi:eye"></span></button>
 
 </td>
 <td>
     <i style="margin-right: 5px;" class="fa fa-file-pdf-o" aria-hidden="true"></i>
     <a href="#">{{sponsorRequest.registeredUser.FirstName}}IS.pdf</a>
-    <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
+    <button type="button" style= "margin-left: 5px;" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
         data-bs-target="#showDoc" (click)="setInc()"><span class="iconify" data-icon="mdi:eye"></span></button>
 
 </td>
 <td>
-    <div *ngIf="needsAction" class="d-flex gap-2">
+    <div *ngIf="needsAction" class="d-flex gap-2;" style="display: flex; justify-content: center;align-items: center;flex-direction: column;">
         <div *ngIf="status=='Set Up Meeting'" class=".hbtn .hbtn-primary">
             <button  type="button" (click)="setupMeeting()"  data-bs-toggle="modal"
             data-bs-target="#sponsorM" class="hbtn hbtn-primary">Set Up Meeting</button>
 
         </div>
-        <div *ngIf="status=='Approve'" class=".hbtn .hbtn-primary">
-            <button (click)="acceptSponsor()" class="hbtn hbtn-primary">Approve</button>
+        <div *ngIf="status=='Approve'" style="display: block; width: 100%" class=".hbtn .hbtn-primary">
+            <button (click)="acceptSponsor()" class="hbtn hbtn-primary" style="display: block; width: 100%; margin-bottom: 5px;">Approve</button>
         </div>
-        <div *ngIf="status=='Approve'" class=".hbtn .hbtn-primary">
-            <button (click)="rejectSponsor()" class="hbtn hbtn-primary">Reject</button>
+        <div *ngIf="status=='Approve'" style="display: block; width: 100%" class=".hbtn .hbtn-primary">
+            <button (click)="rejectSponsor()" class="hbtn hbtn-primary" style="display: block; width: 100%">Reject</button>
         </div>
 
     </div>
