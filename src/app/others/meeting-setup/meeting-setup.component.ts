@@ -28,7 +28,9 @@ export class MeetingSetupComponent implements OnInit {
       this.name = data.registeredUser.FirstName;
     })
   }
-
+  close(){
+    this.elementUpdated.emit();
+  }
   setUpMeeting(data: any) {
    
     let date = data.date + "T" + data.time + ":00Z"

@@ -61,6 +61,7 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
    }
 
    acceptSponsor(){
+    console.log("trying",this.sponsorRequest.ID);
       this.mService.acceptSponsor(this.sponsorRequest.ID).subscribe((data:any) => {  
         console.log(data);
         this.elementUpdated.emit();//Notifies parent to reload
