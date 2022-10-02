@@ -3,16 +3,14 @@
 	<section class="project-section section-gap-extra-bottom primary-soft-bg">
 		<div class="container">
 			<div class="row justify-content-center project-items project-style-one">
-				<div *ngIf="loadingHandler.isLoading | async" class="row" >
-					<div class="col-sm-12">
-						<div style="height: 250px;display: flex;justify-content: center; align-items: center;">
-							<app-loading-indicator></app-loading-indicator>
-						</div>
-					
-					</div>
-				</div>
-	
- <app-needitem *ngFor="let need of needs" [need]="need" (elementDeleted)="onElementDeleted($event)">{{need.Title}}</app-needitem>
+			
+<div *ngIf="show()">
+	<app-needitem *ngFor="let need of needs" [need]="need" (elementDeleted)="onElementDeleted($event)">{{need.Title}}</app-needitem>
+
+</div>
+<div *ngIf="!show() ">
+<img src="../../../assets/images/empty.jpg">
+</div>s
 
 			</div>
 		</div>

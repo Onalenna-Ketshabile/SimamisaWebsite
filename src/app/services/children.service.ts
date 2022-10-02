@@ -48,7 +48,7 @@ readonly getSpURL= `${BASEURL}/children/sponsorship/?childID=`
    }
    //Child's update posts  ********************************************
     readonly childUpdatesUrl = `${BASEURL}/children/child/post/?id=`//May be incorrect
-   getChildUpdatesByID(id:string):Observable<ChildUpdate[]>{
+   getChildUpdatesByID(id:string):Observable<any>{
   
     return this.http.get<any>(this.childUpdatesUrl + id, { headers: this.headers }).pipe(
       map((res) => {

@@ -31,13 +31,21 @@
                            <div class="col-lg-12">
                                <div class="card">
                                    <div class="card-body">
+                                    <div  *ngIf="loaderService.isLoading | async" class="row" >
+                                      <div class="col-sm-12">
+                                          <div style="margin-left:400px;margin-top:30px;margin-bottom:30px">
+                                              <app-loading-indicator></app-loading-indicator>
+                                          </div>
+                                      
+                                      </div>
+                                    </div>
                                         <div class="row align-items-center">
                                    
         
                                         </div>
                                         <!-- end row -->
                 
-                                        <div class="table-responsive mb-4">
+                                        <div *ngIf="show()" class="table-responsive mb-4">
                                             <table class="table table-bordered table-responsive">
                                                 <thead>
                                                 <tr>
@@ -59,6 +67,9 @@
                                             </table>
                                             <!-- end table -->
                                         </div>
+                                        <div *ngIf="!show()">
+                                          <img src="../../../../assets/images/empty.jpg">
+                                      </div>
                                         <!-- end table responsive -->
                                    </div>
                                </div>

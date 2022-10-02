@@ -113,7 +113,14 @@
 
 
       <div class="gn-title">Nofications</div>
-
+      <div  *ngIf="loaderService.isLoading | async" class="row" >
+        <div class="col-sm-12">
+        <div style="margin-left:50px;margin-top:30px;margin-bottom:30px">
+            <app-loading-indicator></app-loading-indicator>
+        </div>
+    
+    </div>
+  </div>
       <ul class="list-w-title" style="background: #fef8f5">
         <li *ngFor="let newNotification of newNotifications?.slice(0,numNewNotifications)" style="background: #fef5ef">
           <a href="#">
@@ -133,6 +140,7 @@
         </li>
       </ul>
 
+
     </div>
     <!-- End Today -->
 
@@ -143,6 +151,8 @@
 
 </div>
 <!-- END SIDEPANEL -->
+
+
 
 
 <!-- Start Footer -->
@@ -165,8 +175,6 @@
     ©  2022 Simamisa by <a href="" target="_blank">BitReapers</a> All rights reserved.
   </div> 
 </div>
-
-
 <!-- End Footer -->
 
 </div>
