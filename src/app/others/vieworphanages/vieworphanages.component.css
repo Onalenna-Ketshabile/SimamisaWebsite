@@ -562,13 +562,13 @@ section .col-inner.border-block{
 
 .rounded-triangle{
     height: 1006px;
-    background: url() no-repeat center center;
+   ;
 	background-size: cover;
 }
 
 .rounded-image{
     height: 1020px;
-    background: url() no-repeat center center;
+
 	background-size: cover;
 }
 
@@ -626,8 +626,8 @@ section .col-inner.border-block{
 .orange-bg{background-color:#ffab40;}
 .green-bg{background-color:#8BC34A;}
 
-.pattern-bg-dark{background-image: url();background-repeat: repeat;}
-.pattern-bg-light{background-image: url();background-repeat: repeat;}
+.pattern-bg-dark{/*background-image: url();*/background-repeat: repeat;}
+.pattern-bg-light{/*background-image: url();*/background-repeat: repeat;}
 .light-br-r{border-right:1px solid #eeeeee;}
 
 .fixed-bg{background-attachment: fixed!important;}
@@ -872,11 +872,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 	transform: translate(-50%, -120%);
 	-webkit-transform: translate(-50%, -120%);
 	-moz-transform: translate(-50%, -120%);
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 }
 
 .box-title-two:after, .box-title-three:after{
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
@@ -896,7 +896,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 }
 
 .box-title-three:after{
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 }
 
 .img-icon{
@@ -913,43 +913,43 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 }
 
 .virus-icon {
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 .hand-icon {
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 .mask-icon {
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 
 .infection-icon {
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 .earth-icon {
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 .food-icon {
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 
 .phone-icon{
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 
 .address-icon{
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 
 .email-icon{
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	background-size: cover;
 }
 
@@ -1192,7 +1192,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 	top:10%;
 	width: 302px;
 	height: 306px;
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 }
 
 .triangle-light-blue{
@@ -1200,7 +1200,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 	bottom:0%;
 	width: 218px;
 	height: 236px;
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 }
 
 .virus-box-1 {
@@ -1208,7 +1208,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 	bottom:-23%;
 	width: 276px;
 	height: 276px;
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 }
 
 .virus-box-2 {
@@ -1216,7 +1216,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 	top:2%;
 	width: 300px;
 	height: 300px;
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 }
 
 .circle-box-big:after {
@@ -1224,14 +1224,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
     margin-top: 50%;
     width: 848px;
     height: 849px;
-    background: url() no-repeat;
+   /* */;
 }
 
 .triangle-yellow-big {
 	left: -50%;
 	width: 1345px;
 	height: 100vh;
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	position: absolute;
 	top: 50%;
 	transform: translate(-30%, -70%);
@@ -1242,7 +1242,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
     top: -50%;
     width: 755px;
     height: 813px;
-    background: url() no-repeat;
+   /* */;
 	transform: translateY(-50%);
 }
 
@@ -1251,7 +1251,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
     top: -50%;
     width: 681px;
     height: 682px;
-    background: url() no-repeat;
+   /* */;
     transform: translateY(50%);
 }
 
@@ -1270,7 +1270,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
     margin-top: -30%;
     width: 1443px;
     height: 1453px;
-    background: url() no-repeat;
+   /* */;
 }
 
 .bubble-gradient-blue:after{
@@ -1278,7 +1278,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 	top:50%;
 	width: 497px;
 	height: 497px;
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	transform: translate(-40%, -80%);
 }
 
@@ -1287,7 +1287,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
 	top:50%;
 	width: 260px;
 	height: 284px;
-	background: url() no-repeat;
+/*	background: url() no-repeat;*/
 	transform: translateY(-50%);
 }
 
@@ -1296,7 +1296,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
     top: 50%;
     width: 273px;
     height: 283px;
-    background: url() no-repeat;
+   /* */;
     transform: translateY(-170%);
 }
 
@@ -1305,7 +1305,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a158ed",endCo
     top: 50%;
     width: 168px;
     height: 172px;
-    background: url() no-repeat;
+   /* */;
     transform: translateY(-150%);
 }
 
@@ -2451,7 +2451,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 670px;
-	background: url() no-repeat center center;
+	
 	background-size: cover;
 	z-index: -1;
 }
@@ -5361,52 +5361,52 @@ section.dark-block .default-slider .slick-dots li button {
 }
 
 .about-us-bg{
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .startup-bg-left {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .startup-bg-right {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .travel-bg-left {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .travel-bg-right {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .gym-bg-left {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .gym-bg-right {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .barber-bg-left {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .barber-bg-right {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 
 .archi-bg-left {
-  background:url() center no-repeat;
+  /*background:url() center no-repeat;*/
   background-size: cover;
 }
 

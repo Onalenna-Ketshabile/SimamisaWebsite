@@ -539,7 +539,7 @@ body.fullpage {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url();
+    /*background-image: url();*/
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 110%;
@@ -555,7 +555,7 @@ body.fullpage {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url();
+    /*background-image: url();*/
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: 100% 20%;
@@ -1154,7 +1154,7 @@ nav.navbar .nav .open > a:hover, nav.navbar .nav .open > a:focus {
 }
 
 .features .img-holder {
-    background-image: url();
+    /*background-image: url();*/
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -1184,7 +1184,7 @@ nav.navbar .nav .open > a:hover, nav.navbar .nav .open > a:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url();
+    /*background-image: url();*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -1608,7 +1608,7 @@ nav.navbar .nav .open > a:hover, nav.navbar .nav .open > a:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url();
+    /*background-image: url();*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -2485,11 +2485,11 @@ nav.navbar .nav .open > a:hover, nav.navbar .nav .open > a:focus {
 }
 
 .text-photo-sc .photo-holder.photo1 {
-    background-image: url();
+    /*background-image: url();*/
 }
 
 .text-photo-sc .photo-holder.photo2 {
-    background-image: url();
+    /*background-image: url();*/
 }
 
 .text-photo-sc .photo-holder img {

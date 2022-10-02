@@ -9448,7 +9448,7 @@ body[data-layout-color=dark] .card .card-drop{
     padding:20px;
     left:20px!important;
     right:20px!important;
-    background-image:url();
+    /* background-image:url();*/
     background-position:right bottom;
     background-repeat:no-repeat
 }
@@ -10127,7 +10127,7 @@ body[data-layout-color=dark] .text-blue{
     min-height:100px
 }
 body.authentication-bg{
-    background-image:url();
+    /* background-image:url();*/
     background-size:cover;
     background-position:center
 }
@@ -13670,7 +13670,7 @@ body[data-layout-color=dark] .tablesaw-enhanced .tablesaw-bar .btn{
     color:#3a4250
 }
 .ms-container{
-    background:transparent url() no-repeat 50% 50%;
+ /*    background:transparent url() no-repeat 50% 50%;*/
     width:auto;
     max-width:370px
 }
@@ -14071,10 +14071,10 @@ body[data-layout-color=dark] .dropify-wrapper .dropify-preview{
     background-color:#3c4453
 }
 .editable-clear-x{
-    background:url() center center no-repeat
+    /*background:url() center no-repeat;*/
 }
 .editableform-loading{
-    background:url() center center no-repeat
+    /*background:url() center no-repeat;*/
 }
 .editable-checklist label{
     display:block
@@ -14264,7 +14264,7 @@ body[data-layout-color=dark] .datepicker .datepicker-switch:hover,body[data-layo
     position:absolute
 }
 .jstree-default .jstree-icon,.jstree-default .jstree-node{
-    background-image:url()
+    /* background-image:url() */
 }
 .jstree-default .jstree-node{
     background-position:-292px -4px;
@@ -14280,7 +14280,7 @@ body[data-layout-color=dark] .datepicker .datepicker-switch:hover,body[data-layo
     height:28px
 }
 .jstree-default>.jstree-container-ul .jstree-loading>.jstree-ocl{
-    background:url() center center no-repeat
+    /*background:url() center no-repeat;*/
 }
 .jstree-default .jstree-icon:empty{
     width:24px;

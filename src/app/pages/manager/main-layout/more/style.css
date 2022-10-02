@@ -1550,7 +1550,7 @@ Mailbox
   padding: 20px 30px;
   border-bottom: 60px solid #fff;
   position: relative;
-  background: url();
+ 
   background-size: cover;
 }
 .social-top .profile-img {
@@ -3888,7 +3888,7 @@ Widgets
   padding-top: 40px;
   color: #fff;
   text-align: center;
-  background: url();
+ 
   background-size: cover;
 }
 .profile-widget .profile-image {

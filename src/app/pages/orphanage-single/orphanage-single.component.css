@@ -3005,7 +3005,7 @@ div[class*=col]:nth-of-type(6n + 6) .gallery-item .gallery-content .title {
   top: 5px;
   width: 50px;
   height: 50px;
-  background: url() no-repeat center center;
+ 
   background-size: contain;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -3497,7 +3497,7 @@ div[class*=col]:nth-of-type(6n + 4) .counter-item.round-style::before {
   content: "";
   width: 50px;
   height: 50px;
-  background: url() no-repeat center center;
+ 
   background-size: contain;
   margin-bottom: 15px;
 }
@@ -4935,7 +4935,7 @@ div[class*=col]:nth-of-type(5n + 5) .event-item .event-thumb .date-tag::before {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url() no-repeat center center;
+ 
   background-size: contain;
   z-index: 1;
 }
@@ -4944,7 +4944,7 @@ div[class*=col]:nth-of-type(5n + 5) .event-item .event-thumb .date-tag::before {
   left: -8px;
   bottom: -8px;
   right: 8px;
-  background: url() no-repeat center center;
+ 
   background-size: contain;
 }
 .countdown li * {
@@ -4962,15 +4962,15 @@ div[class*=col]:nth-of-type(5n + 5) .event-item .event-thumb .date-tag::before {
   margin-bottom: 0 !important;
 }
 .countdown li:nth-of-type(4n + 2)::after {
-  background: url() no-repeat center center;
+ 
   background-size: contain;
 }
 .countdown li:nth-of-type(4n + 3)::after {
-  background: url() no-repeat center center;
+ 
   background-size: contain;
 }
 .countdown li:nth-of-type(4n + 4)::after {
-  background: url() no-repeat center center;
+
   background-size: contain;
 }
 @media (max-width: 575px) {
@@ -6812,7 +6812,7 @@ div[class*=col]:nth-of-type(6n + 6) .product-list-item .product-thumb {
   display: block;
   width: 84px;
   height: 60px;
-  background: url() no-repeat center center;
+  /*background: url() no-repeat center center;*/;
   background-size: contain;
   margin: 0 auto 30px;
 }
