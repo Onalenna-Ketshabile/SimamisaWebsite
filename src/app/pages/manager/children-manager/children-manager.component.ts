@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Child } from 'src/app/models/child';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { ChildrenService } from 'src/app/services/children.service';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-children-manager',
@@ -12,7 +13,7 @@ import { ChildrenService } from 'src/app/services/children.service';
 export class ChildrenManagerComponent implements OnInit {
   children?: Child[];
   loadingHandler = new LoadingHandler();
-  constructor(private cService:ChildrenService) { }
+  constructor(private cService:ChildrenService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {
     this.loadingHandler.start();

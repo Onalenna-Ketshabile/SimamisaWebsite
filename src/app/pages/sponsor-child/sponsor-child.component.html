@@ -14,7 +14,14 @@
 
  <section class="pb-0" id="blog">
     <div class="container">
-
+        <div  *ngIf="loaderService.isLoading | async" class="row" >
+            <div class="col-sm-12">
+                <div style="margin-left:500px;margin-top:30px;margin-bottom:30px">
+                    <app-loading-indicator></app-loading-indicator>
+                </div>
+            
+            </div>
+        </div>
       <div class="row mt-50">
        <app-childitem *ngFor="let child of children" [child]="child"></app-childitem>
 

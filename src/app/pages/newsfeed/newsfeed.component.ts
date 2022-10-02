@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-newsfeed',
@@ -11,7 +12,7 @@ export class NewsfeedComponent implements OnInit {
   formModal:any;
   myAngularQrCode:any
   id: any;
-  constructor(private authService:AuthenticationService,private _Activatedroute: ActivatedRoute) { }
+  constructor(private authService:AuthenticationService,private _Activatedroute: ActivatedRoute, public loaderService:LoaderService) { }
  
 
   ngOnInit(): void {

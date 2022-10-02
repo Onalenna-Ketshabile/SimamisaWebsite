@@ -4,6 +4,7 @@ import { notification } from 'src/app/models/notification';
 import { notificationAll } from 'src/app/models/notificationAll';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NotificationsService } from 'src/app/services/notifications.service';
+import { LoaderService } from '../../../services/loader.service';
 
 declare var window: any;
 
@@ -31,7 +32,7 @@ UserName!: Observable<String>;
   managerNotifications!: notificationAll;
   notifications?: notification[];
   
-  constructor(private authService:AuthenticationService, private notificationService: NotificationsService) {
+  constructor(private authService:AuthenticationService, private notificationService: NotificationsService, public loaderService:LoaderService) {
     
     console.log("SidePanelOpen: ",this.sidePanelOpen);
     

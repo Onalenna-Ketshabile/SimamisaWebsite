@@ -113,7 +113,14 @@
 
 
       <div class="gn-title">Nofications</div>
-
+      <div  *ngIf="loaderService.isLoading | async" class="row" >
+        <div class="col-sm-12">
+        <div style="margin-left:50px;margin-top:30px;margin-bottom:30px">
+            <app-loading-indicator></app-loading-indicator>
+        </div>
+    
+    </div>
+  </div>
       <ul class="list-w-title">
         <li *ngFor="let notification of notifications">
           <a href="#">
@@ -124,7 +131,9 @@
           </a>
         </li>
       </ul>
-
+      <!-- <div *ngIf="!show()">
+        <img src="../../../../assets/images/empty.jpg">
+    </div> -->
     </div>
     <!-- End Today -->
 

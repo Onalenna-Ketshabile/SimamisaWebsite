@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular
 import { NgForm } from '@angular/forms';
 import { Proposal } from 'src/app/models/proposal';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
+import { LoaderService } from 'src/app/services/loader.service';
 import { ProposalServiceService } from 'src/app/services/proposal-service.service';
 
 interface Filter {
@@ -34,7 +35,8 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
     { id: 4, name: 'Rejected' },
   ];
   filterval: number = 1;
-  constructor(private proposalService: ProposalServiceService) { }
+  isLoaded=false;
+  constructor(private proposalService: ProposalServiceService,public loaderService:LoaderService) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes['filterval']);
@@ -49,9 +51,15 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
       this.allProps= data;
       this.updateFilter();
       this.loadingHandler.finish();
+      this.isLoaded=true;
     });
 
   }
+  show(){ 
+
+      return !(this.isLoaded && this.proposals!.length<1) ;
+  }
+
   updateFilter(): void {
     
     if (this.activeLayout == 'pickups') {
@@ -80,7 +88,7 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
     this.proposals = this.proposals?.filter(prop => (
       prop.isAccepted ==true && prop.isFulfilled==true
     ));
-   
+   this.isLoaded=true;
   }
  
   if (selected.name == 'Rejected') {//Get rejected

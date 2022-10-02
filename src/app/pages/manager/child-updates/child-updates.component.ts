@@ -4,6 +4,7 @@ import { Child } from 'src/app/models/child';
 import { ChildUpdate } from 'src/app/models/childupdate';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { ChildrenService } from 'src/app/services/children.service';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-child-updates',
@@ -17,7 +18,9 @@ export class ChildUpdatesComponent implements OnInit {
   childupdates!: ChildUpdate[];
   name! :string ;
   loadingHandler = new LoadingHandler();
-  constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService) { }
+  isLoadedC=false;
+  isLoaded=false;
+  constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {
     this.loadingHandler.start();
@@ -26,17 +29,29 @@ export class ChildUpdatesComponent implements OnInit {
 
   getChildUpdates() {
     this.id = this._Activatedroute.snapshot.paramMap.get("id");
-   
+   console.log(this.id)
     localStorage.setItem("childID", this.id!);
     this.cService.getChildByID(this.id!).subscribe(data => {
       this.child = data;
       this.name = this.child.Nickname;
+      this.isLoadedC =true;
     });
     this.cService.getChildUpdatesByID(this.id!).subscribe(data => {
-      this.childupdates = data;
-      this.loadingHandler.finish();  
+      
+      if(data =="Not Sponsored"){
+        this.childupdates = [];
+        this.isLoaded=true;
+      }else{
+        this.childupdates = data;
+        this.isLoaded=true;
+      }
+     
+    
     });
 
+  }
+  show(){
+    return !(this.isLoaded && this.childupdates!.length<1) ;
   }
   openModal() {
     //this.formModal.show();

@@ -20,7 +20,14 @@
   <section class="event-area section-gap-extra-bottom">
     <div class="container" style="min-height: 420px;">
 
-
+      <div  *ngIf="loaderService.isLoading | async" class="row" >
+        <div class="col-sm-12">
+            <div style="margin-left:400px;margin-top:30px;margin-bottom:30px">
+                <app-loading-indicator></app-loading-indicator>
+            </div>
+        
+        </div>
+    </div>
   <app-vieworphanages-manager *ngFor="let orph of orphanages" [orphanage]="orph"></app-vieworphanages-manager>
    </div>
 </section>

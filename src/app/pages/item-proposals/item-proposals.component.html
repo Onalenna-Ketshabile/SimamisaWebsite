@@ -35,7 +35,14 @@
                     </div>
                  </div>
                     <div class="card-body" [ngSwitch]="activeLayout">
-
+                        <div  *ngIf="loaderService.isLoading | async" class="row" >
+                            <div class="col-sm-12">
+                                <div style="margin-left:400px;margin-top:30px;margin-bottom:30px">
+                                    <app-loading-indicator></app-loading-indicator>
+                                </div>
+                            
+                            </div>
+                          </div>
                         <!--DropOff Layout-->
                         <div *ngSwitchCase="'dropoffs'">
                             <div class="row align-items-center">
@@ -49,15 +56,8 @@
                                 </div>
 
 
-                                <div class="panel-body with-table">
-                                    <div  *ngIf="loadingHandler.isLoading | async" class="row" >
-                                        <div class="col-sm-12">
-                                            <div style="margin-left:130px; margin-bottom:30px">
-                                                <app-loading-indicator></app-loading-indicator>
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
+                                <div *ngIf="show()" class="panel-body with-table">
+                                  
                                     <table class="table table-bordered table-responsive"
                                         style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
                                         <thead>
@@ -88,7 +88,9 @@
                                     <!-- end table -->
                                 </div>
                                 <!-- end table responsive -->
-
+                                <div *ngIf="!show()">
+                                    <img src="../../../assets/images/empty.jpg">
+                                </div>
                             </div>
 
                         </div>
@@ -107,7 +109,7 @@
                                 </div>
 
 
-                                <div class="panel-body with-table">
+                                <div *ngIf="show()" class="panel-body with-table">
                                     <table class="table table-bordered table-responsive"
                                         style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
                                         <thead>
@@ -135,7 +137,9 @@
                                     <!-- end table -->
                                 </div>
                                 <!-- end table responsive -->
-
+                                <div *ngIf="!show()">
+                                    <img src="../../../assets/images/empty.jpg">
+                                </div>
                             </div>
 
                         </div>

@@ -9,6 +9,8 @@ ChildInterest:string,
 Avatar : any
 ChildPassword: string
 orphanageID: number,
-DOB: string
+DOB: string,
+isSponsored:boolean
+
 
 }

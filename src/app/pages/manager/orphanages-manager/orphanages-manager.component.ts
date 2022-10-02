@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Orphanage } from 'src/app/models/orphanage';
+import { LoaderService } from 'src/app/services/loader.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { OrphanageService } from 'src/app/services/orphanage.service';
 })
 export class OrphanagesManagerComponent implements OnInit {
   orphanages?: Orphanage[];
-  constructor(private orphService:OrphanageService, private route:ActivatedRoute) {
+  constructor(private orphService:OrphanageService, private route:ActivatedRoute, public loaderService:LoaderService) {
     console.log("Trying to load orphanages...");
 //  this.orphanages = this.route.snapshot.data['orphanages'];
   

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Orphanage } from 'src/app/models/orphanage';
+import { LoaderService } from 'src/app/services/loader.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 
 
@@ -11,7 +12,7 @@ import { OrphanageService } from 'src/app/services/orphanage.service';
 export class OrphanagesComponent implements OnInit {
   orphanages?: Orphanage[];
   isLoaded = false;
-  constructor(private orphService:OrphanageService) { }
+  constructor(private orphService:OrphanageService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {
     this.orphService.init();

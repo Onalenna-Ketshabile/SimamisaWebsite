@@ -5,6 +5,7 @@ import { Child } from 'src/app/models/child';
 import { Childneed } from 'src/app/models/childneed';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { ChildrenService } from 'src/app/services/children.service';
+import { LoaderService } from 'src/app/services/loader.service';
 import { NeedsService } from 'src/app/services/needs.service';
 @Component({
   selector: 'app-child-needs',
@@ -18,7 +19,9 @@ export class ChildNeedsComponent implements OnInit {
   childneeds!: Childneed[]
   formModal: any;
   loadingHandler = new LoadingHandler();
-  constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService, private nService: NeedsService) { }
+  isLoadedC=false;
+  isLoaded=false;
+  constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService, private nService: NeedsService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {
     this.loadingHandler.start();
@@ -33,14 +36,22 @@ export class ChildNeedsComponent implements OnInit {
     console.log(this.id);
     localStorage.setItem("childID", this.id!);
     this.cService.getChildByID(this.id!).subscribe(data => {
+      console.log(data);
       this.child = data;
       this.name = this.child.Nickname;
+      this.isLoadedC=true;
     });
     this.nService.getChildNeedsById(this.id!).subscribe(data => {
+      console.log(data);
       this.childneeds = data;
+      
       this.loadingHandler.finish();  
+      this.isLoaded =true;
     });
    
+  }
+  show(){
+    return !(this.isLoaded && this.childneeds!.length<1) ;
   }
   openModal() {
     this.formModal.show();

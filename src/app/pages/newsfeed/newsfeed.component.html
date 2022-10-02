@@ -56,6 +56,25 @@
       </div>
   </div>
 </div>
+<div *ngIf="show()">
+  <div  *ngIf="loaderService.isLoading | async" class="row" >
+    <div class="col-sm-12">
+        <div style="margin-left:400px;margin-top:30px;margin-bottom:30px">
+            <app-loading-indicator></app-loading-indicator>
+        </div>
+    
+    </div>
+  </div>
+</div>
+<div *ngIf="!show()">
+  <div  *ngIf="loaderService.isLoading | async" class="row" >
+    <div class="col-sm-12">
+        <div style="margin-left:500px;margin-top:30px;margin-bottom:30px">
+            <app-loading-indicator></app-loading-indicator>
+        </div>   
+    </div>
+  </div>
+</div>
 
 <div class="con" style="min-height: 420px;">
 <app-allneeds [id]="id"></app-allneeds>
