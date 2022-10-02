@@ -9,12 +9,21 @@ import { AdminReportsService } from 'src/app/services/admin-reports.service';
 })
 export class TableOrphanagesNeedsComponent implements OnInit {
 
-  adminOrphanageNeeds!: adminOrphanageNeeds[]
+  adminOrphanageNeeds!: adminOrphanageNeeds[];
+  donationAmount!: any[];
 
   constructor(private adminReports :AdminReportsService) {  }
 
   ngOnInit(): void {
 
+    
+    this.adminReports.getTotalDonationAmount().subscribe(data=>{
+      this.donationAmount = data;
+ 
+      console.log(this.donationAmount);
+
+    });
+    
     this.adminReports.getOrphanageNeedsReports().subscribe(data=>{
       this.adminOrphanageNeeds = data;
  

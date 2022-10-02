@@ -49,6 +49,10 @@ export class MeetingSetupComponent implements OnInit {
       this.gotLink=true;
     })
   }
+  reloadPage(){
+    console.log("reload");
+    window.location.reload();
+  }
 
 
 

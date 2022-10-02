@@ -19,6 +19,8 @@ export class AdminReportsService {
   private numberOfUsers = new BehaviorSubject<number[]>([]);
   private numberOfChildren = new BehaviorSubject<number[]>([]);
   private numberOfSponsors = new BehaviorSubject<number[]>([]);
+  private donationAmount = new BehaviorSubject<number[]>([]);
+
   headers: any;
 
   readonly apiURL = `${BASEURL}`;
@@ -143,6 +145,19 @@ export class AdminReportsService {
     );
   }
 
+  getTotalDonationAmount():Observable<any>{
+    this._totalDonationAmount();
+    return this.donationAmount;
+
+  }
+  _totalDonationAmount(){
+    this.http.get<any[]>(this.apiURL.slice(0,-11)+'/admin/donations',{headers:this.headers}).subscribe(
+      (donatiom)=>{
+        this.donationAmount.next(donatiom);
+        console.log("donation amount");
+      }
+    );
+  }
 
       
 
