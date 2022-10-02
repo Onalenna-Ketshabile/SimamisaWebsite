@@ -29105,6 +29105,18 @@ table p {
 	text-align: center;
 	transition: .3s;
 }
+donate-amount2 {
+	border: 2px solid #203438;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	height: 58px;
+	line-height: 58px;
+	margin-right: 20px;
+	min-width: 95px;
+	text-align: center;
+	transition: .3s;
+}
 
 @media only screen and (max-width:1199px) {
 	.donate-form form .amount-info .donate-amount {

@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-
+import {LoaderService} from 'src/app/services/loader.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor( private titleService: Title,
     private authService:AuthenticationService,
     private router:Router,
-    private route:ActivatedRoute) {
+    private route:ActivatedRoute,
+    public loaderService:LoaderService) {
     titleService.setTitle("Login");
     }
 
