@@ -71,6 +71,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NetworkInterceptor } from './network.interceptor';
+import {InterceptorService} from './services/interceptor.service'
 import { DonateComponent } from './pages/donate/donate.component';
 import { DashboardAdminComponent } from './pages/admin/dashboard-admin/dashboard-admin.component';
 import { BarchartComponent } from './pages/admin/barchart/barchart.component';
@@ -93,11 +94,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PieChartDonorGenderComponent } from './pages/manager/pie-chart-donor-gender/pie-chart-donor-gender.component';
 import { TableInventoryComponent } from './pages/manager/table-inventory/table-inventory.component';
 import { TableRowInventoryComponent } from './pages/manager/table-row-inventory/table-row-inventory.component';
-import {PdfViewerModule} from 'ng2-pdf-viewer';
+
 
 import { ModalViewPdfComponent } from './others/modal-view-pdf/modal-view-pdf.component';
 import { MeetingSetupComponent } from './others/meeting-setup/meeting-setup.component';
 import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/modal-distribute-funds.component';
+
 
 @NgModule({
   declarations: [
@@ -178,19 +180,18 @@ import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/m
     TableRowInventoryComponent,
     ModalViewPdfComponent,
     MeetingSetupComponent,
-     
-    ModalDistributeFundsComponent,
 
+    ModalDistributeFundsComponent,
 
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     BrowserAnimationsModule, MatProgressSpinnerModule, MatToolbarModule, HttpClientModule, NgSelectModule, QRCodeModule, MatProgressBarModule, MatTooltipModule,
-    NgxSpinnerModule,PdfViewerModule
+    NgxSpinnerModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
-    useClass: NetworkInterceptor,
+    useClass: InterceptorService,
     multi: true
   },
     OrphanagesResolverService

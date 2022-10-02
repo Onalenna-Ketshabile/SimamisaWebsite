@@ -31,31 +31,46 @@
                                 <img src="../../../assets/images/line-t3.png" alt="image" class="line-shape">
                             </div>
                             <form>
-                                <div class="amount-info">
-                                    <div class="donate-amount">R100</div>
-                                    <div class="donate-amount">R500</div>
-                                    <div class="donate-amount">R1000</div>
-                                    <div class="donate-amount donate-custom-amount">
-                                        <input placeholder="Custom" class="form-control">
-                                    </div>
+                                <div>
+                                    <label> Choose Amount:</label>
+                              
                                 </div>
+                                <div class="amount-info">
+                                    <button class="donate-amount" (click)="updateAmount(100)">R100</button>
+                                    <button class="donate-amount" (click)="updateAmount(500)">R500</button>
+                                    <button class="donate-amount" (click)="updateAmount(1000)">R1000</button>
+                                    <button class="donate-amount" (click)="setCustom()">Custom</button>
+                                    <br>
+                                  
+                                </div>
+                                <div *ngIf="isCustom()">
+                                    <input  name="amt"  (keyup)="onKey($event)" placeholder="Custom Amount" class="form-control"  required ngModel>
+                                    
+                                </div>
+                                <div *ngIf="isSelected()">
+                                    <label>Amount Chosen:</label>
+                                    <span>{{amountchosen}}</span>
+                                </div>
+                               <div *ngIf="amountErr">
+                               <p style="color: red;">Choose a valid amount to donate</p>
+                               </div>
                                 <div class="payment-method-wrp">
                                     <h4>Payment Method:</h4>
                                     <div class="payment-method">
                                         <div class="payment-type">
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" checked name="inlineRadioOptions" id="inlineRadio1" value="option1" class="form-check-input">
+                                                <input type="radio" (click)="updateType('card')" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="form-check-input">
                                                 <label for="inlineRadio1" class="form-check-label">Credit Card</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="form-check-input">
+                                                <input type="radio"  (click)="updateType('paypal')" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="form-check-input">
                                                 <label for="inlineRadio2" class="form-check-label">Paypal</label>
                                             </div>
                                         </div>
-                                        <img  src="./../../../assets/images/payment-card.png" alt="image">
+                                      
                                     </div>
                                 </div>
-                                <div class="personal-info">
+                                <div *ngIf="isCardPayment()" class="personal-info">
                                     <h4>Personal Info:</h4>
                                     <div class="row row-gutter-20">
                                         <div class="col-md-6">
@@ -86,14 +101,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="btn-wrp">
+                               
 
+                                    <div id="paypal"></div>
+                               
+                                <div *ngIf="!isPaypal()" class="btn-wrp">
                                     <!-- <a href="#" class="btn-theme" data-bs-toggle="modal" data-bs-target="#payNeed-modal">Donate Now
                                     </a> -->
-                                    <a href="#" class="btn-theme hbtn hbtn-primary" >Donate Now
-                                    </a>
+                                    <button class="btn-theme hbtn hbtn-primary" >Donate Now
+                                    </button>
                                     <a hidden href="#" class="hbtn hbtn-primary">Total Donation: R500</a>
                                 </div>
+                              
                             </form>
                             <div hidden class="layer-style">
                                 <img src="" alt="image" class="layer-style1">
