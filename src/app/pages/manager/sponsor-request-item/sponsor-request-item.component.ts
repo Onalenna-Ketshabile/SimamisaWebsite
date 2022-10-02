@@ -64,14 +64,16 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
     console.log("trying",this.sponsorRequest.ID);
       this.mService.acceptSponsor(this.sponsorRequest.ID).subscribe((data:any) => {  
         console.log(data);
-        this.elementUpdated.emit();//Notifies parent to reload
+        window.location.reload();
+       // this.elementUpdated.emit();//Notifies parent to reload
       
       });
    }
    rejectSponsor(){
     this.mService.rejectSponsor(this.sponsorRequest.ID).subscribe((data:any) => {  
       console.log(data);
-      this.elementUpdated.emit();//Notifies parent to reload
+      window.location.reload();
+      //this.elementUpdated.emit();//Notifies parent to reload
     
     });
    }
