@@ -28,17 +28,18 @@ export class PartneringRequestsComponent implements OnInit {
     })
     this.partneringService.ViewRequests().subscribe(data=>{
       
-      this.orphanages =data;
+     this.orphanages =data;
       
-      if(data.length == 0){
-        this.noData = this.nothingReturned();}
+      // if(data.length == 0 ){
+      //   this.noData = this.nothingReturned();}
     });
     this.loadingHandler.finish(); 
    
   }
 
 nothingReturned(): boolean{
-  if(this.orphanages?.length == 0 && !this.isLoading ){
+  console.log(this.orphanages?.length  , this.isLoading, "check.");
+  if(this.orphanages?.length == undefined && !this.isLoading ){
    return true;
   }
   else{

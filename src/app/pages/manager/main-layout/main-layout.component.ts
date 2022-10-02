@@ -36,6 +36,7 @@ UserName!: Observable<String>;
   oldNotifications?: notification[];
   numNewNotifications:number=0;
   maxNotificatios = 25;
+  maxOffset = 0;
 
   
   constructor(private authService:AuthenticationService, private notificationService: NotificationsService, public loaderService:LoaderService) {
@@ -91,6 +92,11 @@ UserName!: Observable<String>;
           this.numNewNotifications = this.maxNotificatios;
          }
          this.numNewNotifications = this.newNotifications.length;
+
+         this.maxOffset = this.maxNotificatios - this.numNewNotifications;
+         if(this.maxOffset<0){
+          this.maxOffset = 0;
+         }
       }
       else{
         

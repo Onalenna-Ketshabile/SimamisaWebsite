@@ -130,7 +130,7 @@
            {{newNotification?.Body}}
           </a>
         </li>
-        <li *ngFor="let oldNotification of oldNotifications?.slice(0,maxNotificatios - numNewNotifications)">
+        <li *ngFor="let oldNotification of oldNotifications?.slice(0,maxOffset)">
           <a href="#">
            <span class="label label-danger"></span> 
             <span class="date" style="margin-bottom: 10px">{{oldNotification?.NotificationTime?.slice(0,10)}} {{oldNotification?.NotificationTime?.slice(11,16)}}</span>
