@@ -19,5 +19,7 @@ export class RowOrphanagesNeedsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  distribute(){
+    console.log(this.admOrphanageNeeds.Name);
+  }
 }
