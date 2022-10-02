@@ -1,6 +1,6 @@
 .dashtainer {
     padding: 20px;
-    background: #F7F6F5;
+    background: #FAFAFA;
     margin: 10px;
     border-radius: 10px;
 }
@@ -12,4 +12,11 @@
   
   .col {
     display: table-cell; /* Make elements inside the container behave like table cells */
+  }
+  .dashHeading{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    opacity: 0.8;
   }

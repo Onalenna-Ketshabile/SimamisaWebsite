@@ -5,7 +5,7 @@ import { ManagerReportsService } from 'src/app/services/manager-reports.service'
 @Component({
   selector: 'app-table-inventory',
   templateUrl: './table-inventory.component.html',
-  styleUrls: ['./table-inventory.component.css']
+  styleUrls: ['./table-inventory.component.css','../../../../assets/css/modal.css']
 })
 export class TableInventoryComponent implements OnInit {
 

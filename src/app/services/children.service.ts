@@ -33,7 +33,7 @@ export class ChildrenService {
   }
 readonly getSpURL= `${BASEURL}/children/sponsorship/?childID=`
   getSponsorShipID(id:string):Observable<any>{
-    return this.http.get<string>(this.apiURL+id,{headers:this.headers});
+    return this.http.get<string>(this.getSpURL+id,{headers:this.headers});
   }
 
   getAllChildren():Observable<Child[]>{

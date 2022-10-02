@@ -5,7 +5,7 @@ import { AdminReportsService } from 'src/app/services/admin-reports.service';
 @Component({
   selector: 'app-table-orphanages-needs',
   templateUrl: './table-orphanages-needs.component.html',
-  styleUrls: ['./table-orphanages-needs.component.css']
+  styleUrls: ['./table-orphanages-needs.component.css','../../../../assets/css/modal.css']
 })
 export class TableOrphanagesNeedsComponent implements OnInit {
 

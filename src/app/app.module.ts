@@ -101,6 +101,8 @@ import { MeetingSetupComponent } from './others/meeting-setup/meeting-setup.comp
 import { ModalDistributeFundsComponent } from './others/modal-distribute-funds/modal-distribute-funds.component';
 import { TableUnreliableUsersComponent } from './pages/manager/table-unreliable-users/table-unreliable-users.component';
 import { TableRowUnreliableUsersComponent } from './pages/manager/table-row-unreliable-users/table-row-unreliable-users.component';
+import { SponsorAccountabilityComponent } from './pages/manager/sponsor-accountability/sponsor-accountability.component';
+import { RowSponsorAccComponent } from './pages/manager/row-sponsor-acc/row-sponsor-acc.component';
 
 
 @NgModule({
@@ -186,6 +188,8 @@ import { TableRowUnreliableUsersComponent } from './pages/manager/table-row-unre
     ModalDistributeFundsComponent,
       TableUnreliableUsersComponent,
       TableRowUnreliableUsersComponent,
+      SponsorAccountabilityComponent,
+      RowSponsorAccComponent,
 
   ],
   imports: [

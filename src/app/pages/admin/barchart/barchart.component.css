@@ -1,7 +1,14 @@
 #chartContainer{
     display:block;
     padding: 20px;
-    background: #FAFAFA;
+    background: white;
     margin-top: 10px;
     margin-bottom: 20px;
 }
+.dashHeading{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    opacity: 0.8;
+  }

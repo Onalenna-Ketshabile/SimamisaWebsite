@@ -1,6 +1,6 @@
 <div class="panel panel-default"> 
-    <div  class="panel-heading"> 
-      <div class="panel-title">Total Donations: <span class="donation-amount">R150000</span>
+    <div hidden class="panel-heading"> 
+      <div class="panel-title">Orphanage Item Inventory.
       </div> 
 
     </div> 
@@ -10,22 +10,19 @@
           <tr> 
             <th>#
             </th> 
-            <th>Orphanage Name
+            <th>Item Name
             </th> 
-            <th>No. Of Needs proposed
+            <th>Quantity
             </th> 
-            <th>No.Of Needs Unmet
-            </th> 
-            <th>Action
-            </th> 
+        
           </tr> 
         </thead> 
         <tbody> 
-         
-              <tr app-row-orphanages-needs  *ngFor="let adminOrphNeeds of adminOrphanageNeeds" [admOrphanageNeeds]="adminOrphNeeds"  >
+<!--          
+              <tr app-table-row-inventory  *ngFor="let managerInventoryReport of managerInventoryReports" [managerInventoryReport]="managerInventoryReport"  >
                                         
                       
-            </tr>
+            </tr> -->
           
           
         </tbody> 

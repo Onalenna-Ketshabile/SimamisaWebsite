@@ -6,7 +6,7 @@ import { ManagerReportsService } from 'src/app/services/manager-reports.service'
 @Component({
   selector: 'app-table-unreliable-users',
   templateUrl: './table-unreliable-users.component.html',
-  styleUrls: ['./table-unreliable-users.component.css']
+  styleUrls: ['./table-unreliable-users.component.css','../../../../assets/css/modal.css']
 })
 export class TableUnreliableUsersComponent implements OnInit {
   
