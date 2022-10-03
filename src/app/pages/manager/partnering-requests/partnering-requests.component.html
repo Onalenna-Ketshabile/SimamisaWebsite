@@ -17,20 +17,23 @@
     <!-- End Page Header Right Div -->
 
   </div>
-<div class="con" style="min-height: 420px;">
-  <div class="col-sm-12">
-    <div style="margin-left:400px;margin-top:30px;margin-bottom:30px">
-        <app-loading-indicator></app-loading-indicator>
+  <div  *ngIf="loaderService.isLoading | async" class="row" >
+    <div class="col-sm-12">
+        <div style="margin-left:400px;margin-top:30px;margin-bottom:30px">
+            <app-loading-indicator></app-loading-indicator>
+        </div>   
     </div>
-
-</div>
+  </div>
   <div  *ngIf="noData" style="min-height: 420px;display: flex;justify-content: center;align-items: center;">
     <div style="display: flex; justify-content:center; align-items: center; flex-direction: column;"><img style="opacity: 0.8; height: 200px; width: auto;" src="../../../assets/images/empty.jpg"></div>
       <div  style="font-size: 22px;margin-top: 20px;">You have no partnering requests.</div>
 
-      </div>
-  <app-view-partneringrequests *ngFor="let orphanage of orphanages" [orphanage]="orphanage"></app-view-partneringrequests>
-</div>
+    
+  </div>
+  <div *ngIf="!noData">
+    <app-view-partneringrequests *ngFor="let orphanage of orphanages" [orphanage]="orphanage"></app-view-partneringrequests>
+
+  </div>
   <div hidden class="view-more-btn text-center mt-80">
     <a href="project-1.html" class="main-btn bordered-btn">View More Events <i class="fa fa-arrow-right"></i></a>
 </div>

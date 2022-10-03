@@ -16,25 +16,29 @@ export class PartneringRequestsComponent implements OnInit {
   orphanages?: Orphanage[];
   noData:boolean=false;
 
-  isLoaded= false;
+  isLoading= false;
   loadingHandler = new LoadingHandler();
   constructor(private partneringService: PartneringService,public loaderService:LoaderService) { }
 
   ngOnInit(): void {
     this.loadingHandler.start();
     this.partneringService.init();
+    this.loaderService.isLoading.subscribe((data)=>{
+      this.isLoading=data;
+    })
     this.partneringService.ViewRequests().subscribe(data=>{
       
       this.orphanages =data;
+      
       if(data.length == 0){
         this.noData = this.nothingReturned();}
     });
     this.loadingHandler.finish(); 
-    this.isLoaded=true;    
+   
   }
 
 nothingReturned(): boolean{
-  if(this.orphanages?.length == 0){
+  if(this.orphanages?.length == 0 && !this.isLoading ){
    return true;
   }
   else{
