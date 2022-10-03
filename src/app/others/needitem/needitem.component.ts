@@ -52,8 +52,8 @@ export class NeeditemComponent implements OnInit {
    orph.subscribe((orphanage)=>{this.orphName=orphanage?.OrphanageName});
    console.log("STOP <------------- ####");
     console.log("name "+this.orphName);
-    if (this.need.Description.length > 100) {
-      this.descriptionToShow = this.need.Description.slice(0, 100);
+    if (this.need.Description.length > 125) {
+      this.descriptionToShow = this.need.Description.slice(0, 125);
       this.showReadMore = true;
     } else {
       this.descriptionToShow = this.need.Description;
