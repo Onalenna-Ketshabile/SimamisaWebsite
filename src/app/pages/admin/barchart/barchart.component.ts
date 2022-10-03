@@ -158,20 +158,20 @@ export class BarchartComponent implements OnInit {
       let needsMetPrio1: number[] = [0,0,0,0,0,0,0,0,0,0,0,0];
       let needsMetPrio2: number[] = [0,0,0,0,0,0,0,0,0,0,0,0];
       let needsMetPrio3: number[] = [0,0,0,0,0,0,0,0,0,0,0,0];
-
+      let weeklyarray : number[] = [5,6,7,2,6,5,2,5,9,4,8,0];
     for(var i = 0; i < 12; i++){
       needsMetPrio1[i] = this.needsReportPriorityOne[i].metNeeds
       needsMetPrio2[i] = this.needsReportPriorityTwo[i].metNeeds
       needsMetPrio3[i] = this.needsReportPriorityThree[i].metNeeds             
     }
    
-      const myChart = new Chart("lineChart", {
+    const myChart = new Chart("lineChart", {
     type: 'line',
     data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
         datasets: [{
             label: 'Priority 1',
-            data: needsMetPrio1,
+            data: [5,6,7,2,6,5,2,5,9,4,8,0],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
             ],
@@ -232,6 +232,15 @@ export class BarchartComponent implements OnInit {
       ]
     },
     options: {
+        plugins: {
+          tooltip: {
+            callbacks: {
+              afterTitle: function(context){
+                return  `${context[0].label} Day: ${weeklyarray[context[0].dataIndex]+1} `;
+              }
+            }
+          }
+        },
         scales: {
             y: {
                 beginAtZero: true

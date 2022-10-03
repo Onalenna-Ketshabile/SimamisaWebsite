@@ -18,6 +18,11 @@
 
   </div>
 <div class="con" style="min-height: 420px;">
+  <div *ngIf="nothingReturned()" style="min-height: 420px;display: flex;justify-content: center;align-items: center;">
+    <div style="display: flex; justify-content:center; align-items: center; flex-direction: column;"><img style="opacity: 0.8; height: 200px; width: auto;" src="../../../assets/images/empty.jpg"><div>
+      <div  style="font-size: 22px;margin-top: 20px;">You haven't received any offers.<div>
+
+      </div>
 <app-view-myoffers *ngFor="let offer of offers" [offer]="offer"></app-view-myoffers>
 </div>
 <!-- <div class="view-more-btn text-center mt-80">

@@ -18,5 +18,14 @@ export class MyOffersComponent implements OnInit {
       this.offers =data;
     });
   }
+  nothingReturned(): boolean{
+    if(this.offers?.length == 0){
+     return true;
+    }
+    else{
+     return false;
+    }
+ }
+ 
 
 }

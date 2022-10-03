@@ -20,6 +20,14 @@ export class MyPartnersComponent implements OnInit {
     });
   
   }
+  nothingReturned(): boolean{
+     if(this.orphanages.length == 0){
+      return true;
+     }
+     else{
+      return false;
+     }
+  }
   
   
 
