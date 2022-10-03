@@ -15,14 +15,14 @@ export class ModalAddNeedComponent implements OnInit {
  // ratings: number[] = [1, 2, 3];
   ratings = [{
     name:"low",
-    num:3,
+    num:1,
   },{
     name:"medium",
     num:2,
   },
   {
     name:"high",
-    num:1,
+    num:3,
   }];
   imageError!: string;
   isImageSaved: boolean = false;
