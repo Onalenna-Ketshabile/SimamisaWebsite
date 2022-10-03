@@ -31,8 +31,8 @@
                 <div class="description-content">
                     <p class="description">
                         {{descriptionToShow}}  </p>
-                  <button *ngIf="showReadMore" (click)="onReadMore(need)">Read More</button>
-                  <button *ngIf="showShowLess" (click)="onShowless(need)">Show Less</button>
+                  <button hidden *ngIf="showReadMore" (click)="onReadMore(need)">Read More</button>
+                  <button hidden *ngIf="showShowLess" (click)="onShowless(need)">Show Less</button>
             
                 </div>
 
