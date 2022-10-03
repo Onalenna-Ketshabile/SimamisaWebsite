@@ -103,7 +103,7 @@ export class NeeditemComponent implements OnInit {
 
  needPriorityFormat(){
     if(this.need.PriorityRating == 1){
-      this.priority = "high"
+      this.priority = "low"
       this.priorityColor = '#FF7B29';
     }
     if(this.need.PriorityRating == 2 ){
@@ -111,7 +111,7 @@ export class NeeditemComponent implements OnInit {
       this.priorityColor = '#FFB282';
     }
     if(this.need.PriorityRating == 3){
-      this.priority = "low";
+      this.priority = "high";
       this.priorityColor = '#CC8E68';
     }
  }
