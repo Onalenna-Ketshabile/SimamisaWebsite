@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Orphanage } from 'src/app/models/orphanage';
 import { PartneringRequest } from 'src/app/models/PartneringRequest';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
+import { LoaderService } from 'src/app/services/loader.service';
 import { PartneringService } from 'src/app/services/partnering.service';
 
 @Component({
@@ -17,9 +18,10 @@ export class PartneringRequestsComponent implements OnInit {
 
   isLoaded= false;
   loadingHandler = new LoadingHandler();
-  constructor(private partneringService: PartneringService) { }
+  constructor(private partneringService: PartneringService,public loaderService:LoaderService) { }
 
   ngOnInit(): void {
+    this.loadingHandler.start();
     this.partneringService.init();
     this.partneringService.ViewRequests().subscribe(data=>{
       
@@ -27,6 +29,8 @@ export class PartneringRequestsComponent implements OnInit {
       if(data.length == 0){
         this.noData = this.nothingReturned();}
     });
+    this.loadingHandler.finish(); 
+    this.isLoaded=true;    
   }
 
 nothingReturned(): boolean{
