@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { adminOrphanageNeeds } from 'src/app/models/adminOrphanageNeeds';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 
 @Component({
   selector: '[app-row-orphanages-needs]',
@@ -13,13 +14,14 @@ export class RowOrphanagesNeedsComponent implements OnInit {
   @Input()
   myIndex!: number;
   index!:number;
-  constructor() {
+  constructor(private dataToModals: DataToModalsService) {
     this.index = 0;
    }
 
   ngOnInit(): void {
   }
   distribute(){
-    console.log(this.admOrphanageNeeds.Name);
+   // console.log(this.admOrphanageNeeds.ID);
+    this.dataToModals.setIDDetails(this.admOrphanageNeeds);
   }
 }
