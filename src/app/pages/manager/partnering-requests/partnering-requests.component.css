@@ -1061,7 +1061,7 @@ a:hover {
 }
 
 .site-footer.with-footer-bg .footer-content-area {
-	background-image: url();
+	/*background-image: url();*/
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -1118,7 +1118,7 @@ a:hover {
 
 .site-footer .footer-cta .container::after {
 	z-index: -1;
-	background-image: url();
+	/*background-image: url();*/
 	background-size: cover;
 	background-position: center;
 	opacity: 0.07;
@@ -1322,7 +1322,7 @@ a:hover {
 	padding-bottom: 390px;
 	text-align: center;
 	background-color: #fde2b7;
-	background-image: url();
+	/*background-image: url();*/
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -1535,7 +1535,7 @@ a:hover {
 	position: relative;
 	z-index: 1;
 	padding: 125px 0;
-	background-image: url();
+	/*background-image: url();*/
 	background-size: cover;
 	background-position: center;
 }
@@ -2231,7 +2231,7 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background-image: url();
+	/*background-image: url();*/
 	background-position: center;
 	background-repeat: no-repeat;
 	opacity: 0.05;
@@ -3453,7 +3453,7 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background-image: url();
+	/*background-image: url();*/
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -3854,7 +3854,7 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background-image: url();
+	/*background-image: url();*/
 	background-size: cover;
 	background-position: center;
 	opacity: 0.15;
@@ -4070,7 +4070,7 @@ a:hover {
 	height: 380px;
 	border-bottom-left-radius: 140px;
 	border-bottom-right-radius: 140px;
-	background-image: url();
+	/*background-image: url();*/
 	background-size: cover;
 	background-position: center;
 	display: -webkit-box;
@@ -4169,7 +4169,7 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background-image: url();
+	/*background-image: url();*/
 	background-size: cover;
 	background-position: center;
 	opacity: 0.04;

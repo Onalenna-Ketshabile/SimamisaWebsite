@@ -1618,7 +1618,7 @@ body.slidein .responsive-menu {
 }
 .service-box > span:before {
   content: "";
-  background-image: url();
+  /*background-image: url();*/
   position: absolute;
   left: 0;
   right: 0;
@@ -2088,13 +2088,13 @@ body.slidein .responsive-menu {
   position: absolute;
   bottom: -125px;
   left: 23%;
-  background: url() top left no-repeat;
+  /* background: url() top left no-repeat; */
   background-size: contain;
   margin: 0 0 0 -28px;
 }
 .form-wrap form .input-field:before {
   content: "";
-  background-image: url();
+  /*background-image: url();*/
   width: 32px;
   height: 27px;
   position: absolute;
@@ -2114,7 +2114,7 @@ body.slidein .responsive-menu {
 .form-button:after {
   content: "";
   position: absolute;
-  background: url() top left no-repeat;
+  /* background: url() top left no-repeat; */
   height: 257px;
   width: 221px;
   background-size: contain;
@@ -2703,7 +2703,7 @@ body.slidein .responsive-menu {
 .price-table-box.active {
   background-color: rgb(26,57,127);
   z-index: 1;
-  background-image: url();
+  /*background-image: url();*/
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: contain;
