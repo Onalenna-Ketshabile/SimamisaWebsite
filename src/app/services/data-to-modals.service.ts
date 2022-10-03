@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as e from 'express';
 import { Subject } from 'rxjs';
+import { adminOrphanageNeeds } from '../models/adminOrphanageNeeds';
 import { Childneed } from '../models/childneed';
 import { ChildUpdate } from '../models/childupdate';
 import { Need } from '../models/need';
@@ -33,6 +34,11 @@ export class DataToModalsService {
 
   private _reqDataSource = new Subject<sponsorRequest>();
   _reqDataSource$ = this._reqDataSource.asObservable();
+
+
+  private _idDistributeSource = new Subject<adminOrphanageNeeds>();
+  idDistributeSent$ = this._idDistributeSource.asObservable();
+
   constructor() { }
 
   setOfferDetails(offer: Offer) {
@@ -61,5 +67,8 @@ export class DataToModalsService {
   setRequest(body: any) {
     console.log(body)
     this._reqDataSource.next(body);
+  }
+  setIDDetails(adminOrphanageNeeds: adminOrphanageNeeds) {
+    this._idDistributeSource.next(adminOrphanageNeeds);
   }
 }
