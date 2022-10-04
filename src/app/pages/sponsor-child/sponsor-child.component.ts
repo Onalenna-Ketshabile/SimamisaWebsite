@@ -17,6 +17,7 @@ export class SponsorChildComponent implements OnInit {
   ngOnInit(): void {
    this.children_service.getAllChildren().subscribe(data=>{
      this.children =data;
+     console.log(data[0]);
    });
  }
 

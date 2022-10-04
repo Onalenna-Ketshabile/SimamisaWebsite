@@ -6,5 +6,10 @@
 <div class="dashHeading" style="margin: 30px 0px;">Total needs met in different priority categories</div>  
 <div id="chartContainer">
     <canvas id="lineChart" ></canvas>
-    </div>
+    <select (change)="updateMonth($event.target)">
+        <option value="jan"> Jan 2022</option>
+        <option value="feb"> Feb 2022</option>
+    </select>
+    <button (click)="updateMonth(this)"></button>
+</div>
     

@@ -43,6 +43,7 @@ export class ChildPageComponent implements OnInit {
     //Get the Orphanage
     this.orphanage_service.getOrphanageByID(this.route.snapshot.params['o_id']).subscribe(data => {
       this.orphanage = data;
+      console.log("orphanage",data);
     });
     let val :number= 0;
     val = this.route.snapshot.params['c_id'];

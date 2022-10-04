@@ -1,9 +1,9 @@
 .panel-title {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 16px;
+    font-size: 22px;
     color: inherit;
-    padding: 10px;
+    padding: 23px;
     border: 1px solid black;
     width: fit-content;
     border-radius: 5px;
@@ -15,8 +15,8 @@
     flex-direction: row-reverse;
 }
 .donation-amount{
-    background: #FF7B29;
-    padding: 6px;
+    background: #FFB282;
+    padding: 10px;
     border-radius: 7px;
     margin-left: 4px;
     font-weight: 500;

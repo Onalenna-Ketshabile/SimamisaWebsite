@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Chart, registerables} from 'node_modules/chart.js'
 import { adminNeedsReport } from 'src/app/models/adminNeedsReport';
 import { AdminReportsService } from 'src/app/services/admin-reports.service';
+import 'chartjs-adapter-moment';
+
 @Component({
   selector: 'app-barchart',
   templateUrl: './barchart.component.html',
@@ -14,7 +16,9 @@ export class BarchartComponent implements OnInit {
     needsReportPriorityTwo!: adminNeedsReport[];
     needsReportPriorityThree!: adminNeedsReport[];
 
-
+    myChart: any;
+    jan : any;
+    feb: any;
   
     currentMonth: number  = 0;
   constructor(private adminReports : AdminReportsService) { }
@@ -70,6 +74,24 @@ export class BarchartComponent implements OnInit {
     
 
   }
+  updateMonth(month:any){
+    console.log(month.value);
+    if(month.value === 'jan'){
+      console.log("changing dataset to jan");
+      console.log(this.myChart.config.data.datasets[0].data);
+      this.myChart.config.data.datasets[0].data = this.jan;
+      console.log(this.myChart.config.data.datasets[0].data);
+    }
+    if(month.value === 'feb'){
+      console.log("changing dataset to feb");
+      //console.log(this.myChart.config.data.datasets[0].data);
+      this.myChart.config.data.datasets[0].data = this.feb;
+      console.log(this.myChart.config.data.datasets[0].data);
+;
+    }
+    this.myChart.update();
+    console.log(this.myChart.update());
+  }
 
   plotBarGraph(){
    
@@ -86,7 +108,7 @@ export class BarchartComponent implements OnInit {
                         + this.needsReportPriorityThree[i].metNeeds
       }
       console.log("NewArray: "+ needsProposed);
-    const myChart = new Chart("barChart", {
+      const myChart = new Chart("barChart", {
         type: 'bar',
         data: {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
@@ -165,13 +187,27 @@ export class BarchartComponent implements OnInit {
       needsMetPrio3[i] = this.needsReportPriorityThree[i].metNeeds             
     }
    
-    const myChart = new Chart("lineChart", {
+
+
+     this.jan = [
+      {x: '2022-01-10',y: 20},
+      {x: '2022-01-11', y: 25},
+      {x: '2022-01-12', y: 30},
+    ];
+
+     this.feb = [
+      {x: '2022-01-10',y: 30},
+      {x: '2022-01-11', y: 45},
+      {x: '2022-01-12', y: 60},
+    ];
+    console.log("jan and feb set.");
+     this.myChart = new Chart("lineChart", {
     type: 'line',
     data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        //labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
         datasets: [{
             label: 'Priority 1',
-            data: [5,6,7,2,6,5,2,5,9,4,8,0],
+            data: this.jan,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
             ],
@@ -183,7 +219,7 @@ export class BarchartComponent implements OnInit {
       
         {
           label: 'Priority 2',
-          data: needsMetPrio2,
+          data: this.jan,
           backgroundColor: [
           
               'rgba(54, 162, 235, 0.2)',
@@ -198,7 +234,7 @@ export class BarchartComponent implements OnInit {
 
       {
         label: 'Priority 3',
-        data: needsMetPrio3,
+        data: this.jan,
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -242,13 +278,22 @@ export class BarchartComponent implements OnInit {
           }
         },
         scales: {
+            x: {
+              type: 'time',
+              time: {
+                unit: 'day'
+              },
+            },
             y: {
                 beginAtZero: true
             }
         }
     }
 }); 
+
+
   }
  }
+
 
 }

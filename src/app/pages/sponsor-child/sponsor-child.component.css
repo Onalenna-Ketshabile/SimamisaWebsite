@@ -3894,7 +3894,7 @@ img.mfp-img {
     border: 0px solid #FFB282;
     border-radius: 10px;
     margin-bottom: 40px;
-    height: 480px;
+    height: 490px;
     box-shadow: 0 3px 20px rgb(0 0 0 / 20%);
 }
 
@@ -3930,7 +3930,7 @@ img.mfp-img {
 .post-info h3, .post-info h1 {
     font-size: 18px;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-weight: 600;
 		line-height: 30px;
 }
@@ -3982,7 +3982,7 @@ img.mfp-img {
 	background-color:#72c3fc;
 }
 .post-content{
-  height: 55px;
+  height: 65px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: grid;
@@ -6799,7 +6799,7 @@ section.dark-block .accordion-transparent .panel-title a.collapsed, section.dark
 	width: 35px;
 	height: 35px;
 	border-radius: 50%;
-	margin-right: 15px;
+	margin-right: 5px;
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 35px;
 	flex: 0 0 35px;
@@ -6817,7 +6817,7 @@ section.dark-block .accordion-transparent .panel-title a.collapsed, section.dark
 	-ms-flex-align: center;
 	align-items: center;
 	margin-bottom: 0px;
-    margin-left: 5px;
+    margin-right: 5px;
 	line-height: 1.2;
 }
 

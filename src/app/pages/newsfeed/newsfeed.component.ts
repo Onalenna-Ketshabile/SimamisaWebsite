@@ -28,4 +28,9 @@ export class NewsfeedComponent implements OnInit {
  show():boolean{
   return localStorage.getItem('userRole')=="M";
  }
+ search(details:{ need: string}){
+  console.log(details);
+  console.log("About to search ", details.need);
+  this.ngOnInit();
+ }
 }
