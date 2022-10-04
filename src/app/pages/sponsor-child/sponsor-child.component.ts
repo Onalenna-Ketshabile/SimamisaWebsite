@@ -15,7 +15,7 @@ export class SponsorChildComponent implements OnInit {
   constructor(private children_service:ChildrenService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {
-   this.children_service.getAllChildren().subscribe(data=>{
+   this.children_service.getAllChildren().subscribe((data:any)=>{
      this.children =data;
      console.log(data[0]);
    });
