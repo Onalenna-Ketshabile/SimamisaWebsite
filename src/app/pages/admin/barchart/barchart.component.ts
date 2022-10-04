@@ -30,12 +30,22 @@ export class BarchartComponent implements OnInit {
     this.needsReportPriorityOne = []
     this.needsReportPriorityTwo = [];
     this.needsReportPriorityThree =[];
+    
 
     console.log(this.needsReportPriorityOne.length!=0 && this.needsReportPriorityTwo.length!=0);
 
     if(this.needsReportPriorityOne.length!=0 && this.needsReportPriorityTwo.length!=0 && this.needsReportPriorityThree.length!=0 ){
         console.log("Inside the IF");
     }
+
+    this.adminReports.getNeedDataForAMonth('Feb',1).subscribe(data=> {
+
+       
+           console.log('#The needs: ', data );
+         console.log("Not making use of data in chart...");
+
+    });
+
     this.adminReports.getAdminNeedsReportOne().subscribe(data=>{
       this.needsReportPriorityOne =data;
       
@@ -204,10 +214,10 @@ export class BarchartComponent implements OnInit {
      this.myChart = new Chart("lineChart", {
     type: 'line',
     data: {
-        //labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
         datasets: [{
             label: 'Priority 1',
-            data: this.jan,
+            data: needsMetPrio1,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
             ],
@@ -219,7 +229,7 @@ export class BarchartComponent implements OnInit {
       
         {
           label: 'Priority 2',
-          data: this.jan,
+          data: needsMetPrio2,
           backgroundColor: [
           
               'rgba(54, 162, 235, 0.2)',
@@ -234,7 +244,7 @@ export class BarchartComponent implements OnInit {
 
       {
         label: 'Priority 3',
-        data: this.jan,
+        data: needsMetPrio3,
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -278,12 +288,7 @@ export class BarchartComponent implements OnInit {
           }
         },
         scales: {
-            x: {
-              type: 'time',
-              time: {
-                unit: 'day'
-              },
-            },
+
             y: {
                 beginAtZero: true
             }

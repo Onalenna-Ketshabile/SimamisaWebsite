@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { BASEURL } from '../constants/constants';
+import { accountability } from '../models/accountability';
 import { managerDemographicsReport } from '../models/managerDemographicsReport';
 import { managerInventoryReport } from '../models/managerInventoryReport';
 import { managerNeedsReport } from '../models/managerNeedsReports';
@@ -21,6 +22,7 @@ export class ManagerReportsService {
   private managerDemographicsReport = new BehaviorSubject<managerDemographicsReport[]>([]);
   private managerFlaggedUsersReport = new BehaviorSubject<unreliableUser[]>([]);
 
+  private sponsorAccountability = new BehaviorSubject<accountability[]>([]);
   headers: any;
 
   readonly apiURL = `${BASEURL}/`;
@@ -127,6 +129,21 @@ export class ManagerReportsService {
         this.managerFlaggedUsersReport.next(inventoryReport);
       }
     );
+    console.log('url',this.apiURL+'om/flags?id='+localStorage.getItem('orphID'))
+  }
+
+  getSponsorAccountability():Observable<any>{
+    this._sponsorAccountability();
+    return this.sponsorAccountability;
+
+  } 
+   _sponsorAccountability(){
+    this.http.get<any[]>(this.apiURL+'om/accountability?id='+localStorage.getItem('orphID'),{headers:this.headers}).subscribe(
+      (acc)=>{
+        this.sponsorAccountability.next(acc);
+      }
+    );
+    console.log('route',this.apiURL+'om/accountability?id='+localStorage.getItem('orphID'));
   }
 
 
