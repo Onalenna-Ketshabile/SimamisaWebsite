@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { accountability } from 'src/app/models/accountability';
+import { ManagerReportsService } from 'src/app/services/manager-reports.service';
 
 @Component({
   selector: 'app-sponsor-accountability',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SponsorAccountabilityComponent implements OnInit {
 
-  constructor() { }
+  sponsorAccountability!: accountability[];
+  constructor(private managerService: ManagerReportsService) { }
 
   ngOnInit(): void {
+    this.managerService.getSponsorAccountability().subscribe(data=> {
+      this.sponsorAccountability = data;
+
+      console.log("sponsorAcc", this.sponsorAccountability)
+    })
   }
 
 }

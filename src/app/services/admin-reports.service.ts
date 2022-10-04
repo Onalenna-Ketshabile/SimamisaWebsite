@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { BASEURL } from '../constants/constants';
 import { adminNeedsReport } from '../models/adminNeedsReport';
 import { adminOrphanageNeeds } from '../models/adminOrphanageNeeds';
@@ -23,7 +23,11 @@ export class AdminReportsService {
   private donationAmount = new BehaviorSubject<number[]>([]);
 
   private NeedsFilterByMonth = new BehaviorSubject<number[]>([]);
-  private NeedsForFilterChart = new BehaviorSubject<Need[]>([])
+  //private NeedsForFilterChart = new BehaviorSubject<Need[]>([]);
+
+  private NeedsForFilterChart = new Subject<Need[]>();
+  theNeed$ = this.NeedsForFilterChart.asObservable();
+
 
   headers: any;
 
@@ -163,15 +167,27 @@ export class AdminReportsService {
     );
   }
 
-  getNeedDataForAMonth(month:string,rating:number){
+  getNeedDataForAMonth(month:string,rating:number):Observable<any>{
+    this._NeedDataForAMonth(month,rating).subscribe( data => {
+         console.log("Logging data",data);
+         
+         this.NeedsForFilterChart.next(data)
+    
+     
+    });
+    console.log("more random",this.NeedsForFilterChart);
+    console.log("more random",this.NeedsForFilterChart);
+
+    return this.NeedsForFilterChart.asObservable();
+
+  }
+
+  _NeedDataForAMonth(month:string,rating:number):Observable<any>{
 
 
-    this.http.get<any[]>(this.apiURL.slice(0,-11)+'/admin/'+month+"?rating="+rating,{headers:this.headers}).subscribe(
-      (donatiom)=>{
-        this.donationAmount.next(donatiom);
-        console.log("donation amount");
-      }
-    );
+    return this.http.get<any[]>(this.apiURL.slice(0,-11)+'/admin/'+month+"?rating="+rating,{headers:this.headers});
+    console.log(this.apiURL.slice(0,-11)+'/admin/'+month+"?rating="+rating);
+  
 
   }
       
