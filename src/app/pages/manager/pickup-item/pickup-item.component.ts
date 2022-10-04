@@ -45,6 +45,11 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
     }
    
   }
+  isFlagged(){
+   console.log( this.proposal.registeredUser.isFlagged == '1')
+   console.log( this.proposal.registeredUser.isFlagged === '1')
+    return this.proposal.registeredUser.isFlagged == "1";
+  }
   showConfirm(){
     if(this.status!=undefined && this.status.includes("Awaiting")){
       return true;

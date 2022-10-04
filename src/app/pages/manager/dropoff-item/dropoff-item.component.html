@@ -1,13 +1,19 @@
-<td>{{proposalTitle}}</td>
+<td >
+  <span  *ngIf="isFlagged()" style="color: red;">
+    {{proposalTitle}}
+  </span>
+  <span  *ngIf="!isFlagged()"  style="color: black;" >
+    {{proposalTitle}}
+  </span>
+</td>
 <td>{{proposal.NumberToGive}}</td>
 <td>{{propDate}}</td>
 <td>{{propTime}}</td>
-
 <td>
    {{proposal.ProposalComment}}
 </td>
 <td>
-    0649267698
+  {{ proposal.registeredUser.Phonenumber}}
 </td>
 <td>
   {{ status}}

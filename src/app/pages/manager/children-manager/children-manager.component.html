@@ -12,7 +12,16 @@
     <!-- End Page Header Right Div -->
 
   </div>
-
+<div>           <div class="form-group" style="margin-left: 10px !important;display: flex;align-items: center; ">
+    <span><i style="margin-right: 3px;" class="fa fa-filter" aria-hidden="true"></i>Filter:</span>
+    <ng-select style="margin-top: 5px;display: inline-flex; padding-bottom: 0px; margin-left: 5px" [clearable]="false" [items]="filters" class="ngselectStyle"
+    bindLabel="name"
+    bindValue="id"
+    (change)="updateFilter()"
+    [(ngModel)]="filterval">
+</ng-select>
+</div>
+</div>
 <section class="event-area section-gap-extra-bottom">
     <div class="container">
       <div  *ngIf="loaderService.isLoading | async" class="row" >
