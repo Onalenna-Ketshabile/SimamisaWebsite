@@ -29,7 +29,7 @@ export class PartneringRequestsComponent implements OnInit {
     this.partneringService.ViewRequests().subscribe(data=>{
       
      this.orphanages =data;
-      
+      console.log('data',data);
       // if(data.length == 0 ){
       //   this.noData = this.nothingReturned();}
     });
@@ -39,10 +39,15 @@ export class PartneringRequestsComponent implements OnInit {
 
 nothingReturned(): boolean{
   console.log(this.orphanages?.length  , this.isLoading, "check.");
+  console.log("Length",this.orphanages?.length == undefined);
   if(this.orphanages?.length == undefined && !this.isLoading ){
    return true;
   }
+  else if(this.orphanages?.length == 0 && !this.isLoading ){
+    return true;
+   }
   else{
+    console.log(this.orphanages);
    return false;
   }
 }

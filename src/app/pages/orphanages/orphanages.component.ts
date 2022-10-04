@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Orphanage } from 'src/app/models/orphanage';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 
@@ -12,7 +13,7 @@ import { OrphanageService } from 'src/app/services/orphanage.service';
 export class OrphanagesComponent implements OnInit {
   orphanages?: Orphanage[];
   isLoaded = false;
-  constructor(private orphService:OrphanageService, public loaderService:LoaderService) { }
+  constructor(private orphService:OrphanageService, public loaderService:LoaderService,private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
     this.orphService.init();
@@ -22,6 +23,10 @@ export class OrphanagesComponent implements OnInit {
       this.isLoaded = true;
       }
     });
+  }
+  search(details:{name: string}){
+    this.dataToModals.setSearchOrphanageDetails(details.name);
+    console.log("Searched: ", details.name);
   }
 
 }

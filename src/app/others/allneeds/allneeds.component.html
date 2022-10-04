@@ -5,7 +5,7 @@
 			<div class="row justify-content-center project-items project-style-one">
 			
 <div *ngIf="show()">
-	<app-needitem *ngFor="let need of needs" [need]="need" (elementDeleted)="onElementDeleted($event)">{{need.Title}}</app-needitem>
+	<app-needitem *ngFor="let need of needs; trackBy: trackItem"   [need]="need" (elementDeleted)="onElementDeleted($event)">{{need.Title}}</app-needitem>
 
 </div>
 <div *ngIf="!show() ">

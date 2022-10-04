@@ -21,8 +21,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="search-question-holder">
-                    <form>
-                        <input class="search-input" type="text" placeholder="Search orphanage . . ."/><input type="submit" class="hbtn hbtn-primary btn-search" value="Search"/>
+                    <form #searchForm="ngForm" (ngSubmit)="search(searchForm.value)">
+                        <input class="search-input" name="name" type="text" placeholder="Search orphanage . . ." required ngModel/><input type="submit" class="hbtn hbtn-primary btn-search" value="Search"/>
                     
                     </form>
                 </div> 

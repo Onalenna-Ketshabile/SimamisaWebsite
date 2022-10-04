@@ -21,15 +21,21 @@ export class MyPartnersComponent implements OnInit {
       this.isLoading=data;
     })
     this.partneringService.GetMyPartners().subscribe(data=>{
-      this.orphanages =data;
-      if(data.length == 0){
-        this.noData = this.nothingReturned();}
-      console.log("Data received:", this.orphanages);
+     this.orphanages =data;
+      // if(data.length == 0){
+      //   this.noData = this.nothingReturned();}
+      // console.log("Data received:", this.orphanages);
     });
   
   }
   nothingReturned(): boolean{
-     if(!this.isLoading && this.orphanages.length == 0){
+    console.log('orphanage.length',this.orphanages?.length ,"loading:", this.isLoading);
+  
+     if(!this.isLoading && this.orphanages?.length == 0){
+      
+      return true;
+     }
+     else if(this.orphanages?.length == undefined && !this.isLoading ){
       return true;
      }
      else{

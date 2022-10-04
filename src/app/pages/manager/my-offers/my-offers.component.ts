@@ -24,7 +24,9 @@ export class MyOffersComponent implements OnInit {
       this.isLoading = data;
     })
     this.offersService.getMyOffer().subscribe(data=>{
-     
+       setTimeout(() => {
+        console.log("Hi!")
+    }, 20000);
       this.offers =data;
       // if(data.length == 0){
       //   this.noData = this.nothingReturned();}
@@ -36,6 +38,9 @@ export class MyOffersComponent implements OnInit {
     if(this.offers?.length == 0 && !this.isLoading){
      return true;
     }
+    else if(this.offers?.length == undefined && !this.isLoading ){
+      return true;
+     }
     else{
      return false;
     }

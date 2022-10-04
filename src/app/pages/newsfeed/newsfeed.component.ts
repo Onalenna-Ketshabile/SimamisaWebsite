@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class NewsfeedComponent implements OnInit {
   formModal:any;
   myAngularQrCode:any
   id: any;
-  constructor(private authService:AuthenticationService,private _Activatedroute: ActivatedRoute, public loaderService:LoaderService) { }
+  constructor(private authService:AuthenticationService,private _Activatedroute: ActivatedRoute, public loaderService:LoaderService,private toModalservice:DataToModalsService) { }
  
 
   ngOnInit(): void {
@@ -31,6 +32,6 @@ export class NewsfeedComponent implements OnInit {
  search(details:{ need: string}){
   console.log(details);
   console.log("About to search ", details.need);
-  this.ngOnInit();
+  this.toModalservice.setSearchNeedDetails(details.need);
  }
 }

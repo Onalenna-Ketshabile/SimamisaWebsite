@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Data } from '@angular/router';
 import { Need } from 'src/app/models/need';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { NeedsService } from 'src/app/services/needs.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
@@ -16,9 +18,10 @@ export class AllneedsComponent implements OnInit {
   @Input()
   id!:any
   needs?: Need[];
+  needOriginal?: Need[];
   isLoaded= false;
   loadingHandler = new LoadingHandler();
-  constructor(private needs_service:NeedsService,private orphService:OrphanageService, public loaderService:LoaderService) {
+  constructor(private needs_service:NeedsService,private orphService:OrphanageService, public loaderService:LoaderService, private dataToModals:DataToModalsService) {
 
 
    }
@@ -26,6 +29,18 @@ export class AllneedsComponent implements OnInit {
   ngOnInit(): void {
      this.orphService.init();
      this.getNeeds();
+
+     this.dataToModals.SearchNeedSent$.subscribe(data=>{
+      console.log("Arrived need to search for: ", data);
+      this.needs = this.needOriginal?.filter( need => (need.Title.toLowerCase() == data.toLowerCase()));
+        this
+     });
+
+     this.dataToModals.NeeedsUpdateSent$.subscribe(data=>{
+      console.log("Arrived need to search for: ", data);
+     // this.needs?.filter( need => (need.Title.toLowerCase() == data.toLowerCase()));
+
+     });
     
   }
   show(){
@@ -40,12 +55,14 @@ export class AllneedsComponent implements OnInit {
           console.log(data);
           let need = data.find((nd)=>nd.ID==this.id);
           this.needs = new Array(need!);
+          this.needOriginal = this.needs;
           this.loadingHandler.finish(); 
           this.isLoaded=true;    
         })
       }else{
         this.needs_service.getOrphanageNeeds().subscribe(data=>{
           this.needs =data;
+          this.needOriginal = this.needs;
           this.loadingHandler.finish();
           this.isLoaded=true;    
         });
@@ -54,6 +71,7 @@ export class AllneedsComponent implements OnInit {
     }else{
       this.needs_service.getAllNeeds().subscribe(data=>{
         this.needs =data;
+        this.needOriginal = this.needs;
         this.loadingHandler.finish();
         this.isLoaded=true;    
       });
@@ -72,5 +90,8 @@ export class AllneedsComponent implements OnInit {
     this.getNeeds();
     //document.getElementById("close-add-cneed")!.click();
     
+  }
+  public trackItem (index: number, need: Need) {
+    return need.ID;
   }
 }

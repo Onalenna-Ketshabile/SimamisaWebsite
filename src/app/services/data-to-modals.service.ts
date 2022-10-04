@@ -38,6 +38,15 @@ export class DataToModalsService {
 
   private _idDistributeSource = new Subject<adminOrphanageNeeds>();
   idDistributeSent$ = this._idDistributeSource.asObservable();
+
+  private _SearchNeedSource = new Subject<String>();
+  SearchNeedSent$ = this._SearchNeedSource.asObservable();
+
+  private _SearchOrphanageSource = new Subject<String>();
+  SearchOrphanageSent$ = this._SearchNeedSource.asObservable();
+
+  private _NeedsUpdateSource = new Subject<Need[]>();
+  NeeedsUpdateSent$ = this._NeedsUpdateSource.asObservable();
  
   private _childChangingSource = new Subject<boolean>();
   childChangingSent$ = this._childChangingSource.asObservable();
@@ -77,4 +86,14 @@ export class DataToModalsService {
   sendChildIsChanging(bool:boolean){
     this._childChangingSource.next(bool);
   }
+  setSearchNeedDetails(need: string) {
+    this._SearchNeedSource.next(need);
+  }
+  setNeedsUpdatedDetails(needs: Need[]) {
+    this._NeedsUpdateSource.next(needs);
+  }
+  setSearchOrphanageDetails(orphanage: string) {
+    this._SearchOrphanageSource.next(orphanage);
+  }
+  
 }
