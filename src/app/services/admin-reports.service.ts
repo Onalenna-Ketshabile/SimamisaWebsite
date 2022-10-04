@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { BASEURL } from '../constants/constants';
 import { adminNeedsReport } from '../models/adminNeedsReport';
 import { adminOrphanageNeeds } from '../models/adminOrphanageNeeds';
+import { Need } from '../models/need';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,9 @@ export class AdminReportsService {
   private numberOfChildren = new BehaviorSubject<number[]>([]);
   private numberOfSponsors = new BehaviorSubject<number[]>([]);
   private donationAmount = new BehaviorSubject<number[]>([]);
+
+  private NeedsFilterByMonth = new BehaviorSubject<number[]>([]);
+  private NeedsForFilterChart = new BehaviorSubject<Need[]>([])
 
   headers: any;
 
@@ -159,6 +163,17 @@ export class AdminReportsService {
     );
   }
 
+  getNeedDataForAMonth(month:string,rating:number){
+
+
+    this.http.get<any[]>(this.apiURL.slice(0,-11)+'/admin/'+month+"?rating="+rating,{headers:this.headers}).subscribe(
+      (donatiom)=>{
+        this.donationAmount.next(donatiom);
+        console.log("donation amount");
+      }
+    );
+
+  }
       
 
 }
