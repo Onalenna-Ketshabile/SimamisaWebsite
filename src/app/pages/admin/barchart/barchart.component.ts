@@ -36,7 +36,7 @@ export class BarchartComponent implements OnInit {
     if(this.needsReportPriorityOne.length!=0 && this.needsReportPriorityTwo.length!=0 && this.needsReportPriorityThree.length!=0 ){
         console.log("Inside the IF");
     }
-    this.adminReports.getAdminNeedsReportOne().subscribe((data:any)=>{
+    this.adminReports.getAdminNeedsReportOne().subscribe(data=>{
       this.needsReportPriorityOne =data;
       
       console.log(this.needsReportPriorityOne);
@@ -48,7 +48,7 @@ export class BarchartComponent implements OnInit {
     });
 
     
-    this.adminReports.getAdminNeedsReportTwo().subscribe((data:any)=>{
+    this.adminReports.getAdminNeedsReportTwo().subscribe(data=>{
         this.needsReportPriorityTwo =data;
         console.log(this.needsReportPriorityTwo);
          if(this.needsReportPriorityTwo.length != 0){
@@ -58,7 +58,7 @@ export class BarchartComponent implements OnInit {
          }
       });
 
-      this.adminReports.getAdminNeedsReportThree().subscribe((data:any)=>{
+      this.adminReports.getAdminNeedsReportThree().subscribe(data=>{
         this.needsReportPriorityThree =data;
         console.log(this.needsReportPriorityThree);
          if(this.needsReportPriorityThree.length != 0){
@@ -271,7 +271,7 @@ export class BarchartComponent implements OnInit {
         plugins: {
           tooltip: {
             callbacks: {
-              afterTitle: function(context:any){
+              afterTitle: function(context){
                 return  `${context[0].label} Day: ${weeklyarray[context[0].dataIndex]+1} `;
               }
             }
