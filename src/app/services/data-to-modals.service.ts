@@ -38,7 +38,9 @@ export class DataToModalsService {
 
   private _idDistributeSource = new Subject<adminOrphanageNeeds>();
   idDistributeSent$ = this._idDistributeSource.asObservable();
-
+ 
+  private _childChangingSource = new Subject<boolean>();
+  childChangingSent$ = this._childChangingSource.asObservable();
   constructor() { }
 
   setOfferDetails(offer: Offer) {
@@ -70,5 +72,9 @@ export class DataToModalsService {
   }
   setIDDetails(adminOrphanageNeeds: adminOrphanageNeeds) {
     this._idDistributeSource.next(adminOrphanageNeeds);
+  }
+
+  sendChildIsChanging(bool:boolean){
+    this._childChangingSource.next(bool);
   }
 }

@@ -10,12 +10,8 @@
 <td>{{childneed.AmountNeeded}}</td>
 
 <td>
- <div *ngIf="loadingHandler.isLoading | async" class="d-flex gap-2 row" >
-      
-          <p>Deleting....</p>
-        
-    </div>
-<div *ngIf="!(loadingHandler.isLoading | async)" class="d-flex gap-2">
+
+<div *ngIf="!isUpdating" class="d-flex gap-2">
   
     <div class=".hbtn .hbtn-primary">
         <a (click)="editChildNeed()" data-bs-toggle="modal" data-bs-target="#editChildNeed-modal" class="hbtn hbtn-primary" >Edit <i class="far fa fa-pencil"></i></a>
@@ -26,4 +22,6 @@
     </div>
   
 </div>
+<mat-progress-spinner *ngIf="isUpdating" mode="indeterminate" color="warn" diameter="20"></mat-progress-spinner>
+        
 </td>
