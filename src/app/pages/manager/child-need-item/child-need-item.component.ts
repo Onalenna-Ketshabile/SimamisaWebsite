@@ -16,13 +16,18 @@ childneed!:Childneed
 @Output()
 elementDeleted: EventEmitter<any> = new EventEmitter();
 loadingHandler = new LoadingHandler();
+isUpdating:boolean = false;
   constructor(private needService:NeedsService,private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
+    this.dataToModals.childChangingSent$.subscribe((data)=>{
+      this.isUpdating = data;
+    })
   }
   deleteChildNeed(){
     console.log("Trying") 
     this.loadingHandler.start();
+    this.dataToModals.sendChildIsChanging(true);
     this.needService.deleteChildNeed(this.childneed.ID).subscribe(data => {  
       console.log("Posted");
       console.log(data);

@@ -5,6 +5,7 @@ import { Child } from 'src/app/models/child';
 import { Childneed } from 'src/app/models/childneed';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { ChildrenService } from 'src/app/services/children.service';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { NeedsService } from 'src/app/services/needs.service';
 @Component({
@@ -13,6 +14,7 @@ import { NeedsService } from 'src/app/services/needs.service';
   styleUrls: ['./child-needs.component.css', 'bootstrap.min.css', './../../../../assets/css/icons.min.css', '../../../../assets/css/bootstrap.min.css','../../../../assets/css/table.css']
 })
 export class ChildNeedsComponent implements OnInit {
+  [x: string]: any;
   id!: string | null;
   child!: Child;
   name! :string ;
@@ -21,7 +23,7 @@ export class ChildNeedsComponent implements OnInit {
   loadingHandler = new LoadingHandler();
   isLoadedC=false;
   isLoaded=false;
-  constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService, private nService: NeedsService, public loaderService:LoaderService) { }
+  constructor(private _Activatedroute: ActivatedRoute, private cService: ChildrenService, private nService: NeedsService, public loaderService:LoaderService, private dataToModals:DataToModalsService) { }
 
   ngOnInit(): void {
     this.loadingHandler.start();
@@ -44,7 +46,7 @@ export class ChildNeedsComponent implements OnInit {
     this.nService.getChildNeedsById(this.id!).subscribe(data => {
       console.log(data);
       this.childneeds = data;
-      
+     this.dataToModals.sendChildIsChanging(false);
       this.loadingHandler.finish();  
       this.isLoaded =true;
     });
