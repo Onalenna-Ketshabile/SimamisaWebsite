@@ -3,6 +3,10 @@ import { sponsorRequest } from 'src/app/models/sponsorRequest';
 import { LoadingHandler } from 'src/app/others/loading-indicator/loading-handler';
 import { LoaderService } from 'src/app/services/loader.service';
 import { MeetingService } from 'src/app/services/meeting.service';
+interface Filter {
+  id: number,
+  name: string
+}
 @Component({
   selector: 'app-sponsor-request',
   templateUrl: './sponsor-request.component.html',
@@ -11,8 +15,17 @@ import { MeetingService } from 'src/app/services/meeting.service';
 export class SponsorRequestComponent implements OnInit {
 
   sponsorRequests!: sponsorRequest[];
+  AllsponsorRequests!: sponsorRequest[];
   loadingHandler = new LoadingHandler();
   isLoaded=false;
+  filters: Filter[] = [
+    { id: 0, name: 'All' },
+    { id: 1, name: 'Pending' },
+    { id: 2, name: 'Meeting Pending' },
+    { id: 3, name: 'Accepted' },
+    { id: 4, name: 'Rejected' },
+  ];
+  filterval: number = 0;
   constructor(private mService : MeetingService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {
@@ -29,13 +42,56 @@ export class SponsorRequestComponent implements OnInit {
    console.log(id);
     this.mService.getAllOrphRequests(id!).subscribe((data) => {
       console.log(data);
-    this.sponsorRequests = data;
+      this.AllsponsorRequests = data;
+      this.updateFilter();
       this.loadingHandler.finish();
       this.isLoaded=true;
     });
 
   }
-
+  getStatus(sponsorRequest:any) {
+    if(!sponsorRequest.isAccepted && !sponsorRequest.isRejected){
+    return"Pending";
+    }
+    if(sponsorRequest.isAccepted && sponsorRequest.isRejected){
+      return "Meeting Pending";
+    }
+    if(sponsorRequest.isAccepted && !sponsorRequest.isRejected){
+      return "Accepted";     
+    }
+    if(!sponsorRequest.isAccepted && sponsorRequest.isRejected){  
+          return "Rejected";    
+    }
+     return "All";
+  }
+  updateFilter(): void {
+    
+    let selected = this.filters.find(prop => (prop.id == this.filterval))!;
+    console.log("SDFGHJ",selected)
+    if (selected.name == 'All') {//Get rejected
+      this.sponsorRequests =this.AllsponsorRequests;
+      this.isLoaded=true;
+    }
+    if (selected.name == 'Pending') {//Get rejected
+      this.sponsorRequests = this.AllsponsorRequests?.filter(prop => {return this.getStatus(prop)=="Pending"} );
+      this.isLoaded=true;
+    }
+    if (selected.name == 'Meeting Pending') {//Get rejected
+      this.sponsorRequests = this.AllsponsorRequests?.filter(prop => {return this.getStatus(prop)=="Meeting Pending"} );
+      this.isLoaded=true;
+    }
+    if (selected.name == 'Accepted') {//Get rejected
+      this.sponsorRequests = this.AllsponsorRequests?.filter(prop => {return this.getStatus(prop)=="Accepted"} );
+      this.isLoaded=true;
+    }
+    if (selected.name == 'Rejected') {//Get rejected
+      this.sponsorRequests = this.AllsponsorRequests?.filter(prop => {return this.getStatus(prop)=="Rejected"} );
+      this.isLoaded=true;
+    }
+    
+    this.loadingHandler.finish();
+    
+  }
   onElementUpdated(element: any) {
     this.getRequests();
     

@@ -1,5 +1,6 @@
 export interface Proposal {
     itemNeed: any;
+    registeredUser:any,
     Title: string;
     ID: number,
     PickUpTime: string,
