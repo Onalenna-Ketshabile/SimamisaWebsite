@@ -25,10 +25,11 @@ export class ViewPartneringrequestsComponent implements OnInit {
         this.partneringService.AcceptRequest(this.orphanage.ID+"",localStorage.getItem("orphID")).subscribe(data => {
       console.log(data);
       window.alert("Partnering Request has been accepted.");
-      window.location.href = 'partners';
+      window.location.href = 'manager/partners'
         
   });
    
+  ;
      console.log("Accepting partnering request.");
   }
 
