@@ -54,61 +54,15 @@
                                <div *ngIf="amountErr">
                                <p style="color: red;">Choose a valid amount to donate</p>
                                </div>
-                                <div class="payment-method-wrp">
-                                    <h4>Payment Method:</h4>
-                                    <div class="payment-method">
-                                        <div class="payment-type">
-                                            <div class="form-check form-check-inline">
-                                                <input type="radio" (click)="updateType('card')" name="inlineRadioOptions" id="inlineRadio1" value="option1" class="form-check-input">
-                                                <label for="inlineRadio1" class="form-check-label">Credit Card</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input type="radio"  (click)="updateType('paypal')" name="inlineRadioOptions" id="inlineRadio2" value="option2" class="form-check-input">
-                                                <label for="inlineRadio2" class="form-check-label">Paypal</label>
-                                            </div>
-                                        </div>
-                                      
-                                    </div>
-                                </div>
-                                <div *ngIf="isCardPayment()" class="personal-info">
-                                    <h4>Personal Info:</h4>
-                                    <div class="row row-gutter-20">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input name="con_name" placeholder="Name On Card" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input  type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="Credit Card Numb" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input name="exp_year" placeholder="Exp Year" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input name="exp_month" placeholder="Exp Month" class="form-control">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input name="cvv" placeholder="CVV" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                     
                                
 
                                     <div id="paypal"></div>
                                
-                                <div *ngIf="!isPaypal()" class="btn-wrp">
+                                <div class="btn-wrp">
                                     <!-- <a href="#" class="btn-theme" data-bs-toggle="modal" data-bs-target="#payNeed-modal">Donate Now
                                     </a> -->
-                                    <button class="btn-theme hbtn hbtn-primary" >Donate Now
+                                    <button (click)="clickme()" class="btn-theme hbtn hbtn-primary" >Donate Now
                                     </button>
                                     <a hidden href="#" class="hbtn hbtn-primary">Total Donation: R500</a>
                                 </div>

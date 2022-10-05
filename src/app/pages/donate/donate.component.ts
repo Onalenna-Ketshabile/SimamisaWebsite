@@ -32,32 +32,19 @@ export class DonateComponent implements OnInit {
   }
 
   clickme() {
-    // render({
-    //   id: "#paypal",
-    //   currency: "USD",
-    //   value: this.amountchosen.toPrecision(2),
-    //   onApprove: (details) => {
-    //     console.log(details);
+    let dollards = this.amountchosen * 0.057;
+    render({
+      id: "#paypal",
+      currency: "USD",
+      value: dollards.toPrecision(2),
+      onApprove: (details) => {
+        console.log(details);
 
-    //     this.makeDonation();
+        this.makeDonation();
 
-    //   }
-    // })
-     this.dService.randToUSD(this.amountchosen).subscribe((data)=>{
-      console.log("Res",data);
-      render({
-        id: "#paypal",
-        currency: "USD",
-        value: this.amountchosen.toPrecision(2),
-        onApprove: (details) => {
-          console.log(details);
+      }
+    })
   
-          this.makeDonation();
-  
-        }
-      })
-     })
-   
   }
   onKey(event: any) { // without type info
 
@@ -92,7 +79,7 @@ export class DonateComponent implements OnInit {
     }
     this.dService.generalDonation(body).subscribe(data => {
 
-window.alert("Thank you")
+          window.alert("Thank you")
     });
   }
 
