@@ -22,7 +22,7 @@ export class ModalDistributeFundsComponent implements OnInit {
     console.log("The Modal Says: ", this.orphanageID);
     console.log("amount", modalData.unitCost);
 
-    this.donationService.distribute(modalData.unitCost,this.orphanageID).subscribe(data => {
+    this.donationService.distribute(this.orphanageID,modalData.unitCost).subscribe(data => {
       console.log(data);
       window.alert("Distribution was successful!");
       window.location.reload();
