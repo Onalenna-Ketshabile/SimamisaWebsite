@@ -50,6 +50,10 @@ export class DataToModalsService {
  
   private _childChangingSource = new Subject<boolean>();
   childChangingSent$ = this._childChangingSource.asObservable();
+
+  
+  private _deleteSponsorshipSource = new Subject<string>();
+  deleteSponsorshipSent$ = this._deleteSponsorshipSource.asObservable();
   constructor() { }
 
   setOfferDetails(offer: Offer) {
@@ -94,6 +98,9 @@ export class DataToModalsService {
   }
   setSearchOrphanageDetails(orphanage: string) {
     this._SearchOrphanageSource.next(orphanage);
+  }
+  setSponsorshipDetails(name: string) {
+    this._deleteSponsorshipSource.next(name);
   }
   
 }

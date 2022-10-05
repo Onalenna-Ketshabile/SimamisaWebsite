@@ -17,5 +17,8 @@ export class TableRowUnreliableUsersComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  flag(){
+    window.alert(this.managerUnrealiableUser.Name + ' was flagged!');
+  }
 
 }

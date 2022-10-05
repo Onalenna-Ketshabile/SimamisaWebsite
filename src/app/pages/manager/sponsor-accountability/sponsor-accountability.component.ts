@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { accountability } from 'src/app/models/accountability';
+import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { ManagerReportsService } from 'src/app/services/manager-reports.service';
 
 @Component({
@@ -10,14 +11,19 @@ import { ManagerReportsService } from 'src/app/services/manager-reports.service'
 export class SponsorAccountabilityComponent implements OnInit {
 
   sponsorAccountability!: accountability[];
-  constructor(private managerService: ManagerReportsService) { }
+  constructor(private managerService: ManagerReportsService, private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
     this.managerService.getSponsorAccountability().subscribe(data=> {
       this.sponsorAccountability = data;
 
       console.log("sponsorAcc", this.sponsorAccountability)
+    });
+
+    this.dataToModals.deleteSponsorshipSent$.subscribe( data => {
+         this.sponsorAccountability = this.sponsorAccountability?.filter( sponsor => (sponsor.Childname != data));
     })
+
   }
 
 }
