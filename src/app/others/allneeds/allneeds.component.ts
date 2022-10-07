@@ -51,7 +51,7 @@ export class AllneedsComponent implements OnInit {
     if(localStorage.getItem("userRole")=="M"){
       if(this.id){
         console.log("ID->",this.id)
-        this.needs_service.getAllHNeeds().subscribe(data=>{
+        this.needs_service.getOrphanageNeeds().subscribe(data=>{
           console.log(data);
           let need = data.find((nd)=>nd.ID==this.id);
           this.needs = new Array(need!);

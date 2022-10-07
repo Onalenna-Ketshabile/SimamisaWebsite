@@ -1,13 +1,24 @@
 <td >
-    <span  *ngIf="isFlagged()" style="color: red;">
+   
       {{proposalTitle}}
+    <
+</td>
+<td>
+    <span  *ngIf="isFlagged()" style="color: red;">
+    {{proposal.registeredUser.FirstName}}
+  </span>
+  <span  *ngIf="!isFlagged()" style="color: black;" >
+    {{ proposal.registeredUser.FirstName}} 
+   </span> 
+    <br> 
+    <span  *ngIf="isFlagged()" style="color: red;">
+      {{proposal.registeredUser.Phonenumber}}
     </span>
     <span  *ngIf="!isFlagged()" style="color: black;" >
-      {{proposalTitle}}
-    </span>
-  </td>
+     {{ proposal.registeredUser.Phonenumber}} 
+    </span> 
+    </td>
 <td>{{proposal.NumberToGive}}</td>
-<td>  {{ proposal.registeredUser.Phonenumber}}</td>
 <td>{{propDate}}</td>
 <td>{{propTime}}</td>
 <td>
@@ -16,6 +27,7 @@
 <td>
     {{proposal.ProposalComment}}
 </td>
+
 <td>
     {{status}}
 </td>

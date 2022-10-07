@@ -57,4 +57,15 @@ export class ProposalServiceService {
       },
       ));
   }
+
+  flagUser(body:string):Observable<any>{
+    return this.http.put(`${BASEURL}/om/flag`,body, { headers: this.headers }).pipe(
+      map((res) => {
+     
+          console.log(res);
+          return res;
+        
+      },
+      ));
+  }
 }
