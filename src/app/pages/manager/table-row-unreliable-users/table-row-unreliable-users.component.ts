@@ -19,8 +19,12 @@ export class TableRowUnreliableUsersComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ isFlagged(){
+
+    return this.managerUnrealiableUser.isFlagged == '1';
+  }
   flag(){
-   
+    console.log("Input", this.managerUnrealiableUser);
     let body={
       id:this.managerUnrealiableUser.Id
     };
@@ -30,5 +34,16 @@ export class TableRowUnreliableUsersComponent implements OnInit {
     })
       
   }
-
+  unflag(){
+    console.log("Input", this.managerUnrealiableUser);
+    let body={
+      id:this.managerUnrealiableUser.Id
+    };
+    console.log("Unflag",body)
+    this.pService.unflagUser(JSON.stringify(body)).subscribe((data)=>{
+      window.alert(this.managerUnrealiableUser.Name + ' was unflagged!');
+      this.router.navigate(['manager/item-proposals']);
+    })
+      
+  }
 }

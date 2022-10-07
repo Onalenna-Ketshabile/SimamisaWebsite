@@ -1,6 +1,6 @@
 export interface unreliableUser {
     Id:number,
-    isFlagged:boolean,
+    isFlagged:string,
     Name : string,
     Offences: number,
     Total: number
