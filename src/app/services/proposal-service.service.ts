@@ -8,6 +8,7 @@ import { Proposal } from '../models/proposal';
   providedIn: 'root'
 })
 export class ProposalServiceService {
+
   headers: any;
   constructor(private http:HttpClient) { 
 
@@ -54,6 +55,27 @@ export class ProposalServiceService {
           console.log(res);
           return res;
         }
+      },
+      ));
+  }
+
+  flagUser(body:string):Observable<any>{
+    return this.http.put(`${BASEURL}/om/flag`,body, { headers: this.headers }).pipe(
+      map((res) => {
+     
+          console.log(res);
+          return res;
+        
+      },
+      ));
+  }
+  unflagUser(body: string) :Observable<any>{
+    return this.http.put(`${BASEURL}/om/unflag`,body, { headers: this.headers }).pipe(
+      map((res) => {
+     
+          console.log(res);
+          return res;
+        
       },
       ));
   }
