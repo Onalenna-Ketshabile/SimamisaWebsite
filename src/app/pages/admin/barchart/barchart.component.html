@@ -5,11 +5,20 @@
 </div>
 <div class="dashHeading" style="margin: 30px 0px;">Total needs met in different priority categories</div>  
 <div id="chartContainer">
-    <canvas id="lineChart" ></canvas>
-    <select hidden (change)="updateMonth($event.target)">
+   
+    <select  (change)="updateMonth($event.target)" style="    background: #FFB282;color: #807066;padding: 5px;border-radius: 5px;">
         <option value="jan"> Jan 2022</option>
         <option value="feb"> Feb 2022</option>
+        <option value="mar"> Mar 2022</option>
+        <option value="apr"> Apr 2022</option>
+        <option value="may"> May 2022</option>
+        <option value="jun"> June 2022</option>
+        <option value="jul"> Jul 2022</option>
+        <option value="aug"> Aug 2022</option>
+        <option value="sep"> Sep 2022</option>
+        <option value="oct"> Oct 2022</option>
+
     </select>
-   
+    <canvas id="lineChart" ></canvas>
 </div>
     

@@ -19,6 +19,37 @@ export class BarchartComponent implements OnInit {
     myChart: any;
     jan : any;
     feb: any;
+    mar : any;
+    apr: any;
+    may : any;
+    jun: any;
+    jul : any;
+    aug: any;
+    sep : any;
+    oct: any;
+
+    jan2 : any;
+    feb2: any;
+    mar2 : any;
+    apr2: any;
+    may2 : any;
+    jun2: any;
+    jul2 : any;
+    aug2: any;
+    sep2 : any;
+    oct2: any;
+
+    jan3 : any;
+    feb3: any;
+    mar3 : any;
+    apr3: any;
+    may3 : any;
+    jun3: any;
+    jul3 : any;
+    aug3: any;
+    sep3 : any;
+    oct3: any;
+  
   
     currentMonth: number  = 0;
   constructor(private adminReports : AdminReportsService) { }
@@ -87,18 +118,70 @@ export class BarchartComponent implements OnInit {
   updateMonth(month:any){
     console.log(month.value);
     if(month.value === 'jan'){
-      console.log("changing dataset to jan");
-      console.log(this.myChart.config.data.datasets[0].data);
       this.myChart.config.data.datasets[0].data = this.jan;
-      console.log(this.myChart.config.data.datasets[0].data);
+      this.myChart.config.data.datasets[1].data = this.jan2;
+      this.myChart.config.data.datasets[2].data = this.jan3;
     }
     if(month.value === 'feb'){
-      console.log("changing dataset to feb");
-      //console.log(this.myChart.config.data.datasets[0].data);
       this.myChart.config.data.datasets[0].data = this.feb;
-      console.log(this.myChart.config.data.datasets[0].data);
-;
+      this.myChart.config.data.datasets[1].data = this.feb2;
+      this.myChart.config.data.datasets[2].data = this.feb3;
     }
+    if(month.value === 'mar'){
+      this.myChart.config.data.datasets[0].data = this.mar;
+      this.myChart.config.data.datasets[1].data = this.mar2;
+      this.myChart.config.data.datasets[2].data = this.mar3;
+    }
+    if(month.value === 'apr'){
+      this.myChart.config.data.datasets[0].data = this.apr;
+      this.myChart.config.data.datasets[1].data = this.apr2;
+      this.myChart.config.data.datasets[2].data = this.apr3;
+    }
+    if(month.value === 'may'){
+      this.myChart.config.data.datasets[0].data = this.may;
+      this.myChart.config.data.datasets[1].data = this.may2;
+      this.myChart.config.data.datasets[2].data = this.may3;
+    }
+    if(month.value === 'jun'){
+      this.myChart.config.data.datasets[0].data = this.jun;
+      this.myChart.config.data.datasets[1].data = this.jun2;
+      this.myChart.config.data.datasets[2].data = this.jun3;
+    }
+    if(month.value === 'jul'){
+      this.myChart.config.data.datasets[0].data = this.jul;
+      this.myChart.config.data.datasets[1].data = this.jul2;
+      this.myChart.config.data.datasets[2].data = this.jul3;
+    }
+    if(month.value === 'aug'){
+      this.myChart.config.data.datasets[0].data = this.aug;
+      this.myChart.config.data.datasets[1].data = this.aug2;
+      this.myChart.config.data.datasets[2].data = this.aug3;
+    }
+    if(month.value === 'sep'){
+      this.myChart.config.data.datasets[0].data = this.sep;
+      this.myChart.config.data.datasets[1].data = this.sep2;
+      this.myChart.config.data.datasets[2].data = this.sep3;
+    }
+    if(month.value === 'oct'){
+      this.myChart.config.data.datasets[0].data = this.oct;
+      this.myChart.config.data.datasets[1].data = this.oct2;
+      this.myChart.config.data.datasets[2].data = this.oct3;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     this.myChart.update();
     console.log(this.myChart.update());
   }
@@ -200,24 +283,239 @@ export class BarchartComponent implements OnInit {
 
 
      this.jan = [
-      {x: '2022-01-10',y: 20},
-      {x: '2022-01-11', y: 25},
-      {x: '2022-01-12', y: 30},
+      {x: '01-Jan-2022',y: 20},
+      {x: '15-Jan-2022', y: 5},
+      {x: '25-Jan-2022', y: 30},
+      {x: '30-Jan-2022',y: 20},
+    ];
+    this.jan2 = [
+      {x: '01-Jan-2022',y: 0},
+      {x: '15-Jan-2022', y: 10},
+      {x: '25-Jan-2022', y: 20},
+      {x: '30-Jan-2022',y: 20},
+    ];
+    this.jan3 = [
+      {x: '01-Jan-2022',y: 3},
+      {x: '15-Jan-2022', y: 0},
+      {x: '25-Jan-2022', y: 14},
+      {x: '30-Jan-2022',y: 37},
     ];
 
      this.feb = [
-      {x: '2022-01-10',y: 30},
-      {x: '2022-01-11', y: 45},
-      {x: '2022-01-12', y: 60},
+      {x: '01-Feb-2022',y: 40},
+      {x: '15-Feb-2022', y: 31},
+      {x: '25-Feb-2022', y: 23},
+      {x: '28-Feb-2022', y: 8}
+      ,
     ];
+    
+    this.feb2 = [
+      {x: '01-Feb-2022',y: 1},
+      {x: '15-Feb-2022', y: 16},
+      {x: '25-Feb-2022', y: 23},
+      {x: '28-Feb-2022', y: 37}
+      ,
+    ];
+    
+    this.feb3 = [
+      {x: '01-Feb-2022',y: 5},
+      {x: '15-Feb-2022', y: 7},
+      {x: '25-Feb-2022', y: 5},
+      {x: '28-Feb-2022', y: 9}
+      ,
+    ];
+
+    this.mar = [
+      {x: '01-Mar-2022',y: 10},
+      {x: '15-Mar-2022', y: 25},
+      {x: '25-Mar-2022', y: 40},
+      {x: '30-Mar-2022', y: 70}
+      ,
+    ];
+    this.mar2 = [
+      {x: '01-Mar-2022',y: 22},
+      {x: '15-Mar-2022', y: 5},
+      {x: '25-Mar-2022', y: 10},
+      {x: '30-Mar-2022', y: 40}
+      ,
+    ];
+    this.mar3 = [
+      {x: '01-Mar-2022',y: 56},
+      {x: '15-Mar-2022', y: 43},
+      {x: '25-Mar-2022', y: 60},
+      {x: '30-Mar-2022', y: 36}
+      ,
+    ];
+
+    this.apr = [
+      {x: '01-Apr-2022',y: 5},
+      {x: '15-Apr-2022', y: 12},
+      {x: '25-Apr-2022', y: 4},
+      {x: '30-Apr-2022', y: 21}
+      ,
+    ];
+    this.apr2 = [
+      {x: '01-Apr-2022',y: 2},
+      {x: '15-Apr-2022', y: 10},
+      {x: '25-Apr-2022', y: 25},
+      {x: '30-Apr-2022', y: 16}
+      ,
+    ];
+    this.apr3 = [
+      {x: '01-Apr-2022',y: 6},
+      {x: '15-Apr-2022', y: 8},
+      {x: '25-Apr-2022', y: 17},
+      {x: '30-Apr-2022', y: 17}
+      ,
+    ];
+
+    this.may = [
+      {x: '01-May-2022',y: 26},
+      {x: '15-May-2022', y: 30},
+      {x: '25-May-2022', y: 40},
+      {x: '30-May-2022', y: 34}
+      ,
+    ];
+    this.may2 = [
+      {x: '01-May-2022',y: 0},
+      {x: '15-May-2022', y: 67},
+      {x: '25-May-2022', y: 30},
+      {x: '30-May-2022', y: 27}
+      ,
+    ];
+    this.may3 = [
+      {x: '01-May-2022',y: 16},
+      {x: '15-May-2022', y: 28},
+      {x: '25-May-2022', y: 14},
+      {x: '30-May-2022', y: 39}
+      ,
+    ];
+    
+
+    this.jun = [
+      {x: '01-Jun-2022',y: 3},
+      {x: '15-Jun-2022', y: 32},
+      {x: '25-Jun-2022', y: 10},
+      {x: '28-Jun-2022', y: 67}
+      ,
+    ];
+    this.jun2 = [
+      {x: '01-Jun-2022',y: 1},
+      {x: '15-Jun-2022', y: 21},
+      {x: '25-Jun-2022', y: 17},
+      {x: '28-Jun-2022', y: 4}
+      ,
+    ];
+    this.jun3 = [
+      {x: '01-Jun-2022',y: 3},
+      {x: '15-Jun-2022', y: 32},
+      {x: '25-Jun-2022', y: 24},
+      {x: '28-Jun-2022', y: 19}
+      ,
+    ];
+
+    this.jul = [
+      {x: '01-Jul-2022',y: 14},
+      {x: '15-Jul-2022', y: 26},
+      {x: '25-Jul-2022', y: 21},
+      {x: '30-Jul-2022', y: 11}
+      ,
+    ];
+
+    this.jul2 = [
+      {x: '01-Jul-2022',y: 27},
+      {x: '15-Jul-2022', y: 6},
+      {x: '25-Jul-2022', y: 16},
+      {x: '30-Jul-2022', y: 33}
+      ,
+    ];
+
+    this.jul3 = [
+      {x: '01-Jul-2022',y: 9},
+      {x: '15-Jul-2022', y: 45},
+      {x: '25-Jul-2022', y: 25},
+      {x: '30-Jul-2022', y: 21}
+      ,
+    ];
+
+    this.aug = [
+      {x: '01-Aug-2022',y: 15},
+      {x: '15-Aug-2022', y: 14},
+      {x: '25-Aug-2022', y: 19},
+      {x: '30-Aug-2022', y: 2}
+      ,
+    ];
+
+    this.aug2 = [
+      {x: '01-Aug-2022',y: 14},
+      {x: '15-Aug-2022', y: 24},
+      {x: '25-Aug-2022', y: 22},
+      {x: '30-Aug-2022', y: 13}
+      ,
+    ];
+
+    this.aug3 = [
+      {x: '01-Aug-2022',y: 3},
+      {x: '15-Aug-2022', y: 10},
+      {x: '25-Aug-2022', y: 16},
+      {x: '30-Aug-2022', y: 24}
+      ,
+    ];
+
+    this.sep = [
+      {x: '01-Sep-2022',y: 10},
+      {x: '15-Sep-2022', y: 25},
+      {x: '25-Sep-2022', y: 15},
+      {x: '30-Sep-2022', y: 12}
+      ,
+    ];
+    
+    this.sep2 = [
+      {x: '01-Sep-2022',y: 10},
+      {x: '15-Sep-2022', y: 40},
+      {x: '25-Sep-2022', y: 38},
+      {x: '30-Sep-2022', y: 26}
+      ,
+    ];
+    
+    this.sep3 = [
+      {x: '01-Sep-2022',y: 3},
+      {x: '15-Sep-2022', y: 32},
+      {x: '25-Sep-2022', y: 15},
+      {x: '30-Sep-2022', y: 18}
+      ,
+    ];
+
+    this.oct = [
+      {x: '01-Oct-2022',y: 33},
+      {x: '15-Oct-2022', y: null},
+      {x: '25-Oct-2022', y: null},
+      {x: '30-Oct-2022', y: null}
+      ,
+    ];
+    this.oct2 = [
+      {x: '01-Oct-2022',y: 12},
+      {x: '15-Oct-2022', y: null},
+      {x: '25-Oct-2022', y: null},
+      {x: '30-Oct-2022', y: null}
+      ,
+    ];
+    this.oct3 = [
+      {x: '01-Oct-2022',y: 17},
+      {x: '15-Oct-2022', y: null},
+      {x: '25-Oct-2022', y: null},
+      {x: '30-Oct-2022', y: null}
+      ,
+    ];
+
     console.log("jan and feb set.");
      this.myChart = new Chart("lineChart", {
     type: 'line',
     data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        //labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
         datasets: [{
             label: 'Priority 1',
-            data: needsMetPrio1,
+            data: this.jan,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
             ],
@@ -229,7 +527,7 @@ export class BarchartComponent implements OnInit {
       
         {
           label: 'Priority 2',
-          data: needsMetPrio2,
+          data: this.jan2,
           backgroundColor: [
           
               'rgba(54, 162, 235, 0.2)',
@@ -244,7 +542,7 @@ export class BarchartComponent implements OnInit {
 
       {
         label: 'Priority 3',
-        data: needsMetPrio3,
+        data: this.jan3,
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
