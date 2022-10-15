@@ -10,13 +10,22 @@ import { OrphanageService } from 'src/app/services/orphanage.service';
 })
 export class VieworphanagesComponent implements OnInit {
   orphanages?: Orphanage[];
+  orphanageOriginal?: Orphanage[];
+
   constructor(private orphService:OrphanageService,private dataToModals: DataToModalsService) { }
 
   ngOnInit(): void {
     this.orphService.init();
     this.orphService.getOrphanages().subscribe(data=>{
       this.orphanages =data;
-      
+      this.orphanageOriginal = data;
     });
+
+    this.dataToModals.SearchOrphanageSent$.subscribe(data=>{
+      console.log("Arrived orphanage to search for: ", data);
+      this.orphanages = this.orphanageOriginal?.filter( orphanage => (orphanage.OrphanageName.toLowerCase().includes(data.toLowerCase()) ));
+     });
+
+     
   }
 }

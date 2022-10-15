@@ -43,7 +43,7 @@ export class DataToModalsService {
   SearchNeedSent$ = this._SearchNeedSource.asObservable();
 
   private _SearchOrphanageSource = new Subject<String>();
-  SearchOrphanageSent$ = this._SearchNeedSource.asObservable();
+  SearchOrphanageSent$ = this._SearchOrphanageSource.asObservable();
 
   private _NeedsUpdateSource = new Subject<Need[]>();
   NeeedsUpdateSent$ = this._NeedsUpdateSource.asObservable();
