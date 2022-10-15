@@ -3,6 +3,10 @@ import { Orphanage } from 'src/app/models/orphanage';
 import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 
+interface Filter {
+  id: number,
+  name: string
+}
 @Component({
   selector: 'app-vieworphanages',
   templateUrl: './vieworphanages.component.html',
@@ -11,6 +15,20 @@ import { OrphanageService } from 'src/app/services/orphanage.service';
 export class VieworphanagesComponent implements OnInit {
   orphanages?: Orphanage[];
   orphanageOriginal?: Orphanage[];
+
+  filters: Filter[] = [
+    { id: 1, name: 'None' },
+    { id: 2, name: 'Eastern Cape' },
+    { id: 3, name: 'Free State' },
+    { id: 4, name: 'Gauteng' },
+    { id: 5, name: 'KwaZulu-Natal' },
+    { id: 6, name: 'Limpopo' },
+    { id: 7, name: 'Mpumalanga' },
+    { id: 8, name: 'Northern Cape' },
+    { id: 9, name: 'North West' },
+    { id: 10, name: 'Western Cape' },
+  ];
+  filterval: number = 1;
 
   constructor(private orphService:OrphanageService,private dataToModals: DataToModalsService) { }
 

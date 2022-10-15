@@ -1,8 +1,17 @@
  
  <!--=== InfoHub Start ===-->
   <section class="pb-0" id="blog">
-    <div class="container">
 
+    <div class="container">
+      <div>           <div class="form-group" style="margin-left: 10px !important;align-items: center; ">
+        <span><i style="margin-right: 3px;" class="fa fa-filter" aria-hidden="true"></i>Filter By Province:</span>
+        <ng-select style="margin-top: 5px;display: inline-flex; padding-bottom: 0px; margin-left: 5px" [clearable]="false" [items]="filters" class="ngselectStyle"
+        bindLabel="name"
+        bindValue="id"
+        [(ngModel)]="filterval">
+  </ng-select>
+    </div>
+  </div>
       <div class="row mt-50">
 <app-orphanage-item  *ngFor="let orph of orphanages" [orphanage]="orph"></app-orphanage-item>
       </div>
