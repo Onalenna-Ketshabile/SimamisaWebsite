@@ -1,17 +1,24 @@
 <app-modal-paypal-need (transactionDone)="onElementUpdated($event)"></app-modal-paypal-need>
-<app-modal-add-need (elementAdded)="onElementAdded($event)" ></app-modal-add-need>
-	<section class="project-section section-gap-extra-bottom primary-soft-bg">
-		<div class="container">
-			<div class="row justify-content-center project-items project-style-one">
+<app-modal-add-need (elementAdded)="onElementAdded($event)"></app-modal-add-need>
+<section class="project-section section-gap-extra-bottom primary-soft-bg">
+	<div class="container">
+		<div *ngIf="show()" class=" project-items project-style-one" >
 			
-<div *ngIf="show()">
-	<app-needitem *ngFor="let need of needs; trackBy: trackItem"   [need]="need" (elementDeleted)="onElementDeleted($event)">{{need.Title}}</app-needitem>
-
-</div>
-<div *ngIf="!show() ">
-<img src="../../../assets/images/empty.jpg">
-</div>
-
-			</div>
+				<app-needitem *ngFor="let need of needs
+	| paginate: { itemsPerPage: 8, currentPage: page,totalItems:totalLength };
+	trackBy: trackItem
+	" [need]="need" (elementDeleted)="onElementDeleted($event)">{{need.Title}}</app-needitem>						
 		</div>
-	</section>
+
+		<div *ngIf="!show() ">
+			<img src="../../../assets/images/empty.jpg">
+		</div>
+	</div>
+</section>
+<section *ngIf="show()"class="project-section section-gap-extra-bottom primary-soft-bg">
+	<div  class="row" style="text-align:center;">
+
+		<pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+	</div>
+
+</section>

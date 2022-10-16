@@ -1,6 +1,10 @@
-<td > 
-    {{proposalTitle}}
-</td>
+<td >
+    <b>
+     {{proposalTitle}}
+    </b>
+ 
+     
+ </td>
 <td>
   <span  *ngIf="isFlagged()" style="color: red;">
   {{proposal.registeredUser.FirstName}}
@@ -24,7 +28,10 @@
 </td>
 
 <td>
-  {{ status}}
+  <span [style]="color()">
+    {{ status}}
+  </span>
+
 </td>
 <td>
     <div class="d-flex gap-2 ">

@@ -2296,4 +2296,6 @@ nav.navbar .nav .open>a:focus {
 
 
 
-
+.my-pagination .ngx-pagination .current {
+    background:   #FF7B29;
+  }

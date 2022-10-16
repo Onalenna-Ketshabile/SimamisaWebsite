@@ -1,6 +1,8 @@
 <td >
-   
-      {{proposalTitle}}
+   <b>
+    {{proposalTitle}}
+   </b>
+
     
 </td>
 <td>
@@ -29,8 +31,11 @@
 </td>
 
 <td>
-    {{status}}
-</td>
+    <span [style]="color()">
+      {{ status}}
+    </span>
+  
+  </td>
 <td>
     <div class="d-flex gap-2">
         <div *ngIf="!isFulfilled()">

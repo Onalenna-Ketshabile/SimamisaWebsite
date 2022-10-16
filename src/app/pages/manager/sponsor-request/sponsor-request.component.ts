@@ -26,6 +26,8 @@ export class SponsorRequestComponent implements OnInit {
     { id: 4, name: 'Rejected' },
   ];
   filterval: number = 0;
+  totalLength:any;
+  page:number=1;
   constructor(private mService : MeetingService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {
@@ -37,14 +39,15 @@ export class SponsorRequestComponent implements OnInit {
     return !(this.isLoaded && this.sponsorRequests!.length<1) ;
 }
   getRequests() {
-    this.loadingHandler.start();   
+    
     let id = localStorage.getItem("orphID");
    console.log(id);
     this.mService.getAllOrphRequests(id!).subscribe((data) => {
       console.log(data);
       this.AllsponsorRequests = data;
       this.updateFilter();
-      this.loadingHandler.finish();
+     this.totalLength = this.sponsorRequests.length;
+
       this.isLoaded=true;
     });
 
@@ -88,7 +91,8 @@ export class SponsorRequestComponent implements OnInit {
       this.sponsorRequests = this.AllsponsorRequests?.filter(prop => {return this.getStatus(prop)=="Rejected"} );
       this.isLoaded=true;
     }
-    
+    this.totalLength = this.sponsorRequests.length;
+    this.page=1;
     this.loadingHandler.finish();
     
   }

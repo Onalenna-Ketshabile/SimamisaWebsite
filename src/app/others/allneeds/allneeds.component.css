@@ -387,6 +387,7 @@ a:hover {
 	border-radius: 10px;
     background: white;
     padding: 10px;
+	
  
 }
 
@@ -1548,3 +1549,7 @@ i, span, a {
     box-shadow: 0 0px 10px rgb(0 0 0 / 10%);
     border-radius: 5px;
 }
+
+.my-pagination .ngx-pagination .current {
+    background:   #FF7B29;
+  }

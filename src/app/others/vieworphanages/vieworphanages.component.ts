@@ -31,6 +31,7 @@ export class VieworphanagesComponent implements OnInit {
   ];
   filterval: number = 1;
  isLoaded=false;
+ 
   constructor(private orphService:OrphanageService,private dataToModals: DataToModalsService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {

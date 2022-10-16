@@ -46,6 +46,18 @@ export class ChildrenManagerComponent implements OnInit {
 
 
   }
+
+  search(val: { name: any; }){
+    const name = val.name;
+    console.log(val.name);
+    if(name){
+      this.children = this.allChildren?.filter(prop => {return (prop.Nickname.includes(name) || prop.Username.includes(name)) });
+   
+    }else{
+      this.updateFilter();
+    }
+    this.isLoaded=true;
+  }
   updateFilter(): void {
     
     let selected = this.filters.find(prop => (prop.id == this.filterval))!;

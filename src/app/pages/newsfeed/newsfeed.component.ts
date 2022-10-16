@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { LoaderService } from 'src/app/services/loader.service';
@@ -13,7 +13,7 @@ export class NewsfeedComponent implements OnInit {
   formModal:any;
   myAngularQrCode:any
   id: any;
-  constructor(private authService:AuthenticationService,private _Activatedroute: ActivatedRoute, public loaderService:LoaderService,private toModalservice:DataToModalsService) { }
+  constructor(private router:Router,private _Activatedroute: ActivatedRoute, public loaderService:LoaderService,private toModalservice:DataToModalsService) { }
  
 
   ngOnInit(): void {
@@ -33,5 +33,9 @@ export class NewsfeedComponent implements OnInit {
   console.log(details);
   console.log("About to search ", details.need);
   this.toModalservice.setSearchNeedDetails(details.need);
+ }
+ setUrl():void{
+  localStorage.setItem('redirectTo', this.router.url);
+
  }
 }

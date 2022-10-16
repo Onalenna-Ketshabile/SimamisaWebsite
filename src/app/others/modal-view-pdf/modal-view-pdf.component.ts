@@ -31,7 +31,7 @@ export class ModalViewPdfComponent implements OnInit {
         return this.docURL != undefined ;
   }
   reset(){
-    let x  = 'https://simamisa-images.s3.amazonaws.com/bigloader.gif'
+    let x  = 'https://simamisa-images.s3.amazonaws.com/big-loader.gif'
     this.docURL = this.sanitizer.bypassSecurityTrustResourceUrl(x);
   }
 

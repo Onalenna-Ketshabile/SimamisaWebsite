@@ -45,6 +45,22 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
     }
    
   }
+  color(): string{
+    if(this.status =="Needs Action"){
+      return "background-color: coral; color:white"
+    }
+    if(this.status =="Fulfilled"){
+      return "background-color: green; color:white"
+    }
+    if(this.status =="Awaiting Dropoff"){
+      return "background-color: yellow; color:white"
+    }
+    if(this.status =="Rejected"){
+      return "background-color: red; color:white"
+    }
+
+    return "color:black"
+  }
   isFlagged(){
 
     return this.proposal.registeredUser.isFlagged == "1";

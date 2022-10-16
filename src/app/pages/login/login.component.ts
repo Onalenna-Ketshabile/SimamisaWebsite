@@ -45,20 +45,27 @@ export class LoginComponent implements OnInit {
     this.loadingHandler.start();
     this.authService.login(body).subscribe(data=>{
       console.log(data);
+      if(data){
       this.loadingHandler.finish();
       this.returnUrl= this.route.snapshot.queryParams['returnUrl'];
+
       var router = "home";
+      const redirect:string = localStorage.getItem('redirectTo')!;
+      if (redirect) {
+       localStorage.removeItem('redirectTo');
+      router = redirect;
+      }
       if(this.authService.getUserRole==="M") router= 'manager' ;
     // this.router.navigateByUrl(this.returnUrl);
 
       if(this.authService.getUserRole==="A") router = 'admin';
      // this.router.navigateByUrl(this.returnUrl);
-     
+    
      window.location.href = router;
      console.log("router:");
      console.log(this.returnUrl);
 
-  
+      }
     });
   }
 

@@ -22,6 +22,15 @@
 </ng-select>
 </div>
 </div>
+<div class="col-sm-12">
+  <div class="search-question-holder">
+    <form #searchForm="ngForm" (ngSubmit)="search(searchForm.value)">
+        <input class="search-input" name="name" type="text" placeholder="Search child . . ." required ngModel/><input type="submit" class="hbtn hbtn-primary btn-search" value="Search"/>
+    
+    </form>
+  </div> 
+</div>
+
 <section class="event-area section-gap-extra-bottom">
     <div class="container">
       <div  *ngIf="loaderService.isLoading | async" class="row" >

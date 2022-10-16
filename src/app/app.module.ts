@@ -70,7 +70,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { NetworkInterceptor } from './network.interceptor';
+import {NgxPaginationModule} from 'ngx-pagination';
 import {InterceptorService} from './services/interceptor.service'
 import { DonateComponent } from './pages/donate/donate.component';
 import { DashboardAdminComponent } from './pages/admin/dashboard-admin/dashboard-admin.component';
@@ -195,7 +195,7 @@ import { RowSponsorAccComponent } from './pages/manager/row-sponsor-acc/row-spon
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, CommonModule, CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     BrowserAnimationsModule, MatProgressSpinnerModule, MatToolbarModule, HttpClientModule, NgSelectModule, QRCodeModule, MatProgressBarModule, MatTooltipModule,
-    NgxSpinnerModule,
+    NgxSpinnerModule,NgxPaginationModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

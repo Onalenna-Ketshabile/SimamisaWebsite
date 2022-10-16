@@ -1,15 +1,11 @@
 <app-modal-view-pdf *ngIf="false" ></app-modal-view-pdf>
-
+<td><b>{{sponsorRequest.child.Nickname}}</b></td>
 <td>
-    <div class="avatar-sm d-inline-block align-middle me-2">
-        <div class="avatar-title bg-soft-primary text-primary font-size-20 m-0 rounded-circle">
-            <i class="bx bxs-user-circle"></i>
-        </div>
-    </div>
+
     <a class="text-body">{{sponsorRequest.registeredUser.FirstName}}</a>
 </td>
 <td>{{sponsorRequest.registeredUser.Email}}</td>
-<td>{{sponsorRequest.child.Nickname}}</td>
+
 <td>
     <i style="margin-right: 5px;" class="fa fa-file-pdf-o" aria-hidden="true"></i>
     <a href="#">{{sponsorRequest.registeredUser.FirstName}}ID.pdf</a>

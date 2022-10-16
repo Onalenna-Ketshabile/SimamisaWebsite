@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Child } from 'src/app/models/child';
 import { Orphanage } from 'src/app/models/orphanage';
@@ -13,6 +13,8 @@ export class ChilditemComponent implements OnInit {
 
   @Input()
   child!: Child;
+  @Output()
+  imClicked: EventEmitter<any> = new EventEmitter();
   orphanage!: Orphanage;
  orphName!: string;
   constructor(private router:Router,private orphanage_service: OrphanageService) { }
@@ -29,11 +31,23 @@ export class ChilditemComponent implements OnInit {
       }
     });
   }
+
+  show():boolean{
+    if(localStorage.getItem("userRole")==null &&localStorage.getItem("userName")==null ){
+      return false;
+    }else{
+      return true;
+    }
+  }
   onSelected(_child: Child): void{
 
+    if(this.show()){
+      console.log(_child);
+      this.router.navigate(['/orphanage/'+_child.orphanageID+'/child/'+_child.ID]);
+    }else{
+      this.imClicked.emit();
+    }
     
-     console.log(_child);
-     this.router.navigate(['/orphanage/'+_child.orphanageID+'/child/'+_child.ID]);
   }
 
 }

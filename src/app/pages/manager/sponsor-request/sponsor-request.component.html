@@ -61,19 +61,20 @@
                                             <table class="table table-bordered table-responsive">
                                                 <thead>
                                                 <tr>
-                                                    
-                                                    <th scope="col">Name</th>
+                                                  <th scope="col">Child To Sponsor</th>
+                                                    <th scope="col">Sponsor Name</th>
                                                     <th scope="col">Email</th>
-                                                    <th scope="col">Child To Sponsor</th>
+                                                   
                                                     <th scope="col">National ID</th>
                                                     <th scope="col">Income Statement/Affidavit</th>         
                                                     <th style="width: 80px; min-width: 80px;">Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                  <tr app-sponsor-request-item  *ngFor="let sponsorRequest of sponsorRequests" [sponsorRequest]="sponsorRequest" (elementUpdated)="onElementUpdated($event)" >
+                                                  <tr app-sponsor-request-item  *ngFor="let sponsorRequest of sponsorRequests | paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength };" [sponsorRequest]="sponsorRequest" (elementUpdated)="onElementUpdated($event)" >
                                                      
                                                   </tr>
+
                                                     <!-- <tr app-sponsor-request-item >   *ngFor="let sponsorRequest of sponsorRequests" [sponsorRequest]="sponsorRequest" </tr> -->
                                                 </tbody>
                                             </table>
@@ -81,6 +82,10 @@
                                         </div>
                                         <div *ngIf="!show()">
                                           <img src="../../../../assets/images/empty.jpg">
+                                      </div>
+                                      <div *ngIf="show()" class="row" style="text-align:center;">
+
+                                        <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
                                       </div>
                                         <!-- end table responsive -->
                                    </div>

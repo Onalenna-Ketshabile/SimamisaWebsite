@@ -28,5 +28,8 @@ UserName!: Observable<String>;
     return (this.router.routerState.snapshot.url.includes('login')||this.router.routerState.snapshot.url.includes('logout')||this.router.routerState.snapshot.url.includes('register')||this.UserRole.getValue()=='M'|| this.UserRole.getValue()=='A');
 
   }
- 
+  setUrl():void{
+    localStorage.setItem('redirectTo', this.router.url);
+  
+   }
 }

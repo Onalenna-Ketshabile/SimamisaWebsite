@@ -50,7 +50,7 @@
           </div>
           <div  *ngIf="!show()" class="col-sm-12">
             <div class="search-question-holder">
-                <button  class="main-btn"   data-bs-toggle="modal" data-bs-target="#showQR" >Get our mobile app<i class="fa fa-download"></i></button>
+                <button  class="main-btn" (click)="setUrl()"   data-bs-toggle="modal" data-bs-target="#showQR" >Get our mobile app<i class="fa fa-download"></i></button>
             </div> 
         </div>
       </div>

@@ -53,9 +53,10 @@
   <li><a href="home" routerLink="home"><span class="icon color5"><i class="fa fa-home"></i></span>Home<span class="label label-default"> </span></a></li>
   <li><a href="dashboard" routerLink="dashboard"><span class="icon color5"><i class="fa fa-line-chart"></i></span>Dashboard<span class="label label-default"> </span></a></li>
 
-  <li><a  href="orphanages" routerLink="orphanages"><span class="icon color6"><i class="fa-solid fa-house-chimney-user"></i></span>Orphanages<span class="label label-default"></span></a></li>
+  <!-- <li><a  href="orphanages" routerLink="orphanages"><span class="icon color6"><i class="fa-solid fa-house-chimney-user"></i></span>Orphanages<span class="label label-default"></span></a></li> -->
   <li><a ><span class="icon color7"><i class="fa fa-users"></i></span>Partnership<span class="caret"></span></a> 
     <ul>
+      <li><a href="orphanages" routerLink="orphanages">Orphanages</a></li>
       <li><a href="partners" routerLink="partners">My Partners</a></li>
       <li><a href="partnering-requests" routerLink="partnering-requests">Partnering Requests</a></li>
       <li><a href="my-offers" routerLink="my-offers">My Offers</a></li>
@@ -100,7 +101,7 @@
 <!-- END CONTAINER -->
  <!-- //////////////////////////////////////////////////////////////////////////// --> 
  <!-- START SIDEPANEL: NOTIFICATIONS-->
-<div role="tabpanel" class="sidepanel">
+<div role="tabpanel" class="sidepanel" *ngIf="sidePanelOpen">
 
   <!-- Nav tabs -->
 
@@ -123,7 +124,7 @@
   </div>
       <ul class="list-w-title" style="background: rgba(254,248,245,0.2);">
         <li *ngFor="let newNotification of newNotifications?.slice(0,numNewNotifications)" style="background: #fef5ef">
-          <a href="#">
+          <a (click)="openNotification()" [href]="getLink(newNotification)" [routerLink]="getLink(newNotification)"  >
            <span class="label label-danger">New</span> 
             <span class="date" style="margin-bottom: 10px">{{newNotification?.NotificationTime?.slice(0,10)}} {{newNotification?.NotificationTime?.slice(11,16)}}</span>
             <h4>{{newNotification?.Title}}</h4>
@@ -131,7 +132,7 @@
           </a>
         </li>
         <li *ngFor="let oldNotification of oldNotifications?.slice(0,maxOffset)">
-          <a href="#">
+          <a  (click)="openNotification()" [href]="getLink(oldNotification)"  [routerLink]="getLink(oldNotification)" >
            <span class="label label-danger"></span> 
             <span class="date" style="margin-bottom: 10px">{{oldNotification?.NotificationTime?.slice(0,10)}} {{oldNotification?.NotificationTime?.slice(11,16)}}</span>
             <h4>{{oldNotification?.Title}}</h4>

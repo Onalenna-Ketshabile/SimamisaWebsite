@@ -13,21 +13,25 @@
 </div>
 
  <section class="pb-0" id="blog">
-    <div class="container">
+    <div *ngIf="!invalidUser" class="container">
         <div  *ngIf="loaderService.isLoading | async" class="row" >
             <div class="col-sm-12">
                 <div style="margin-left:500px;margin-top:30px;margin-bottom:30px">
                     <app-loading-indicator></app-loading-indicator>
-                </div>
-            
+                </div>        
             </div>
         </div>
       <div class="row mt-50">
-       <app-childitem *ngFor="let child of children" [child]="child"></app-childitem>
+       <app-childitem  *ngFor="let child of children | paginate: { itemsPerPage: 9, currentPage: page,totalItems:totalLength };" (imClicked)="onChildClicked($event)" [child]="child"></app-childitem>
 
      
       </div>
+      <div  class="row" style="text-align:center;">
+
+		<pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+	</div>
     </div>
+ 
   </section>
   <!--=== Blogs End ===-->
 

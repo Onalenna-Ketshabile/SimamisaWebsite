@@ -17,10 +17,12 @@ export class AllneedsComponent implements OnInit {
 
   @Input()
   id!:any
-  needs?: Need[];
+  needs!: Need[];
   needOriginal?: Need[];
   isLoaded= false;
   loadingHandler = new LoadingHandler();
+  totalLength:any;
+  page:number=1;
   constructor(private needs_service:NeedsService,private orphService:OrphanageService, public loaderService:LoaderService, private dataToModals:DataToModalsService) {
 
 
@@ -32,7 +34,7 @@ export class AllneedsComponent implements OnInit {
 
      this.dataToModals.SearchNeedSent$.subscribe(data=>{
       console.log("Arrived need to search for: ", data);
-      this.needs = this.needOriginal?.filter( need => (need.Title.toLowerCase() == data.toLowerCase()));
+      this.needs = this.needOriginal!.filter( need => (need.Title.toLowerCase() == data.toLowerCase()));
         this
      });
 
@@ -56,14 +58,14 @@ export class AllneedsComponent implements OnInit {
           let need = data.find((nd)=>nd.ID==this.id);
           this.needs = new Array(need!);
           this.needOriginal = this.needs;
-          this.loadingHandler.finish(); 
+         this.totalLength = data.length; 
           this.isLoaded=true;    
         })
       }else{
         this.needs_service.getOrphanageNeeds().subscribe(data=>{
           this.needs =data;
           this.needOriginal = this.needs;
-          this.loadingHandler.finish();
+          this.totalLength = data.length; 
           this.isLoaded=true;    
         });
       }

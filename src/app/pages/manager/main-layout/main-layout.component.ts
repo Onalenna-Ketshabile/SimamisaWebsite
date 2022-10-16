@@ -5,7 +5,7 @@ import { notificationAll } from 'src/app/models/notificationAll';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NotificationsService } from 'src/app/services/notifications.service';
 import { LoaderService } from '../../../services/loader.service';
-
+import {ChangeDetectorRef } from '@angular/core';
 declare var window: any;
 
 @Component({
@@ -39,7 +39,11 @@ UserName!: Observable<String>;
   maxOffset = 0;
 
   
-  constructor(private authService:AuthenticationService, private notificationService: NotificationsService, public loaderService:LoaderService) {
+  constructor(private authService:AuthenticationService,
+     private notificationService: NotificationsService,
+     public loaderService:LoaderService,
+     private cdref: ChangeDetectorRef
+     ) {
     
     console.log("SidePanelOpen: ",this.sidePanelOpen);
     
@@ -66,7 +70,7 @@ UserName!: Observable<String>;
    }
 
   ngOnInit(): void {
-
+    
     this.notificationService.getManagerNotificationsNum().subscribe(data=>{
  
       this.notificationNum = data;
@@ -99,7 +103,10 @@ UserName!: Observable<String>;
          }
       }
       else{
-        
+        this.maxOffset = this.maxNotificatios - this.numNewNotifications;
+        if(this.maxOffset<0){
+         this.maxOffset = 0;
+        }
         console.log("No New Notifications .");
         this.numNewNotifications = 0;
         console.log("num", this.numNewNotifications);
@@ -113,7 +120,21 @@ UserName!: Observable<String>;
     });
     }
   }
-
+  ngAfterContentChecked() {
+    this.cdref.detectChanges();
+  }
+  getLink(notif:notification):string{
+       if(notif.Title.includes("Proposal")){
+        return "item-proposals";
+       }
+       if(notif.Title.includes("Sponsorship")){
+        return "sponsor-request";
+       }
+       if(notif.Title.includes("partnering")){
+        return "partnering-requests";
+       }
+       return"#";
+  }
 
   openModal(){
      this.formModal.show();

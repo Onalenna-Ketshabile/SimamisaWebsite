@@ -78,7 +78,7 @@
                                         <tbody>
                                             
 
-                                            <tr  app-dropoff-item *ngFor="let proposal of proposals"
+                                            <tr  app-dropoff-item *ngFor="let proposal of proposals  | paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength }"
                                             [proposal]="proposal" (elementUpdated)="onElementUpdated($event)">
 
                                       
@@ -92,6 +92,10 @@
                                 <div *ngIf="!show()">
                                     <img src="../../../assets/images/empty.jpg">
                                 </div>
+                                <div *ngIf="show()" class="row" style="text-align:center;">
+
+                                    <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+                                  </div>
                             </div>
 
                         </div>
@@ -130,7 +134,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr app-pickup-item *ngFor="let proposal of proposals"
+                                            <tr app-pickup-item *ngFor="let proposal of proposals  | paginate: { itemsPerPage: 5, currentPage: page,totalItems:totalLength };"
                                             [proposal]="proposal" (elementUpdated)="onElementUpdated($event)"></tr>
 
 
@@ -142,6 +146,10 @@
                                 <div *ngIf="!show()">
                                     <img src="../../../assets/images/empty.jpg">
                                 </div>
+                                <div *ngIf="show()" class="row" style="text-align:center;">
+
+                                    <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+                                  </div>
                             </div>
 
                         </div>
