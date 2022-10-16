@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Orphanage } from 'src/app/models/orphanage';
 import { DataToModalsService } from 'src/app/services/data-to-modals.service';
+import { LoaderService } from 'src/app/services/loader.service';
 import { OrphanageService } from 'src/app/services/orphanage.service';
 
 interface Filter {
@@ -29,21 +30,49 @@ export class VieworphanagesComponent implements OnInit {
     { id: 10, name: 'Western Cape' },
   ];
   filterval: number = 1;
-
-  constructor(private orphService:OrphanageService,private dataToModals: DataToModalsService) { }
+ isLoaded=false;
+  constructor(private orphService:OrphanageService,private dataToModals: DataToModalsService, public loaderService:LoaderService) { }
 
   ngOnInit(): void {
     this.orphService.init();
+    
+    this.getOrphanages();
+     
+  }
+
+  getOrphanages():void{
     this.orphService.getOrphanages().subscribe(data=>{
       this.orphanages =data;
       this.orphanageOriginal = data;
+      // this.isLoaded = true;
     });
 
     this.dataToModals.SearchOrphanageSent$.subscribe(data=>{
       console.log("Arrived orphanage to search for: ", data);
       this.orphanages = this.orphanageOriginal?.filter( orphanage => (orphanage.OrphanageName.toLowerCase().includes(data.toLowerCase()) ));
-     });
-
      
+    });
   }
+  show(){ 
+
+    return !(this.isLoaded && this.orphanages!.length<1) ;
+}
+
+  updateFilter(): void {
+    
+    let selected = this.filters.find(prop => (prop.id == this.filterval))!;
+   if(selected.name == 'None'){
+    this.orphanages =this.orphanageOriginal; 
+    this.isLoaded=true;
+   }else{
+    this.orphanages = this.orphanageOriginal?.filter(prop => {return prop.OrphanageAddress.includes(selected.name)} );
+    this.isLoaded=true;
+   }
+
+    
+       
+  }
+
+
+
 }

@@ -8,13 +8,20 @@
         <ng-select style="margin-top: 5px;display: inline-flex; padding-bottom: 0px; margin-left: 5px" [clearable]="false" [items]="filters" class="ngselectStyle"
         bindLabel="name"
         bindValue="id"
+        (change)="updateFilter()"
         [(ngModel)]="filterval">
   </ng-select>
     </div>
   </div>
-      <div class="row mt-50">
+ 
+      <div *ngIf="show()" class="row mt-50">
 <app-orphanage-item  *ngFor="let orph of orphanages" [orphanage]="orph"></app-orphanage-item>
-      </div>
+     
+</div>
+<div *ngIf="!show()" class="row mt-50">
+  <img src="../../../../assets/images/empty.jpg">
+  <h1>No Orphanages in the requested province have registered with us yet</h1>
+</div>
     </div>
   </section>
   <!--=== Blogs End ===-->
