@@ -1,45 +1,24 @@
-/*** ======= // TABLE OF CONTENT // ============================
-01- Google Fonts
-02- General Styling
-03- Cross Browser Compatibility
-04- Theme Style
-05- Header Styles
-    05.1- Header Style 1
-    05.2- Menu Style
-    05.3- Header Ver 2
-    05.4- Menu Style 2
-06- 
 
-===================================================== ***/
-
-/*===== Google Fonts =====*/
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i&amp;display=swap);
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap);
 
 
 /*===== General Styling =====*/
-body, 
-html {overflow-x: hidden;}
-body {
-  margin: 0;
-  font-family: Arimo;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-}
+
+
 h1,
 
 h3,
 h4,
 h5,
 h6 {
-  font-family: Rubik;
+ 
   color: #333;
   font-weight: 700;
   font-size: xx-large;
 }
 p {
-  font-family: Arimo;
+
   color: #666;
   line-height: 1.875rem;
   font-size: 1.0625rem;
@@ -47,7 +26,7 @@ p {
 }
 ul li,
 ol li {
-  font-family: Rubik;
+   
   color: #666;
   font-size: 1rem;
   line-height: 1.875rem;
@@ -59,121 +38,7 @@ ins {
   text-decoration:none;
   outline:none;
 }
-input,
-textarea,
-select,
-button {border: 0;}
-button,
-input[type="submit"],
-.fileContainer,
-input[type="file"] {cursor: pointer;}
-input:focus,
-textarea:focus,
-select:focus,
-button:focus,
-a:focus,
-.form-wrp fieldset p a:focus,
-.page-link:focus,
-.btn.focus, 
-.btn:focus,
-.bootstrap-select .dropdown-toggle:focus {
-  border-color: transparent;
-  outline: none !important;
-  -webkit-box-shadow: none !important;
-  -ms-box-shadow: none !important;
-  -o-box-shadow: none !important;
-  box-shadow: none !important;
-}
-textarea {resize: none;}
-main,
-section,
-footer,
-.block {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  max-width: 100%;
-  position:relative;
-  width:100%;
-}
-.block {padding: 7.8125rem 0;}
-.less-spacing,
-.block.less-spacing {padding: 6.25rem 0;}
-.top-spac50,
-.block.top-spac50 {padding-top: 3.125rem;}
-.bottom-spac50,
-.block.bottom-spac50 {padding-bottom: 3.125rem;}
-.top-spac60,
-.block.top-spac60 {padding-top: 3.75rem;}
-.bottom-spac60,
-.block.bottom-spac60 {padding-bottom: 3.75rem;}
-.top-spac70,
-.block.top-spac70 {padding-top: 4.375rem;}
-.bottom-spac70,
-.block.bottom-spac70 {padding-bottom: 4.375rem;}
-.top-spac80,
-.block.top-spac80 {padding-top: 5rem;}
-.bottom-spac80,
-.block.bottom-spac80 {padding-bottom: 5rem;}
-.top-spac90,
-.block.top-spac90 {padding-top: 5.625rem;}
-.bottom-spac90,
-.block.bottom-spac90 {padding-bottom: 5.625rem;}
-.top-spac100,
-.block.top-spac100 {padding-top: 6.25rem;}
-.bottom-spac100,
-.block.bottom-spac100 {padding-bottom: 6.25rem;}
-.top-spac104,
-.block.top-spac104 {padding-top: 6.5rem;}
-.bottom-spac104,
-.block.bottom-spac104 {padding-bottom: 6.5rem;}
-.top-spac110,
-.block.top-spac110 {padding-top: 6.875rem;}
-.bottom-spac110,
-.block.bottom-spac110 {padding-bottom: 6.875rem;}
-.top-spac170,
-.block.top-spac170 {padding-top: 10.625rem;}
-.bottom-spac170,
-.block.bottom-spac170 {padding-bottom: 10.625rem;}
-.top-spac220,
-.block.top-spac220 {padding-top: 13.75rem;}
-.bottom-spac220,
-.block.bottom-spac220 {padding-bottom: 13.75rem;}
-.top-spac250,
-.block.top-spac250 {padding-top: 15.625rem;}
-.bottom-spac250,
-.block.bottom-spac250 {padding-bottom: 15.625rem;}
-.top-spac270,
-.block.top-spac270 {padding-top: 16.875rem;}
-.bottom-spac270,
-.block.bottom-spac270 {padding-bottom: 16.875rem;}
-.top-spac460,
-.block.top-spac460 {padding-top: 28.75rem;}
-.bottom-spac460,
-.block.bottom-spac460 {padding-bottom: 28.75rem;}
-.remove-gap,
-.gap.remove-gap {padding-top: 0;}
-.remove-bottom,
-.block.remove-bottom {padding-bottom: 0;}
-.no-padding,
-.block.no-padding {padding: 0;}
-.wht-bg {background-color: #fff;}
-.drk-bg {background-color: #0f0f0f;}
-.drk-bg2 {background-color: #111111;}
-.drk-bg3 {background-color: #0d0d0d;}
-.gray-bg {background-color: #fafafa;}
-.gray-bg2 {background-color: #f9f9f9;}
-.gray-bg3 {background-color: #fbfbfb;}
-.blue-bg {background-color: #2a255e;}
-.gray-grdnt-bg {
-  background-image: -moz-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(250,250,250,0.85) 28%, rgba(250,250,250,0.65) 42%, rgba(250,250,250,0.4) 64%, rgba(250,250,250,0.3) 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(250,250,250,1)), color-stop(28%, rgba(250,250,250,0.85)), color-stop(42%, rgba(250,250,250,0.65)), color-stop(64%, rgba(250,250,250,0.4)), color-stop(100%, rgba(250,250,250,0.3)));
-  background-image: -webkit-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(250,250,250,0.85) 28%, rgba(250,250,250,0.65) 42%, rgba(250,250,250,0.4) 64%, rgba(250,250,250,0.3) 100%);
-  background-image: -o-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(250,250,250,0.85) 28%, rgba(250,250,250,0.65) 42%, rgba(250,250,250,0.4) 64%, rgba(250,250,250,0.3) 100%);
-  background-image: -ms-linear-gradient(top, rgba(250,250,250,1) 0%, rgba(250,250,250,0.85) 28%, rgba(250,250,250,0.65) 42%, rgba(250,250,250,0.4) 64%, rgba(250,250,250,0.3) 100%);
-  background-image: linear-gradient(to bottom, rgba(250,250,250,1) 0%, rgba(250,250,250,0.85) 28%, rgba(250,250,250,0.65) 42%, rgba(250,250,250,0.4) 64%, rgba(250,250,250,0.3) 100%);
-}
+
 .shp-tp {
   background-color: inherit;
   position: absolute;
@@ -800,7 +665,7 @@ nav > div ul li,
   z-index: 99999999;
 }
 .loader span {
-  font-family: Rubik;
+   
   position: absolute;
   font-weight: normal;
   top: 52%;
@@ -851,7 +716,7 @@ nav > div ul li,
   -webkit-box-shadow: inset 0 0 0 1px #3e3e3e, 0 0 1px 1px #3e3e3e;
   box-shadow: inset 0 0 0 1px #3e3e3e, 0 0 1px 1px #3e3e3e;
   opacity: 1;
-  font-family: Rubik;
+   
 }
 .loader-style-1 .cube-face-front {
   -webkit-transform: translate3d(0, 0, 40px);
@@ -1051,7 +916,7 @@ nav > div ul li,
   line-height: 64px;
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: Rubik;
+   
   padding: 0 3.125rem;
   position: relative;
   min-height: 4.375rem;
@@ -1070,7 +935,7 @@ nav > div ul li,
   display: inline-block;
   border-bottom: 0.0625rem solid;
   font-weight: 700;
-  font-family: rubik;
+   
 }
 .blue-layer .wb-top-donate-list-wrap > a {color: #fff;}
 .wb-top-donate-list-wrap > a i {margin-left: 0.625rem;}
@@ -1197,7 +1062,7 @@ nav > div > ul > li {
   font-size: 1.0625rem;
   width: auto;
   color: #fff;
-  font-family: Rubik;
+   
   font-weight: 500;
   line-height: 3.875rem;
 }
@@ -1231,7 +1096,7 @@ nav > div ul ul ul:before {
 }
 nav > div ul ul li {
   font-size: 0.875rem;
-  font-family: Rubik;
+   
   font-weight: 400;
   margin-top: 20px;
   opacity: 0;
@@ -1656,7 +1521,7 @@ header.style1.v3 {padding-top: 1.875rem;}
 .abt-desc > span {
   display: inline-block;
   font-size: 1rem;
-  font-family: Rubik;
+   
   font-weight: 500;
   text-transform: uppercase;
   border-bottom: 0.0625rem solid;
@@ -1765,7 +1630,7 @@ header.style1.v3 {padding-top: 1.875rem;}
   display: inline-block;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: Rubik;
+   
   color: #fff;
   overflow: hidden;
   padding: 1.109rem 2.8125rem;
@@ -1860,7 +1725,7 @@ header.style1.v3 {padding-top: 1.875rem;}
 .fct-bx > span {
   font-size: 1.0625rem;
   display: inline-block;
-  font-family: Rubik;
+   
   color: #666;
 }
 .clr2 {color: #c48016;}
@@ -1975,7 +1840,7 @@ header.style1.v3 {padding-top: 1.875rem;}
   left: 2.5rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  font-family: Rubik;
+   
 }
 .cus-cat > a {
   color: #fff;
@@ -2048,7 +1913,7 @@ header.style1.v3 {padding-top: 1.875rem;}
   width: 2.8125rem;
   position: absolute;
   right: -1.40625rem;
-  font-family: Rubik;
+   
   font-size: 0.8125rem;
   font-weight: 500;
   border: 0.0625rem solid #fbfbfb;
@@ -2066,7 +1931,7 @@ header.style1.v3 {padding-top: 1.875rem;}
 .cus-amt {
   font-size: 1rem;
   display: inline-block;
-  font-family: Rubik;
+   
   color: #666;
 }
 .cus-amt i {
@@ -2103,6 +1968,7 @@ header.style1.v3 {padding-top: 1.875rem;}
 .evnt-wrp {
   display: inline-block;
   width: 100%;
+  margin: 30px 0px 30px;
 }
 .remove-ext8 .evnt-bx {margin-bottom: 3.4375rem;}
 .evnt-bx {
@@ -2115,8 +1981,8 @@ header.style1.v3 {padding-top: 1.875rem;}
   box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
 }
 .evnt-thmb {
-  min-width: 540px;
-  max-width: 540px;
+  min-width: 500px;
+  max-width: 500px;
   position: relative;
 }
 .evnt-thmb + .evnt-inf {padding: 0 5rem 0 5.625rem;}
@@ -2185,7 +2051,7 @@ header.style1.v3 {padding-top: 1.875rem;}
   color: #333;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: Rubik;
+   
   padding: 0.984375rem 2.9375rem;
   z-index: 1;
 }
@@ -2427,7 +2293,7 @@ header.style1.v3 {padding-top: 1.875rem;}
 .bcm-adpt-inr > a {
   display: inline-block;
   font-size: 1rem;
-  font-family: Rubik;
+   
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
@@ -2491,7 +2357,7 @@ header.style1.v3 {padding-top: 1.875rem;}
 .cntry-hlp-md {width: 100%;}
 .cntry-hlp-md > span {
   width: 100%;
-  font-family: Rubik;
+   
   color: #3f3f3f;
   display: inline-block;
   font-size: 1rem;
@@ -2505,7 +2371,7 @@ header.style1.v3 {padding-top: 1.875rem;}
 .cntry-hlp-md > strong {
   text-transform: uppercase;
   font-size: 1rem;
-  font-family: Rubik;
+   
   display: inline-block;
   width: 100%;
 }
@@ -2591,7 +2457,6 @@ header.style1.v3 {padding-top: 1.875rem;}
 }
 footer .wdgt-bx ul.abt-cnt-lst li {
   padding-left: 2.1875rem;
-  font-family: arimo;
 }
 .dark-layer .wdgt-bx ul li {color: #d7d7d7;}
 .wdgt-bx ul li {
@@ -2621,7 +2486,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
 .wdgt-bx ul li + li {margin-top: 0.8125rem;}
 .dark-layer .cpyrgt-p {color: #d7d7d7;}
 .cpyrgt-p {
-  font-family: Rubik;
+   
   line-height: 62px;
 }
 .cpyrgt-p > a:hover, 
@@ -2638,7 +2503,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
 .ftr-sbscrb > p {
   font-size: 1.25rem;
   margin-bottom: 0;
-  font-family: Rubik;
+   
   line-height: 1.75rem;
 }
 .thm-layer p {color: #fff;}
@@ -2646,7 +2511,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
 .thm-layer a {color: #fff;}
 .ftr-sbscrb > a {
   font-size: 0.9375rem;
-  font-family: Rubik;
+   
   text-decoration: underline;
   display: inline-block;
   font-weight: 700;
@@ -2718,7 +2583,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
 .prg-dnt-inr > span {
   display: inline-block;
   font-size: 1.125rem;
-  font-family: Rubik;
+   
   letter-spacing: 0.025rem;
 }
 .prg-dnt-inr > span + h2 {margin-top: 0.625rem;}
@@ -2761,7 +2626,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
 .prg-dnt-cls > span {
   display: inline-block;
   font-size: 3.125rem;
-  font-family: Rubik;
+   
   line-height: initial;
   vertical-align: middle;
 }
@@ -2773,7 +2638,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
 .prg-dnt-cls-inf > strong {
   display: block;
   font-size: 1.125rem;
-  font-family: Rubik;
+   
   color: #333;
   min-width: 200px;
 }
@@ -2799,7 +2664,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
   display: inline-block;
   font-size: 1rem;
   text-transform: uppercase;
-  font-family: Rubik;
+   
   text-decoration: underline;
   letter-spacing: 0.075rem;
 }
@@ -2879,7 +2744,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
   display: inline-block;
   font-size: 1.0625rem;
   color: #999;
-  font-family: Rubik;
+   
 }
 .cus-inf2 > span i {
   font-weight: 500;
@@ -2914,7 +2779,7 @@ footer .wdgt-bx ul.abt-cnt-lst li {
 }
 .huslnd-inf > span {
   font-size: 3.75rem;
-  font-family: Rubik;
+   
   display: block;
   font-weight: 700;
   line-height: initial;
@@ -3002,7 +2867,7 @@ div.slick-current .strs-itm-inr > i {
 .strs-itm-inf-inr > h4 + span {margin-top: 0.125rem;}
 .strs-itm-inf-inr > span {
   display: block;
-  font-family: Rubik;
+   
   color: #999;
   font-size: 0.9375rem;
 }
@@ -3014,7 +2879,7 @@ div.slick-current .strs-itm-inr > i {
   cursor: pointer;
 }
 .strs-nav-itm > span {
-  font-family: Rubik;
+   
   color: #888;
   text-transform: uppercase;
   display: block;
@@ -3192,7 +3057,7 @@ div.slick-current .strs-itm-inr > i {
   display: block;
   font-size: 0.875rem;
   text-transform: uppercase;
-  font-family: Rubik;
+   
 }
 .spnsr-chld-inf > span + a {
   margin-bottom: -0.3125rem;
@@ -3302,7 +3167,7 @@ div.slick-current .strs-itm-inr > i {
   font-size: 0.9375rem;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: Rubik;
+   
   color: #fff;
   background-color: #000;
   padding: 0 1.875rem;
@@ -3328,7 +3193,7 @@ div.slick-current .strs-itm-inr > i {
 .ftr-scl > a {
   display: inline-block;
   font-size: 1.0625rem;
-  font-family: Rubik;
+   
   font-weight: 500;
 }
 .ftr-scl > a i {margin-right: 0.4375rem;}
@@ -3338,7 +3203,6 @@ div.slick-current .strs-itm-inr > i {
 .wdgt-bx.style2 ul li {font-size: 1.0625rem;}
 .wdgt-bx.style2 ul.abt-cnt-lst li {
   padding-left: 0;
-  font-family: arimo;
 }
 .wdgt-bx ul.abt-cnt-lst li:before {display: none;}
 .wdgt-bx ul.abt-cnt-lst li span {
@@ -3367,7 +3231,7 @@ div.slick-current .strs-itm-inr > i {
 .btm-br p {
   font-size: 1rem;
   color: #fff;
-  font-family: Rubik;
+   
   margin-bottom: 0;
   display: inline-block;
 }
@@ -3474,7 +3338,7 @@ div.slick-current .strs-itm-inr > i {
 }
 .abt-inf > span {
   display: block;
-  font-family: Rubik;
+   
   font-size: 3.125rem;
   font-weight: 500;
   line-height: initial;
@@ -3487,7 +3351,7 @@ div.slick-current .strs-itm-inr > i {
 .abt-inf > p {
   margin-bottom: 0;
   font-size: 1.125rem;
-  font-family: Rubik;
+   
   font-weight: 500;
 }
 .abt-wrp2 .abt-desc {max-width: 100%;}
@@ -3570,7 +3434,7 @@ div.slick-current .strs-itm-inr > i {
   display: block;
   background-color: #47474a;
   font-size: 1.125rem;
-  font-family: Rubik;
+   
   line-height: 2.5rem;
 }
 /*===== Ceo Message Style 1 =====*/
@@ -3610,7 +3474,7 @@ div.slick-current .strs-itm-inr > i {
   font-style: normal;
   font-weight: 500;
   text-transform: uppercase;
-  font-family: Rubik;
+   
   display: block;
   font-size: 1.25rem;
 }
@@ -3690,7 +3554,7 @@ div.slick-current .strs-itm-inr > i {
   display: block;
   font-size: 0.9375rem;
   color: #999;
-  font-family: Rubik;
+   
 }
 .tem-thmb:before {
   content: "";
@@ -3792,7 +3656,7 @@ div.slick-current .strs-itm-inr > i {
   line-height: 4.875rem;
   width: 4.875rem;
   font-size: 2.125rem;
-  font-family: Rubik;
+   
   -webkit-box-shadow: 0 0 0 0.5625rem rgba(23,23,23,.2);
   -ms-box-shadow: 0 0 0 0.5625rem rgba(23,23,23,.2);
   -o-box-shadow: 0 0 0 0.5625rem rgba(23,23,23,.2);
@@ -3929,7 +3793,7 @@ div.slick-current .strs-itm-inr > i {
 .ftr-dta-inr > p {
   margin-bottom: 0;
   color: #333;
-  font-family: Rubik;
+   
   font-size: 1rem;
 }
 .ftr-dta-inr > p span {font-weight: 500;}
@@ -4257,7 +4121,7 @@ div.slick-current .strs-itm-inr > i {
 .blg-bx3 > span {
   display: inline-block;
   font-size: 0.875rem;
-  font-family: Rubik;
+   
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -4318,7 +4182,7 @@ div.slick-current .strs-itm-inr > i {
 .feat-cap3 > span {
   display: block;
   color: #fff;
-  font-family: Rubik;
+   
   font-size: 1.5625rem;
 }
 .feat-cap3 > span + .countdown {margin-top: 1.5625rem;}
@@ -4527,13 +4391,13 @@ div.slick-current .strs-itm-inr > i {
   margin-bottom: 0;
   font-size: 2rem;
   line-height: 2.75rem;
-  font-family: Rubik;
+   
 }
 .ceo-msg2 > p + cite {margin-top: 1.875rem;}
 .ceo-msg2 > cite {
   font-size: 1.125rem;
   font-style: normal;
-  font-family: Rubik;
+   
   display: inline-block;
 }
 .ceo-msg2 > cite strong {font-weight: 500;}
@@ -4635,7 +4499,7 @@ ol.breadcrumb li.breadcrumb-item {
   font-size: 0.875rem;
   text-transform: uppercase;
   font-weight: 500;
-  font-family: Rubik;
+   
   color: #999;
   position: relative;
   line-height: 2.5rem;
@@ -4725,7 +4589,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
 .error-inr > strong {
   display: block;
   font-size: 10.625rem;
-  font-family: Rubik;
+   
   font-weight: 700;
   line-height: 10.625rem;
 }
@@ -4777,7 +4641,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
 .error-inr > a {
   display: inline-block;
   font-size: 1.0625rem;
-  font-family: Rubik;
+   
   text-transform: uppercase;
   font-weight: 700;
   border-bottom: 0.125rem solid;
@@ -4843,7 +4707,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
 .cmg-inr > p {
   color: #d7d7d7;
   margin-bottom: 0;
-  font-family: Rubik;
+   
   font-size: 1rem;
 }
 .cmg-inr > p a {font-weight: 500;}
@@ -4906,7 +4770,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
   font-size: 1.125rem;
   line-height: 1.875rem;
   text-transform: uppercase;
-  font-family: Rubik;
+   
   margin-bottom: 0;
   max-width: 90%;
 }
@@ -4995,14 +4859,14 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
 .srch-chld-frm-fld > label {
   margin-bottom: 0;
   text-transform: uppercase;
-  font-family: Rubik;
+   
   font-weight: 700;
   color: #333;
   font-size: 1.125rem;
   line-height: 2.5rem;
 }
 .srch-chld-frm-fld > span label {
-  font-family: Rubik;
+   
   color: #333;
   margin-bottom: 0;
   font-size: 0.875rem;
@@ -5056,7 +4920,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
   display: inline-block;
   line-height: 3.625rem;
   font-size: 0.875rem;
-  font-family: Rubik;
+   
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
@@ -5161,7 +5025,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
 }
 .spnsr-chld-dtl-inf-inr > h2 + i {margin-top: 0.375rem;}
 .spnsr-chld-dtl-inf-inr > i {
-  font-family: Rubik;
+   
   font-style: normal;
   text-transform: uppercase;
   font-size: 1rem;
@@ -5192,7 +5056,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
   display: inline-block;
   background-color: #e3b903;
   color: #fff;
-  font-family: Rubik;
+   
   font-size: 0.9375rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -5287,7 +5151,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
 }
 .spnsr-chld-frm-wrp label {
   margin-bottom: 0.3125rem;
-  font-family: Rubik;
+   
   font-weight: 500;
   color: #333;
   font-size: 1rem;
@@ -5420,7 +5284,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
 .abt-pg-desc p.blc-wt {
   font-size: 1.5rem;
   line-height: 2.25rem;
-  font-family: Rubik;
+   
   font-weight: 500;
   margin-bottom: 0.625rem;
 }
@@ -5485,7 +5349,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
   display: inline-block;
   font-size: 0.9375rem;
   color: #999;
-  font-family: Rubik;
+   
   vertical-align: middle;
 }
 .blg-dat + .blg-tgs {margin-left: 1.25rem;}
@@ -5541,7 +5405,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
   display: inline-block;
   color: #999;
   font-size: 0.875rem;
-  font-family: Rubik;
+   
 }
 .mini-pst-inf > span + h6 {margin-top: 0.3125rem;}
 .mini-pst-inf > h6 {
@@ -5605,7 +5469,7 @@ ol.breadcrumb li.breadcrumb-item + li.breadcrumb-item:before {
   color: #d4d4d4;
   display: inline-block;
   font-size: 0.875rem;
-  font-family: Rubik;
+   
 }
 .mini-cus-inf > span span {font-weight: 500;}
 .wdgt-bx.v2.nws-ltr-wdgt {padding: 0;}
@@ -5667,7 +5531,7 @@ ul.insta-gal + .insta-gal-inf {margin-top: 1.5625rem;}
   font-size: 0.875rem;
   color: #999;
   text-transform: uppercase;
-  font-family: Rubik;
+   
 }
 .insta-gal-inf-inr > h5 {
   margin-bottom: 0;
@@ -5754,7 +5618,7 @@ ul.insta-gal + .insta-gal-inf {margin-top: 1.5625rem;}
 .tem-dtl-inf-md > ul + span {margin-top: 0.9375rem;}
 .tem-dtl-inf-md > span {
   display: block;
-  font-family: Rubik;
+   
   font-size: 1.0625rem;
   font-weight: 600;
 }
@@ -5863,7 +5727,7 @@ blockquote > p {
   font-size: 1.25rem;
   line-height: 1.875rem;
   font-style: italic;
-  font-family: Rubik;
+   
 }
 blockquote + .alignright {margin-top: -1.25rem;}
 .gallery {width: 100%;}
@@ -5898,7 +5762,7 @@ blockquote + .alignright {margin-top: -1.25rem;}
 }
 .blg-scl > span {
   color: #999;
-  font-family: Rubik;
+   
   font-weight: 500;
   display: inline-block;
   font-size: 0.875rem;
@@ -6060,7 +5924,7 @@ blockquote + .alignright {margin-top: -1.25rem;}
 .cmt-inf > span {
   display: inline-block;
   font-size: 0.875rem;
-  font-family: Rubik;
+   
 }
 .cmt-inf > p {
   margin: 0.625rem 0 0;
@@ -6070,7 +5934,7 @@ blockquote + .alignright {margin-top: -1.25rem;}
 .comment-reply-link {
   color: #fff;
   text-transform: uppercase;
-  font-family: Rubik;
+   
   position: absolute;
   top: 0;
   right: 0;
@@ -6139,7 +6003,7 @@ blockquote + .alignright {margin-top: -1.25rem;}
   display: block;
   background-color: #47474a;
   font-size: 0.875rem;
-  font-family: Rubik;
+   
   line-height: 1.875rem;
 }
 .blg-dtl-thmb + .blog-dtl-wrp {margin-top: 2.5rem;}
@@ -6176,7 +6040,7 @@ blockquote.alignright {
   display: block;
   color: #999;
   font-size: 1.0625rem;
-  font-family: Rubik;
+   
 }
 .srch-fund-inr > span + form {margin-top: 0.625rem;}
 .srch-fund-inr form {
@@ -6220,7 +6084,7 @@ blockquote.alignright {
   background-color: rgba(0,0,0,.6);
   -webkit-border-radius: 2.5rem;
   border-radius: 2.5rem;
-  font-family: Rubik;
+   
   color: #fff;
   line-height: 3.4375rem;
   font-size: 1rem;
@@ -6366,7 +6230,7 @@ blockquote.alignright {
   color: #999;
   font-style: normal;
   font-size: 1rem;
-  font-family: Rubik;
+   
   font-weight: 500;
   right: 1.5625rem;
   position: absolute;
@@ -6411,7 +6275,7 @@ blockquote.alignright {
 .cstm-rdo {display: inline-block;}
 .cstm-rdo + .cstm-rdo {margin-left: 2.1875rem;}
 .cstm-rdo > label {
-  font-family: Rubik;
+   
   margin-bottom: 0;
   text-transform: uppercase;
   font-size: 1rem;
@@ -6431,7 +6295,7 @@ blockquote.alignright {
 }
 .dnt-fld2 > i {
   position: absolute;
-  font-family: Rubik;
+   
   color: #575757;
   font-style: normal;
   font-size: 1.25rem;
@@ -6462,7 +6326,7 @@ blockquote.alignright {
 .dnt-prc-lst > li span {
   width: 100%;
   color: #fff;
-  font-family: Rubik;
+   
   background-color: #999;
   display: block;
   line-height: 3.75rem;
@@ -6497,7 +6361,7 @@ blockquote.alignright {
   left: 0;
   line-height: 3.75rem;
   font-size: 1.0625rem;
-  font-family: Rubik;
+   
   color: #666;
 }
 .dnt-fld-inr {
@@ -6725,7 +6589,7 @@ blockquote.alignright {
 }
 .evnt-dtl-dt > span {
   display: block;
-  font-family: Rubik;
+   
   color: #666;
   font-size: 0.875rem;
   line-height: 1.4375rem;
@@ -6739,7 +6603,7 @@ blockquote.alignright {
 .evnt-dtl-btns > a:first-child {
   display: inline-block;
   vertical-align: middle;
-  font-family: Rubik;
+   
   text-transform: uppercase;
   font-size: 0.875rem;
   color: #333;
@@ -6855,7 +6719,7 @@ blockquote.alignright {
   display: block;
   color: #999;
   font-size: 0.9375rem;
-  font-family: Rubik;
+   
 }
 .evnt-glry-inr {width: 100%;}
 .remove-ext1 .gallery-item {margin-bottom: 1.25rem;}
@@ -6903,7 +6767,7 @@ blockquote.alignright {
   color: #fff;
   font-weight: 500;
   font-size: 2.8125rem;
-  font-family: Rubik;
+   
 }
 .prc-hed > span sup {
   top: -0.9375rem;
@@ -6942,7 +6806,7 @@ blockquote.alignright {
   border: 0.125rem solid #fff;
   -webkit-border-radius: 2.5rem;
   border-radius: 2.5rem;
-  font-family: Rubik;
+   
   text-transform: uppercase;
   font-size: 0.9375rem;
   font-weight: 700;
