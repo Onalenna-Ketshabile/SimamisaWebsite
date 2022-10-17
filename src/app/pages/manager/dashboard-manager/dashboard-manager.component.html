@@ -1,4 +1,5 @@
 
+<app-modal-calcgas></app-modal-calcgas>
 <div class="page-header" >
     <h1 class="title">Dashboard</h1>
       <ol hidden class="breadcrumb">
@@ -14,29 +15,31 @@
  <div class="col-container">
   
   <div class="col-sm-4 col-xs-4"> 
-    <div class="tile-stats tile-red"> 
+    <div class="tile-stats tile-red" style="height:170px"> 
       <div class="icon"><i class="entypo-home"></i></div>
-         <div class="num">4</div>
-          <h3>Pickups</h3>
-           <p>Left this week</p>
+         <div class="num">{{pickups}}</div>
+          <h3>Pickup(s)</h3>
+           <p>in the next 7 days</p>
    </div> 
     <!-- <app-doughnut-chart-proposals></app-doughnut-chart-proposals> -->
    </div>
    <div class="col-sm-4 col-xs-4"> 
-    <div class="tile-stats tile-blue"> 
+    <div class="tile-stats tile-blue" style="height:170px"> 
       <div class="icon"><i class="entypo-home"></i></div>
-         <div class="num">2</div>
-          <h3>Drop off </h3>
-           <p>left this week</p>
+         <div class="num">{{dropoffs}}</div>
+          <h3>Dropoff(s) </h3>
+           <p>in the next 7 days</p>
    </div> 
     <!-- <app-doughnut-chart-proposals></app-doughnut-chart-proposals> -->
    </div>
    <div class="col-sm-4 col-xs-4">
-    <div class="tile-stats tile-green"> 
+    <div class="tile-stats tile-green" style="height:170px"> 
       <div class="icon"><i class="entypo-home"></i></div>
-         <div class="num">14</div>
+         <div class="num">{{x}}</div>
           <h3>Litres</h3>
-           <p>of petrol estimated</p>
+           <p >of petrol/diesel estimated  <button type="button" data-bs-toggle="modal" data-bs-target="#calcgas"  >Calculate</button>
+           </p>
+              
    </div> 
      <!-- <app-pie-chart-donor-gender></app-pie-chart-donor-gender> -->
 

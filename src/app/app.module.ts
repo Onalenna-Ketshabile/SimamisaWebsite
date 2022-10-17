@@ -105,6 +105,7 @@ import { SponsorAccountabilityComponent } from './pages/manager/sponsor-accounta
 import { RowSponsorAccComponent } from './pages/manager/row-sponsor-acc/row-sponsor-acc.component';
 import { EventsComponent } from './pages/events/events.component';
 import { EventItemComponent } from './pages/event-item/event-item.component';
+import { ModalCalcgasComponent } from './others/modal-calcgas/modal-calcgas.component';
 
 
 @NgModule({
@@ -194,6 +195,7 @@ import { EventItemComponent } from './pages/event-item/event-item.component';
       RowSponsorAccComponent,
       EventsComponent,
       EventItemComponent,
+      ModalCalcgasComponent,
 
   ],
   imports: [
