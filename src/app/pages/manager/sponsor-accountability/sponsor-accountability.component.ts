@@ -15,7 +15,7 @@ export class SponsorAccountabilityComponent implements OnInit {
 
   ngOnInit(): void {
     this.managerService.getSponsorAccountability().subscribe(data=> {
-      this.sponsorAccountability = data;
+      this.sponsorAccountability = data.filter( (sponsor:accountability) => (sponsor.Number != 0));
 
       console.log("sponsorAcc", this.sponsorAccountability)
     });
