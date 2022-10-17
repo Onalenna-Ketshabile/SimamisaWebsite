@@ -3,7 +3,7 @@
     margin-bottom: 0;
     font-size: 22px;
     color: inherit;
-    padding: 23px;
+    padding: 18px;
     border: 1px solid black;
     width: fit-content;
     border-radius: 5px;
@@ -16,7 +16,7 @@
 }
 .donation-amount{
     background: #FFB282;
-    padding: 10px;
+    padding: 8px;
     border-radius: 7px;
     margin-left: 4px;
     font-weight: 500;

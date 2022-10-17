@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { DataToModalsService } from 'src/app/services/data-to-modals.service';
 import { DonationService } from 'src/app/services/donation.service';
 
@@ -8,14 +9,23 @@ import { DonationService } from 'src/app/services/donation.service';
   styleUrls: ['./modal-distribute-funds.component.css','./../../../assets/css/modal.css']
 })
 export class ModalDistributeFundsComponent implements OnInit {
-
+  @ViewChild('distributeFundsForm') distributeFundsForm!: NgForm;
   orphanageID!:number;
+  amountNeeded!: number;
   constructor(private dataToModals: DataToModalsService, private donationService: DonationService) { }
 
   ngOnInit(): void {
     this.dataToModals.idDistributeSent$.subscribe(data=>{
       this.orphanageID = data.ID;
+      this.amountNeeded = data.amountNeeded;
+      console.log(this.orphanageID, this.amountNeeded);
+      setTimeout(()=>{
+        console.log("BreakPoint");
+        this.distributeFundsForm.controls["unitCost"].setValue(this.amountNeeded);
+   
+      })
     });
+
   }
 
   Distribute(modalData: { unitCost: number;}){ //unitCost , the amount distributed

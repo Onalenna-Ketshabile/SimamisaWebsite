@@ -15,6 +15,7 @@ export class AdminReportsService {
   private adminNeedsReportTwo = new BehaviorSubject<adminNeedsReport[]>([]);
   private adminNeedsReportThree = new BehaviorSubject<adminNeedsReport[]>([]);
   private orphanageNeedsReport = new BehaviorSubject<adminOrphanageNeeds[]>([]);
+  private neededAmount = new BehaviorSubject<any[]>([]);
 
   private numberOfOrphanages = new BehaviorSubject<number[]>([]);
   private numberOfUsers = new BehaviorSubject<number[]>([]);
@@ -163,6 +164,19 @@ export class AdminReportsService {
       (donatiom)=>{
         this.donationAmount.next(donatiom);
         console.log("donation amount");
+      }
+    );
+  }
+
+    getNeededAmount():Observable<any>{
+    this._totalNeededAmount();
+    return this.neededAmount;
+
+  }
+  _totalNeededAmount(){
+    this.http.get<any[]>(this.apiURL.slice(0,-11)+'/admin/totalAmounts',{headers:this.headers}).subscribe(
+      (neededAmount)=>{
+        this.neededAmount.next(neededAmount);
       }
     );
   }
