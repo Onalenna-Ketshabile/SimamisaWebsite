@@ -206,7 +206,7 @@ th {
 
 label {
 	display: inline-block;
-	margin-bottom: .5rem;
+	margin-bottom: 15px;
 }
 
 button {
@@ -29618,7 +29618,7 @@ donate-amount2 {
 }
 
 .donation-form .section-title {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 .donation-form .section-title .title {
@@ -29652,12 +29652,16 @@ donate-amount2 {
 	color: #fff;
 	font-size: 18px;
 	font-weight: 700;
-	height: 58px;
+	height: 45px;
 	line-height: 58px;
 	margin-right: 20px;
 	min-width: 95px;
 	text-align: center;
 	transition: .3s;
+	border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (max-width:767px) {
@@ -32879,4 +32883,39 @@ donate-amount2 {
 .footer-area .footer-bottom .widget-social-icons a:hover {
 	background-color: #fff;
 	color: #fc6539;
+}
+
+.dnt-titl {
+    width: 100%;
+    margin-top: -1.125rem;
+}
+.dnt-titl > h2 {
+    margin-bottom: 23px;
+    font-size: 2.8125rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+.dnt-titl > h2 + p {
+    margin-top: 0.8125rem;
+}
+.dnt-titl > p {
+    margin-bottom: 0;
+    font-family: Arimo;
+    color: #666;
+    line-height: 1.875rem;
+    font-size: 1.0625rem;
+    font-weight: 400;
+	margin-bottom: 15px;
+}
+.dnt-titl > h2 + p {
+    margin-top: 0.8125rem;
+}
+.dnt-titl > p {
+    margin-bottom: 0;
+    color: #666;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 400;
 }

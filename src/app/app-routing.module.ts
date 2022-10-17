@@ -16,6 +16,7 @@ import { LoadingIndicatorSpinnerComponent } from './others/loading-indicator-spi
 import { DonateComponent } from './pages/donate/donate.component';
 import { OrphanageSingleComponent } from './pages/orphanage-single/orphanage-single.component';
 import { ItemProposalsComponent } from './pages/item-proposals/item-proposals.component';
+import { EventsComponent } from './pages/events/events.component';
 
 const routes: Routes = [
  
@@ -28,6 +29,9 @@ const routes: Routes = [
   { path: 'infohubpost', component: InfohubPostComponent },
   { path: 'newsfeed', component: NewsfeedComponent },
   { path: 'newsfeedpost', component: NewsfeedPostComponent },
+
+  { path: 'events', component: EventsComponent },
+
   {
     path: 'manager',
   canActivate:[AuthGuard],
