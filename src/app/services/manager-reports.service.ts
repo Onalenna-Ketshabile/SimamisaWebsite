@@ -35,8 +35,18 @@ export class ManagerReportsService {
   this.headers.set('Access-Control-Allow-Origin', '*');
 
    }
-
+   
   
+  getWeeklyPickups(orphanageID:string):Observable<any>{
+          return this.http.get(this.apiURL+"om/pickups/?id="+orphanageID,this.headers);
+  }
+  getWeeklyDropoffs(orphanageID:string):Observable<any>{
+    return this.http.get(this.apiURL+"om/drops/?id="+orphanageID,this.headers);
+}
+
+getGasNeeded(orphanageID:string):Observable<any>{
+  return this.http.get(this.apiURL+"om/gas/?id="+orphanageID,this.headers);
+}
   getManagerNeedsReportOne(orphanageID:string):Observable<any>{
     this._managerNeedsReportOne(orphanageID);
     return this.managerNeedsReportOne;

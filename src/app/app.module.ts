@@ -103,6 +103,7 @@ import { TableUnreliableUsersComponent } from './pages/manager/table-unreliable-
 import { TableRowUnreliableUsersComponent } from './pages/manager/table-row-unreliable-users/table-row-unreliable-users.component';
 import { SponsorAccountabilityComponent } from './pages/manager/sponsor-accountability/sponsor-accountability.component';
 import { RowSponsorAccComponent } from './pages/manager/row-sponsor-acc/row-sponsor-acc.component';
+import { ModalCalcgasComponent } from './others/modal-calcgas/modal-calcgas.component';
 
 
 @NgModule({
@@ -190,6 +191,7 @@ import { RowSponsorAccComponent } from './pages/manager/row-sponsor-acc/row-spon
       TableRowUnreliableUsersComponent,
       SponsorAccountabilityComponent,
       RowSponsorAccComponent,
+      ModalCalcgasComponent,
 
   ],
   imports: [
