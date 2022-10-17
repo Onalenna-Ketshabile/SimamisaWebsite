@@ -9,9 +9,9 @@
                   </div>
               </div>
               <div class="clouds">
-                <img src="../../../assets/images/cloud1.svg" alt="" class="cloud1">
-                <img src="../../../assets/images/cloud2.svg" alt="" class="cloud2">
-                <img src="../../../assets/images/cloud3.svg" alt="" class="cloud3">
+                <img  src="../../../assets/images/cloud1.svg" alt="" class="cloud1">
+                <img style="top:210px" src="../../../assets/images/cloud2.svg" alt="" class="cloud2">
+                <img style="top:160px" src="../../../assets/images/cloud3.svg" alt="" class="cloud3">
             </div>
           </div>
       </div>
@@ -24,7 +24,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10 m-auto">
+                        
                         <div class="donation-form bgcolor-theme3">
+                            <div class="dnt-titl">
+                                <h2 itemprop="headline">Save A Life: <strong class="thm-clr">Donate Today</strong></h2>
+                                <p itemprop="description">We are not put on this earth for ourselves, but are placed here for each other. If you are always there for others, then in time of need, someone will be there for you.</p>
+                            </div>
+                            <div style="margin: 30px 0px 30px 0px;" >
+                                <img src="../../../assets/images/kindness.gif" alt="image" class="line-shape">
+                            </div>
+                            <div style="padding: 40px; background: #F7F6F5;box-shadow: 0 3px 10px rgb(0 0 0 / 10%); border-radius: 10px;">
                             <div class="section-title">
                                 <h5 class="subtitle line-theme-color mb-14">Make A Donation</h5>
                                 <h2 class="title text-white">Donate Now</h2>
@@ -44,12 +53,12 @@
                                   
                                 </div>
                                 <div *ngIf="isCustom()">
-                                    <input  name="amt"  (keyup)="onKey($event)" placeholder="Custom Amount" class="form-control"  required ngModel>
+                                    <input  style="margin-bottom: 13px;font-size: 16px;" name="amt"  (keyup)="onKey($event)" placeholder="Custom Amount" class="form-control"  required ngModel>
                                     
                                 </div>
                                 <div *ngIf="isSelected()">
                                     <label>Amount Chosen:</label>
-                                    <span>R {{amountchosen}}</span>
+                                    <span style="margin: 10px;font-size: 16px; font-weight: 600;">R{{amountchosen}}</span>
                                 </div>
                                <div *ngIf="amountErr">
                                <p style="color: red;">Choose a valid amount to donate</p>
@@ -71,6 +80,7 @@
                             <div hidden class="layer-style">
                                 <img src="" alt="image" class="layer-style1">
                                 <img src="" alt="image" class="layer-style2">
+                            </div>
                             </div>
                         </div>
                     </div>
