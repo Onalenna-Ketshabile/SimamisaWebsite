@@ -47,14 +47,14 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
   }
   setInc(){
     console.log(this.sponsorRequest)
-    let url = this.sponsorRequest.documents[0].DocUrl.split("split")[0];
+    let url = this.sponsorRequest.documents[0].DocUrl.split("split")[1];
     console.log(url)
     this.dataToModals.setpdfURL( url);
     
   }
    setID(){
     console.log(this.sponsorRequest)
-    let url = this.sponsorRequest.documents[0].DocUrl.split("split")[1];
+    let url = this.sponsorRequest.documents[0].DocUrl.split("split")[0];
     console.log(url)
     this.dataToModals.setpdfURL( url);
     
