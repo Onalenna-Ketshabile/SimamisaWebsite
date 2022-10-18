@@ -20,7 +20,8 @@ export class OrphanageSingleComponent implements OnInit {
     
     this.orphanageService.init();
     this.orphanageService.getOrphanages().subscribe(data=>{
-     this.orphanage =   data.filter( orph => (orph.ID = Number(this.route.snapshot.params['id'])))[0];
+      console.log("Data Before: ", data);
+     this.orphanage =   data[this.route.snapshot.params['id'] - 1];
       console.log("The orphanage by ID: " + this.route.snapshot.params['id']) ;
       console.log(data)
       console.log("###################");

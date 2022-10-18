@@ -7,10 +7,13 @@
 <td class="text-center">
     {{admOrphanageNeeds.Unmet}}
 </td> 
+<td class="text-center">
+    R{{admOrphanageNeeds.amountNeeded}}.00
+</td> 
 <td>
    
-    <div class=".hbtn .hbtn-primary" style="display: flex;justify-content: center;">
-        <a data-bs-toggle="modal" data-bs-target="#distributeFunds-modal" class="hbtn hbtn-primary" (click)="distribute()" >Distribute Funds  <i class="fa-solid fa-arrow-right-to-arc"></i></a>
+    <div class=".hbtn .hbtn-primary" style="display: flex;justify-content: center;align-items: center; min-width: 200px;">
+        <a data-bs-toggle="modal" data-bs-target="#distributeFunds-modal" class="hbtn hbtn-primary" (click)="distribute()" >Distribute Funds</a>
 
            
     </div>

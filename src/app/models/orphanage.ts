@@ -7,4 +7,6 @@ export interface Orphanage {
     DateReg: string,
     Children:number,
     DefaultChildPassword: string,
+    Email: string;
+    ContactNumber: number;
 }

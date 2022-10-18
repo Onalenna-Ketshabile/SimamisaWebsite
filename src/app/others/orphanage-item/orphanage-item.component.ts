@@ -19,8 +19,8 @@ export class OrphanageItemComponent implements OnInit {
    ngOnInit():void {
 
     }
-    onSelected(_orphanage: Orphanage): void{
-      console.log(_orphanage);
+    onSelected(): void{
+      console.log(this.orphanage);
       this.router.navigate(['/orphanage-single/'+this.orphanage.ID]);
    }
 
