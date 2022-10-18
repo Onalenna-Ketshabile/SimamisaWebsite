@@ -106,6 +106,8 @@ import { RowSponsorAccComponent } from './pages/manager/row-sponsor-acc/row-spon
 import { EventsComponent } from './pages/events/events.component';
 import { EventItemComponent } from './pages/event-item/event-item.component';
 import { ModalCalcgasComponent } from './others/modal-calcgas/modal-calcgas.component';
+import { ModalAddEventComponent } from './others/modal-add-event/modal-add-event.component';
+import { ModalEditEventComponent } from './others/modal-edit-event/modal-edit-event.component';
 
 
 @NgModule({
@@ -196,6 +198,8 @@ import { ModalCalcgasComponent } from './others/modal-calcgas/modal-calcgas.comp
       EventsComponent,
       EventItemComponent,
       ModalCalcgasComponent,
+      ModalAddEventComponent,
+      ModalEditEventComponent,
 
   ],
   imports: [

@@ -27,7 +27,8 @@ const routes: Routes = [
   { path: 'infohub', component: InfoHubComponent },
   { path: 'orphanages', component: OrphanagesComponent },
   { path: 'infohubpost', component: InfohubPostComponent },
-  { path: 'newsfeed', component: NewsfeedComponent },
+  { path: 'newsfeed', component: EventsComponent },
+  { path : 'needs' , component: NewsfeedComponent},
   { path: 'newsfeedpost', component: NewsfeedPostComponent },
 
   { path: 'events', component: EventsComponent },

@@ -11,5 +11,6 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  show(): boolean{  return localStorage.getItem('userRole')=="M"; }
 
 }

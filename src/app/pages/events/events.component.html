@@ -1,4 +1,4 @@
-<div id="header-holder" class="innerpage grey-bg">
+<div *ngIf="!show()"id="header-holder" class="innerpage grey-bg">
     <div class="cloud-bg"></div>
       <div id="top-content" class="container-fluid">
           <div class="container">
@@ -16,6 +16,26 @@
           </div>
       </div>
   </div>
+
+
+  <div class=" container-fluid"  style="padding-right: 0px;padding-left: 0px;">
+    <div class="container"  style="padding-right: 0px; padding-left: 0px;">
+        <!-- Start Page Header -->
+    <div   *ngIf="show()" class="page-header" >
+      <h1 class="title">Newsfeed</h1>
+        <ol class="breadcrumb">
+          <li class="active" style="font-size: 14px;">Your Orphanage's News Updates</li>
+          <div *ngIf="show()" class="mt-3 mt-md-0">
+            <button  type="button" class="btn btn-success waves-effect waves-light hbtn-primary" data-bs-toggle="modal" data-bs-target=""  ><span class="iconify" data-icon="mdi:plus-circle"></span> Add New Event</button>
+        </div>
+      </ol>
+
+  
+    </div>
+    <!-- End Page Header -->
+    </div>
+  </div>
+
 
 <section>
     <div class="block">
@@ -36,8 +56,8 @@
                         <h1 itemprop="headline">Praise Session: One of the best nights of the year!</h1>
                         <p itemprop="description">Yesterday was fantastic! We had a prayer session in our hall, and all of the children were overjoyed, praising alongside our guest.</p>
                         <p itemprop="description">Yesterday was fantastic! We had a prayer session in our hall, and all of the children were overjoyed, praising alongside our guest.</p>
-                        <div class="donation-btns" >
-                            <button  class="main-btn"   data-bs-toggle="modal" data-bs-target="#editNeed-modal"  >Edit <i class="far fa fa-pencil"></i></button>
+                        <div class="donation-btns" *ngIf="show()">
+                            <button  class="main-btn"   data-bs-toggle="modal" data-bs-target=""  >Edit <i class="far fa fa-pencil"></i></button>
                             <button  class="main-btn">Delete <i class="fa fa-trash"></i></button>
                         
                     </div>
@@ -58,10 +78,11 @@
                         <h1 itemprop="headline">Charity Event ideas to Engage Donors, Support</h1>
                         <p itemprop="description">Yesterday was fantastic! We had a prayer session in our hall, and all of the children were overjoyed, praising alongside our guest.</p>
                         <p itemprop="description">Yesterday was fantastic! We had a prayer session in our hall, and all of the children were overjoyed, praising alongside our guest.</p>
-                        <div hidden class="evnt-inf-btm">
-                            <a class="thm-btn2" href="event-detail.html" title="" itemprop="url">Join The Movement</a>
-                            <span class="evnt-loc"><i class="fa fa-map-marker"></i><span>4801 Rockhill Road Kansas City, 64110</span></span>
-                        </div>
+                        <div class="donation-btns" *ngIf="show()">
+                            <button  class="main-btn"   data-bs-toggle="modal" data-bs-target=""  >Edit <i class="far fa fa-pencil"></i></button>
+                            <button  class="main-btn">Delete <i class="fa fa-trash"></i></button>
+                        
+                    </div>
                     </div>
                 </div>
 

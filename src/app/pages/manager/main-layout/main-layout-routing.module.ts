@@ -22,6 +22,7 @@ import { ProfileQueriesComponent } from '../profile-queries/profile-queries.comp
 import { SponsorRequestComponent } from '../sponsor-request/sponsor-request.component';
 import { MainLayoutComponent } from './main-layout.component';
 import { DashboardManagerComponent } from '../dashboard-manager/dashboard-manager.component';
+import { EventsComponent } from '../../events/events.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,7 @@ const routes: Routes = [
   component: MainLayoutComponent ,
   children: [
     {path: 'home', component: HomeComponent},
-    {path: 'newsfeed', component: NewsfeedComponent},
+    {path: 'needs', component: NewsfeedComponent},
     {path: 'newsfeed/:id', component: NewsfeedComponent},
     { path: 'item-proposals' , component: ItemProposalsComponent},
     {path:'newsfeed/editneed/:id',component:EditNeedComponent},
@@ -50,7 +51,7 @@ const routes: Routes = [
     {path: 'child-needs/editchildneed/:id', component: EditChildneedComponent},
     {path: 'child-updates/:id', component: ChildUpdatesComponent},
     {path: 'child-updates/editchildupdate/:id', component: EditChildupdateComponent},
-     
+    {path: 'newsfeed', component: EventsComponent},
     {path: 'dashboard', component: DashboardManagerComponent},
    ]
    }
