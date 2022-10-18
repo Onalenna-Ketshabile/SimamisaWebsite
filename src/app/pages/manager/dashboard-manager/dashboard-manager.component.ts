@@ -21,9 +21,8 @@ export class DashboardManagerComponent implements OnInit {
     this.managerReport.getWeeklyDropoffs(orphanageID).subscribe((data)=>{
       this.dropoffs= data;
     });
-    this.managerReport.getGasNeeded(orphanageID).subscribe((data)=>{
-    this.x= data;
-    })
+     this.x  = Number(localStorage.getItem("gas")!);
+     this.x  = Number(this.x.toFixed(2));
   }
 
 }

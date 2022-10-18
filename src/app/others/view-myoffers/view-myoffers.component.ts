@@ -1,6 +1,7 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { Offer } from 'src/app/models/offer';
 import { DataToModalsService } from 'src/app/services/data-to-modals.service';
+import { OffersService } from 'src/app/services/offers.service';
 
 
 declare var window: any;
@@ -19,7 +20,7 @@ export class ViewMyoffersComponent implements OnInit {
   acceptOfferModal: any;
 
 
-  constructor(private dataToModals: DataToModalsService) { }
+  constructor(private dataToModals: DataToModalsService,private offersService: OffersService) { }
 
   ngOnInit(): void {
     
@@ -35,5 +36,11 @@ export class ViewMyoffersComponent implements OnInit {
  selected(offer: Offer){
    console.log('Selected: ' + offer.Title+ "||| ID: " + offer.ID);
    this.dataToModals.setOfferDetails(offer);
+ }
+ forgo(offer: Offer){
+  let orphID=  localStorage.getItem("orphID");
+    this.offersService.rejectOffer(orphID!,offer.ID).subscribe((data)=>{
+      console.log(data);
+    })
  }
 }

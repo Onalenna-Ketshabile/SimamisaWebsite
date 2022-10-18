@@ -108,6 +108,7 @@ import { EventItemComponent } from './pages/event-item/event-item.component';
 import { ModalCalcgasComponent } from './others/modal-calcgas/modal-calcgas.component';
 import { ModalAddEventComponent } from './others/modal-add-event/modal-add-event.component';
 import { ModalEditEventComponent } from './others/modal-edit-event/modal-edit-event.component';
+import { SentOffersComponent } from './pages/manager/sent-offers/sent-offers.component';
 
 
 @NgModule({
@@ -200,6 +201,7 @@ import { ModalEditEventComponent } from './others/modal-edit-event/modal-edit-ev
       ModalCalcgasComponent,
       ModalAddEventComponent,
       ModalEditEventComponent,
+      SentOffersComponent,
 
   ],
   imports: [

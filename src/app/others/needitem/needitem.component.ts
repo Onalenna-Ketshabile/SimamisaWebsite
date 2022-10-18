@@ -33,7 +33,7 @@ export class NeeditemComponent implements OnInit {
 
    ngOnInit():void {
     this.needPriorityFormat();
-
+  console.log("Heyyyyyyyyyyyyyy",this.need.ID);
     let num =((this.need.AmountReceived/this.need.AmountNeeded)*100);
     
    this.progress= Math.round( num * 100 + Number.EPSILON ) / 100;

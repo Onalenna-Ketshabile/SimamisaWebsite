@@ -17,8 +17,9 @@ export class ModalCalcgasComponent implements OnInit {
     let price =  form.unitCost;//what?
     let orphanageID = localStorage.getItem("orphID")!;
     
-    this.managerReport.getGasNeeded(orphanageID).subscribe((data)=>{
+    this.managerReport.getGasNeeded(orphanageID,price).subscribe((data)=>{
       localStorage.setItem("gas",data);
+      window.location.reload();
     })
     
 

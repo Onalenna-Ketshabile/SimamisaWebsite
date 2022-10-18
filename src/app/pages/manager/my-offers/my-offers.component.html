@@ -7,14 +7,12 @@
       </div>
     </ol>
 
-    <!-- Start Page Header Right Div -->
-    <div hidden class="right">
-      <div class="btn-group" role="group" aria-label="...">
-        <a href="index.html" class="btn btn-light">View Needs</a>
-        <a href="#" class="btn btn-light">View Events</a>
+    <div class="card this-component">
+      <div class="switch-buttons">
+          <a [style.box-shadow]="bsPickUp"  [style.backgroundColor]="btnPickUp"  class="hbtn hbtn-primary left-btn" (click)="showReceived()">Received</a>
+          <a [style.box-shadow]="bsDropOff"  [style.backgroundColor]="btnDropOff" class="hbtn hbtn-primary right-btn" (click)="showSent()">Sent</a>
+
       </div>
-    </div>
-    <!-- End Page Header Right Div -->
 
   </div>
 
@@ -28,15 +26,34 @@
   </div>
 
   <div style="min-height: 420px;">
-    <div  *ngIf="nothingReturned()" style="min-height: 420px;display: flex;justify-content: center;align-items: center; flex-direction: column;">
-      <div style="display: flex; justify-content:center; align-items: center; flex-direction: column;"><img style="opacity: 0.8; height: 200px; width: auto;" src="../../../assets/images/empty.jpg"></div>
-        <div  style="font-size: 22px;margin-top: 20px;">You have no  offers.</div>
-  
+    
+    <div >
+      <div [ngSwitch]="activeLayout">
+       <div  *ngSwitchCase="'received'">
+        <div *ngIf="!nothingRecReturned()">
+          <app-view-myoffers *ngFor="let offer of rec_offers" [offer]="offer"></app-view-myoffers>
+     
+        </div>
+        <div  *ngIf="nothingRecReturned()" style="min-height: 420px;display: flex;justify-content: center;align-items: center; flex-direction: column;">
+          <div style="display: flex; justify-content:center; align-items: center; flex-direction: column;"><img style="opacity: 0.8; height: 200px; width: auto;" src="../../../assets/images/empty.jpg"></div>
+            <div  style="font-size: 22px;margin-top: 20px;">You have no  offers.</div>
       
-    </div>
-    <div *ngIf="!nothingReturned()">
-      <app-view-myoffers *ngFor="let offer of offers" [offer]="offer"></app-view-myoffers>
-  
+          
+        </div>
+         </div>
+       <div  *ngSwitchCase="'sent'">
+        <div *ngIf="!nothingSentReturned()">
+        <app-sent-offers *ngFor="let offeritem of sent_offers" [offer]="offeritem"></app-sent-offers>
+        </div>
+        <div  *ngIf="nothingSentReturned()" style="min-height: 420px;display: flex;justify-content: center;align-items: center; flex-direction: column;">
+          <div style="display: flex; justify-content:center; align-items: center; flex-direction: column;"><img style="opacity: 0.8; height: 200px; width: auto;" src="../../../assets/images/empty.jpg"></div>
+            <div  style="font-size: 22px;margin-top: 20px;">You have no  offers.</div>
+      
+          
+        </div>
+       </div>
+      </div>
+      
     </div>
   </div>
  

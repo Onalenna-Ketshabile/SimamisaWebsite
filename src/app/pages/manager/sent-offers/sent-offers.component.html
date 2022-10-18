@@ -1,0 +1,42 @@
+
+<section class="event-area section-gap-extra-bottom">
+    <div class="container">
+        <div class="event-items">
+        
+            <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="event-thumb">
+                    <img src="../../../../assets/images/offer.png" alt="Image">
+                </div>
+                <div class="event-content">
+ 
+
+                    
+                    <h4 class="event-title"><a href="#">{{offer.Offer.Title}}</a></h4>
+                    <div style="color: #CC8E68; font-weight:500;font-size: 15px; margin-bottom: 20px"><i style="margin-right: 5px;" class="fa-solid fa-share"></i>Sent To: {{offer.ReceivingPartnerName}}</div>
+                    <p>
+                        {{offer.Offer.Description}}
+                     
+                    </p>
+                </div>
+
+                <div class="buttons-container">
+                    <div *ngIf="isConfirm()" class="event-button">
+                        <a id="btnAccept" class="main-btn bordered-btn" (click)="confirm()">Confirm<i class="fa fa-arrow-right"></i></a>
+                    </div>
+                    <div *ngIf="isReject()" class="event-button">
+                        <button  id="btnAccept" class="main-btn bordered-btn" style="background-color: red;">Rejected</button>
+                    </div>
+                    <div *ngIf="isAccepted()" class="event-button">
+                        <button  id="btnAccept" class="main-btn bordered-btn" style="background-color: green;">Accepted</button>
+                    </div>
+                    <div  *ngIf="isAwaiting()"class="event-button">
+                        <button disabled="true" id="btnAccept" class="main-btn bordered-btn" style="background-color: coral;">Awaiting Action</button>    </div>
+                    
+                    </div>
+            </div>
+            
+         
+           
+        </div>
+    </div>
+</section>

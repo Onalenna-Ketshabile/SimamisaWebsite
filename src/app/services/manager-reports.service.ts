@@ -44,8 +44,8 @@ export class ManagerReportsService {
     return this.http.get(this.apiURL+"om/drops/?id="+orphanageID,this.headers);
 }
 
-getGasNeeded(orphanageID:string):Observable<any>{
-  return this.http.get(this.apiURL+"om/gas/?id="+orphanageID,this.headers);
+getGasNeeded(orphanageID:string,price:string):Observable<any>{
+  return this.http.get(`${this.apiURL}om/gas/?id=${orphanageID}&amount=${price}`,this.headers);
 }
   getManagerNeedsReportOne(orphanageID:string):Observable<any>{
     this._managerNeedsReportOne(orphanageID);

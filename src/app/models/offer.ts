@@ -1,5 +1,5 @@
 export interface Offer {
-itemNeed: any;
+    itemNeed: any;
     ID: number,
     Title: string,
     Description:string,

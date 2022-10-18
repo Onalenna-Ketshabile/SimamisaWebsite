@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-qrcode.component.css','../../../assets/css/modal.css']
 })
 export class ModalQrcodeComponent implements OnInit {
-  myAngularQrCode:any
+  myAngularQrCode = " https://expo.dev/artifacts/ce29cc66-9e18-40d2-b163-6bb5ca67c330";
   show: boolean = true;
   constructor() { }
 
