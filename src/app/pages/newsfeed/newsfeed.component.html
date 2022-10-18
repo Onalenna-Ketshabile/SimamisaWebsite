@@ -59,7 +59,7 @@
 <div *ngIf="show()">
   <div  *ngIf="loaderService.isLoading | async" class="row" >
     <div class="col-sm-12">
-        <div style="margin-left:400px;margin-top:30px;margin-bottom:30px">
+        <div style="display: flex; align-items: center; justify-content: center;margin-top:30px;">
             <app-loading-indicator></app-loading-indicator>
         </div>
     
@@ -69,7 +69,7 @@
 <div *ngIf="!show()">
   <div  *ngIf="loaderService.isLoading | async" class="row" >
     <div class="col-sm-12">
-        <div style="margin-left:500px;margin-top:30px;margin-bottom:30px">
+        <div style="display:flex; align-items: center; justify-content: center;margin-top:30px;">
             <app-loading-indicator></app-loading-indicator>
         </div>   
     </div>
