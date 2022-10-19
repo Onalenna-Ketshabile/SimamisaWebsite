@@ -28,8 +28,9 @@ export class NeedsService {
     return this.http.get<Need[]>(this.apiURL + "/", { headers: this.headers });
   }
   getNeedByID(id: string): Observable<Need> {
-    return this.http.get<any>(this.apiURL+"/active", { headers: this.headers }).pipe(
-      map(res => res.find((need:any) => need.ID == id)));
+    console.log("SDFGHJHKL",id);
+    return this.http.get<any>(this.apiURL+"/?id="+id, { headers: this.headers });
+     
   }
   getOrphanageNeeds = () => {
     console.log("OrphID :" + localStorage.getItem("orphID"));
