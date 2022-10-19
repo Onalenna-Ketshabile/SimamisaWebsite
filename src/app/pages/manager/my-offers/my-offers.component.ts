@@ -31,7 +31,7 @@ export class MyOffersComponent implements OnInit {
     })
     this.offersService.getMyOffer().subscribe(data=>{
       this.rec_offers =data;
-      console.log(data);
+      console.log("Offers",data);
       // if(data.length == 0){
       //   this.noData = this.nothingReturned();}
     });
