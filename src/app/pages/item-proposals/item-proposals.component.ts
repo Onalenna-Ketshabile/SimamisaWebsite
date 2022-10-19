@@ -35,7 +35,7 @@ export class ItemProposalsComponent implements OnInit, OnChanges {
     { id: 3, name: 'Fulfilled' },
     { id: 4, name: 'Rejected' },
   ];
-  filterval: number = 1;
+  filterval: number = 0;
   isLoaded = false;
   totalLength: any;
   page: number = 1;
