@@ -30,7 +30,7 @@ export class MyOffersComponent implements OnInit {
       this.isLoading = data;
     })
     this.offersService.getMyOffer().subscribe(data=>{
-      this.rec_offers =data;
+      this.rec_offers =data.filter();
       // if(data.length == 0){
       //   this.noData = this.nothingReturned();}
     });
