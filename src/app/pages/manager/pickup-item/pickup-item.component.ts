@@ -85,7 +85,7 @@ elementUpdated: EventEmitter<any> = new EventEmitter();
     this.proposalService.confirmProposal(this.proposal.ID).subscribe(data => {  
       console.log("Posted");
       console.log(data);
-      this.router.navigate(['manager/newsfeed/'+this.proposal.itemNeedID]);
+      this.router.navigate(['manager/needs/'+this.proposal.itemNeedID]);
       this.elementUpdated.emit();//Notifies parent to reload
       
     });

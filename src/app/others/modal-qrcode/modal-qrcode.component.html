@@ -8,7 +8,7 @@
         <div class="modal-body" >
           <div *ngIf="show">
             <p><strong> Donate Money, Arrange to drop off items that you have, be a helping hand</strong></p>
-            <qrcode style="display: flex;justify-content: center;" qrdata="myAngularQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+            <qrcode style="display: flex;justify-content: center;" qrdata={{myAngularQrCode}} [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
             <button type="button" class="btn btn-light waves-effect waves-light" data-bs-dismiss="modal">OK</button>
             <button type="button" style="padding: 7px;" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal">Cancel</button>
         
