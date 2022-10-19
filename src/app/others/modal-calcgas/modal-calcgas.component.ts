@@ -4,7 +4,7 @@ import { ManagerReportsService } from 'src/app/services/manager-reports.service'
 @Component({
   selector: 'app-modal-calcgas',
   templateUrl: './modal-calcgas.component.html',
-  styleUrls: ['./modal-calcgas.component.css']
+  styleUrls: ['./modal-calcgas.component.css','../../../assets/css/modal.css']
 })
 export class ModalCalcgasComponent implements OnInit {
 

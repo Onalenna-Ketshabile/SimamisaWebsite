@@ -5154,3 +5154,23 @@ a:hover {
     vertical-align: middle;
     flex: 0 0 auto;
 }
+.hbtn {
+    position: relative;
+    display: inline-block;
+    padding: 8px 22px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+	border-radius: 0px;
+}
+
+
+.hbtn.hbtn-primary {
+    background-color: #FF7B29;
+    color: #ffffff;
+}

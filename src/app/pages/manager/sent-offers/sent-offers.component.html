@@ -13,7 +13,7 @@
                     
                     <h4 class="event-title"><a href="#">{{offer.Offer.Title}}</a></h4>
                     <div style="color: #CC8E68; font-weight:500;font-size: 15px; margin-bottom: 20px"><i style="margin-right: 5px;" class="fa-solid fa-share"></i>Sent To: {{offer.ReceivingPartnerName}}</div>
-                    <p>
+                    <p style="min-width: 400px; max-width: 400px;">
                         {{offer.Offer.Description}}
                      
                     </p>
@@ -21,16 +21,16 @@
 
                 <div class="buttons-container">
                     <div *ngIf="isConfirm()" class="event-button">
-                        <a id="btnAccept" class="main-btn bordered-btn" (click)="confirm()">Confirm<i class="fa fa-arrow-right"></i></a>
+                        <a id="btnAccept" class="main-btn bordered-btn" style="width: 160px;"(click)="confirm()">Confirm<i class="fa fa-arrow-right"></i></a>
                     </div>
                     <div *ngIf="isReject()" class="event-button">
-                        <button  id="btnAccept" class="main-btn bordered-btn" style="background-color: red;">Rejected</button>
+                        <button  id="btnAccept" class="main-btn bordered-btn" style="background-color: red;width: 160px;">Rejected</button>
                     </div>
                     <div *ngIf="isAccepted()" class="event-button">
-                        <button  id="btnAccept" class="main-btn bordered-btn" style="background-color: green;">Accepted</button>
+                        <button  id="btnAccept" class="main-btn bordered-btn" style="background-color: green;width: 160px;">Accepted</button>
                     </div>
                     <div  *ngIf="isAwaiting()"class="event-button">
-                        <button disabled="true" id="btnAccept" class="main-btn bordered-btn" style="background-color: coral;">Awaiting Action</button>    </div>
+                        <button disabled="true" id="btnAccept" class="main-btn bordered-btn" style="background-color: coral;width: 160px;">Awaiting Action</button>    </div>
                     
                     </div>
             </div>

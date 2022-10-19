@@ -5157,3 +5157,7 @@ a:hover {
     vertical-align: middle;
     flex: 0 0 auto;
 }
+.btn-search {
+    color: white !important;
+    height: 35px !important;
+}

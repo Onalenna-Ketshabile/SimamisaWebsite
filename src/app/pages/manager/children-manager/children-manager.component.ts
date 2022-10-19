@@ -13,7 +13,7 @@ interface Filter {
   selector: 'app-children-manager',
   templateUrl: './children-manager.component.html',
   styleUrls: ['./children-manager.component.css','../../../../assets/css/bootstrap.min.css',
-  '../../../../assets/css/font-awesome.min.css']
+  '../../../../assets/css/font-awesome.min.css','../../newsfeed/newsfeed.component.css']
 })
 export class ChildrenManagerComponent implements OnInit {
   children?: Child[];
